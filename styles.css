@@ -90,13 +90,13 @@ body {
 
 .hero .title:first-of-type {
     top: 44.8%;
-    left: 36px;
+    left: 32px;
     color: #ffffff;
 }
 
 .hero .title:last-of-type {
     top: 50.1%;
-    left: 89px;
+    left: 76px;
     color: #34a853;
 }
 
@@ -138,13 +138,14 @@ body {
 }
 
 .hero .title {
-    font-size: clamp(2.5rem, 9.26vw, 100px);
+    font-size: clamp(2.3rem, 8.5vw, 92px);
     font-weight: 700;
     line-height: 1.1;
-    letter-spacing: -5px;
+    letter-spacing: -4.5px;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     white-space: nowrap;
     max-width: none;
+    padding-right: 20px;
 }
 
 .title-large {
@@ -494,18 +495,19 @@ body {
     }
 
     .hero .title {
-        font-size: clamp(2.2rem, 9.26vw, 100px);
-        letter-spacing: -4px;
+        font-size: clamp(2rem, 8.2vw, 88px);
+        letter-spacing: -3.5px;
+        padding-right: 16px;
     }
 
     .hero .title:first-of-type {
         top: 44%;
-        left: 28px;
+        left: 24px;
     }
 
     .hero .title:last-of-type {
         top: 49.5%;
-        left: 64px;
+        left: 56px;
     }
 
     .story {
@@ -571,18 +573,19 @@ body {
     }
 
     .hero .title {
-        font-size: clamp(1.9rem, 10.5vw, 4rem);
-        letter-spacing: -2.5px;
+        font-size: clamp(1.75rem, 9.8vw, 3.8rem);
+        letter-spacing: -2px;
+        padding-right: 12px;
     }
 
     .hero .title:first-of-type {
         top: 42.5%;
-        left: 24px;
+        left: 20px;
     }
 
     .hero .title:last-of-type {
         top: 48%;
-        left: 48px;
+        left: 42px;
     }
 
     .chevron-down {
