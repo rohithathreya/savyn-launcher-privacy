@@ -57,6 +57,13 @@ body {
     min-height: 100vh;
 }
 
+/* Left-aligned content containers */
+.content-left {
+    width: 100%;
+    max-width: 800px;
+    text-align: left;
+}
+
 /* Typography */
 .title {
     font-size: clamp(3rem, 8vw, 6rem);
@@ -92,6 +99,32 @@ body {
     font-weight: 300;
     color: var(--text-muted);
     max-width: 800px;
+}
+
+.story-left {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    line-height: 1.7;
+    font-weight: 300;
+    color: var(--text-muted);
+    text-align: left;
+    margin: 0;
+}
+
+.title-small-left {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 500;
+    line-height: 1.3;
+    text-align: left;
+    color: var(--text);
+}
+
+.title-medium-left {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    text-align: left;
+    color: var(--text);
 }
 
 .subtitle {
@@ -195,6 +228,17 @@ body {
     color: var(--accent);
 }
 
+/* Feature Items */
+.feature-item {
+    margin-bottom: 2.5rem;
+}
+
+.feature-desc {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    opacity: 0.7;
+    margin-top: 0.5rem;
+}
+
 /* Footer */
 .footer {
     padding: 4rem 0 3rem;
@@ -293,6 +337,26 @@ body {
         font-size: clamp(1.2rem, 5vw, 1.8rem);
     }
 
+    .story-left {
+        font-size: clamp(1.1rem, 4.5vw, 1.6rem);
+    }
+
+    .title-small-left {
+        font-size: clamp(1.6rem, 6vw, 2.4rem);
+    }
+
+    .title-medium-left {
+        font-size: clamp(1.8rem, 6.5vw, 2.8rem);
+    }
+
+    .content-left {
+        padding: 0;
+    }
+
+    .feature-item {
+        margin-bottom: 2rem;
+    }
+
     .details-grid {
         grid-template-columns: 1fr;
         gap: 2.5rem;
@@ -316,6 +380,27 @@ body {
 
     .section {
         min-height: 50vh;
+        padding: 5vh 0;
+    }
+
+    .story-left {
+        font-size: clamp(1rem, 5vw, 1.4rem);
+    }
+
+    .title-small-left {
+        font-size: clamp(1.4rem, 7vw, 2rem);
+    }
+
+    .title-medium-left {
+        font-size: clamp(1.6rem, 7vw, 2.4rem);
+    }
+
+    .feature-item {
+        margin-bottom: 1.5rem;
+    }
+
+    .feature-desc {
+        font-size: clamp(0.9rem, 4vw, 1.2rem);
     }
 
     .footer-links {
