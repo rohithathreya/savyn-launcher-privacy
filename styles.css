@@ -32,6 +32,10 @@ html {
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
     background: var(--bg);
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(16, 160, 55, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(16, 160, 55, 0.02) 0%, transparent 50%);
+    background-attachment: fixed;
     color: var(--text);
     line-height: 1.7;
     font-size: 18px;
@@ -64,12 +68,52 @@ body {
 .hero {
     min-height: 100vh;
     height: 100vh;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
     padding: 0;
+    margin: 0 -32px;
+    width: calc(100% + 64px);
     position: relative;
     overflow: hidden;
-    background: radial-gradient(circle at center, #041f0c 0%, #000000 70%);
+    background: radial-gradient(ellipse at 50% 50%, #041F0C 0%, #020F06 35%, #000000 70%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.hero .title {
+    position: absolute;
+    margin: 0;
+}
+
+.hero .title:first-of-type {
+    top: 44.8%;
+    left: 36px;
+    color: #ffffff;
+}
+
+.hero .title:last-of-type {
+    top: 50.1%;
+    left: 89px;
+    color: #34a853;
+}
+
+.chevron-down {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s ease-in-out infinite;
+    cursor: pointer;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-10px);
+    }
 }
 
 /* Left-aligned content containers */
@@ -91,24 +135,12 @@ body {
     transition: opacity 0.6s ease;
 }
 
-/* Landing Page Title */
-.title-landing {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+.hero .title {
+    font-size: clamp(2.5rem, 9.26vw, 100px);
     font-weight: 700;
-    font-size: clamp(3.5rem, 9.26vw, 6.25rem);
     line-height: 1.1;
-    letter-spacing: -0.05em;
-    margin: 0;
-    padding: 0;
-}
-
-.landing-line1 {
-    color: #FFFFFF;
-    margin-bottom: 0.5rem;
-}
-
-.landing-line2 {
-    color: #34a853;
+    letter-spacing: -5px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 .title-large {
@@ -453,10 +485,23 @@ body {
     .hero {
         min-height: 100vh;
         height: 100vh;
+        margin: 0 -28px;
+        width: calc(100% + 56px);
     }
 
-    .title-landing {
-        font-size: clamp(3rem, 11vw, 5rem);
+    .hero .title {
+        font-size: clamp(2rem, 9.26vw, 100px);
+        letter-spacing: -3px;
+    }
+
+    .hero .title:first-of-type {
+        top: 44.8%;
+        left: 24px;
+    }
+
+    .hero .title:last-of-type {
+        top: 50.1%;
+        left: 60px;
     }
 
     .story {
@@ -517,10 +562,27 @@ body {
 
     .hero {
         height: 100vh;
+        margin: 0 -24px;
+        width: calc(100% + 48px);
     }
 
-    .title-landing {
-        font-size: clamp(2.5rem, 13vw, 4.5rem);
+    .hero .title {
+        font-size: clamp(1.8rem, 10vw, 3.5rem);
+        letter-spacing: -2px;
+    }
+
+    .hero .title:first-of-type {
+        top: 43%;
+        left: 20px;
+    }
+
+    .hero .title:last-of-type {
+        top: 48.5%;
+        left: 40px;
+    }
+
+    .chevron-down {
+        bottom: 8%;
     }
 
     .story-left {
