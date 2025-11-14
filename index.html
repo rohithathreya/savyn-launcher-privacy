@@ -5,439 +5,333 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Savyn - Your phone that actually learns. Android launcher with on-device AI. No tracking. No servers. Pure privacy.">
     <meta name="keywords" content="android launcher, privacy, mindful usage, AI">
-
-    <title>Savyn – Your phone, finally personal</title>
-
+    
+    <title>Savyn</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Headline + body pairing -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="page-shell">
-
-    <!-- Top progress bar (Wabi-style reading progress) -->
-    <div class="scroll-progress">
-        <div class="scroll-progress-bar"></div>
-    </div>
-
-    <!-- NAV -->
-    <header class="nav">
-        <div class="nav-left">
-            <div class="nav-logo-mark">Savyn</div>
-            <div class="nav-pill">Android launcher • On-device AI</div>
-        </div>
-        <div class="nav-right">
-            <button class="nav-chip">The Savyn Story</button>
-            <a href="mailto:support@savynlabs.com?subject=Join%20Savyn%20Beta" class="nav-cta">
-                Join waitlist
-            </a>
-        </div>
-    </header>
-
-    <main>
-
-        <!-- HERO -->
+    <div class="container">
+        
+        <!-- LANDING -->
         <section class="section hero" data-section="landing">
-            <div class="hero-inner">
-                <div class="hero-copy fade-in">
-                    <p class="eyebrow">A different kind of phone experience</p>
-                    <h1 class="hero-title">
-                        You can just do things.<br>
-                        <span class="hero-highlight">Your phone can too.</span>
-                    </h1>
-                    <p class="hero-subtitle">
-                        Savyn is an Android launcher that actually learns you.<br>
-                        On-device intelligence that understands your patterns,
-                        surfaces the right actions, and never phones home.
-                    </p>
-
-                    <div class="hero-meta-row">
-                        <div class="hero-badges">
-                            <span class="badge badge-soft">On-device AI</span>
-                            <span class="badge badge-soft">No servers</span>
-                            <span class="badge badge-soft">Zero tracking</span>
-                        </div>
-                        <a href="mailto:support@savynlabs.com?subject=Join%20Savyn%20Beta" class="cta-button hero-cta">
-                            Join the beta
-                        </a>
-                    </div>
-
-                    <p class="hero-footnote">
-                        Android 8.0+ • 100% Private • Your usage never leaves your device
-                    </p>
-                </div>
-
-                <!-- Phone mock / visual -->
-                <div class="hero-visual fade-in">
-                    <div class="hero-orbit hero-orbit-1"></div>
-                    <div class="hero-orbit hero-orbit-2"></div>
-
-                    <div class="phone-frame">
-                        <div class="phone-notch"></div>
-                        <div class="phone-inner">
-                            <div class="phone-tag-row">
-                                <span class="chip chip-soft">Morning • 7:14 AM</span>
-                                <span class="chip chip-soft chip-ghost">Knows your rhythm</span>
-                            </div>
-
-                            <div class="phone-stack">
-                                <div class="phone-card phone-card-primary">
-                                    <p class="phone-card-label">Next best action</p>
-                                    <h3 class="phone-card-title">Resume Deep Work</h3>
-                                    <p class="phone-card-text">
-                                        Notes, playlist, timer – all stacked in one tap.
-                                    </p>
-                                </div>
-
-                                <div class="phone-card phone-card-secondary float-up-delay-1">
-                                    <p class="phone-card-label">Break profile</p>
-                                    <p class="phone-card-text">
-                                        “Short reset • High quality” based on your past breaks.
-                                    </p>
-                                </div>
-
-                                <div class="phone-card phone-card-secondary float-up-delay-2">
-                                    <p class="phone-card-label">Contextual apps</p>
-                                    <p class="phone-card-text">
-                                        The 4 apps you’re most likely to need, right now.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="phone-foot">
-                                <span class="pill pill-soft">All on-device</span>
-                                <span class="pill pill-soft">No account</span>
-                                <span class="pill pill-soft">Just your phone and you</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <button class="chevron-down" onclick="document.querySelector('[data-section=ps-1]').scrollIntoView({behavior: 'smooth'})" aria-label="Scroll to story">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+            <h1 class="title fade-in">
+                You can just do things!
+            </h1>
+            <h1 class="title fade-in">
+                Your phone can too!
+            </h1>
+            <div class="chevron-down fade-in" onclick="document.querySelector('[data-section=ps-1]').scrollIntoView({behavior: 'smooth'})">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M7 10L12 15L17 10" stroke="#888888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-            </button>
+            </div>
         </section>
 
-        <!-- CHAPTER 1: YOUR PHONE KNOWS YOU, BUT DOESN'T ACT LIKE IT -->
-        <section class="section story-section" data-section="ps-1">
-            <div class="section-inner fade-in-scroll">
-                <div class="section-label">Chapter 1</div>
-                <h2 class="section-title">
-                    Your phone knows everything about you.<br>
-                    It still acts like it doesn’t.
-                </h2>
-                <p class="story-paragraph">
-                    It knows so much about you – habits, goals, sleep, name it.
+        <!-- PS 1 -->
+        <section class="section" data-section="ps-1">
+            <div class="content-left fade-in-scroll">
+                <p class="story-left">
+                    It knows so much about you - habits, goals, sleep, name it
                 </p>
-                <p class="story-paragraph">
-                    And yet, every time you unlock your phone, the same static
-                    app grids stare you in the face.
+                
+                <p class="story-left" style="margin-top: 2.5rem;">
+                    And yet, every time you unlock, your phone, the same static app grids state you in the face
                 </p>
             </div>
         </section>
 
-        <!-- CHAPTER 2: CONTEXT -->
-        <section class="section story-section" data-section="ps-2">
-            <div class="section-inner fade-in-scroll">
-                <div class="section-label">Chapter 2</div>
-                <h2 class="section-title">
-                    What if your phone always had context<br>
-                    of what you might want?
-                </h2>
-                <p class="story-paragraph">
-                    What if it made each experience personal to that time & situation?
+        <!-- PS 2 -->
+        <section class="section" data-section="ps-2">
+            <div class="content-left fade-in-scroll">
+                <p class="story-left">
+                    What if your phone always had context of what you might want?
                 </p>
-                <p class="story-paragraph">
-                    Not with ads. Or trackers. Or basic ChatGPT wrappers
-                    masquerading as AI wizards.
+                
+                <p class="story-left" style="margin-top: 2.5rem;">
+                    And made each experience personal to that time & situation?
                 </p>
-                <p class="story-paragraph">
+                
+                <p class="story-left" style="margin-top: 2.5rem;">
+                    Not with ads. Or trackers. Or basic ChatGPT wrappers masquerading as AI wizard
+                </p>
+                
+                <p class="story-left" style="margin-top: 2.5rem;">
                     But real intelligence that lives & breathes only on your phone.
                 </p>
-
-                <div class="context-strip">
-                    <span class="context-pill">Deep work</span>
-                    <span class="context-pill">Commute</span>
-                    <span class="context-pill">Micro breaks</span>
-                    <span class="context-pill">Evening wind-down</span>
-                    <span class="context-pill">Weekend reset</span>
-                </div>
             </div>
         </section>
 
-        <!-- CHAPTER 3: SECOND BRAIN -->
-        <section class="section story-section" data-section="ps-3">
-            <div class="section-inner fade-in-scroll">
-                <div class="section-label">Chapter 3</div>
-                <h2 class="section-title">
-                    Your device, finally a true extension of you.
-                </h2>
-                <p class="story-paragraph">
-                    Your device transformed into a true extension of you.
+        <!-- PS 3 -->
+        <section class="section" data-section="ps-3">
+            <div class="content-left fade-in-scroll">
+                <p class="story-left">
+                    Your device transformed into a true extension of you
                 </p>
-                <p class="story-paragraph">
-                    Owned & operated only by you.
+                
+                <p class="story-left" style="margin-top: 2.5rem;">
+                    Owned & operated only by you
                 </p>
-                <p class="story-paragraph">
-                    A second brain, algorithm, whatever you want to call it.
+                
+                <p class="story-left" style="margin-top: 2.5rem;">
+                    A second brain / algorithm of whatever you want to call it
                 </p>
             </div>
         </section>
 
-        <!-- CHAPTER 4: LAUNCHER INTRO -->
-        <section class="section story-section" data-section="ps-5">
-            <div class="section-inner fade-in-scroll">
-                <div class="section-label">Introducing</div>
-                <h2 class="section-title accent-gradient">
-                    Savyn Labs’ Android Launcher<br>is a step in that direction.
+        <!-- PS 5 - LAUNCHER INTRO -->
+        <section class="section" data-section="ps-5">
+            <div class="content-left fade-in-scroll">
+                <h2 class="title-medium-left">
+                    <span class="gradient-text">Savyn Labs' Android Launcher</span> is a step in that direction!
                 </h2>
             </div>
         </section>
 
-        <!-- ADAPTIVE HOME / PRIVACY -->
-        <section class="section split-section" data-section="ps-4">
-            <div class="section-inner split-inner fade-in-scroll">
-                <div class="split-left">
-                    <h3 class="split-title">An adaptive home that learns you</h3>
-                    <p class="story-paragraph">
-                        An adaptive home that learns your patterns and makes
-                        your phone an extension of you.
-                    </p>
-                    <p class="story-paragraph">
-                        It learns your patterns. Understands your intent.
-                        Surfaces the right action at the right time.
-                    </p>
-                    <p class="story-paragraph">
-                        Your goals. Your habits. Your digital fingerprint —
-                        understood and anticipated in real-time.
-                    </p>
+        <!-- PS 4 - ADAPTIVE HOME -->
+        <section class="section" data-section="ps-4">
+            <div class="content-left fade-in-scroll">
+                <p class="story-left">
+                    An adaptive home that learns your patterns and makes your phone an extension of you
+                </p>
+                
+                <p class="story-left" style="margin-top: 2.5rem;">
+                    And the learning? / data? No one (not even us) gets to see / use.
+                </p>
+                
+                <p class="story-left" style="margin-top: 2.5rem;">
+                    No cloud, servers, or accounts!
+                </p>
+            </div>
+        </section>
+
+        <!-- WHAT IT DOES -->
+        <section class="section" data-section="what-it-does">
+            <div class="content-left fade-in-scroll">
+                <p class="story-left">
+                    It learns your patterns. Understands your intent. Surfaces the right action at the right time.
+                </p>
+                
+                <p class="story-left" style="margin-top: 2.5rem;">
+                    Your goals. Your habits. Your digital fingerprint—understood and anticipated in real-time.
+                </p>
+            </div>
+        </section>
+
+        <!-- PRIVACY STATEMENT -->
+        <section class="section" data-section="privacy-statement">
+            <div class="content-left fade-in-scroll">
+                <h2 class="title-medium-left">
+                    The best part? <span class="emphasis">No one sees this but you.</span> Not even us.
+                </h2>
+            </div>
+        </section>
+
+        <!-- PRIVACY DETAILS -->
+        <section class="section" data-section="privacy-details">
+            <div class="content-left fade-in-scroll">
+                <p class="story-left">
+                    No servers. No accounts. No analytics.
+                </p>
+                
+                <p class="story-left" style="margin-top: 2.5rem;">
+                    Not because we encrypt it. Not because we "anonymize" it.
+                </p>
+                
+                <p class="story-left" style="margin-top: 2.5rem;">
+                    Because it <span class="highlight">never leaves your device</span>.
+                </p>
+            </div>
+        </section>
+
+        <!-- PRIVACY TAGLINE -->
+        <section class="section" data-section="privacy-tagline">
+            <div class="content-left fade-in-scroll">
+                <p class="story-left">
+                    This is <span class="highlight">privacy by design</span>. Not marketing speak.
+                </p>
+            </div>
+        </section>
+
+        <!-- FEATURES HEADER -->
+        <section class="section" data-section="features-header">
+            <div class="content-left fade-in-scroll">
+                <h2 class="title-small-left">
+                    So what can the Launcher <span class="emphasis">actually do</span>?
+                </h2>
+            </div>
+        </section>
+
+        <!-- FEATURES LIST -->
+        <section class="section" data-section="features-list">
+            <div class="content-left fade-in-scroll">
+                <div class="feature-item">
+                    <p class="story-left"><span class="highlight">Contextual app suggestions</span></p>
+                    <p class="story-left feature-desc">The right app surfaces before you even search for it</p>
                 </div>
-                <div class="split-right">
-                    <div class="privacy-card">
-                        <h4 class="privacy-heading">
-                            The best part? <span class="emphasis">No one sees this but you.</span> Not even us.
-                        </h4>
-                        <ul class="privacy-list">
-                            <li>No servers. No accounts. No analytics.</li>
-                            <li>Not because we encrypt it.</li>
-                            <li>Not because we “anonymize” it.</li>
-                            <li>Because it <span class="highlight">never leaves your device.</span></li>
-                        </ul>
-                        <p class="privacy-tagline">
-                            This is <span class="highlight">privacy by design</span>. Not marketing speak.
-                        </p>
-                    </div>
+                
+                <div class="feature-item">
+                    <p class="story-left"><span class="highlight">Smart routines</span></p>
+                    <p class="story-left feature-desc">Morning, commute, work, wind-down. It learns your rhythms</p>
+                </div>
+                
+                <div class="feature-item">
+                    <p class="story-left"><span class="highlight">Gesture-based actions</span></p>
+                    <p class="story-left feature-desc">Launch apps, shortcuts, or workflows with a swipe</p>
+                </div>
+                
+                <div class="feature-item">
+                    <p class="story-left"><span class="highlight">Adaptive UI</span></p>
+                    <p class="story-left feature-desc">Changes based on time, location, and usage patterns</p>
+                </div>
+                
+                <div class="feature-item">
+                    <p class="story-left"><span class="highlight">Goal tracking integration</span></p>
+                    <p class="story-left feature-desc">Keep your ambitions front and center, not buried in apps</p>
+                </div>
+                
+                <div class="feature-item">
+                    <p class="story-left"><span class="highlight">Zero-distraction mode</span></p>
+                    <p class="story-left feature-desc">Surfaces only what matters. Hides everything else</p>
                 </div>
             </div>
         </section>
 
-        <!-- WHAT IT CAN ACTUALLY DO -->
-        <section class="section feature-section" data-section="features-header">
-            <div class="section-inner fade-in-scroll">
-                <div class="section-label">So what does it actually do?</div>
-                <h2 class="section-title">
-                    A launcher that thinks in actions,<br>not just apps.
-                </h2>
-
-                <div class="features-grid">
-                    <div class="feature-item">
-                        <p class="story-left">
-                            <span class="highlight">Contextual app suggestions</span>
-                        </p>
-                        <p class="feature-desc">
-                            The right app surfaces before you even search for it.
-                        </p>
-                    </div>
-
-                    <div class="feature-item">
-                        <p class="story-left">
-                            <span class="highlight">Smart routines</span>
-                        </p>
-                        <p class="feature-desc">
-                            Morning, commute, work, wind-down. It learns your rhythms.
-                        </p>
-                    </div>
-
-                    <div class="feature-item">
-                        <p class="story-left">
-                            <span class="highlight">Gesture-based actions</span>
-                        </p>
-                        <p class="feature-desc">
-                            Launch apps, shortcuts, or workflows with a swipe.
-                        </p>
-                    </div>
-
-                    <div class="feature-item">
-                        <p class="story-left">
-                            <span class="highlight">Adaptive UI</span>
-                        </p>
-                        <p class="feature-desc">
-                            Changes based on time, location, and usage patterns.
-                        </p>
-                    </div>
-
-                    <div class="feature-item">
-                        <p class="story-left">
-                            <span class="highlight">Goal tracking integration</span>
-                        </p>
-                        <p class="feature-desc">
-                            Keep your ambitions front and center, not buried in apps.
-                        </p>
-                    </div>
-
-                    <div class="feature-item">
-                        <p class="story-left">
-                            <span class="highlight">Zero-distraction mode</span>
-                        </p>
-                        <p class="feature-desc">
-                            Surfaces only what matters. Hides everything else.
-                        </p>
-                    </div>
-                </div>
-
-                <p class="story-paragraph feature-summary">
-                    All powered by on-device intelligence.<br>
+        <!-- FEATURES SUMMARY -->
+        <section class="section" data-section="features-summary">
+            <div class="content-left fade-in-scroll">
+                <p class="story-left">
+                    All powered by on-device intelligence.
+                </p>
+                
+                <p class="story-left" style="margin-top: 2.5rem;">
                     All private. All yours.
                 </p>
             </div>
         </section>
 
         <!-- VISION -->
-        <section class="section vision-section" data-section="vision">
-            <div class="section-inner fade-in-scroll">
-                <h2 class="section-title accent-gradient">
-                    A future where your phone works for you,<br>
-                    not against you.
+        <section class="section" data-section="vision">
+            <div class="content-left fade-in-scroll">
+                <h2 class="title-medium-left">
+                    A future where your phone <span class="gradient-text">works for you</span>, not against you.
                 </h2>
-                <p class="story-paragraph">
+            </div>
+        </section>
+
+        <!-- VISION DETAILS -->
+        <section class="section" data-section="vision-details">
+            <div class="content-left fade-in-scroll">
+                <p class="story-left">
                     Where AI makes you <span class="highlight">more capable</span>, not more tracked.
                 </p>
-                <p class="story-paragraph">
-                    Where privacy isn’t a marketing claim.
+                
+                <p class="story-left" style="margin-top: 2.5rem;">
+                    Where privacy isn't a marketing claim.
                 </p>
-                <p class="story-paragraph">
-                    It’s how things are built.
+                
+                <p class="story-left" style="margin-top: 2.5rem;">
+                    It's how things are built.
                 </p>
             </div>
         </section>
 
         <!-- CTA -->
         <section class="section cta-section">
-            <div class="section-inner fade-in-scroll cta-inner">
-                <h2 class="title-large">
-                    Savyn Launcher
-                </h2>
-                <p class="subtitle">
-                    Beta launching soon.
-                </p>
-                <a href="mailto:support@savynlabs.com?subject=Join%20Savyn%20Beta" class="cta-button">
-                    Join the waitlist
-                </a>
-                <p class="note">
-                    Android 8.0+ • 100% Private • Zero Data Collection
-                </p>
-            </div>
+            <h2 class="title-large fade-in-scroll">
+                Savyn Launcher
+            </h2>
+            <p class="subtitle fade-in-scroll">
+                Beta launching soon
+            </p>
+            <a href="mailto:support@savynlabs.com?subject=Join%20Savyn%20Beta" class="cta-button fade-in-scroll">
+                Join Waitlist
+            </a>
+            <p class="note fade-in-scroll">
+                Android 8.0+ • 100% Private • Zero Data Collection
+            </p>
         </section>
 
-        <!-- DETAILS -->
+        <!-- Details Section -->
         <section class="section details-section">
             <div class="details-grid fade-in-scroll">
                 <div class="detail-item">
                     <h3>How it works</h3>
                     <p>
-                        Intent-first launcher with multi-head AI ranking system.
-                        Long-term taste, temporal patterns, sequence learning, and
-                        co-usage analysis — all running on-device via TensorFlow Lite.
+                        Intent-first launcher with 5-head AI ranking system. 
+                        Long-term taste, temporal patterns, sequence learning, 
+                        and co-usage analysis—all running on-device via TensorFlow Lite.
                     </p>
                 </div>
-
+                
                 <div class="detail-item">
                     <h3>Privacy</h3>
                     <p>
-                        100% on-device processing. No servers, no accounts, no tracking.
-                        Your usage patterns, insights, and preferences stay on your phone.
-                        Always.
+                        100% on-device processing. No servers, no accounts, no tracking. 
+                        Your usage patterns, insights, and preferences stay encrypted 
+                        on your phone. Always.
                     </p>
                 </div>
-
+                
                 <div class="detail-item">
                     <h3>Features</h3>
                     <p>
-                        Smart app ranking • Vault system for routines • Break detection
-                        & mindful scoring • Usage insights • Semantic search •
+                        Smart app ranking • Vault system for routines • Break detection 
+                        & mindful scoring • Usage insights • Semantic search • 
                         Time-based suggestions • Daily rhythm analysis
                     </p>
                 </div>
-
+                
                 <div class="detail-item">
                     <h3>Contact</h3>
                     <p>
                         <a href="mailto:support@savynlabs.com">support@savynlabs.com</a><br>
-                        Questions, bugs, feedback — we read everything.
+                        Questions, bugs, feedback—we read everything.
                     </p>
                 </div>
             </div>
         </section>
 
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="logo-mark">Savyn</div>
-            <div class="footer-links">
-                <a href="privacy-policy.html">Privacy Policy</a>
-                <span class="separator">•</span>
-                <a href="mailto:support@savynlabs.com">Contact</a>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="logo-mark">Savyn</div>
+                <div class="footer-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <span class="separator">•</span>
+                    <a href="mailto:support@savynlabs.com">Contact</a>
+                </div>
+                <p class="copyright">Savyn Labs © 2025</p>
             </div>
-            <p class="copyright">Savyn Labs © 2025</p>
-        </div>
-    </footer>
+        </footer>
 
-</div>
+    </div>
 
-<!-- JS: scroll reveal + progress -->
-<script>
-    // Intersection Observer for fade-in animations
-    const observerOptions = {
-        threshold: 0.2,
-        rootMargin: '0px 0px -120px 0px'
-    };
+    <!-- Smooth scroll reveal -->
+    <script>
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        };
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in-scroll elements
+        document.querySelectorAll('.fade-in-scroll').forEach(el => {
+            observer.observe(el);
         });
-    }, observerOptions);
 
-    document.querySelectorAll('.fade-in-scroll').forEach(el => observer.observe(el));
-
-    // Hero visible by default
-    document.querySelector('.hero')?.classList.add('visible');
-
-    // Scroll progress bar
-    const progressBar = document.querySelector('.scroll-progress-bar');
-    const pageShell = document.querySelector('.page-shell');
-
-    function updateScrollProgress() {
-        if (!progressBar || !pageShell) return;
-        const scrollTop = window.scrollY || window.pageYOffset;
-        const docHeight = pageShell.scrollHeight - window.innerHeight;
-        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-        progressBar.style.width = progress + '%';
-    }
-
-    window.addEventListener('scroll', updateScrollProgress);
-    window.addEventListener('resize', updateScrollProgress);
-    updateScrollProgress();
-</script>
+        // Add visible class to hero immediately
+        document.querySelector('.hero').classList.add('visible');
+    </script>
 </body>
 </html>
