@@ -90,20 +90,20 @@ body {
 
 .hero .title:first-of-type {
     top: 44.8%;
-    left: 24px;
+    left: 16px;
     color: #ffffff;
 }
 
 .hero .title:last-of-type {
     top: 50.1%;
-    left: 60px;
+    left: 48px;
     color: #34a853;
 }
 
 .chevron-down {
     position: absolute;
     bottom: 10%;
-    left: 50%;
+    left: 50vw;
     transform: translateX(-50%);
     animation: bounce 2s ease-in-out infinite;
     cursor: pointer;
@@ -112,6 +112,7 @@ body {
     justify-content: center;
     width: 40px;
     height: 40px;
+    z-index: 10;
 }
 
 @keyframes bounce {
@@ -507,12 +508,12 @@ body {
 
     .hero .title:first-of-type {
         top: 44%;
-        left: 20px;
+        left: 16px;
     }
 
     .hero .title:last-of-type {
         top: 49.5%;
-        left: 50px;
+        left: 44px;
     }
 
     .story {
@@ -585,12 +586,12 @@ body {
 
     .hero .title:first-of-type {
         top: 42.5%;
-        left: 16px;
+        left: 12px;
     }
 
     .hero .title:last-of-type {
         top: 48%;
-        left: 36px;
+        left: 32px;
     }
 
     .chevron-down {
