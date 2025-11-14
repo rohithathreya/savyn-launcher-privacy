@@ -73,7 +73,7 @@ body {
     padding: 0;
     position: relative;
     overflow: hidden;
-    background: radial-gradient(circle at center, #041f0c 0%, #FFFFFF 100%);
+    background: radial-gradient(circle at center, #041f0c 0%, #000000 100%);
 }
 
 /* Left-aligned content containers */
@@ -86,20 +86,35 @@ body {
 
 /* Typography */
 .title {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-    font-size: clamp(4rem, 9.26vw, 100px);
-    font-weight: 700;
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 650;
     line-height: 1.08;
-    letter-spacing: -0.05em;
+    letter-spacing: -0.035em;
     margin-bottom: 0;
+    color: var(--text);
     transition: opacity 0.6s ease;
 }
 
-.hero .title:first-child {
-    color: #000000;
+/* Landing Page Typography - Exact Specs */
+/* Reference: 1080x2376 frame, font size 100px, letter spacing -5% */
+.title-landing-line1,
+.title-landing-line2 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 700;
+    font-size: clamp(50px, 9.26vw, 100px);
+    letter-spacing: -0.05em;
+    line-height: 1.1;
+    margin: 0;
+    transition: opacity 0.6s ease;
+    text-align: center;
 }
 
-.hero .title:last-child {
+.title-landing-line1 {
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+}
+
+.title-landing-line2 {
     color: #34a853;
 }
 
@@ -447,6 +462,11 @@ body {
         height: 100vh;
     }
 
+    .title-landing-line1,
+    .title-landing-line2 {
+        font-size: clamp(50px, 9.26vw, 100px);
+    }
+
     .story {
         font-size: clamp(1.2rem, 5vw, 1.8rem);
     }
@@ -505,6 +525,11 @@ body {
 
     .hero {
         height: 100vh;
+    }
+
+    .title-landing-line1,
+    .title-landing-line2 {
+        font-size: clamp(45px, 9.26vw, 100px);
     }
 
     .story-left {
