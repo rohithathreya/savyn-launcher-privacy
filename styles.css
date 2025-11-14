@@ -84,21 +84,18 @@ body {
 }
 
 .hero .title {
-    position: absolute;
+    position: relative;
     margin: 0;
+    width: 100%;
+    text-align: center;
 }
 
 .hero .title:first-of-type {
-    top: 44.8%;
-    left: 50vw;
-    transform: translateX(-50%);
     color: #ffffff;
+    margin-bottom: 1rem;
 }
 
 .hero .title:last-of-type {
-    top: 50.1%;
-    left: 50vw;
-    transform: translateX(-50%);
     color: #34a853;
 }
 
@@ -507,17 +504,6 @@ body {
         letter-spacing: -3px;
     }
 
-    .hero .title:first-of-type {
-        top: 44%;
-        left: 50vw;
-        transform: translateX(-50%);
-    }
-
-    .hero .title:last-of-type {
-        top: 49.5%;
-        left: 50vw;
-        transform: translateX(-50%);
-    }
 
     .story {
         font-size: clamp(1.2rem, 5vw, 1.8rem);
@@ -586,17 +572,6 @@ body {
         letter-spacing: -2px;
     }
 
-    .hero .title:first-of-type {
-        top: 42.5%;
-        left: 50vw;
-        transform: translateX(-50%);
-    }
-
-    .hero .title:last-of-type {
-        top: 48%;
-        left: 50vw;
-        transform: translateX(-50%);
-    }
 
     .chevron-down {
         bottom: 8%;
