@@ -97,6 +97,20 @@ body {
 
 .hero .title:last-of-type {
     color: #34a853;
+    animation: subtleGlow 3s ease-in-out infinite;
+    text-shadow: 0 0 20px rgba(52, 168, 83, 0.3);
+}
+
+@keyframes subtleGlow {
+    0%, 100% {
+        text-shadow: 0 0 20px rgba(52, 168, 83, 0.3),
+                     0 0 30px rgba(52, 168, 83, 0.2);
+    }
+    50% {
+        text-shadow: 0 0 25px rgba(52, 168, 83, 0.5),
+                     0 0 40px rgba(52, 168, 83, 0.3),
+                     0 0 50px rgba(52, 168, 83, 0.2);
+    }
 }
 
 .chevron-down {
@@ -244,6 +258,34 @@ body {
     background-clip: text;
     font-weight: 620;
     letter-spacing: -0.02em;
+}
+
+.emphasis-glow {
+    color: #341853;
+    font-weight: 620;
+    letter-spacing: -0.015em;
+    text-shadow: 0 0 0 transparent;
+    transition: text-shadow 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+}
+
+.fade-in-scroll.visible .emphasis-glow {
+    text-shadow: 0 0 30px rgba(52, 24, 83, 0.6),
+                 0 0 50px rgba(52, 24, 83, 0.4),
+                 0 0 70px rgba(52, 24, 83, 0.2);
+    animation: emphasisPulse 2s ease-in-out infinite 1.4s;
+}
+
+@keyframes emphasisPulse {
+    0%, 100% {
+        text-shadow: 0 0 30px rgba(52, 24, 83, 0.6),
+                     0 0 50px rgba(52, 24, 83, 0.4),
+                     0 0 70px rgba(52, 24, 83, 0.2);
+    }
+    50% {
+        text-shadow: 0 0 40px rgba(52, 24, 83, 0.8),
+                     0 0 60px rgba(52, 24, 83, 0.5),
+                     0 0 80px rgba(52, 24, 83, 0.3);
+    }
 }
 
 /* CTA Section */
@@ -467,14 +509,17 @@ body {
 
 .fade-in-scroll {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
-                transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translateY(60px);
+    filter: blur(10px);
+    transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 1.4s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 1.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .fade-in-scroll.visible {
     opacity: 1;
     transform: translateY(0);
+    filter: blur(0);
 }
 
 /* Responsive */

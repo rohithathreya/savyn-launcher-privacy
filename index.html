@@ -38,7 +38,7 @@
                 </p>
                 
                 <p class="story-left" style="margin-top: 2.5rem;">
-                    And yet, every time you unlock your phone, the same static app grids stare you in the face!
+                    And yet, every time you unlock your phone, <span class="emphasis-glow">the same static app grids stare you in the face!</span>
                 </p>
             </div>
         </section>
@@ -313,14 +313,15 @@
     <script>
         // Intersection Observer for fade-in animations
         const observerOptions = {
-            threshold: 0.2,
-            rootMargin: '0px 0px -100px 0px'
+            threshold: 0.15,
+            rootMargin: '0px 0px -80px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
+                    // Don't remove observer to allow re-triggering if needed
                 }
             });
         }, observerOptions);
