@@ -143,6 +143,49 @@
 
     <!-- Smooth scroll reveal -->
     <script>
+        // Buttery smooth scroll function with easing
+        function smoothScrollTo(target) {
+            const targetPosition = target.getBoundingClientRect().top;
+            const startPosition = window.pageYOffset;
+            const distance = targetPosition;
+            const duration = 1000; // 1 second for smooth transition
+            let start = null;
+
+            // Easing function for smooth acceleration and deceleration
+            const easeInOutCubic = (t) => {
+                return t < 0.5 
+                    ? 4 * t * t * t 
+                    : 1 - Math.pow(-2 * t + 2, 3) / 2;
+            };
+
+            function animation(currentTime) {
+                if (start === null) start = currentTime;
+                const timeElapsed = currentTime - start;
+                const progress = Math.min(timeElapsed / duration, 1);
+                const ease = easeInOutCubic(progress);
+                
+                window.scrollTo(0, startPosition + distance * ease);
+                
+                if (timeElapsed < duration) {
+                    requestAnimationFrame(animation);
+                }
+            }
+
+            requestAnimationFrame(animation);
+        }
+
+        // Add smooth scroll to all chevron clicks
+        document.querySelectorAll('.chevron-down').forEach(chevron => {
+            chevron.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetSelector = this.getAttribute('onclick').match(/\[data-section=([^\]]+)\]/)[1];
+                const targetSection = document.querySelector(`[data-section=${targetSelector}]`);
+                if (targetSection) {
+                    smoothScrollTo(targetSection);
+                }
+            });
+        });
+
         // Intersection Observer for fade-in animations
         const observerOptions = {
             threshold: 0.15,
@@ -153,7 +196,6 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    // Don't remove observer to allow re-triggering if needed
                 }
             });
         }, observerOptions);

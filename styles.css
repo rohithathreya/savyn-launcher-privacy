@@ -26,7 +26,7 @@
 
 /* Base */
 html {
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
     background: #000000;
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
@@ -110,6 +110,7 @@ body {
     color: #34a853;
     animation: subtleGlow 4s ease-in-out infinite;
     opacity: 1;
+    margin-bottom: 2rem;
 }
 
 @keyframes subtleGlow {
@@ -142,9 +143,9 @@ body {
 
 .chevron-text {
     font-family: 'Caveat', 'Segoe Script', 'Brush Script MT', cursive;
-    font-size: 0.7rem;
-    color: #666666;
-    opacity: 0.35;
+    font-size: 0.75rem;
+    color: #888888;
+    opacity: 0.6;
     font-weight: 400;
     letter-spacing: 0.02em;
     white-space: nowrap;
@@ -152,7 +153,11 @@ body {
 }
 
 .chevron-down:hover .chevron-text {
-    opacity: 0.65;
+    opacity: 0.9;
+}
+
+.hero .chevron-down {
+    margin-top: 4rem;
 }
 
 @keyframes bounce {
@@ -643,8 +648,8 @@ body {
     }
 
     .chevron-text {
-        font-size: 0.6rem;
-        opacity: 0.3;
+        font-size: 0.7rem;
+        opacity: 0.5;
     }
 
     .hero {
