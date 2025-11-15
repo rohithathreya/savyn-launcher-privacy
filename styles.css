@@ -28,6 +28,9 @@
 html {
     scroll-behavior: smooth;
     background: #000000;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100%;
 }
 
 body {
@@ -41,6 +44,7 @@ body {
     overflow-x: hidden;
     font-feature-settings: 'kern' 1, 'liga' 1;
     text-rendering: optimizeLegibility;
+    height: 100%;
 }
 
 /* Container */
@@ -52,7 +56,8 @@ body {
 
 /* Sections */
 .section {
-    min-height: 80vh;
+    min-height: 100vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -63,6 +68,8 @@ body {
     background: radial-gradient(circle at 20% 50%, rgba(16, 160, 55, 0.03) 0%, transparent 50%),
                 radial-gradient(circle at 80% 80%, rgba(16, 160, 55, 0.02) 0%, transparent 50%),
                 #0a0a0a;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
 }
 
 .hero {
@@ -88,16 +95,21 @@ body {
     margin: 0;
     width: 100%;
     text-align: center;
+    z-index: 2;
+    opacity: 1;
+    visibility: visible;
 }
 
 .hero .title:first-of-type {
     color: #ffffff;
     margin-bottom: 1rem;
+    opacity: 1;
 }
 
 .hero .title:last-of-type {
     color: #34a853;
     animation: subtleGlow 4s ease-in-out infinite;
+    opacity: 1;
 }
 
 @keyframes subtleGlow {
@@ -289,8 +301,10 @@ body {
 
 /* CTA Section */
 .cta-section {
-    min-height: 80vh;
+    min-height: 100vh;
+    height: 100vh;
     padding: calc(var(--spacing) * 1.5) 0;
+    scroll-snap-align: start;
 }
 
 .cta-button {
@@ -338,11 +352,12 @@ body {
 
 /* Details Section */
 .details-section {
-    min-height: auto;
+    min-height: 100vh;
     padding: calc(var(--spacing) * 2) 0;
     background: linear-gradient(180deg, transparent 0%, var(--bg-subtle) 50%, transparent 100%);
     border-top: 1px solid var(--border-subtle);
     border-bottom: 1px solid var(--border-subtle);
+    scroll-snap-align: start;
 }
 
 .details-grid {
@@ -491,8 +506,8 @@ body {
 
 /* Animations */
 .fade-in {
-    opacity: 0;
-    animation: fadeIn 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    animation: fadeIn 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    animation-fill-mode: both;
 }
 
 @keyframes fadeIn {
@@ -529,8 +544,10 @@ body {
     }
 
     .section {
-        min-height: 85vh;
+        min-height: 100vh;
+        height: 100vh;
         padding: 8vh 0;
+        scroll-snap-align: start;
     }
 
     .hero {
@@ -598,8 +615,10 @@ body {
     }
 
     .section {
-        min-height: 90vh;
+        min-height: 100vh;
+        height: 100vh;
         padding: 8vh 0;
+        scroll-snap-align: start;
     }
 
     .hero {
