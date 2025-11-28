@@ -3,19 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Savyn – Your phone as a second brain. Android launcher with on-device AI that actually understands you. No tracking. No servers. Pure privacy.">
-    <meta name="keywords" content="android launcher, second brain, privacy, on-device AI, mindful usage">
+    <meta name="description" content="Savyn – Your phone as a second brain. Android launcher with on-device AI that actually understands you.">
     
     <title>Savyn – Phone as a Second Brain</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="grain-overlay"></div>
     
-    <!-- Floating navigation -->
     <nav class="floating-nav">
         <div class="nav-logo">Savyn</div>
         <a href="mailto:support@savynlabs.com?subject=Join%20Savyn%20Beta" class="nav-cta">Get Early Access</a>
@@ -24,205 +22,267 @@
     <main class="container">
         
         <!-- Hero -->
-        <section class="section hero" data-section="hero">
+        <section class="section hero">
             <div class="hero-content">
-                <p class="section-label fade-in">Phone as a Second Brain</p>
-                <h1 class="hero-title fade-in">
-                    <span class="hero-line">Most of your day</span>
-                    <span class="hero-line">already runs through</span>
-                    <span class="hero-line accent-line">your phone.</span>
+                <p class="hero-label">
+                    <span class="label-line"></span>
+                    <span class="label-text">Phone as a Second Brain</span>
+                    <span class="label-line"></span>
+                </p>
+                <h1 class="hero-title">
+                    <span class="word-reveal">Most</span>
+                    <span class="word-reveal">of</span>
+                    <span class="word-reveal">your</span>
+                    <span class="word-reveal">day</span>
+                    <br>
+                    <span class="word-reveal">already</span>
+                    <span class="word-reveal">runs</span>
+                    <span class="word-reveal">through</span>
+                    <br>
+                    <span class="word-reveal accent glow-pulse">your phone.</span>
                 </h1>
             </div>
-            <div class="scroll-indicator fade-in-delay-2" data-target="reality">
-                <span class="scroll-text">think about it</span>
-                <div class="scroll-arrow">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+            <div class="scroll-cue">
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- The Reality -->
+        <section class="section reality-section">
+            <div class="content-wide">
+                <div class="activity-cloud" data-animate="stagger">
+                    <span class="activity" style="--delay: 0">plan</span>
+                    <span class="activity" style="--delay: 1">pay</span>
+                    <span class="activity" style="--delay: 2">talk</span>
+                    <span class="activity" style="--delay: 3">learn</span>
+                    <span class="activity" style="--delay: 4">book cabs</span>
+                    <span class="activity" style="--delay: 5">order food</span>
+                    <span class="activity" style="--delay: 6">check flights</span>
+                    <span class="activity" style="--delay: 7">save places</span>
+                    <span class="activity" style="--delay: 8">queue podcasts</span>
+                    <span class="activity" style="--delay: 9">browse houses</span>
+                    <span class="activity highlight" style="--delay: 10">stalk restaurants</span>
+                </div>
+                <p class="subtext fade-up">all from that one slab of glass</p>
+            </div>
+        </section>
+
+        <!-- The Problem -->
+        <section class="section problem-section">
+            <div class="content-centered">
+                <p class="lead-text fade-up">And yet, your phone itself is basically a</p>
+                <h2 class="big-statement">
+                    <span class="word-container">
+                        <span class="static-word" data-text="static">static</span>
+                    </span>
+                    <span class="word-container">
+                        <span class="tray-word">tray</span>
+                    </span>
+                    <span class="word-container">
+                        <span class="of-word">of</span>
+                    </span>
+                    <span class="word-container">
+                        <span class="apps-word">apps</span>
+                        <span class="apps-cursor"></span>
+                    </span>
+                </h2>
+                <p class="dim-text typewriter" data-text="Just icons. Each app its own little island."></p>
+            </div>
+        </section>
+
+        <!-- Meanwhile -->
+        <section class="section meanwhile-section">
+            <div class="content-narrow">
+                <p class="section-intro illuminate">Meanwhile, the device sits at the centre of everything:</p>
+                
+                <div class="insight-list">
+                    <div class="insight-item" data-animate="slide-right">
+                        <span class="insight-bullet"></span>
+                        <p>It sees which apps you reach for <em class="handwritten">and when</em></p>
+                    </div>
+                    <div class="insight-item" data-animate="slide-right">
+                        <span class="insight-bullet"></span>
+                        <p>The places you keep checking <em class="handwritten">and the spots you save</em></p>
+                    </div>
+                    <div class="insight-item" data-animate="slide-right">
+                        <span class="insight-bullet"></span>
+                        <p>The trips, the shops, the tools you lean on for <span class="cycle-text"></span></p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Reality -->
-        <section class="section" data-section="reality">
-            <div class="prose-container fade-in-scroll">
-                <p class="prose-text">
-                    You plan, pay, talk, learn, book cabs, order food, check flights, save places, queue podcasts, browse houses, stalk restaurants – all from that one slab of glass.
+        <!-- The Realization -->
+        <section class="section realization-section">
+            <div class="content-centered">
+                <p class="lead-text fade-up">No "second brain" app will ever see that much real behaviour</p>
+                <p class="subtext fade-up">even if you <em>wanted</em> to log it all</p>
+                
+                <div class="divider-line"></div>
+                
+                <p class="big-text illuminate-words">
+                    Your phone already holds more 
+                    <span class="underline-animate">raw context</span> 
+                    about your life than you could practically type into any system.
                 </p>
-                <p class="prose-text callout">
-                    And yet, your phone itself is basically a <strong>static tray of apps</strong>.
-                </p>
-                <p class="prose-muted">
-                    Just icons. Each app its own little island.
-                </p>
-            </div>
-            <div class="scroll-indicator" data-target="context">
-                <span class="scroll-text">meanwhile</span>
-                <div class="scroll-arrow">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
             </div>
         </section>
 
-        <!-- Context -->
-        <section class="section" data-section="context">
-            <div class="prose-container fade-in-scroll">
-                <p class="prose-text">
-                    Meanwhile, the device sits at the centre of everything:
-                </p>
-                <ul class="context-list">
-                    <li>It sees which apps you reach for and when</li>
-                    <li>The places you keep checking and the spots you save</li>
-                    <li>The trips you plan, the shops you revisit, the tools you lean on for work, for errands, for escape</li>
-                </ul>
-                <p class="prose-text">
-                    No "second brain" app will ever see that much real behaviour, even if you <em>wanted</em> to log it all.
-                </p>
-            </div>
-            <div class="scroll-indicator" data-target="advantage">
-                <span class="scroll-text">and there's more</span>
-                <div class="scroll-arrow">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-            </div>
-        </section>
-
-        <!-- Advantage -->
-        <section class="section" data-section="advantage">
-            <div class="prose-container fade-in-scroll">
-                <p class="prose-text">
-                    Your phone already holds more raw context about your life than you could practically type into any system.
-                </p>
-                <p class="prose-text">
-                    It also already has what every second brain is secretly begging for:
-                </p>
-                <p class="prose-highlight">
-                    storage, compute, sensors, and a constant, real-time stream of fresh data.
-                </p>
-            </div>
-            <div class="scroll-indicator" data-target="question">
-                <span class="scroll-text">so then</span>
-                <div class="scroll-arrow">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+        <!-- The Assets -->
+        <section class="section assets-section">
+            <div class="content-centered">
+                <p class="lead-text fade-up">It also already has what every second brain is secretly begging for:</p>
+                
+                <div class="assets-grid">
+                    <div class="asset-item" data-animate="pop">
+                        <span class="asset-icon">◈</span>
+                        <span class="asset-label">storage</span>
+                    </div>
+                    <div class="asset-item" data-animate="pop">
+                        <span class="asset-icon">◇</span>
+                        <span class="asset-label">compute</span>
+                    </div>
+                    <div class="asset-item" data-animate="pop">
+                        <span class="asset-icon">○</span>
+                        <span class="asset-label">sensors</span>
+                    </div>
+                    <div class="asset-item" data-animate="pop">
+                        <span class="asset-icon pulse-icon">●</span>
+                        <span class="asset-label">real-time data</span>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- The Question -->
-        <section class="section insight-section" data-section="question">
-            <div class="prose-container fade-in-scroll">
-                <p class="prose-text">
-                    So if all of this can run strictly on-device…
-                </p>
-                <p class="prose-question">
-                    why stop at being a pretty launcher?
-                </p>
-                <p class="prose-question large">
-                    Why not let the phone itself <span class="accent">become the second brain?</span>
-                </p>
-            </div>
-            <div class="scroll-indicator" data-target="brain">
-                <span class="scroll-text">a brain that</span>
-                <div class="scroll-arrow">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
+        <section class="section question-section">
+            <div class="content-centered">
+                <p class="small-text fade-up">So if all of this can run strictly on-device…</p>
+                
+                <h2 class="question-text">
+                    <span class="question-line fade-up">why stop at being a pretty launcher?</span>
+                </h2>
+                
+                <h2 class="mega-question">
+                    <span class="mega-line">Why not let the phone itself</span>
+                    <span class="mega-line accent-line">
+                        <span class="become-text">become</span> 
+                        <span class="the-text">the</span>
+                        <span class="second-brain-text signature-draw">second brain?</span>
+                    </span>
+                </h2>
             </div>
         </section>
 
         <!-- The Brain -->
-        <section class="section" data-section="brain">
-            <div class="prose-container fade-in-scroll">
-                <p class="prose-text">A brain that:</p>
-                <ul class="brain-list">
-                    <li>always has up-to-date context by default</li>
-                    <li>never needs you to "sit and capture everything"</li>
-                    <li>doesn't ask for your life story – it's been there the whole time</li>
-                </ul>
-                <p class="prose-text callout">
-                    If anything is meant to be your second brain, it's this thing you unlock 200 times a day.
-                </p>
-                <p class="prose-muted italic">
-                    Is that not the actual endgame of every second brain tool?
-                </p>
-            </div>
-            <div class="scroll-indicator" data-target="savyn">
-                <span class="scroll-text">enter savyn</span>
-                <div class="scroll-arrow">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+        <section class="section brain-section">
+            <div class="content-narrow">
+                <p class="section-intro handwritten-intro">A brain that:</p>
+                
+                <div class="brain-features">
+                    <div class="brain-feature" data-animate="illuminate">
+                        <span class="feature-check">✓</span>
+                        <p>always has <span class="glow-word">up-to-date context</span> by default</p>
+                    </div>
+                    <div class="brain-feature" data-animate="illuminate">
+                        <span class="feature-check">✓</span>
+                        <p>never needs you to "sit and capture everything"</p>
+                    </div>
+                    <div class="brain-feature" data-animate="illuminate">
+                        <span class="feature-check">✓</span>
+                        <p>doesn't ask for your life story – <em class="handwritten">it's been there the whole time</em></p>
+                    </div>
                 </div>
+                
+                <div class="punchline-block">
+                    <p class="punchline">If anything is meant to be your second brain,</p>
+                    <p class="punchline-emphasis">it's this thing you unlock <span class="counter" data-target="200">0</span> times a day.</p>
+                </div>
+                
+                <p class="rhetorical handwritten">Is that not the actual endgame of every second brain tool?</p>
             </div>
         </section>
 
-        <!-- Savyn Intro -->
-        <section class="section product-section" data-section="savyn">
-            <div class="prose-container fade-in-scroll">
-                <h2 class="product-title">What Savyn does with that brain</h2>
-                <p class="prose-text">
-                    Savyn is that idea in version one.
-                </p>
-                <p class="prose-text">
-                    It lives at your Android home screen and starts using this context <em>for</em> you:
-                </p>
-                <ul class="feature-list">
-                    <li>Knows which apps and actions are likely to matter <strong>right now</strong>, not just "most used"</li>
-                    <li>Becomes a smart place to keep screenshots, articles, books, links and notes – and actually surface them when they're relevant</li>
-                    <li>Lets you spin up different kinds of sessions (deep work, admin, reset, explore) without rebuilding the stack every time</li>
-                    <li>Gradually turns your phone from "a drawer of apps" into "the place where your day comes together"</li>
-                </ul>
+        <!-- Savyn -->
+        <section class="section savyn-section">
+            <div class="content-centered">
+                <div class="savyn-intro">
+                    <h2 class="savyn-title">
+                        <span class="what-text">What</span>
+                        <svg class="savyn-signature" viewBox="0 0 200 60" preserveAspectRatio="xMidYMid meet">
+                            <path class="signature-path" d="M10,45 C20,45 25,20 35,20 C45,20 40,45 50,45 C55,45 55,25 65,25 C75,25 70,45 80,45 L85,45 C95,45 90,20 100,20 C110,20 105,45 115,45 C120,45 125,25 130,25 C140,25 145,45 155,45" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                        <span class="savyn-text">Savyn</span>
+                    </h2>
+                    <p class="savyn-subtitle">does with that brain</p>
+                </div>
+                
+                <p class="version-text fade-up">Savyn is that idea in <span class="v1-badge">version one</span></p>
+                
+                <p class="lives-text fade-up">It lives at your Android home screen and starts using this context <em>for</em> you:</p>
             </div>
-            <div class="scroll-indicator" data-target="vision">
-                <span class="scroll-text">and beyond</span>
-                <div class="scroll-arrow">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+        </section>
+
+        <!-- Features -->
+        <section class="section features-section">
+            <div class="content-narrow">
+                <div class="feature-cards">
+                    <div class="feature-card" data-animate="card-reveal">
+                        <div class="card-glow"></div>
+                        <p>Knows which apps and actions are likely to matter <strong class="glow-text">right now</strong>, not just "most used"</p>
+                    </div>
+                    <div class="feature-card" data-animate="card-reveal">
+                        <div class="card-glow"></div>
+                        <p>Becomes a smart place to keep screenshots, articles, books, links – and actually <span class="underline-animate">surface them when relevant</span></p>
+                    </div>
+                    <div class="feature-card" data-animate="card-reveal">
+                        <div class="card-glow"></div>
+                        <p>Spin up different sessions: <span class="session-cycle"></span> without rebuilding the stack</p>
+                    </div>
+                    <div class="feature-card" data-animate="card-reveal">
+                        <div class="card-glow"></div>
+                        <p>Turns your phone from "a drawer of apps" into <em class="handwritten">"where your day comes together"</em></p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Vision -->
-        <section class="section" data-section="vision">
-            <div class="prose-container fade-in-scroll">
-                <p class="prose-text">
-                    This is the starting point.
-                </p>
-                <p class="prose-text">
-                    Over time, the same brain can grow into the <strong>context bus between apps</strong> – the layer that understands you across tools and lets them plug into <em>your</em> model of you, not just their own.
-                </p>
-                <div class="final-statement">
-                    <p>The data, the patterns, the understanding all live where they should have from the beginning:</p>
-                    <p class="emphasis">On your phone.</p>
-                    <p class="emphasis accent">In a brain that's <strong>yours</strong>.</p>
+        <section class="section vision-section">
+            <div class="content-centered">
+                <p class="small-text fade-up">This is the starting point.</p>
+                
+                <div class="vision-block">
+                    <p class="vision-text illuminate-words">
+                        Over time, the same brain can grow into the 
+                        <strong class="glow-word">context bus between apps</strong> 
+                        – the layer that understands you across tools and lets them plug into 
+                        <em>your</em> model of you, not just their own.
+                    </p>
                 </div>
-            </div>
-            <div class="scroll-indicator" data-target="cta">
-                <span class="scroll-text">get started</span>
-                <div class="scroll-arrow">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                
+                <div class="final-statement">
+                    <p class="final-line fade-up">The data, the patterns, the understanding</p>
+                    <p class="final-line fade-up">all live where they should have from the beginning:</p>
+                    <p class="final-emphasis">
+                        <span class="on-text">On</span> 
+                        <span class="your-text">your</span> 
+                        <span class="phone-text glow-pulse">phone.</span>
+                    </p>
+                    <p class="final-tagline">
+                        In a brain that's 
+                        <span class="yours-text signature-yours">yours.</span>
+                    </p>
                 </div>
             </div>
         </section>
 
         <!-- CTA -->
-        <section class="section cta-section" data-section="cta">
-            <div class="cta-container fade-in-scroll">
+        <section class="section cta-section">
+            <div class="cta-container">
                 <a href="mailto:support@savynlabs.com?subject=Join%20Savyn%20Beta" class="cta-button">
-                    <span>Get early access</span>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                        <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                    <span class="cta-text">Get early access</span>
+                    <span class="cta-arrow">→</span>
                 </a>
                 <p class="cta-note">Android first.</p>
             </div>
@@ -231,85 +291,122 @@
         <!-- Footer -->
         <footer class="footer">
             <div class="footer-content">
-                <div class="footer-brand">
-                    <span class="footer-logo">Savyn</span>
-                    <span class="footer-tagline">Phone as a second brain</span>
-                </div>
+                <span class="footer-logo">Savyn</span>
                 <div class="footer-links">
-                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="privacy-policy.html">Privacy</a>
                     <a href="mailto:support@savynlabs.com">Contact</a>
                 </div>
-                <p class="copyright">Savyn Labs © 2025</p>
+                <p class="copyright">© 2025 Savyn Labs</p>
             </div>
         </footer>
 
     </main>
 
     <script>
-        // Fast scroll
-        function smoothScrollTo(target) {
-            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
-            const startPosition = window.pageYOffset;
-            const distance = targetPosition - startPosition;
-            const duration = 700;
-            let start = null;
-
-            const easeOutQuint = (t) => 1 - Math.pow(1 - t, 5);
-
-            function animation(currentTime) {
-                if (start === null) start = currentTime;
-                const timeElapsed = currentTime - start;
-                const progress = Math.min(timeElapsed / duration, 1);
-                
-                window.scrollTo(0, startPosition + distance * easeOutQuint(progress));
-                
-                if (timeElapsed < duration) requestAnimationFrame(animation);
-            }
-
-            requestAnimationFrame(animation);
-        }
-
-        // Scroll indicators
-        document.querySelectorAll('.scroll-indicator').forEach(indicator => {
-            indicator.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(`[data-section="${this.dataset.target}"]`);
-                if (target) smoothScrollTo(target);
-            });
-        });
-
-        // Intersection Observer
-        const observer = new IntersectionObserver((entries) => {
+        // Intersection Observer for animations
+        const observerCallback = (entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    entry.target.querySelectorAll('li').forEach((li, i) => {
-                        li.style.transitionDelay = `${i * 0.06}s`;
-                        li.classList.add('visible');
-                    });
+                    entry.target.classList.add('in-view');
+                    
+                    // Counter animation
+                    const counter = entry.target.querySelector('.counter');
+                    if (counter && !counter.dataset.animated) {
+                        counter.dataset.animated = 'true';
+                        animateCounter(counter);
+                    }
+                    
+                    // Typewriter effect
+                    const typewriter = entry.target.querySelector('.typewriter');
+                    if (typewriter && !typewriter.dataset.animated) {
+                        typewriter.dataset.animated = 'true';
+                        typeWrite(typewriter);
+                    }
                 }
             });
-        }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
-
-        document.querySelectorAll('.fade-in-scroll').forEach(el => observer.observe(el));
-
-        // Hero
-        setTimeout(() => document.querySelector('.hero').classList.add('visible'), 100);
-
-        // Nav
+        };
+        
+        const observer = new IntersectionObserver(observerCallback, {
+            threshold: 0.2,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        
+        document.querySelectorAll('.section').forEach(s => observer.observe(s));
+        
+        // Counter animation
+        function animateCounter(el) {
+            const target = parseInt(el.dataset.target);
+            const duration = 2000;
+            const start = performance.now();
+            
+            function update(now) {
+                const elapsed = now - start;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 4);
+                el.textContent = Math.floor(eased * target);
+                if (progress < 1) requestAnimationFrame(update);
+            }
+            requestAnimationFrame(update);
+        }
+        
+        // Typewriter effect
+        function typeWrite(el) {
+            const text = el.dataset.text;
+            let i = 0;
+            el.textContent = '';
+            function type() {
+                if (i < text.length) {
+                    el.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(type, 40);
+                }
+            }
+            setTimeout(type, 500);
+        }
+        
+        // Cycling text
+        const cycleTexts = ['work', 'errands', 'escape', 'life'];
+        let cycleIndex = 0;
+        const cycleEl = document.querySelector('.cycle-text');
+        if (cycleEl) {
+            function cycleWord() {
+                cycleEl.classList.remove('visible');
+                setTimeout(() => {
+                    cycleEl.textContent = cycleTexts[cycleIndex];
+                    cycleEl.classList.add('visible');
+                    cycleIndex = (cycleIndex + 1) % cycleTexts.length;
+                }, 300);
+            }
+            cycleWord();
+            setInterval(cycleWord, 2000);
+        }
+        
+        // Session cycling
+        const sessionTexts = ['deep work', 'admin', 'reset', 'explore'];
+        let sessionIndex = 0;
+        const sessionEl = document.querySelector('.session-cycle');
+        if (sessionEl) {
+            function cycleSession() {
+                sessionEl.classList.remove('visible');
+                setTimeout(() => {
+                    sessionEl.textContent = sessionTexts[sessionIndex];
+                    sessionEl.classList.add('visible');
+                    sessionIndex = (sessionIndex + 1) % sessionTexts.length;
+                }, 300);
+            }
+            cycleSession();
+            setInterval(cycleSession, 1800);
+        }
+        
+        // Floating nav
         window.addEventListener('scroll', () => {
             document.querySelector('.floating-nav').classList.toggle('visible', window.scrollY > 100);
         }, { passive: true });
-
-        // Parallax
-        window.addEventListener('scroll', () => {
-            const hero = document.querySelector('.hero-content');
-            const scrolled = window.pageYOffset;
-            if (hero && scrolled < window.innerHeight) {
-                hero.style.transform = `translateY(${scrolled * 0.25}px)`;
-                hero.style.opacity = 1 - (scrolled / window.innerHeight) * 0.6;
-            }
-        }, { passive: true });
+        
+        // Smooth scroll for scroll cue
+        document.querySelector('.scroll-cue')?.addEventListener('click', () => {
+            document.querySelector('.reality-section').scrollIntoView({ behavior: 'smooth' });
+        });
     </script>
 </body>
 </html>
