@@ -12,262 +12,149 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="grain"></div>
     
     <nav class="nav">
         <span class="nav-logo">Savyn</span>
-        <a href="mailto:support@savynlabs.com?subject=Join%20Savyn%20Beta" class="nav-cta">Get Early Access</a>
+        <a href="mailto:support@savynlabs.com?subject=Join%20Savyn%20Beta" class="nav-cta">Early Access</a>
     </nav>
 
     <main>
         
         <!-- Hero -->
         <section class="hero">
-            <div class="container">
-                <p class="hero-tag">Phone as a Second Brain</p>
-                <h1 class="hero-title">
-                    Your whole life runs through <span class="accent">your phone.</span>
-                </h1>
-            </div>
-            <div class="scroll-line"></div>
+            <p class="hero-tag">Phone as a Second Brain</p>
+            <h1 class="hero-title">A good part of our lives runs through our phone.</h1>
         </section>
 
-        <!-- Section 1: The Reality -->
-        <section class="section" id="reality">
-            <div class="container">
-                <div class="prose">
-                    <p>
-                        Every day, you <span class="activity-cycle"></span> – all from that one slab of glass you unlock a hundred times a day.
-                    </p>
-                    
-                    <div class="static-visual">
-                        <div class="static-content">
-                            <p>
-                                And yet, the phone itself remains a <strong>static tray of apps</strong>. Just icons. Each app hoarding its own little island of data.
-                            </p>
-                        </div>
-                        <div class="wave-animation">
-                            <svg viewBox="0 0 120 80" preserveAspectRatio="xMidYMid meet">
-                                <rect class="static-block" x="50" y="25" width="20" height="30" rx="3"/>
-                                <path class="wave wave-1" d="M0,40 Q15,35 30,40 T60,40 T90,40 T120,40"/>
-                                <path class="wave wave-2" d="M0,50 Q15,45 30,50 T60,50 T90,50 T120,50"/>
-                                <path class="wave wave-3" d="M0,60 Q15,55 30,60 T60,60 T90,60 T120,60"/>
-                            </svg>
-                        </div>
-                    </div>
-                    
-                    <p>
-                        Meanwhile, your device quietly sits at the center of everything. It sees which apps you reach for and when. It watches your patterns – <span class="handwritten">without you ever telling it a thing</span>.
-                    </p>
-                    <p>
-                        That's more <span class="underline-draw">raw context about your life</span> than you could practically type into any note-taking app, PKM system, or "second brain" tool – even if you wanted to.
-                    </p>
-                </div>
+        <!-- Activity Showcase -->
+        <section class="activities">
+            <div class="activity-display">
+                <span class="activity-icon"></span>
+                <span class="activity-text"></span>
             </div>
         </section>
 
-        <!-- Section 2: The Opportunity -->
-        <section class="section" id="opportunity">
-            <div class="container">
-                <div class="prose">
-                    <p class="lead">
-                        Your phone already has the data. It has the processing power. And it has a <span class="glow">constant stream of fresh, real-time information</span> about how you actually live.
-                    </p>
-                    
-                    <!-- Real-time data visualization -->
-                    <div class="realtime-visual">
-                        <div class="pulse-ring"></div>
-                        <div class="pulse-ring delay-1"></div>
-                        <div class="pulse-ring delay-2"></div>
-                        <div class="pulse-center"></div>
-                    </div>
-                    
-                    <p>
-                        So here's the question: if all of this can run strictly on-device – private, personal, never leaving your phone – <span class="highlight">why stop at being just a launcher?</span>
-                    </p>
-                    <p>
-                        Why not let the phone itself become the second brain? A brain that always has context by default. That never asks you to "sit down and capture everything." That doesn't need you to explain your life – <span class="handwritten">it's been there the whole time</span>.
-                    </p>
-                    <p class="aside">
-                        Real-time data no external tool could ever access. Privacy enforced by architecture, not policy. Is this not the holy grail of every second brain?
-                    </p>
-                </div>
-            </div>
+        <!-- The Reality -->
+        <section class="content">
+            <p>Your device is the epicentre of so much action. It sees which apps you reach for and when. It sees your patterns in real-time. All this as you just go about your day.</p>
+            
+            <p>That's more <strong>raw context</strong> about you than you could practically provide to any note-taking, life-planning, PKM app or "second brain" – even if you wanted to.</p>
         </section>
 
-        <!-- Section 3: What Savyn Does -->
-        <section class="section" id="savyn">
-            <div class="container">
-                <div class="savyn-header">
-                    <span class="savyn-intro">This is</span>
-                    <h2 class="savyn-title">Savyn</h2>
-                    <p class="savyn-subtitle">That idea – in its first version.</p>
+        <!-- The Question -->
+        <section class="content">
+            <p>So this device – with its constant stream of fresh, real-time data and serious processing power – why is it just sitting around as a <em>static vessel for apps</em>?</p>
+            
+            <p class="highlight-text">Why not make it your actual second brain?</p>
+            
+            <p>A brain that always has up-to-date context. That never needs you to sit and log everything. That doesn't ask for your life story – <span class="handwritten">it's been there the whole time.</span></p>
+        </section>
+
+        <!-- Savyn -->
+        <section class="savyn-section">
+            <div class="savyn-header">
+                <span class="savyn-label">This is</span>
+                <h2 class="savyn-title">Savyn</h2>
+            </div>
+            
+            <p>That idea, in its first version. It lives at your Android home screen and starts putting all this context to work.</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <span class="feature-bullet">→</span>
+                    <p>Knows what apps and actions you likely need <strong>right now</strong> – not just "most used"</p>
                 </div>
-                
-                <div class="savyn-features">
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <svg viewBox="0 0 40 40">
-                                <circle class="icon-ring" cx="20" cy="20" r="16"/>
-                                <circle class="icon-dot" cx="20" cy="20" r="4"/>
-                            </svg>
-                        </div>
-                        <div class="feature-content">
-                            <p>Lives at your Android home screen. Learns which apps and actions you need <span class="highlight">right now</span> – not just what you've used most.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <svg viewBox="0 0 40 40">
-                                <rect class="icon-card card-1" x="8" y="12" width="12" height="16" rx="2"/>
-                                <rect class="icon-card card-2" x="20" y="12" width="12" height="16" rx="2"/>
-                            </svg>
-                        </div>
-                        <div class="feature-content">
-                            <p>Becomes a smart place to toss screenshots, articles, bookmarks – things you'd normally lose – and actually <span class="underline-draw">surfaces them when relevant</span>.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <svg viewBox="0 0 40 40">
-                                <path class="icon-switch" d="M12,20 L28,20"/>
-                                <circle class="icon-toggle" cx="24" cy="20" r="6"/>
-                            </svg>
-                        </div>
-                        <div class="feature-content">
-                            <p>Spin up different modes – <span class="mode-cycle"></span> – without rebuilding your stack from scratch every time.</p>
-                        </div>
-                    </div>
+                <div class="feature">
+                    <span class="feature-bullet">→</span>
+                    <p>A smart place for screenshots, articles, links – actually surfaces them when relevant</p>
                 </div>
-                
-                <div class="savyn-vision">
-                    <!-- Brain network animation -->
-                    <div class="brain-visual">
-                        <svg viewBox="0 0 200 100">
-                            <circle class="node node-1" cx="30" cy="50" r="6"/>
-                            <circle class="node node-2" cx="70" cy="30" r="5"/>
-                            <circle class="node node-3" cx="100" cy="55" r="7"/>
-                            <circle class="node node-4" cx="130" cy="35" r="5"/>
-                            <circle class="node node-5" cx="170" cy="50" r="6"/>
-                            <line class="connection" x1="30" y1="50" x2="70" y2="30"/>
-                            <line class="connection" x1="70" y1="30" x2="100" y2="55"/>
-                            <line class="connection" x1="100" y1="55" x2="130" y2="35"/>
-                            <line class="connection" x1="130" y1="35" x2="170" y2="50"/>
-                            <line class="connection" x1="30" y1="50" x2="100" y2="55"/>
-                            <line class="connection" x1="70" y1="30" x2="130" y2="35"/>
-                        </svg>
-                    </div>
-                    <p>
-                        This is the starting point. Over time, the same brain grows into the <strong>context layer between all your apps</strong> – understanding you across tools. Capture thoughts without friction. Find things when they matter. Do what you meant to do.
-                    </p>
-                    <p class="vision-final">
-                        All on your phone. In a brain that's <span class="handwritten yours">yours</span>.
-                    </p>
+                <div class="feature">
+                    <span class="feature-bullet">→</span>
+                    <p>Spin up modes – <span class="mode-cycle"></span> – without rebuilding from scratch</p>
                 </div>
             </div>
+            
+            <p>Over time, it becomes the <strong>context layer</strong> across all your apps. Capture thoughts without friction. Find things when they matter.</p>
+            
+            <p class="final-line">All on your phone. In a brain that's <span class="handwritten">yours.</span></p>
         </section>
 
         <!-- CTA -->
-        <section class="section cta-section">
-            <div class="container">
-                <div class="cta-block">
-                    <p class="cta-lead">Savyn is in early development. You're seeing it first.</p>
-                    <a href="mailto:support@savynlabs.com?subject=Join%20Savyn%20Beta" class="cta-button">
-                        Get early access <span class="arrow">→</span>
-                    </a>
-                    <p class="cta-note">Android first.</p>
-                </div>
-            </div>
+        <section class="cta">
+            <p class="cta-lead">Early development. You're seeing it first.</p>
+            <a href="mailto:support@savynlabs.com?subject=Join%20Savyn%20Beta" class="cta-btn">Get early access →</a>
+            <p class="cta-note">Android first.</p>
         </section>
 
         <!-- Footer -->
         <footer class="footer">
-            <div class="container footer-content">
-                <span class="footer-logo">Savyn</span>
-                <div class="footer-links">
-                    <a href="privacy-policy.html">Privacy</a>
-                    <a href="mailto:support@savynlabs.com">Contact</a>
-                </div>
-                <p class="copyright">© 2025 Savyn Labs</p>
+            <span class="footer-logo">Savyn</span>
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy</a>
+                <a href="mailto:support@savynlabs.com">Contact</a>
             </div>
+            <p class="copyright">© 2025 Savyn Labs</p>
         </footer>
 
     </main>
 
     <script>
-        // Intersection Observer
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('in-view');
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -10% 0px' });
-        
-        document.querySelectorAll('.section, .hero').forEach(el => observer.observe(el));
-        
-        // Activity cycling (what you do on phone)
+        // Activities with icons
         const activities = [
-            'plan trips',
-            'pay bills',
-            'talk to friends',
-            'order food',
-            'check flights',
-            'save places',
-            'queue podcasts',
-            'browse apartments',
-            'book restaurants',
-            'track packages'
+            { icon: '✈️', text: 'plan trips' },
+            { icon: '💳', text: 'pay bills' },
+            { icon: '💬', text: 'talk to friends' },
+            { icon: '🍕', text: 'order food' },
+            { icon: '📍', text: 'save places' },
+            { icon: '🎧', text: 'queue podcasts' },
+            { icon: '🏠', text: 'browse apartments' },
+            { icon: '🍽️', text: 'book restaurants' },
+            { icon: '📦', text: 'track packages' },
+            { icon: '📅', text: 'schedule meetings' }
         ];
+        
         let activityIndex = 0;
-        const activityEl = document.querySelector('.activity-cycle');
+        const iconEl = document.querySelector('.activity-icon');
+        const textEl = document.querySelector('.activity-text');
         
         function cycleActivity() {
-            if (!activityEl) return;
-            activityEl.classList.remove('visible');
+            const display = document.querySelector('.activity-display');
+            display.classList.remove('visible');
+            
             setTimeout(() => {
-                activityEl.textContent = activities[activityIndex];
-                activityEl.classList.add('visible');
+                iconEl.textContent = activities[activityIndex].icon;
+                textEl.textContent = activities[activityIndex].text;
+                display.classList.add('visible');
                 activityIndex = (activityIndex + 1) % activities.length;
-            }, 200);
+            }, 300);
         }
         
-        cycleActivity();
-        setInterval(cycleActivity, 2000);
+        setTimeout(() => {
+            cycleActivity();
+            setInterval(cycleActivity, 2200);
+        }, 500);
         
         // Mode cycling
-        const modes = ['deep work', 'quick admin', 'creative flow', 'wind down'];
+        const modes = ['deep work', 'quick admin', 'wind down', 'explore'];
         let modeIndex = 0;
         const modeEl = document.querySelector('.mode-cycle');
         
         function cycleMode() {
             if (!modeEl) return;
-            modeEl.classList.remove('visible');
+            modeEl.style.opacity = '0';
             setTimeout(() => {
                 modeEl.textContent = modes[modeIndex];
-                modeEl.classList.add('visible');
+                modeEl.style.opacity = '1';
                 modeIndex = (modeIndex + 1) % modes.length;
             }, 200);
         }
         
         cycleMode();
-        setInterval(cycleMode, 2200);
+        setInterval(cycleMode, 2000);
         
-        // Nav visibility
-        let lastScroll = 0;
+        // Nav on scroll
         window.addEventListener('scroll', () => {
-            const nav = document.querySelector('.nav');
-            const scrollY = window.scrollY;
-            
-            if (scrollY > 100) {
-                nav.classList.add('visible');
-                nav.classList.toggle('hidden', scrollY > lastScroll && scrollY > 300);
-            } else {
-                nav.classList.remove('visible');
-            }
-            lastScroll = scrollY;
+            document.querySelector('.nav').classList.toggle('scrolled', window.scrollY > 50);
         }, { passive: true });
     </script>
 </body>
