@@ -1,6 +1,5 @@
 /* ============================================
-   Savyn – Clean & Elegant
-   Mobile-first, left-aligned prose
+   Savyn – Alive & Elegant
    ============================================ */
 
 *, *::before, *::after {
@@ -40,7 +39,6 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Grain texture */
 .grain {
     position: fixed;
     inset: 0;
@@ -50,7 +48,6 @@ body {
     background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* Container */
 .container {
     max-width: 680px;
     margin: 0 auto;
@@ -154,10 +151,7 @@ body {
 }
 
 @keyframes fadeUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes glowPulse {
@@ -165,7 +159,6 @@ body {
     50% { text-shadow: 0 0 40px var(--accent-glow), 0 0 80px rgba(230, 167, 86, 0.2); }
 }
 
-/* Scroll indicator */
 .scroll-line {
     position: absolute;
     bottom: 2rem;
@@ -178,9 +171,7 @@ body {
     animation: fadeIn 1s 1.2s forwards, scrollPulse 2.5s 1.2s ease-in-out infinite;
 }
 
-@keyframes fadeIn {
-    to { opacity: 1; }
-}
+@keyframes fadeIn { to { opacity: 1; } }
 
 @keyframes scrollPulse {
     0%, 100% { transform: translateX(-50%) scaleY(1); opacity: 0.8; }
@@ -191,7 +182,7 @@ body {
    SECTIONS
    ============================================ */
 .section {
-    padding: 6rem 0;
+    padding: 5rem 0;
     opacity: 0;
     transform: translateY(40px);
     transition: all 0.8s var(--ease);
@@ -200,38 +191,6 @@ body {
 .section.in-view {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* Section title */
-.section-title {
-    margin-bottom: 2.5rem;
-}
-
-.title-small {
-    display: block;
-    font-family: var(--font-body);
-    font-size: 1rem;
-    font-weight: 400;
-    color: var(--text-dim);
-    margin-bottom: 0.25rem;
-}
-
-.title-name {
-    font-family: var(--font-display);
-    font-size: clamp(2.5rem, 10vw, 4rem);
-    font-weight: 400;
-    letter-spacing: -0.03em;
-    background: linear-gradient(135deg, var(--accent) 0%, #f0d9b5 50%, var(--sage) 100%);
-    background-size: 200% 200%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: gradientShift 6s ease infinite;
-}
-
-@keyframes gradientShift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
 }
 
 /* ============================================
@@ -261,14 +220,6 @@ body {
     font-weight: 600;
 }
 
-.prose strong.dim {
-    color: var(--text-dim);
-}
-
-.prose em {
-    font-style: italic;
-}
-
 .prose .aside {
     font-size: 1rem;
     color: var(--text-dim);
@@ -278,13 +229,28 @@ body {
     margin-top: 2rem;
 }
 
-/* Highlight - warm accent */
+/* Activity cycling */
+.activity-cycle {
+    display: inline-block;
+    min-width: 140px;
+    font-weight: 500;
+    color: var(--accent);
+    opacity: 0;
+    transform: translateY(8px);
+    transition: all 0.25s var(--ease);
+}
+
+.activity-cycle.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Highlights */
 .highlight {
     color: var(--accent);
     font-weight: 500;
 }
 
-/* Glow text */
 .glow {
     color: var(--accent);
     animation: textGlow 3s ease-in-out infinite;
@@ -295,7 +261,6 @@ body {
     50% { text-shadow: 0 0 20px var(--accent-glow); }
 }
 
-/* Handwritten text */
 .handwritten {
     font-family: var(--font-hand);
     font-size: 1.3em;
@@ -324,7 +289,6 @@ body {
     transition-delay: 0.5s;
 }
 
-/* Underline draw animation */
 .underline-draw {
     position: relative;
     color: var(--text);
@@ -345,21 +309,344 @@ body {
     width: 100%;
 }
 
-/* Cycling text */
-.cycle-text {
-    display: inline-block;
-    min-width: 120px;
-    font-family: var(--font-hand);
-    font-size: 1.3em;
-    color: var(--accent);
-    transition: all 0.2s ease;
+/* ============================================
+   STATIC VISUAL - Wave Animation
+   ============================================ */
+.static-visual {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 2.5rem 0;
+    padding: 1.5rem;
+    background: var(--bg-surface);
+    border-radius: 16px;
+}
+
+.static-content {
+    flex: 1;
+}
+
+.static-content p {
+    margin: 0;
+    color: var(--text-secondary);
+}
+
+.wave-animation {
+    width: 120px;
+    height: 80px;
+    flex-shrink: 0;
+}
+
+.wave-animation svg {
+    width: 100%;
+    height: 100%;
+}
+
+.static-block {
+    fill: var(--text-dim);
+}
+
+.wave {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 2;
+    stroke-linecap: round;
+    opacity: 0.6;
+}
+
+.wave-1 {
+    animation: waveFlow 3s ease-in-out infinite;
+}
+
+.wave-2 {
+    animation: waveFlow 3s ease-in-out infinite 0.3s;
+    opacity: 0.4;
+}
+
+.wave-3 {
+    animation: waveFlow 3s ease-in-out infinite 0.6s;
+    opacity: 0.2;
+}
+
+@keyframes waveFlow {
+    0%, 100% {
+        d: path("M0,40 Q15,35 30,40 T60,40 T90,40 T120,40");
+        transform: translateX(0);
+    }
+    50% {
+        d: path("M0,40 Q15,45 30,40 T60,40 T90,40 T120,40");
+        transform: translateX(-10px);
+    }
 }
 
 /* ============================================
-   CTA SECTION
+   REALTIME VISUAL - Pulse Rings
+   ============================================ */
+.realtime-visual {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 3rem auto;
+}
+
+.pulse-ring {
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--accent);
+    border-radius: 50%;
+    opacity: 0;
+    animation: pulseRing 3s ease-out infinite;
+}
+
+.pulse-ring.delay-1 {
+    animation-delay: 1s;
+}
+
+.pulse-ring.delay-2 {
+    animation-delay: 2s;
+}
+
+@keyframes pulseRing {
+    0% {
+        transform: scale(0.3);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+.pulse-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    background: var(--accent);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 20px var(--accent-glow);
+    animation: centerPulse 2s ease-in-out infinite;
+}
+
+@keyframes centerPulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.2); }
+}
+
+/* ============================================
+   SAVYN SECTION
+   ============================================ */
+.savyn-header {
+    margin-bottom: 3rem;
+}
+
+.savyn-intro {
+    display: block;
+    font-size: 1rem;
+    color: var(--text-dim);
+    margin-bottom: 0.25rem;
+}
+
+.savyn-title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 12vw, 5rem);
+    font-weight: 400;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    background: linear-gradient(135deg, var(--accent) 0%, #f0d9b5 50%, var(--sage) 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 6s ease infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.savyn-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    margin-top: 0.75rem;
+}
+
+/* Feature items */
+.savyn-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.feature-item {
+    display: flex;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    background: var(--bg-surface);
+    border-radius: 16px;
+    border: 1px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.feature-item:hover {
+    border-color: rgba(230, 167, 86, 0.2);
+}
+
+.feature-icon {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+}
+
+.feature-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Icon animations */
+.icon-ring {
+    fill: none;
+    stroke: var(--text-dim);
+    stroke-width: 2;
+}
+
+.icon-dot {
+    fill: var(--accent);
+    animation: dotPulse 2s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+    0%, 100% { r: 4; opacity: 1; }
+    50% { r: 6; opacity: 0.7; }
+}
+
+.icon-card {
+    fill: var(--text-dim);
+    transition: transform 0.3s var(--ease);
+}
+
+.feature-item:hover .card-1 {
+    transform: translateX(-2px) rotate(-3deg);
+}
+
+.feature-item:hover .card-2 {
+    transform: translateX(2px) rotate(3deg);
+}
+
+.icon-switch {
+    stroke: var(--text-dim);
+    stroke-width: 3;
+    stroke-linecap: round;
+}
+
+.icon-toggle {
+    fill: var(--accent);
+    animation: toggleSlide 2.5s ease-in-out infinite;
+}
+
+@keyframes toggleSlide {
+    0%, 100% { cx: 16; }
+    50% { cx: 24; }
+}
+
+.feature-content p {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Mode cycling */
+.mode-cycle {
+    display: inline-block;
+    min-width: 110px;
+    font-family: var(--font-hand);
+    font-size: 1.3em;
+    color: var(--accent);
+    opacity: 0;
+    transform: translateY(6px);
+    transition: all 0.2s ease;
+}
+
+.mode-cycle.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Vision section */
+.savyn-vision {
+    padding: 2rem;
+    background: var(--bg-surface);
+    border-radius: 20px;
+    position: relative;
+}
+
+.brain-visual {
+    width: 100%;
+    height: 80px;
+    margin-bottom: 1.5rem;
+}
+
+.brain-visual svg {
+    width: 100%;
+    height: 100%;
+}
+
+.node {
+    fill: var(--accent);
+    opacity: 0.8;
+}
+
+.node-1, .node-3, .node-5 {
+    animation: nodePulse 3s ease-in-out infinite;
+}
+
+.node-2, .node-4 {
+    animation: nodePulse 3s ease-in-out infinite 1.5s;
+}
+
+@keyframes nodePulse {
+    0%, 100% { opacity: 0.6; r: 5; }
+    50% { opacity: 1; r: 7; }
+}
+
+.connection {
+    stroke: var(--accent);
+    stroke-width: 1;
+    opacity: 0.3;
+    stroke-dasharray: 4 4;
+    animation: connectionFlow 4s linear infinite;
+}
+
+@keyframes connectionFlow {
+    to { stroke-dashoffset: -40; }
+}
+
+.savyn-vision p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+}
+
+.savyn-vision p:last-child {
+    margin-bottom: 0;
+}
+
+.vision-final {
+    font-size: 1.2rem;
+    color: var(--text);
+}
+
+/* ============================================
+   CTA
    ============================================ */
 .cta-section {
-    padding: 5rem 0 6rem;
+    padding: 4rem 0 5rem;
 }
 
 .cta-block {
@@ -456,50 +743,40 @@ body {
    RESPONSIVE
    ============================================ */
 @media (min-width: 768px) {
-    body {
-        font-size: 18px;
+    body { font-size: 18px; }
+    .container { padding: 0 2rem; }
+    .section { padding: 7rem 0; }
+    .cta-block { padding: 4rem 3rem; }
+}
+
+@media (max-width: 600px) {
+    .static-visual {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
     }
     
-    .container {
-        padding: 0 2rem;
+    .wave-animation {
+        width: 100%;
+        max-width: 160px;
     }
     
-    .section {
-        padding: 8rem 0;
+    .feature-item {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
     }
     
-    .cta-block {
-        padding: 4rem 3rem;
+    .feature-icon {
+        margin: 0 auto;
     }
 }
 
-@media (min-width: 1024px) {
-    .hero .container {
-        max-width: 900px;
-    }
-    
-    .section {
-        padding: 10rem 0;
-    }
-}
-
-/* Small screens */
 @media (max-width: 480px) {
-    .hero {
-        padding: 4rem 0;
-    }
-    
-    .hero-tag {
-        font-size: 1.2rem;
-    }
-    
-    .section {
-        padding: 4rem 0;
-    }
-    
-    .prose {
-        font-size: 1rem;
-    }
+    .hero { padding: 4rem 0; }
+    .hero-tag { font-size: 1.2rem; }
+    .section { padding: 4rem 0; }
+    .prose { font-size: 1rem; }
     
     .cta-block {
         padding: 2.5rem 1.5rem;
@@ -509,6 +786,14 @@ body {
     .cta-button {
         padding: 1rem 2rem;
         font-size: 1rem;
+    }
+    
+    .savyn-features {
+        gap: 1rem;
+    }
+    
+    .feature-item {
+        padding: 1.25rem;
     }
 }
 
@@ -523,9 +808,6 @@ body {
     }
 }
 
-/* ============================================
-   SELECTION
-   ============================================ */
 ::selection {
     background: var(--accent);
     color: var(--bg);

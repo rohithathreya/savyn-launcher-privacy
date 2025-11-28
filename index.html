@@ -37,13 +37,27 @@
             <div class="container">
                 <div class="prose">
                     <p>
-                        You plan trips, pay bills, talk to friends, order food, save places, queue up podcasts, check flights, browse apartments – all from that one slab of glass you unlock <span class="highlight">a hundred times a day</span>.
+                        Every day, you <span class="activity-cycle"></span> – all from that one slab of glass you unlock a hundred times a day.
                     </p>
+                    
+                    <div class="static-visual">
+                        <div class="static-content">
+                            <p>
+                                And yet, the phone itself remains a <strong>static tray of apps</strong>. Just icons. Each app hoarding its own little island of data.
+                            </p>
+                        </div>
+                        <div class="wave-animation">
+                            <svg viewBox="0 0 120 80" preserveAspectRatio="xMidYMid meet">
+                                <rect class="static-block" x="50" y="25" width="20" height="30" rx="3"/>
+                                <path class="wave wave-1" d="M0,40 Q15,35 30,40 T60,40 T90,40 T120,40"/>
+                                <path class="wave wave-2" d="M0,50 Q15,45 30,50 T60,50 T90,50 T120,50"/>
+                                <path class="wave wave-3" d="M0,60 Q15,55 30,60 T60,60 T90,60 T120,60"/>
+                            </svg>
+                        </div>
+                    </div>
+                    
                     <p>
-                        And yet, the phone itself remains a <strong class="dim">static tray of apps</strong>. Just icons. Each app hoarding its own little island of data.
-                    </p>
-                    <p>
-                        Meanwhile, your device quietly sits at the center of everything. It sees which apps you reach for and when. The restaurants you keep checking. The trips you're planning. The tools you lean on for work, for errands, for unwinding. It watches your patterns – <span class="handwritten">without you ever telling it a thing</span>.
+                        Meanwhile, your device quietly sits at the center of everything. It sees which apps you reach for and when. It watches your patterns – <span class="handwritten">without you ever telling it a thing</span>.
                     </p>
                     <p>
                         That's more <span class="underline-draw">raw context about your life</span> than you could practically type into any note-taking app, PKM system, or "second brain" tool – even if you wanted to.
@@ -57,19 +71,25 @@
             <div class="container">
                 <div class="prose">
                     <p class="lead">
-                        Your phone already has the data. It has the processing power. It has sensors, storage, and a <span class="glow">constant stream of fresh, real-time information</span> about how you actually live.
+                        Your phone already has the data. It has the processing power. And it has a <span class="glow">constant stream of fresh, real-time information</span> about how you actually live.
                     </p>
+                    
+                    <!-- Real-time data visualization -->
+                    <div class="realtime-visual">
+                        <div class="pulse-ring"></div>
+                        <div class="pulse-ring delay-1"></div>
+                        <div class="pulse-ring delay-2"></div>
+                        <div class="pulse-center"></div>
+                    </div>
+                    
                     <p>
                         So here's the question: if all of this can run strictly on-device – private, personal, never leaving your phone – <span class="highlight">why stop at being just a launcher?</span>
                     </p>
                     <p>
-                        Why not let the phone itself become the second brain?
-                    </p>
-                    <p>
-                        A brain that always has context by default. That never asks you to "sit down and capture everything." That doesn't need you to explain your life – <span class="handwritten">it's been there the whole time</span>.
+                        Why not let the phone itself become the second brain? A brain that always has context by default. That never asks you to "sit down and capture everything." That doesn't need you to explain your life – <span class="handwritten">it's been there the whole time</span>.
                     </p>
                     <p class="aside">
-                        Real-time data no external tool could ever access. Privacy that's enforced by architecture, not policy. Is this not the actual endgame of every second brain?
+                        Real-time data no external tool could ever access. Privacy enforced by architecture, not policy. Is this not the holy grail of every second brain?
                     </p>
                 </div>
             </div>
@@ -78,25 +98,72 @@
         <!-- Section 3: What Savyn Does -->
         <section class="section" id="savyn">
             <div class="container">
-                <h2 class="section-title">
-                    <span class="title-small">This is</span>
-                    <span class="title-name">Savyn</span>
-                </h2>
-                <div class="prose">
+                <div class="savyn-header">
+                    <span class="savyn-intro">This is</span>
+                    <h2 class="savyn-title">Savyn</h2>
+                    <p class="savyn-subtitle">That idea – in its first version.</p>
+                </div>
+                
+                <div class="savyn-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 40 40">
+                                <circle class="icon-ring" cx="20" cy="20" r="16"/>
+                                <circle class="icon-dot" cx="20" cy="20" r="4"/>
+                            </svg>
+                        </div>
+                        <div class="feature-content">
+                            <p>Lives at your Android home screen. Learns which apps and actions you need <span class="highlight">right now</span> – not just what you've used most.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 40 40">
+                                <rect class="icon-card card-1" x="8" y="12" width="12" height="16" rx="2"/>
+                                <rect class="icon-card card-2" x="20" y="12" width="12" height="16" rx="2"/>
+                            </svg>
+                        </div>
+                        <div class="feature-content">
+                            <p>Becomes a smart place to toss screenshots, articles, bookmarks – things you'd normally lose – and actually <span class="underline-draw">surfaces them when relevant</span>.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 40 40">
+                                <path class="icon-switch" d="M12,20 L28,20"/>
+                                <circle class="icon-toggle" cx="24" cy="20" r="6"/>
+                            </svg>
+                        </div>
+                        <div class="feature-content">
+                            <p>Spin up different modes – <span class="mode-cycle"></span> – without rebuilding your stack from scratch every time.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="savyn-vision">
+                    <!-- Brain network animation -->
+                    <div class="brain-visual">
+                        <svg viewBox="0 0 200 100">
+                            <circle class="node node-1" cx="30" cy="50" r="6"/>
+                            <circle class="node node-2" cx="70" cy="30" r="5"/>
+                            <circle class="node node-3" cx="100" cy="55" r="7"/>
+                            <circle class="node node-4" cx="130" cy="35" r="5"/>
+                            <circle class="node node-5" cx="170" cy="50" r="6"/>
+                            <line class="connection" x1="30" y1="50" x2="70" y2="30"/>
+                            <line class="connection" x1="70" y1="30" x2="100" y2="55"/>
+                            <line class="connection" x1="100" y1="55" x2="130" y2="35"/>
+                            <line class="connection" x1="130" y1="35" x2="170" y2="50"/>
+                            <line class="connection" x1="30" y1="50" x2="100" y2="55"/>
+                            <line class="connection" x1="70" y1="30" x2="130" y2="35"/>
+                        </svg>
+                    </div>
                     <p>
-                        Savyn is that idea – in its first version. It lives at your Android home screen and starts putting all this context to work <em>for</em> you.
+                        This is the starting point. Over time, the same brain grows into the <strong>context layer between all your apps</strong> – understanding you across tools. Capture thoughts without friction. Find things when they matter. Do what you meant to do.
                     </p>
-                    <p>
-                        It learns which apps and actions you're likely to need <span class="highlight">right now</span> – not just what you've used most. It becomes a smart place to toss screenshots, articles, bookmarks, links – things you'd normally lose – and actually surfaces them when they're relevant. It lets you spin up different modes – <span class="cycle-text"></span> – without rebuilding your stack from scratch every time.
-                    </p>
-                    <p>
-                        Gradually, your phone stops being a drawer of apps and starts becoming <span class="underline-draw">the place where your day comes together</span>.
-                    </p>
-                    <p>
-                        This is the starting point. Over time, the same brain can grow into the <strong>context layer between all your apps</strong> – understanding you across tools, letting them plug into your model of yourself instead of each building their own. Capture thoughts without friction. Find saved things when they actually matter. Get nudged toward what you meant to do, not what the algorithm wants.
-                    </p>
-                    <p>
-                        All of it on your phone. In a brain that's <span class="handwritten yours">yours</span>.
+                    <p class="vision-final">
+                        All on your phone. In a brain that's <span class="handwritten yours">yours</span>.
                     </p>
                 </div>
             </div>
@@ -130,7 +197,7 @@
     </main>
 
     <script>
-        // Intersection Observer for section animations
+        // Intersection Observer
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -141,19 +208,46 @@
         
         document.querySelectorAll('.section, .hero').forEach(el => observer.observe(el));
         
-        // Cycling text for modes
+        // Activity cycling (what you do on phone)
+        const activities = [
+            'plan trips',
+            'pay bills',
+            'talk to friends',
+            'order food',
+            'check flights',
+            'save places',
+            'queue podcasts',
+            'browse apartments',
+            'book restaurants',
+            'track packages'
+        ];
+        let activityIndex = 0;
+        const activityEl = document.querySelector('.activity-cycle');
+        
+        function cycleActivity() {
+            if (!activityEl) return;
+            activityEl.classList.remove('visible');
+            setTimeout(() => {
+                activityEl.textContent = activities[activityIndex];
+                activityEl.classList.add('visible');
+                activityIndex = (activityIndex + 1) % activities.length;
+            }, 200);
+        }
+        
+        cycleActivity();
+        setInterval(cycleActivity, 2000);
+        
+        // Mode cycling
         const modes = ['deep work', 'quick admin', 'creative flow', 'wind down'];
         let modeIndex = 0;
-        const cycleEl = document.querySelector('.cycle-text');
+        const modeEl = document.querySelector('.mode-cycle');
         
         function cycleMode() {
-            if (!cycleEl) return;
-            cycleEl.style.opacity = '0';
-            cycleEl.style.transform = 'translateY(8px)';
+            if (!modeEl) return;
+            modeEl.classList.remove('visible');
             setTimeout(() => {
-                cycleEl.textContent = modes[modeIndex];
-                cycleEl.style.opacity = '1';
-                cycleEl.style.transform = 'translateY(0)';
+                modeEl.textContent = modes[modeIndex];
+                modeEl.classList.add('visible');
                 modeIndex = (modeIndex + 1) % modes.length;
             }, 200);
         }
