@@ -70,6 +70,7 @@ body {
     border-radius: 100px;
     text-decoration: none;
     transition: background 0.2s;
+    white-space: nowrap;
 }
 
 .nav-cta:hover { background: var(--accent); }
@@ -203,7 +204,7 @@ body {
 
 /* 2 lines max - sized for mobile */
 .para-2 {
-    font-size: 1.05rem;
+    font-size: 0.95rem;
 }
 
 /* Highlight */
@@ -223,7 +224,7 @@ body {
     background-size: 100% 2px;
 }
 
-/* Animated looping strikethrough */
+/* Strikethrough - grey, happens once */
 .strike-loop {
     position: relative;
     color: var(--dim);
@@ -234,31 +235,14 @@ body {
     position: absolute;
     top: 50%;
     left: 0;
-    width: 100%;
+    width: 0;
     height: 2px;
-    background: var(--accent);
-    transform: scaleX(0);
-    transform-origin: left;
-    animation: strikeLoop 2.5s ease-in-out infinite;
+    background: var(--dim);
+    transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@keyframes strikeLoop {
-    0%, 100% { 
-        transform: scaleX(0); 
-        transform-origin: left;
-    }
-    40% { 
-        transform: scaleX(1); 
-        transform-origin: left;
-    }
-    60% { 
-        transform: scaleX(1); 
-        transform-origin: right;
-    }
-    100% { 
-        transform: scaleX(0); 
-        transform-origin: right;
-    }
+.visible .strike-loop::after {
+    width: 100%;
 }
 
 /* ============================================
@@ -279,7 +263,7 @@ body {
 
 .big-question {
     font-family: var(--serif);
-    font-size: 1.4rem;
+    font-size: 1.25rem;
     font-weight: 400;
     line-height: 1.35;
     color: var(--text);
@@ -509,9 +493,9 @@ body {
     .activity-text { font-size: 1.15rem; }
     
     .para-4 { font-size: 1.1rem; }
-    .para-2 { font-size: 1.15rem; }
+    .para-2 { font-size: 1.05rem; }
     
-    .big-question { font-size: 1.6rem; }
+    .big-question { font-size: 1.45rem; }
     
     .savyn-name { font-size: 3rem; }
     .feat { padding: 1rem; }
@@ -532,9 +516,9 @@ body {
     .title { font-size: 2.75rem; }
     
     .para-4 { font-size: 1.15rem; }
-    .para-2 { font-size: 1.2rem; }
+    .para-2 { font-size: 1.15rem; }
     
-    .big-question { font-size: 1.85rem; }
+    .big-question { font-size: 1.65rem; }
     
     .savyn-name { font-size: 3.5rem; }
     
