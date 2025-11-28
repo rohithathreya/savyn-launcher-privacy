@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Savyn – Your phone as a second brain. Android launcher with on-device AI that actually understands you.">
+    <meta name="description" content="Savyn – Your phone as a second brain. On-device AI that actually understands you.">
     
     <title>Savyn – Phone as a Second Brain</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,266 +12,91 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="grain-overlay"></div>
+    <div class="grain"></div>
     
-    <nav class="floating-nav">
-        <div class="nav-logo">Savyn</div>
+    <nav class="nav">
+        <span class="nav-logo">Savyn</span>
         <a href="mailto:support@savynlabs.com?subject=Join%20Savyn%20Beta" class="nav-cta">Get Early Access</a>
     </nav>
 
-    <main class="container">
+    <main>
         
         <!-- Hero -->
-        <section class="section hero">
-            <div class="hero-content">
-                <p class="hero-label">
-                    <span class="label-line"></span>
-                    <span class="label-text">Phone as a Second Brain</span>
-                    <span class="label-line"></span>
-                </p>
+        <section class="hero">
+            <div class="container">
+                <p class="hero-tag">Phone as a Second Brain</p>
                 <h1 class="hero-title">
-                    <span class="word-reveal">Most</span>
-                    <span class="word-reveal">of</span>
-                    <span class="word-reveal">your</span>
-                    <span class="word-reveal">day</span>
-                    <br>
-                    <span class="word-reveal">already</span>
-                    <span class="word-reveal">runs</span>
-                    <span class="word-reveal">through</span>
-                    <br>
-                    <span class="word-reveal accent glow-pulse">your phone.</span>
+                    Your whole life runs through <span class="accent">your phone.</span>
                 </h1>
             </div>
-            <div class="scroll-cue">
-                <div class="scroll-line"></div>
-            </div>
+            <div class="scroll-line"></div>
         </section>
 
-        <!-- The Reality -->
-        <section class="section reality-section">
-            <div class="content-wide">
-                <div class="activity-cloud" data-animate="stagger">
-                    <span class="activity" style="--delay: 0">plan</span>
-                    <span class="activity" style="--delay: 1">pay</span>
-                    <span class="activity" style="--delay: 2">talk</span>
-                    <span class="activity" style="--delay: 3">learn</span>
-                    <span class="activity" style="--delay: 4">book cabs</span>
-                    <span class="activity" style="--delay: 5">order food</span>
-                    <span class="activity" style="--delay: 6">check flights</span>
-                    <span class="activity" style="--delay: 7">save places</span>
-                    <span class="activity" style="--delay: 8">queue podcasts</span>
-                    <span class="activity" style="--delay: 9">browse houses</span>
-                    <span class="activity highlight" style="--delay: 10">stalk restaurants</span>
-                </div>
-                <p class="subtext fade-up">all from that one slab of glass</p>
-            </div>
-        </section>
-
-        <!-- The Problem -->
-        <section class="section problem-section">
-            <div class="content-centered">
-                <p class="lead-text fade-up">And yet, your phone itself is basically a</p>
-                <h2 class="big-statement">
-                    <span class="word-container">
-                        <span class="static-word" data-text="static">static</span>
-                    </span>
-                    <span class="word-container">
-                        <span class="tray-word">tray</span>
-                    </span>
-                    <span class="word-container">
-                        <span class="of-word">of</span>
-                    </span>
-                    <span class="word-container">
-                        <span class="apps-word">apps</span>
-                        <span class="apps-cursor"></span>
-                    </span>
-                </h2>
-                <p class="dim-text typewriter" data-text="Just icons. Each app its own little island."></p>
-            </div>
-        </section>
-
-        <!-- Meanwhile -->
-        <section class="section meanwhile-section">
-            <div class="content-narrow">
-                <p class="section-intro illuminate">Meanwhile, the device sits at the centre of everything:</p>
-                
-                <div class="insight-list">
-                    <div class="insight-item" data-animate="slide-right">
-                        <span class="insight-bullet"></span>
-                        <p>It sees which apps you reach for <em class="handwritten">and when</em></p>
-                    </div>
-                    <div class="insight-item" data-animate="slide-right">
-                        <span class="insight-bullet"></span>
-                        <p>The places you keep checking <em class="handwritten">and the spots you save</em></p>
-                    </div>
-                    <div class="insight-item" data-animate="slide-right">
-                        <span class="insight-bullet"></span>
-                        <p>The trips, the shops, the tools you lean on for <span class="cycle-text"></span></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- The Realization -->
-        <section class="section realization-section">
-            <div class="content-centered">
-                <p class="lead-text fade-up">No "second brain" app will ever see that much real behaviour</p>
-                <p class="subtext fade-up">even if you <em>wanted</em> to log it all</p>
-                
-                <div class="divider-line"></div>
-                
-                <p class="big-text illuminate-words">
-                    Your phone already holds more 
-                    <span class="underline-animate">raw context</span> 
-                    about your life than you could practically type into any system.
-                </p>
-            </div>
-        </section>
-
-        <!-- The Assets -->
-        <section class="section assets-section">
-            <div class="content-centered">
-                <p class="lead-text fade-up">It also already has what every second brain is secretly begging for:</p>
-                
-                <div class="assets-grid">
-                    <div class="asset-item" data-animate="pop">
-                        <span class="asset-icon">◈</span>
-                        <span class="asset-label">storage</span>
-                    </div>
-                    <div class="asset-item" data-animate="pop">
-                        <span class="asset-icon">◇</span>
-                        <span class="asset-label">compute</span>
-                    </div>
-                    <div class="asset-item" data-animate="pop">
-                        <span class="asset-icon">○</span>
-                        <span class="asset-label">sensors</span>
-                    </div>
-                    <div class="asset-item" data-animate="pop">
-                        <span class="asset-icon pulse-icon">●</span>
-                        <span class="asset-label">real-time data</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- The Question -->
-        <section class="section question-section">
-            <div class="content-centered">
-                <p class="small-text fade-up">So if all of this can run strictly on-device…</p>
-                
-                <h2 class="question-text">
-                    <span class="question-line fade-up">why stop at being a pretty launcher?</span>
-                </h2>
-                
-                <h2 class="mega-question">
-                    <span class="mega-line">Why not let the phone itself</span>
-                    <span class="mega-line accent-line">
-                        <span class="become-text">become</span> 
-                        <span class="the-text">the</span>
-                        <span class="second-brain-text signature-draw">second brain?</span>
-                    </span>
-                </h2>
-            </div>
-        </section>
-
-        <!-- The Brain -->
-        <section class="section brain-section">
-            <div class="content-narrow">
-                <p class="section-intro handwritten-intro">A brain that:</p>
-                
-                <div class="brain-features">
-                    <div class="brain-feature" data-animate="illuminate">
-                        <span class="feature-check">✓</span>
-                        <p>always has <span class="glow-word">up-to-date context</span> by default</p>
-                    </div>
-                    <div class="brain-feature" data-animate="illuminate">
-                        <span class="feature-check">✓</span>
-                        <p>never needs you to "sit and capture everything"</p>
-                    </div>
-                    <div class="brain-feature" data-animate="illuminate">
-                        <span class="feature-check">✓</span>
-                        <p>doesn't ask for your life story – <em class="handwritten">it's been there the whole time</em></p>
-                    </div>
-                </div>
-                
-                <div class="punchline-block">
-                    <p class="punchline">If anything is meant to be your second brain,</p>
-                    <p class="punchline-emphasis">it's this thing you unlock <span class="counter" data-target="200">0</span> times a day.</p>
-                </div>
-                
-                <p class="rhetorical handwritten">Is that not the actual endgame of every second brain tool?</p>
-            </div>
-        </section>
-
-        <!-- Savyn -->
-        <section class="section savyn-section">
-            <div class="content-centered">
-                <div class="savyn-intro">
-                    <h2 class="savyn-title">
-                        <span class="what-text">What</span>
-                        <svg class="savyn-signature" viewBox="0 0 200 60" preserveAspectRatio="xMidYMid meet">
-                            <path class="signature-path" d="M10,45 C20,45 25,20 35,20 C45,20 40,45 50,45 C55,45 55,25 65,25 C75,25 70,45 80,45 L85,45 C95,45 90,20 100,20 C110,20 105,45 115,45 C120,45 125,25 130,25 C140,25 145,45 155,45" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-                        </svg>
-                        <span class="savyn-text">Savyn</span>
-                    </h2>
-                    <p class="savyn-subtitle">does with that brain</p>
-                </div>
-                
-                <p class="version-text fade-up">Savyn is that idea in <span class="v1-badge">version one</span></p>
-                
-                <p class="lives-text fade-up">It lives at your Android home screen and starts using this context <em>for</em> you:</p>
-            </div>
-        </section>
-
-        <!-- Features -->
-        <section class="section features-section">
-            <div class="content-narrow">
-                <div class="feature-cards">
-                    <div class="feature-card" data-animate="card-reveal">
-                        <div class="card-glow"></div>
-                        <p>Knows which apps and actions are likely to matter <strong class="glow-text">right now</strong>, not just "most used"</p>
-                    </div>
-                    <div class="feature-card" data-animate="card-reveal">
-                        <div class="card-glow"></div>
-                        <p>Becomes a smart place to keep screenshots, articles, books, links – and actually <span class="underline-animate">surface them when relevant</span></p>
-                    </div>
-                    <div class="feature-card" data-animate="card-reveal">
-                        <div class="card-glow"></div>
-                        <p>Spin up different sessions: <span class="session-cycle"></span> without rebuilding the stack</p>
-                    </div>
-                    <div class="feature-card" data-animate="card-reveal">
-                        <div class="card-glow"></div>
-                        <p>Turns your phone from "a drawer of apps" into <em class="handwritten">"where your day comes together"</em></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Vision -->
-        <section class="section vision-section">
-            <div class="content-centered">
-                <p class="small-text fade-up">This is the starting point.</p>
-                
-                <div class="vision-block">
-                    <p class="vision-text illuminate-words">
-                        Over time, the same brain can grow into the 
-                        <strong class="glow-word">context bus between apps</strong> 
-                        – the layer that understands you across tools and lets them plug into 
-                        <em>your</em> model of you, not just their own.
+        <!-- Section 1: The Reality -->
+        <section class="section" id="reality">
+            <div class="container">
+                <div class="prose">
+                    <p>
+                        You plan trips, pay bills, talk to friends, order food, save places, queue up podcasts, check flights, browse apartments – all from that one slab of glass you unlock <span class="highlight">a hundred times a day</span>.
+                    </p>
+                    <p>
+                        And yet, the phone itself remains a <strong class="dim">static tray of apps</strong>. Just icons. Each app hoarding its own little island of data.
+                    </p>
+                    <p>
+                        Meanwhile, your device quietly sits at the center of everything. It sees which apps you reach for and when. The restaurants you keep checking. The trips you're planning. The tools you lean on for work, for errands, for unwinding. It watches your patterns – <span class="handwritten">without you ever telling it a thing</span>.
+                    </p>
+                    <p>
+                        That's more <span class="underline-draw">raw context about your life</span> than you could practically type into any note-taking app, PKM system, or "second brain" tool – even if you wanted to.
                     </p>
                 </div>
-                
-                <div class="final-statement">
-                    <p class="final-line fade-up">The data, the patterns, the understanding</p>
-                    <p class="final-line fade-up">all live where they should have from the beginning:</p>
-                    <p class="final-emphasis">
-                        <span class="on-text">On</span> 
-                        <span class="your-text">your</span> 
-                        <span class="phone-text glow-pulse">phone.</span>
+            </div>
+        </section>
+
+        <!-- Section 2: The Opportunity -->
+        <section class="section" id="opportunity">
+            <div class="container">
+                <div class="prose">
+                    <p class="lead">
+                        Your phone already has the data. It has the processing power. It has sensors, storage, and a <span class="glow">constant stream of fresh, real-time information</span> about how you actually live.
                     </p>
-                    <p class="final-tagline">
-                        In a brain that's 
-                        <span class="yours-text signature-yours">yours.</span>
+                    <p>
+                        So here's the question: if all of this can run strictly on-device – private, personal, never leaving your phone – <span class="highlight">why stop at being just a launcher?</span>
+                    </p>
+                    <p>
+                        Why not let the phone itself become the second brain?
+                    </p>
+                    <p>
+                        A brain that always has context by default. That never asks you to "sit down and capture everything." That doesn't need you to explain your life – <span class="handwritten">it's been there the whole time</span>.
+                    </p>
+                    <p class="aside">
+                        Real-time data no external tool could ever access. Privacy that's enforced by architecture, not policy. Is this not the actual endgame of every second brain?
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: What Savyn Does -->
+        <section class="section" id="savyn">
+            <div class="container">
+                <h2 class="section-title">
+                    <span class="title-small">This is</span>
+                    <span class="title-name">Savyn</span>
+                </h2>
+                <div class="prose">
+                    <p>
+                        Savyn is that idea – in its first version. It lives at your Android home screen and starts putting all this context to work <em>for</em> you.
+                    </p>
+                    <p>
+                        It learns which apps and actions you're likely to need <span class="highlight">right now</span> – not just what you've used most. It becomes a smart place to toss screenshots, articles, bookmarks, links – things you'd normally lose – and actually surfaces them when they're relevant. It lets you spin up different modes – <span class="cycle-text"></span> – without rebuilding your stack from scratch every time.
+                    </p>
+                    <p>
+                        Gradually, your phone stops being a drawer of apps and starts becoming <span class="underline-draw">the place where your day comes together</span>.
+                    </p>
+                    <p>
+                        This is the starting point. Over time, the same brain can grow into the <strong>context layer between all your apps</strong> – understanding you across tools, letting them plug into your model of yourself instead of each building their own. Capture thoughts without friction. Find saved things when they actually matter. Get nudged toward what you meant to do, not what the algorithm wants.
+                    </p>
+                    <p>
+                        All of it on your phone. In a brain that's <span class="handwritten yours">yours</span>.
                     </p>
                 </div>
             </div>
@@ -279,18 +104,20 @@
 
         <!-- CTA -->
         <section class="section cta-section">
-            <div class="cta-container">
-                <a href="mailto:support@savynlabs.com?subject=Join%20Savyn%20Beta" class="cta-button">
-                    <span class="cta-text">Get early access</span>
-                    <span class="cta-arrow">→</span>
-                </a>
-                <p class="cta-note">Android first.</p>
+            <div class="container">
+                <div class="cta-block">
+                    <p class="cta-lead">Savyn is in early development. You're seeing it first.</p>
+                    <a href="mailto:support@savynlabs.com?subject=Join%20Savyn%20Beta" class="cta-button">
+                        Get early access <span class="arrow">→</span>
+                    </a>
+                    <p class="cta-note">Android first.</p>
+                </div>
             </div>
         </section>
 
         <!-- Footer -->
         <footer class="footer">
-            <div class="footer-content">
+            <div class="container footer-content">
                 <span class="footer-logo">Savyn</span>
                 <div class="footer-links">
                     <a href="privacy-policy.html">Privacy</a>
@@ -303,110 +130,51 @@
     </main>
 
     <script>
-        // Intersection Observer for animations
-        const observerCallback = (entries) => {
+        // Intersection Observer for section animations
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('in-view');
-                    
-                    // Counter animation
-                    const counter = entry.target.querySelector('.counter');
-                    if (counter && !counter.dataset.animated) {
-                        counter.dataset.animated = 'true';
-                        animateCounter(counter);
-                    }
-                    
-                    // Typewriter effect
-                    const typewriter = entry.target.querySelector('.typewriter');
-                    if (typewriter && !typewriter.dataset.animated) {
-                        typewriter.dataset.animated = 'true';
-                        typeWrite(typewriter);
-                    }
                 }
             });
-        };
+        }, { threshold: 0.1, rootMargin: '0px 0px -10% 0px' });
         
-        const observer = new IntersectionObserver(observerCallback, {
-            threshold: 0.2,
-            rootMargin: '0px 0px -50px 0px'
-        });
+        document.querySelectorAll('.section, .hero').forEach(el => observer.observe(el));
         
-        document.querySelectorAll('.section').forEach(s => observer.observe(s));
-        
-        // Counter animation
-        function animateCounter(el) {
-            const target = parseInt(el.dataset.target);
-            const duration = 2000;
-            const start = performance.now();
-            
-            function update(now) {
-                const elapsed = now - start;
-                const progress = Math.min(elapsed / duration, 1);
-                const eased = 1 - Math.pow(1 - progress, 4);
-                el.textContent = Math.floor(eased * target);
-                if (progress < 1) requestAnimationFrame(update);
-            }
-            requestAnimationFrame(update);
-        }
-        
-        // Typewriter effect
-        function typeWrite(el) {
-            const text = el.dataset.text;
-            let i = 0;
-            el.textContent = '';
-            function type() {
-                if (i < text.length) {
-                    el.textContent += text.charAt(i);
-                    i++;
-                    setTimeout(type, 40);
-                }
-            }
-            setTimeout(type, 500);
-        }
-        
-        // Cycling text
-        const cycleTexts = ['work', 'errands', 'escape', 'life'];
-        let cycleIndex = 0;
+        // Cycling text for modes
+        const modes = ['deep work', 'quick admin', 'creative flow', 'wind down'];
+        let modeIndex = 0;
         const cycleEl = document.querySelector('.cycle-text');
-        if (cycleEl) {
-            function cycleWord() {
-                cycleEl.classList.remove('visible');
-                setTimeout(() => {
-                    cycleEl.textContent = cycleTexts[cycleIndex];
-                    cycleEl.classList.add('visible');
-                    cycleIndex = (cycleIndex + 1) % cycleTexts.length;
-                }, 300);
-            }
-            cycleWord();
-            setInterval(cycleWord, 2000);
+        
+        function cycleMode() {
+            if (!cycleEl) return;
+            cycleEl.style.opacity = '0';
+            cycleEl.style.transform = 'translateY(8px)';
+            setTimeout(() => {
+                cycleEl.textContent = modes[modeIndex];
+                cycleEl.style.opacity = '1';
+                cycleEl.style.transform = 'translateY(0)';
+                modeIndex = (modeIndex + 1) % modes.length;
+            }, 200);
         }
         
-        // Session cycling
-        const sessionTexts = ['deep work', 'admin', 'reset', 'explore'];
-        let sessionIndex = 0;
-        const sessionEl = document.querySelector('.session-cycle');
-        if (sessionEl) {
-            function cycleSession() {
-                sessionEl.classList.remove('visible');
-                setTimeout(() => {
-                    sessionEl.textContent = sessionTexts[sessionIndex];
-                    sessionEl.classList.add('visible');
-                    sessionIndex = (sessionIndex + 1) % sessionTexts.length;
-                }, 300);
-            }
-            cycleSession();
-            setInterval(cycleSession, 1800);
-        }
+        cycleMode();
+        setInterval(cycleMode, 2200);
         
-        // Floating nav
+        // Nav visibility
+        let lastScroll = 0;
         window.addEventListener('scroll', () => {
-            document.querySelector('.floating-nav').classList.toggle('visible', window.scrollY > 100);
+            const nav = document.querySelector('.nav');
+            const scrollY = window.scrollY;
+            
+            if (scrollY > 100) {
+                nav.classList.add('visible');
+                nav.classList.toggle('hidden', scrollY > lastScroll && scrollY > 300);
+            } else {
+                nav.classList.remove('visible');
+            }
+            lastScroll = scrollY;
         }, { passive: true });
-        
-        // Smooth scroll for scroll cue
-        document.querySelector('.scroll-cue')?.addEventListener('click', () => {
-            document.querySelector('.reality-section').scrollIntoView({ behavior: 'smooth' });
-        });
     </script>
 </body>
 </html>
