@@ -37,21 +37,23 @@
             </div>
         </section>
 
-        <!-- Reality -->
+        <!-- Reality - 4 lines max -->
         <section class="block">
-            <p>Your phone <span class="highlight typing-reveal">sees everything.</span></p>
-            <p class="dim">Which apps you reach for. When. Your patterns.</p>
-            <p>More <span class="underline-anim">raw context</span> than you could ever log into any system.</p>
+            <p class="para-4">Your phone is a vessel for apps and sees everything — which apps you reach for and when, places you visit and bookmark, you name it.</p>
+        </section>
+
+        <!-- Raw context - 2 lines max -->
+        <section class="block">
+            <p class="para-2">More <span class="underline-anim">raw context</span> than you could ever manually provide to any "second brain" app.</p>
         </section>
 
         <!-- The Flip -->
         <section class="block">
-            <p>It has the data. The processing power.</p>
-            <p class="punch">So why is it just a <span class="static-text">static grid</span> of icons?</p>
+            <p>It has the data. The processing power. So why is it just a <span class="strike-loop">static grid</span> of icons?</p>
         </section>
 
-        <!-- The Question -->
-        <section class="block center">
+        <!-- The Question - centered, glowing -->
+        <section class="question-block">
             <p class="big-question">Why not make it <em>the</em> <span class="glow-word">second brain?</span></p>
         </section>
 
@@ -77,7 +79,7 @@
                 </div>
             </div>
             
-            <p class="vision">Over time, it becomes the <strong>context layer</strong> across all your apps.</p>
+            <p>Over time, it becomes the <strong>context layer</strong> across all your apps.</p>
             
             <p class="final">Your phone. <span class="handwritten">Your brain.</span></p>
         </section>
@@ -159,7 +161,7 @@
             entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
         }, { threshold: 0.2 });
         
-        document.querySelectorAll('.block, .savyn, .cta').forEach(el => obs.observe(el));
+        document.querySelectorAll('.block, .question-block, .savyn, .cta').forEach(el => obs.observe(el));
     </script>
 </body>
 </html>

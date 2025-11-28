@@ -1,17 +1,16 @@
 /* ============================================
-   Savyn – Alive & Mobile First
+   Savyn – Clean, Consistent, Left-aligned
    ============================================ */
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
     --bg: #0a0908;
-    --text: #f0ebe3;
-    --mid: #9a958c;
-    --dim: #5a5650;
+    --text: #c8c3ba;
     --accent: #e9a84a;
     --glow: rgba(233, 168, 74, 0.6);
     --sage: #7fb587;
+    --dim: #6a655e;
     
     --serif: 'Fraunces', Georgia, serif;
     --sans: 'DM Sans', system-ui, sans-serif;
@@ -23,7 +22,7 @@ html, body {
     color: var(--text);
     font-family: var(--sans);
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -71,10 +70,10 @@ body {
 .nav-cta:hover { background: var(--accent); }
 
 /* ============================================
-   HERO - 2 lines max on any phone
+   HERO
    ============================================ */
 .hero {
-    min-height: 75vh;
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -112,6 +111,7 @@ body {
     font-weight: 400;
     line-height: 1.2;
     letter-spacing: -0.02em;
+    color: var(--text);
 }
 
 .title .line {
@@ -143,8 +143,6 @@ body {
    ============================================ */
 .activities {
     padding: 2.5rem 0;
-    display: flex;
-    justify-content: center;
 }
 
 .activity-pill {
@@ -174,13 +172,12 @@ body {
 }
 
 /* ============================================
-   CONTENT BLOCKS
+   CONTENT BLOCKS - All left aligned
    ============================================ */
 .block {
-    padding: 2rem 0;
-    max-width: 480px;
+    padding: 1.5rem 0;
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(25px);
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -189,39 +186,28 @@ body {
     transform: translateY(0);
 }
 
-.block.center {
-    text-align: center;
-    max-width: 100%;
-}
-
 .block p {
-    font-size: 1.05rem;
-    color: var(--mid);
-    margin-bottom: 0.75rem;
+    color: var(--text);
     line-height: 1.65;
 }
 
-.block p:last-child { margin-bottom: 0; }
-
-.block .dim {
-    color: var(--dim);
-    font-size: 0.95rem;
+/* 4 lines max - sized for mobile */
+.para-4 {
+    font-size: 1rem;
 }
 
-.block .punch {
-    font-size: 1.15rem;
-    color: var(--text);
+/* 2 lines max - sized for mobile */
+.para-2 {
+    font-size: 1.05rem;
 }
 
 /* Highlight */
 .highlight {
     color: var(--accent);
-    font-weight: 500;
 }
 
 /* Underline animation */
 .underline-anim {
-    color: var(--text);
     background: linear-gradient(var(--sage), var(--sage)) no-repeat;
     background-size: 0% 2px;
     background-position: 0 100%;
@@ -232,54 +218,85 @@ body {
     background-size: 100% 2px;
 }
 
-/* Static text effect */
-.static-text {
-    color: var(--dim);
+/* Animated looping strikethrough */
+.strike-loop {
     position: relative;
+    color: var(--dim);
 }
 
-.static-text::after {
+.strike-loop::after {
     content: '';
     position: absolute;
     top: 50%;
-    left: -4px;
-    right: -4px;
-    height: 1px;
-    background: var(--dim);
-    animation: staticLine 3s ease-in-out infinite;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: strikeLoop 2.5s ease-in-out infinite;
 }
 
-@keyframes staticLine {
-    0%, 100% { opacity: 0; }
-    50% { opacity: 0.5; }
+@keyframes strikeLoop {
+    0%, 100% { 
+        transform: scaleX(0); 
+        transform-origin: left;
+    }
+    40% { 
+        transform: scaleX(1); 
+        transform-origin: left;
+    }
+    60% { 
+        transform: scaleX(1); 
+        transform-origin: right;
+    }
+    100% { 
+        transform: scaleX(0); 
+        transform-origin: right;
+    }
 }
 
-/* Big question */
+/* ============================================
+   QUESTION - Centered, Glowing
+   ============================================ */
+.question-block {
+    padding: 2.5rem 0;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(25px);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.question-block.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .big-question {
     font-family: var(--serif);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 400;
-    line-height: 1.3;
+    line-height: 1.35;
     color: var(--text);
 }
 
 .big-question em {
     font-style: italic;
-    color: var(--mid);
+    color: var(--dim);
 }
 
 .glow-word {
     color: var(--accent);
-    animation: glowPulse 2.5s ease-in-out infinite;
+    animation: glowPulse 2s ease-in-out infinite;
 }
 
 /* ============================================
-   SAVYN
+   SAVYN - Left aligned
    ============================================ */
 .savyn {
-    padding: 2.5rem 0;
+    padding: 2rem 0;
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(25px);
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -322,7 +339,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .feat {
@@ -341,14 +358,9 @@ body {
 
 .feat p {
     font-size: 0.95rem;
-    color: var(--mid);
+    color: var(--text);
     margin: 0;
     line-height: 1.5;
-}
-
-.feat strong, .feat .highlight {
-    color: var(--accent);
-    font-weight: 500;
 }
 
 /* Mode cycle */
@@ -368,20 +380,20 @@ body {
     transform: translateY(0);
 }
 
-.vision {
+.savyn > p {
     font-size: 1rem;
-    color: var(--mid);
-    margin-bottom: 1.5rem;
+    color: var(--text);
+    margin-bottom: 1rem;
     line-height: 1.6;
 }
 
-.vision strong {
-    color: var(--text);
+.savyn strong {
+    color: var(--accent);
 }
 
 .final {
     font-size: 1.1rem;
-    color: var(--text);
+    margin-top: 1.5rem;
 }
 
 .handwritten {
@@ -407,13 +419,12 @@ body {
 }
 
 /* ============================================
-   CTA
+   CTA - Left aligned
    ============================================ */
 .cta {
-    padding: 2.5rem 0;
-    text-align: center;
+    padding: 2rem 0;
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(25px);
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -462,7 +473,6 @@ body {
 .footer {
     padding: 2rem 0;
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 0.75rem;
     flex-wrap: wrap;
@@ -491,9 +501,10 @@ body {
     .activity-icon { font-size: 1.5rem; }
     .activity-text { font-size: 1.15rem; }
     
-    .block p { font-size: 1.15rem; }
-    .block .punch { font-size: 1.25rem; }
-    .big-question { font-size: 1.75rem; }
+    .para-4 { font-size: 1.1rem; }
+    .para-2 { font-size: 1.15rem; }
+    
+    .big-question { font-size: 1.6rem; }
     
     .savyn-name { font-size: 3rem; }
     .feat { padding: 1rem; }
@@ -505,7 +516,7 @@ body {
    ============================================ */
 @media (min-width: 900px) {
     body {
-        max-width: 640px;
+        max-width: 600px;
         margin: 0 auto;
     }
     
@@ -513,8 +524,10 @@ body {
     
     .title { font-size: 2.75rem; }
     
-    .block p { font-size: 1.2rem; }
-    .big-question { font-size: 2rem; }
+    .para-4 { font-size: 1.15rem; }
+    .para-2 { font-size: 1.2rem; }
+    
+    .big-question { font-size: 1.85rem; }
     
     .savyn-name { font-size: 3.5rem; }
     
