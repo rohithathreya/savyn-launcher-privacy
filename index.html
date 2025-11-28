@@ -18,25 +18,23 @@
     <!-- Floating navigation -->
     <nav class="floating-nav">
         <div class="nav-logo">Savyn</div>
-        <a href="mailto:support@savynlabs.com?subject=Join%20Savyn%20Beta" class="nav-cta">Join Early Access</a>
+        <a href="mailto:support@savynlabs.com?subject=Join%20Savyn%20Beta" class="nav-cta">Get Early Access</a>
     </nav>
 
     <main class="container">
         
-        <!-- SECTION 1: The Second Brain Graveyard -->
+        <!-- SECTION 1: Your Phone is Already Half a Second Brain -->
         <section class="section hero" data-section="hero">
             <div class="hero-content">
-                <p class="section-label fade-in">The Second Brain Graveyard</p>
+                <p class="section-label fade-in">Your Phone is Already Half a Second Brain</p>
                 <h1 class="hero-title fade-in">
-                    <span class="hero-line">We've all installed</span>
-                    <span class="hero-line accent-line">that app.</span>
+                    <span class="hero-line">Your whole life already</span>
+                    <span class="hero-line">runs through</span>
+                    <span class="hero-line accent-line">your phone.</span>
                 </h1>
-                <p class="hero-subtitle fade-in-delay">
-                    The one that promised to finally "organize your life", "capture what matters", or "be your second brain".
-                </p>
             </div>
-            <div class="scroll-indicator fade-in-delay-2" onclick="document.querySelector('[data-section=reality]').scrollIntoView({behavior: 'smooth'})">
-                <span class="scroll-text">what happened next</span>
+            <div class="scroll-indicator fade-in-delay-2" data-target="phone-data">
+                <span class="scroll-text">think about it</span>
                 <div class="scroll-arrow">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                         <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -45,24 +43,55 @@
             </div>
         </section>
 
-        <!-- The Reality -->
-        <section class="section story-section" data-section="reality">
+        <!-- Phone Data Reality -->
+        <section class="section story-section" data-section="phone-data">
             <div class="story-container fade-in-scroll">
                 <div class="story-content centered">
-                    <div class="quality-badges">
-                        <span class="quality-badge">Some were genuinely brilliant.</span>
-                        <span class="quality-badge muted">Most were… fine.</span>
+                    <div class="phone-life-grid">
+                        <span class="life-tag">Wake-ups</span>
+                        <span class="life-tag">Messages</span>
+                        <span class="life-tag">Work pings</span>
+                        <span class="life-tag">Maps</span>
+                        <span class="life-tag">Money</span>
+                        <span class="life-tag">Food orders</span>
+                        <span class="life-tag highlight">Late-night rabbit holes</span>
                     </div>
-                    <p class="story-text large centered">
-                        Almost all ended the same way:
+                    <p class="story-text centered">
+                        It all goes through that one screen you unlock a <em>ridiculous</em> number of times a day.
+                    </p>
+                </div>
+            </div>
+            <div class="scroll-indicator" data-target="phone-advantage">
+                <span class="scroll-text">which means</span>
+                <div class="scroll-arrow">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Advantage -->
+        <section class="section story-section" data-section="phone-advantage">
+            <div class="story-container fade-in-scroll">
+                <div class="story-content centered">
+                    <p class="story-text">
+                        Your phone already has something most "second brain" tools have to beg for:
                     </p>
                     <p class="story-reveal">
-                        We stopped using them.
+                        Real, everyday data about how you actually live.
                     </p>
+                    <div class="data-examples">
+                        <p>What you open, when you open it</p>
+                        <p>What you bounce between</p>
+                        <p>What you always come back to</p>
+                        <p class="faded">What quietly fades out of your life</p>
+                    </div>
+                    <p class="conclusion-line">That's an incredible starting point.</p>
                 </div>
             </div>
-            <div class="scroll-indicator" onclick="document.querySelector('[data-section=reasons]').scrollIntoView({behavior: 'smooth'})">
-                <span class="scroll-text">sound familiar?</span>
+            <div class="scroll-indicator" data-target="my-problem">
+                <span class="scroll-text">but here's my story</span>
                 <div class="scroll-arrow">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                         <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -71,82 +100,55 @@
             </div>
         </section>
 
-        <!-- The Reasons -->
-        <section class="section story-section" data-section="reasons">
+        <!-- SECTION 2: Why Traditional Second Brains Didn't Stick -->
+        <section class="section story-section" data-section="my-problem">
             <div class="story-container fade-in-scroll">
                 <div class="story-content">
-                    <div class="reasons-visual">
-                        <div class="reason-card">
-                            <span class="reason-icon">⌨️</span>
-                            <p>One needed manual inputs for everything.</p>
-                        </div>
-                        <div class="reason-card">
-                            <span class="reason-icon">📚</span>
-                            <p>Another felt like after-school homework.</p>
-                        </div>
-                        <div class="reason-card highlight-card">
-                            <span class="reason-icon">📁</span>
-                            <p>Another got buried in a folder called <span class="folder-name">"Productivity (lol)"</span> that we never opened again.</p>
-                        </div>
-                    </div>
-                    <p class="pattern-conclusion">
-                        The pattern was clear:<br>
-                        <span class="emphasis-warm">Every "second brain" wanted more effort than our dopamine-addled monkey brain was willing to give.</span>
-                    </p>
-                </div>
-            </div>
-            <div class="scroll-indicator" onclick="document.querySelector('[data-section=pattern]').scrollIntoView({behavior: 'smooth'})">
-                <span class="scroll-text">but something stayed</span>
-                <div class="scroll-arrow">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 2: The One Thing We Never Churn From -->
-        <section class="section story-section" data-section="pattern">
-            <div class="story-container fade-in-scroll">
-                <div class="story-content centered">
-                    <p class="section-label">The One Thing We Never Churn From</p>
+                    <p class="section-label">Why Traditional Second Brains Didn't Stick (For Me)</p>
                     <p class="story-text">
-                        Through all those cycles of:
+                        I've tried the classic "second brain" options too:
                     </p>
-                    
-                    <!-- Vertical cycle visual -->
-                    <div class="cycle-visual-vertical">
-                        <div class="cycle-step-v">
-                            <span class="cycle-dot"></span>
-                            <span class="cycle-label">new tool</span>
+                    <p class="tools-tried">
+                        Notion setups, note-taking systems, PKMs, templates, you name it.
+                    </p>
+                    <p class="story-text">
+                        Some were genuinely brilliant. The problem was… <span class="emphasis-warm">me.</span>
+                    </p>
+                </div>
+            </div>
+            <div class="scroll-indicator" data-target="my-issues">
+                <span class="scroll-text">specifically</span>
+                <div class="scroll-arrow">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Issues -->
+        <section class="section story-section" data-section="my-issues">
+            <div class="story-container fade-in-scroll">
+                <div class="story-content">
+                    <div class="issues-list">
+                        <div class="issue-card">
+                            <p>I didn't always have the discipline to keep pouring data in</p>
                         </div>
-                        <div class="cycle-line"></div>
-                        <div class="cycle-step-v">
-                            <span class="cycle-dot"></span>
-                            <span class="cycle-label">honeymoon</span>
+                        <div class="issue-card">
+                            <p>My attention is more <span class="highlight-phrase">"dopamine monkey"</span> than <span class="muted-phrase">"bullet journal monk"</span></p>
                         </div>
-                        <div class="cycle-line"></div>
-                        <div class="cycle-step-v">
-                            <span class="cycle-dot faded"></span>
-                            <span class="cycle-label faded">guilt</span>
-                        </div>
-                        <div class="cycle-line faded"></div>
-                        <div class="cycle-step-v">
-                            <span class="cycle-dot faded"></span>
-                            <span class="cycle-label faded">uninstall</span>
+                        <div class="issue-card">
+                            <p>The tools lived in apps I had to <em>remember</em> to open</p>
                         </div>
                     </div>
-                    
-                    <p class="story-text emphasis-text">
-                        …one thing never left our hand:
-                    </p>
-                    <p class="story-reveal large">
-                        Our phone.
-                    </p>
+                    <div class="friction-block">
+                        <p>They were great once I was inside them.</p>
+                        <p class="emphasis">The friction was everything before that.</p>
+                    </div>
                 </div>
             </div>
-            <div class="scroll-indicator" onclick="document.querySelector('[data-section=phone-life]').scrollIntoView({behavior: 'smooth'})">
-                <span class="scroll-text">we use it for everything</span>
+            <div class="scroll-indicator" data-target="the-question">
+                <span class="scroll-text">so I asked</span>
                 <div class="scroll-arrow">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                         <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -155,88 +157,48 @@
             </div>
         </section>
 
-        <!-- Phone Life -->
-        <section class="section data-section" data-section="phone-life">
-            <div class="data-container fade-in-scroll">
-                <p class="data-intro">We use it for everything:</p>
-                
-                <div class="phone-uses-visual">
-                    <p class="phone-use-line italic">Waking up, staying up, scrolling to avoid both</p>
-                    <p class="phone-use-line">Health, finances, errands, work, side quests</p>
-                    <p class="phone-use-line">Food, flights, memes, breakups, makeups</p>
-                </div>
-                
-                <h3 class="data-heading">It quietly sees almost your entire life:</h3>
-                <ul class="data-list">
-                    <li class="data-item">
-                        <span class="data-icon">◐</span>
-                        <span>When you wake up and when you crash</span>
-                    </li>
-                    <li class="data-item">
-                        <span class="data-icon">◑</span>
-                        <span>Which apps you open, and in what order</span>
-                    </li>
-                    <li class="data-item">
-                        <span class="data-icon">◒</span>
-                        <span>Your hobbies, obsessions, and late-night rabbit holes</span>
-                    </li>
-                    <li class="data-item">
-                        <span class="data-icon">◓</span>
-                        <span>The restaurants you check, the books you look up, the articles you save <em class="aside">(and forget)</em></span>
-                    </li>
-                </ul>
-            </div>
-            <div class="scroll-indicator" onclick="document.querySelector('[data-section=dumb-phone]').scrollIntoView({behavior: 'smooth'})">
-                <span class="scroll-text">and yet…</span>
-                <div class="scroll-arrow">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-            </div>
-        </section>
-
-        <!-- Dumb Phone Insight -->
-        <section class="section insight-section" data-section="dumb-phone">
+        <!-- The Question -->
+        <section class="section insight-section" data-section="the-question">
             <div class="insight-container fade-in-scroll">
-                <p class="insight-prelude">And yet, with all that rich, personal data…</p>
-                <h2 class="insight-statement">
-                    Your phone is kind of <span class="highlight-warm">dumb.</span>
-                </h2>
-                <div class="dumb-reasons">
-                    <p class="dumb-reason">Each app hoards its own little island of data.</p>
-                    <p class="dumb-reason">Your home screen is just a static grid of icons.</p>
-                    <p class="dumb-reason emphasis">Nothing actually connects the dots about you.</p>
-                </div>
-            </div>
-            <div class="scroll-indicator" onclick="document.querySelector('[data-section=question]').scrollIntoView({behavior: 'smooth'})">
-                <span class="scroll-text">so we asked</span>
-                <div class="scroll-arrow">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 3: The Question -->
-        <section class="section insight-section" data-section="question">
-            <div class="insight-container fade-in-scroll">
-                <p class="section-label">So What If…</p>
-                <p class="insight-prelude">Instead of building yet another app that begs for your attention…</p>
+                <p class="insight-prelude">So instead of trying to fix my discipline, I asked a different question:</p>
                 <h2 class="insight-question">
-                    What if we upgraded<br>
-                    <span class="highlight-warm">the phone itself?</span>
+                    What if the second brain started from the one place I'm always in anyway —<br>
+                    <span class="highlight-warm">my phone?</span>
                 </h2>
-                <div class="not-list-centered">
-                    <p class="not-item">Not a separate "system" you have to remember to maintain.</p>
-                    <p class="not-item">Not another inbox that slowly becomes a <em>guilt museum</em>.</p>
-                </div>
-                <p class="just-statement">
-                    Just your default phone experience… <span class="highlight-soft">made smarter.</span>
-                </p>
             </div>
-            <div class="scroll-indicator" onclick="document.querySelector('[data-section=intro]').scrollIntoView({behavior: 'smooth'})">
+            <div class="scroll-indicator" data-target="phone-first">
+                <span class="scroll-text">here's the flip</span>
+                <div class="scroll-arrow">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Phone First, System Later -->
+        <section class="section story-section contrast-section" data-section="phone-first">
+            <div class="story-container fade-in-scroll">
+                <div class="story-content">
+                    <p class="section-label">Phone First, System Later</p>
+                    
+                    <div class="contrast-block old-way">
+                        <p class="contrast-label">Most tools say:</p>
+                        <p class="contrast-quote">"Here's a beautiful empty system. Now fill it with your life."</p>
+                    </div>
+                    
+                    <div class="contrast-block new-way">
+                        <p class="contrast-label">Savyn flips that:</p>
+                        <p class="contrast-quote">"You're already living your life on your phone.<br>Let me watch the patterns and grow into a brain around that."</p>
+                    </div>
+                    
+                    <div class="no-ceremony">
+                        <p>No ceremonies. No "today I will set up my second brain" ritual.</p>
+                        <p class="punchline">You just… use your phone. Savyn quietly starts connecting dots.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator" data-target="meet-savyn">
                 <span class="scroll-text">meet savyn</span>
                 <div class="scroll-arrow">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -247,26 +209,21 @@
         </section>
 
         <!-- SECTION 4: Meet Savyn -->
-        <section class="section product-intro" data-section="intro">
+        <section class="section product-intro" data-section="meet-savyn">
             <div class="intro-container fade-in-scroll">
                 <div class="intro-visual">
                     <div class="savyn-logo-large">
-                        <span class="logo-s">S</span>
-                        <span class="logo-rest">avyn</span>
+                        <span class="logo-s">S</span><span class="logo-rest">avyn</span>
                     </div>
-                    <p class="intro-tagline">Your phone as a second brain</p>
+                    <p class="intro-tagline">A private second brain that lives in your phone, not on a server.</p>
                 </div>
                 
                 <p class="intro-lead">
-                    Savyn turns your Android phone into a private, on-device second brain that actually understands you.
-                </p>
-                
-                <p class="intro-device-layer">
-                    It sits at the <span class="highlight-warm">device layer</span>, not as Yet Another App™:
+                    Savyn turns your Android home screen into a contextual layer that actually has some idea of what's going on.
                 </p>
             </div>
-            <div class="scroll-indicator" onclick="document.querySelector('[data-section=features]').scrollIntoView({behavior: 'smooth'})">
-                <span class="scroll-text">what it does</span>
+            <div class="scroll-indicator" data-target="features">
+                <span class="scroll-text">what it does today</span>
                 <div class="scroll-arrow">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                         <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -275,68 +232,69 @@
             </div>
         </section>
 
-        <!-- Features -->
+        <!-- Today's Features -->
         <section class="section features-section" data-section="features">
             <div class="features-container fade-in-scroll">
-                <h3 class="features-heading">What Savyn Does</h3>
+                <h3 class="features-heading">Today, Savyn:</h3>
                 
                 <div class="features-list">
                     <div class="feature-row">
                         <div class="feature-icon-wrapper">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
                                 <rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
                                 <rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
                                 <circle cx="17.5" cy="17.5" r="3.5" stroke="currentColor" stroke-width="1.5"/>
                             </svg>
                         </div>
-                        <p class="feature-text">Your home screen becomes a <span class="feature-highlight">contextual brain</span>, not just an icon grid</p>
+                        <p class="feature-text">Replaces the static icon grid with a <span class="feature-highlight">smarter, context-aware home screen</span></p>
                     </div>
                     
                     <div class="feature-row">
                         <div class="feature-icon-wrapper">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                             </svg>
                         </div>
-                        <p class="feature-text">Learns your patterns over time – what you use, when, and in what combinations</p>
+                        <p class="feature-text">Learns your patterns over time – what you use, when, and in what sequences</p>
                     </div>
                     
                     <div class="feature-row">
                         <div class="feature-icon-wrapper">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                                <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
-                        <p class="feature-text">Surfaces the right apps, actions, and routines when you're most likely to need them</p>
+                        <p class="feature-text">Surfaces the right apps, actions and routines when you're most likely to need them</p>
                     </div>
                     
                     <div class="feature-row">
                         <div class="feature-icon-wrapper">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                             </svg>
                         </div>
-                        <p class="feature-text">Drop in what matters – notes, links, lists, ideas – into the same brain</p>
+                        <p class="feature-text">Lets you add what matters on top – links, notes, lists, deep links, micro-routines – into the same brain</p>
                     </div>
                     
-                    <div class="feature-row highlight-row">
+                    <div class="feature-row">
                         <div class="feature-icon-wrapper">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                             </svg>
                         </div>
-                        <p class="feature-text">All of this runs <span class="feature-highlight privacy">private and on-device</span> by design</p>
+                        <p class="feature-text">Gently reduces those "let me just check one thing" spirals by making your intentional paths easier to start</p>
                     </div>
                 </div>
                 
                 <div class="features-footer-block">
-                    <p class="features-footer">The more you use your phone, the more Savyn quietly adapts around you.</p>
-                    <p class="features-subtext">No streaks. No dashboards yelling at you. Just a phone that gradually… <em>gets you.</em></p>
+                    <p class="features-footer">You don't have to "maintain a system".</p>
+                    <p class="features-subtext">You just live your normal phone life — Savyn reshapes itself around you.</p>
                 </div>
             </div>
-            <div class="scroll-indicator" onclick="document.querySelector('[data-section=privacy]').scrollIntoView({behavior: 'smooth'})">
-                <span class="scroll-text">why on-device?</span>
+            <div class="scroll-indicator" data-target="vision">
+                <span class="scroll-text">but the goal is bigger</span>
                 <div class="scroll-arrow">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                         <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -345,32 +303,77 @@
             </div>
         </section>
 
-        <!-- SECTION 5: Privacy -->
-        <section class="section privacy-section" data-section="privacy">
-            <div class="privacy-container fade-in-scroll">
-                <p class="section-label">Why On-Device Matters</p>
-                <p class="privacy-lead">A real second brain needs real data about you.</p>
-                <p class="privacy-contrast">That doesn't mean your life needs to go on a field trip to random servers.</p>
+        <!-- SECTION 5: Vision -->
+        <section class="section vision-section" data-section="vision">
+            <div class="vision-container fade-in-scroll">
+                <p class="section-label">From Smart Launcher to Full Second Brain</p>
                 
-                <div class="privacy-details">
-                    <p class="privacy-intro">Savyn runs its intelligence on your device, so:</p>
-                    <ul class="privacy-list">
-                        <li>Your patterns stay on your phone</li>
-                        <li>You don't need an account to get value</li>
-                        <li>You stay in control of what (if anything) ever leaves the device</li>
+                <div class="vision-now">
+                    <p class="vision-label">Right now, Savyn is:</p>
+                    <ul class="vision-list now">
+                        <li>A smarter home screen</li>
+                        <li>A private layer that understands context</li>
+                        <li>A place where your most important actions, apps and snippets live</li>
                     </ul>
                 </div>
                 
-                <div class="privacy-conclusion-block">
-                    <p class="privacy-conclusion">
-                        Your phone already knows a lot about you.
-                    </p>
-                    <p class="privacy-mission">
-                        Savyn's job is simple: <span class="highlight-warm">make it finally useful with that knowledge</span> – without you having to trade privacy for convenience.
-                    </p>
+                <div class="vision-future">
+                    <p class="vision-statement">Savyn is the foundation for an all-purpose second brain that lives in your phone.</p>
+                    
+                    <p class="vision-label">Over time, the same brain that:</p>
+                    <ul class="vision-list capabilities">
+                        <li>Sees your usage patterns</li>
+                        <li>Knows your timing and energy rhythms</li>
+                        <li>Understands what you tend to come back to</li>
+                    </ul>
+                    
+                    <p class="vision-label">…can also become the place where you:</p>
+                    <ul class="vision-list future">
+                        <li>Capture half-formed ideas without ceremony</li>
+                        <li>Save articles, recipes, references and find them when they're actually relevant</li>
+                        <li>Build small personal workflows on top of your existing apps</li>
+                        <li>Get nudged into the right mode (focus / admin / recharge) at the right time</li>
+                    </ul>
+                </div>
+                
+                <div class="vision-punchline">
+                    <p>No new "productivity religion".</p>
+                    <p class="highlight-text">Just your phone gradually evolving from "app grid" to "oh wait, this thing actually gets me".</p>
                 </div>
             </div>
-            <div class="scroll-indicator" onclick="document.querySelector('[data-section=cta]').scrollIntoView({behavior: 'smooth'})">
+            <div class="scroll-indicator" data-target="privacy">
+                <span class="scroll-text">and it's all private</span>
+                <div class="scroll-arrow">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: Privacy -->
+        <section class="section privacy-section" data-section="privacy">
+            <div class="privacy-container fade-in-scroll">
+                <p class="section-label">On-Device by Design</p>
+                <p class="privacy-lead">A real second brain needs real context about you.</p>
+                <p class="privacy-contrast">That doesn't mean your life should sit on someone else's server.</p>
+                
+                <div class="privacy-details">
+                    <p class="privacy-intro">Savyn keeps its intelligence on your device, so:</p>
+                    <ul class="privacy-list">
+                        <li>Your patterns stay on your phone</li>
+                        <li>You can get value without creating an account</li>
+                        <li>You stay in control of what, if anything, ever leaves the device</li>
+                    </ul>
+                </div>
+                
+                <div class="no-judgment">
+                    <p>Savyn isn't here to judge what you do on your phone.</p>
+                    <p class="muted">It doesn't care if it's deep work, dumb memes, or something in between.</p>
+                    <p class="conclusion">It just sees patterns and tries to be useful.</p>
+                </div>
+            </div>
+            <div class="scroll-indicator" data-target="cta">
                 <span class="scroll-text">get early access</span>
                 <div class="scroll-arrow">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -380,42 +383,41 @@
             </div>
         </section>
 
-        <!-- SECTION 6: CTA -->
+        <!-- SECTION 7: CTA -->
         <section class="section cta-section" data-section="cta">
             <div class="cta-container fade-in-scroll">
                 <p class="section-label">Early Access</p>
-                <h2 class="cta-title">Savyn is in active development.<br>You're seeing it very early.</h2>
+                <h2 class="cta-title">Savyn is in active development.<br>You're seeing it early on purpose.</h2>
                 
                 <div class="expectations">
                     <div class="expectation-card">
                         <span class="expectation-icon">⚡</span>
-                        <p>You'll watch it evolve fast</p>
-                    </div>
-                    <div class="expectation-card">
-                        <span class="expectation-icon">💬</span>
-                        <p>Your feedback can directly shape what this second brain becomes</p>
+                        <p>It will evolve fast</p>
                     </div>
                     <div class="expectation-card">
                         <span class="expectation-icon">🔧</span>
-                        <p>Some edges will be rough — we treat that as training data, not failure</p>
+                        <p>Some edges will be rough (we treat that as training data, not failure)</p>
+                    </div>
+                    <div class="expectation-card">
+                        <span class="expectation-icon">💬</span>
+                        <p>Your feedback will directly shape what this "phone as a second brain" becomes</p>
                     </div>
                 </div>
                 
                 <div class="final-pitch">
-                    <p>If traditional "second brain" apps felt like too much work, Savyn is our counter-proposal:</p>
-                    <p class="pitch-highlight">Start from the one thing you already use all day – your phone – and let it grow into the second brain you always wished it had.</p>
+                    <p>If you've ever bounced off traditional second brain apps because they felt like work, Savyn is our counter-proposal:</p>
+                    <p class="pitch-highlight">Start from the one thing you already use all day – your phone – and let it grow into the brain you always wished it had.</p>
                 </div>
                 
                 <a href="mailto:support@savynlabs.com?subject=Join%20Savyn%20Beta" class="cta-button">
-                    <span>Join the Android beta</span>
+                    <span>Get early access</span>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                         <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </a>
-                <p class="cta-note">Android 8.0+ • 100% Private • Zero Data Collection</p>
                 
                 <p class="ios-note">
-                    (And if you're reading this on iOS and mildly offended, don't worry — we hear you 😉)
+                    Android only for now. iOS folks, you can still yell at us — it genuinely helps with prioritising what to build next.
                 </p>
             </div>
         </section>
@@ -438,25 +440,22 @@
     </main>
 
     <script>
-        // Smooth scroll with easing
+        // Fast, smooth scroll with optimized easing
         function smoothScrollTo(target) {
-            const targetPosition = target.getBoundingClientRect().top;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
             const startPosition = window.pageYOffset;
-            const distance = targetPosition;
-            const duration = 1200;
+            const distance = targetPosition - startPosition;
+            const duration = 800; // Faster
             let start = null;
 
-            const easeInOutQuart = (t) => {
-                return t < 0.5 
-                    ? 8 * t * t * t * t 
-                    : 1 - Math.pow(-2 * t + 2, 4) / 2;
-            };
+            // Snappier easing
+            const easeOutQuint = (t) => 1 - Math.pow(1 - t, 5);
 
             function animation(currentTime) {
                 if (start === null) start = currentTime;
                 const timeElapsed = currentTime - start;
                 const progress = Math.min(timeElapsed / duration, 1);
-                const ease = easeInOutQuart(progress);
+                const ease = easeOutQuint(progress);
                 
                 window.scrollTo(0, startPosition + distance * ease);
                 
@@ -468,25 +467,22 @@
             requestAnimationFrame(animation);
         }
 
-        // Scroll indicator clicks
+        // Scroll indicator clicks - using data attributes now
         document.querySelectorAll('.scroll-indicator').forEach(indicator => {
             indicator.addEventListener('click', function(e) {
                 e.preventDefault();
-                const onclickAttr = this.getAttribute('onclick');
-                const match = onclickAttr.match(/\[data-section=([^\]]+)\]/);
-                if (match) {
-                    const targetSection = document.querySelector(`[data-section=${match[1]}]`);
-                    if (targetSection) {
-                        smoothScrollTo(targetSection);
-                    }
+                const targetId = this.getAttribute('data-target');
+                const targetSection = document.querySelector(`[data-section="${targetId}"]`);
+                if (targetSection) {
+                    smoothScrollTo(targetSection);
                 }
             });
         });
 
-        // Intersection Observer for fade-in animations
+        // Faster Intersection Observer
         const observerOptions = {
-            threshold: 0.15,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0.1,
+            rootMargin: '0px 0px -30px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -494,10 +490,10 @@
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
                     
-                    // Staggered animation for list items
-                    const items = entry.target.querySelectorAll('.data-item, .feature-row, .expectation-card, .reason-card, .cycle-step-v, .dumb-reason');
+                    // Faster staggered animation
+                    const items = entry.target.querySelectorAll('.data-item, .feature-row, .expectation-card, .issue-card, .life-tag, .vision-list li');
                     items.forEach((item, index) => {
-                        item.style.transitionDelay = `${index * 0.1}s`;
+                        item.style.transitionDelay = `${index * 0.05}s`; // Faster stagger
                         item.classList.add('visible');
                     });
                 }
@@ -531,8 +527,8 @@
             const hero = document.querySelector('.hero-content');
             const scrolled = window.pageYOffset;
             if (hero && scrolled < window.innerHeight) {
-                hero.style.transform = `translateY(${scrolled * 0.3}px)`;
-                hero.style.opacity = 1 - (scrolled / window.innerHeight) * 0.5;
+                hero.style.transform = `translateY(${scrolled * 0.25}px)`;
+                hero.style.opacity = 1 - (scrolled / window.innerHeight) * 0.6;
             }
         }, { passive: true });
     </script>
