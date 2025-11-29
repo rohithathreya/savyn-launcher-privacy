@@ -95,14 +95,131 @@
     </footer>
 
     <script>
-        // Scroll observer for text blocks
+        // ============================================
+        // Network Background Animation
+        // ============================================
+        const canvas = document.getElementById('network-bg');
+        const ctx = canvas.getContext('2d');
+        
+        let nodes = [];
+        let connections = [];
+        let animationProgress = 0;
+        const nodeCount = 60;
+        const connectionDistance = 150;
+        
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        
+        function createNodes() {
+            nodes = [];
+            for (let i = 0; i < nodeCount; i++) {
+                nodes.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    vx: (Math.random() - 0.5) * 0.3,
+                    vy: (Math.random() - 0.5) * 0.3,
+                    radius: Math.random() * 2 + 1,
+                    originX: -100 + (Math.random() * 200), // Start from left
+                    delay: Math.random() * 2 // Staggered entry
+                });
+            }
+        }
+        
+        function updateNodes() {
+            animationProgress += 0.008;
+            
+            nodes.forEach((node, i) => {
+                // Expand from left animation
+                const expandProgress = Math.min(1, Math.max(0, animationProgress - node.delay) * 0.5);
+                const targetX = node.originX + (node.x - node.originX);
+                
+                if (expandProgress < 1) {
+                    node.currentX = node.originX + (node.x - node.originX) * easeOutQuart(expandProgress);
+                    node.currentY = canvas.height / 2 + (node.y - canvas.height / 2) * easeOutQuart(expandProgress);
+                } else {
+                    // Float around after expanded
+                    node.x += node.vx;
+                    node.y += node.vy;
+                    
+                    // Bounce off edges softly
+                    if (node.x < 0 || node.x > canvas.width) node.vx *= -1;
+                    if (node.y < 0 || node.y > canvas.height) node.vy *= -1;
+                    
+                    node.currentX = node.x;
+                    node.currentY = node.y;
+                }
+            });
+        }
+        
+        function easeOutQuart(t) {
+            return 1 - Math.pow(1 - t, 4);
+        }
+        
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw connections
+            ctx.strokeStyle = 'rgba(212, 175, 55, 0.15)';
+            ctx.lineWidth = 0.5;
+            
+            for (let i = 0; i < nodes.length; i++) {
+                for (let j = i + 1; j < nodes.length; j++) {
+                    const dx = (nodes[i].currentX || nodes[i].x) - (nodes[j].currentX || nodes[j].x);
+                    const dy = (nodes[i].currentY || nodes[i].y) - (nodes[j].currentY || nodes[j].y);
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (dist < connectionDistance) {
+                        const opacity = (1 - dist / connectionDistance) * 0.2;
+                        ctx.strokeStyle = `rgba(212, 175, 55, ${opacity})`;
+                        ctx.beginPath();
+                        ctx.moveTo(nodes[i].currentX || nodes[i].x, nodes[i].currentY || nodes[i].y);
+                        ctx.lineTo(nodes[j].currentX || nodes[j].x, nodes[j].currentY || nodes[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            
+            // Draw nodes
+            nodes.forEach(node => {
+                const x = node.currentX || node.x;
+                const y = node.currentY || node.y;
+                
+                ctx.beginPath();
+                ctx.arc(x, y, node.radius, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(212, 175, 55, 0.4)';
+                ctx.fill();
+            });
+        }
+        
+        function animate() {
+            updateNodes();
+            draw();
+            requestAnimationFrame(animate);
+        }
+        
+        // Initialize
+        resize();
+        createNodes();
+        animate();
+        
+        window.addEventListener('resize', () => {
+            resize();
+            createNodes();
+            animationProgress = 3; // Skip intro on resize
+        });
+
+        // ============================================
+        // Scroll Observer
+        // ============================================
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
                 }
             });
-        }, { threshold: 0.3 });
+        }, { threshold: 0.2 });
 
         document.querySelectorAll('.text-block').forEach(el => observer.observe(el));
 
