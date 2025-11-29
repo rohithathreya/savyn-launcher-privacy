@@ -1,12 +1,15 @@
-<meta name="description" content="Savyn – Your phone as a second brain. Private. Encrypted. On-device.">
-<title>Savyn – The Extension of Your Mind</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Savyn – Your phone as a second brain. Private. Encrypted. On-device.">
+    <title>Savyn – The Extension of Your Mind</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300;400;500;600&display=swap"
-    rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -91,7 +94,22 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
-</body>
+    <script>
+        // Scroll observer for text blocks
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.3 });
 
+        document.querySelectorAll('.text-block').forEach(el => observer.observe(el));
+
+        // CTA button scroll
+        document.getElementById('top-cta')?.addEventListener('click', () => {
+            document.getElementById('signup-section')?.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
 </html>
