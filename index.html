@@ -75,10 +75,22 @@
         <section class="footer-cta" id="signup-section">
             <p>Ready to reclaim your attention?</p>
 
-            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="email-form">
-                <input type="email" name="email" placeholder="Enter your email" required>
-                <button type="submit">Early Access</button>
+            <form id="beta-form" class="email-form">
+                <input type="email" id="email-input" name="email" placeholder="Enter your email" required>
+                <button type="submit" id="submit-btn">Join Beta</button>
             </form>
+
+            <!-- Success state (hidden by default) -->
+            <div id="success-state" class="success-state hidden">
+                <p class="success-message">🎉 You're in! Check your email, then:</p>
+                <a id="play-opt-in-btn" href="#" target="_blank" class="play-btn">
+                    Open Google Play to Join Beta
+                </a>
+                <p class="success-note">If Play says "not a tester yet", wait 2-3 minutes and try again.</p>
+            </div>
+
+            <!-- Error state (hidden by default) -->
+            <p id="error-message" class="error-message hidden"></p>
         </section>
 
     </main>
@@ -226,6 +238,59 @@
         // CTA button scroll
         document.getElementById('top-cta')?.addEventListener('click', () => {
             document.getElementById('signup-section')?.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // ============================================
+        // Beta Signup Form
+        // ============================================
+        const API_URL = 'https://savyn-beta-api.savynlabs.workers.dev';
+
+        const betaForm = document.getElementById('beta-form');
+        const emailInput = document.getElementById('email-input');
+        const submitBtn = document.getElementById('submit-btn');
+        const successState = document.getElementById('success-state');
+        const playOptInBtn = document.getElementById('play-opt-in-btn');
+        const errorMessage = document.getElementById('error-message');
+
+        betaForm?.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = emailInput.value.trim();
+            if (!email) return;
+
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Joining...';
+            errorMessage.classList.add('hidden');
+
+            try {
+                const response = await fetch(`${API_URL}/join-beta`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email })
+                });
+
+                const data = await response.json();
+
+                if (data.ok) {
+                    // Success! Show the opt-in button
+                    betaForm.classList.add('hidden');
+                    successState.classList.remove('hidden');
+                    playOptInBtn.href = data.optInUrl;
+                } else {
+                    // Show error
+                    errorMessage.textContent = data.error || 'Something went wrong. Please try again.';
+                    errorMessage.classList.remove('hidden');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Join Beta';
+                }
+            } catch (error) {
+                console.error('Signup error:', error);
+                errorMessage.textContent = 'Network error. Please check your connection and try again.';
+                errorMessage.classList.remove('hidden');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Join Beta';
+            }
         });
     </script>
 </body>

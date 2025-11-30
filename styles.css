@@ -322,6 +322,67 @@ a {
     transform: translateY(-1px);
 }
 
+.email-form button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ============================================
+   Beta Signup States
+   ============================================ */
+
+.hidden {
+    display: none !important;
+}
+
+.success-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.success-message {
+    font-size: 1.3rem;
+    color: var(--text) !important;
+    font-weight: 500;
+}
+
+.play-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #00C853 0%, #00E676 100%);
+    color: #000 !important;
+    padding: 1rem 2rem;
+    border-radius: 100px;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 200, 83, 0.3);
+}
+
+.play-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 30px rgba(0, 200, 83, 0.4);
+}
+
+.success-note {
+    font-size: 0.9rem;
+    color: var(--text-dim) !important;
+    font-style: italic;
+}
+
+.error-message {
+    color: #FF6B6B;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+}
+
 .footer {
     padding: 3rem 2rem;
     border-top: 1px solid var(--border);
