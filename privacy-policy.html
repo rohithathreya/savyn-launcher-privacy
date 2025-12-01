@@ -3,127 +3,513 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Savyn Launcher - Privacy Policy</title>
+    <meta name="description" content="Savyn Privacy Policy – Your data stays on your device. Always.">
+    <title>Privacy Policy – Savyn</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --bg: #0a0a0f;
+            --bg-elevated: #12121a;
+            --text: #f0f0f5;
+            --text-dim: #8888a0;
+            --text-muted: #55556a;
+            --accent: #8b5cf6;
+            --accent-bright: #a78bfa;
+            --accent-subtle: rgba(139, 92, 246, 0.1);
+            --border: rgba(255, 255, 255, 0.08);
+            --border-glow: rgba(139, 92, 246, 0.3);
+            --glass: rgba(255, 255, 255, 0.03);
+            
+            --display: 'Instrument Serif', serif;
+            --sans: 'Space Grotesk', sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--sans);
+            font-size: 17px;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Gradient overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse 80% 50% at 50% 0%, rgba(139, 92, 246, 0.06) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        /* Nav */
+        .nav {
+            position: fixed;
+            top: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            padding: 0.6rem 1.25rem;
+            background: rgba(18, 18, 26, 0.9);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            z-index: 100;
+        }
+        
+        .nav a {
+            font-family: var(--display);
+            font-size: 1.2rem;
+            color: var(--text);
+            text-decoration: none;
+        }
+        
+        .nav a:hover {
+            color: var(--accent-bright);
+        }
+        
+        /* Container */
+        .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
-            color: #333;
-            background: #f9f9f9;
+            padding: 8rem 2rem 6rem;
         }
-        .container {
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        
+        /* Hero */
+        .policy-hero {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid var(--border);
         }
-        h1 {
-            color: #1a1a1a;
-            border-bottom: 3px solid #4CAF50;
-            padding-bottom: 10px;
+        
+        .policy-hero h1 {
+            font-family: var(--display);
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 400;
+            margin-bottom: 1rem;
+            background: linear-gradient(to bottom, var(--text) 0%, var(--text-dim) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        h3 {
-            color: #2c3e50;
-            margin-top: 30px;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        li {
-            margin: 8px 0;
-        }
-        .effective-date {
-            color: #666;
+        
+        .policy-hero .tagline {
+            font-size: 1.2rem;
+            color: var(--accent);
             font-style: italic;
-            margin-bottom: 30px;
+            font-family: var(--display);
         }
-        .contact {
-            background: #f0f0f0;
-            padding: 15px;
-            border-radius: 5px;
-            margin-top: 30px;
+        
+        .effective-date {
+            display: inline-block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            background: var(--glass);
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            border: 1px solid var(--border);
+            margin-top: 2rem;
         }
-        strong {
-            color: #2c3e50;
+        
+        /* Sections */
+        section {
+            margin-bottom: 3rem;
+        }
+        
+        h2 {
+            font-family: var(--display);
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: var(--text);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        h3 {
+            font-family: var(--sans);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent-bright);
+            margin: 1.5rem 0 0.75rem;
+        }
+        
+        p {
+            color: var(--text-dim);
+            margin-bottom: 1rem;
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        
+        li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dim);
+        }
+        
+        li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.6em;
+            width: 6px;
+            height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+        
+        li strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+        
+        /* TL;DR Box */
+        .tldr {
+            background: var(--accent-subtle);
+            border: 1px solid var(--border-glow);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .tldr h2 {
+            border: none;
+            padding: 0;
+            margin-bottom: 1.5rem;
+            color: var(--accent-bright);
+        }
+        
+        .tldr-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .tldr-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+        
+        .tldr-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .tldr-text {
+            font-size: 0.95rem;
+            color: var(--text);
+        }
+        
+        .tldr-text span {
+            display: block;
+            color: var(--text-dim);
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+        }
+        
+        /* Cards */
+        .card {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .card h3 {
+            margin-top: 0;
+        }
+        
+        /* Contact */
+        .contact-section {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        .contact-section h2 {
+            border: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-section p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-section a {
+            color: var(--accent-bright);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .contact-section a:hover {
+            color: var(--accent);
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border);
+            margin-top: 4rem;
+        }
+        
+        .footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .footer a:hover {
+            color: var(--accent);
+        }
+        
+        .footer span {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            display: block;
+            margin-top: 1rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 7rem 1.5rem 4rem;
+            }
+            
+            .policy-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .tldr {
+                padding: 1.5rem;
+            }
+            
+            .tldr-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .contact-section {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
+    <nav class="nav">
+        <a href="/">← Savyn</a>
+    </nav>
+
     <div class="container">
-        <h1>Savyn Launcher – Privacy Policy</h1>
-        <p class="effective-date"><strong>Effective Date:</strong> November 7, 2025</p>
+        <header class="policy-hero">
+            <h1>Privacy Policy</h1>
+            <p class="tagline">Your data stays on your device. Always.</p>
+            <span class="effective-date">Last updated: December 1, 2025</span>
+        </header>
 
-        <h3>Who we are</h3>
-        <p>Savyn Launcher ("Savyn," "we," "our," "app") is an Android launcher developed by Savyn Labs that personalizes your home screen on-device using artificial intelligence.</p>
+        <!-- TL;DR -->
+        <div class="tldr">
+            <h2>TL;DR</h2>
+            <div class="tldr-grid">
+                <div class="tldr-item">
+                    <span class="tldr-icon">🔒</span>
+                    <div class="tldr-text">
+                        100% On-Device
+                        <span>All processing happens locally</span>
+                    </div>
+                </div>
+                <div class="tldr-item">
+                    <span class="tldr-icon">🚫</span>
+                    <div class="tldr-text">
+                        No Data Collection
+                        <span>We can't see your data</span>
+                    </div>
+                </div>
+                <div class="tldr-item">
+                    <span class="tldr-icon">📵</span>
+                    <div class="tldr-text">
+                        No Ads or Tracking
+                        <span>Your attention is yours</span>
+                    </div>
+                </div>
+                <div class="tldr-item">
+                    <span class="tldr-icon">🗑️</span>
+                    <div class="tldr-text">
+                        You Control Deletion
+                        <span>Uninstall = everything gone</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <h3>What data the app accesses (on your device)</h3>
-        <p>To power core launcher features, Savyn accesses the following on your device:</p>
-        <ul>
-            <li><strong>Installed apps list</strong> – to display your app drawer and shortcuts.</li>
-            <li><strong>App usage events</strong> (requires "Usage Access" permission) – app opens, close times and durations, and screen on/off events, to build on-device suggestions and insights.</li>
-            <li><strong>App categories</strong> – categories we derive from the installed apps list to organize your drawer and insights.</li>
-        </ul>
+        <!-- Who We Are -->
+        <section>
+            <h2>Who We Are</h2>
+            <p>
+                Savyn is an Android launcher developed by <strong>Savyn Labs</strong> that transforms your phone 
+                into a personalized second brain — entirely on-device using on-device AI.
+            </p>
+        </section>
 
-        <h3>How we use the data</h3>
-        <ul>
-            <li><strong>Personalization & insights:</strong> Show the right apps at the right time and your screen-time patterns.</li>
-            <li><strong>On-device ML only:</strong> Recommendations are computed locally using machine learning; no data leaves your device.</li>
-        </ul>
+        <!-- What We Access -->
+        <section>
+            <h2>What Data Savyn Accesses</h2>
+            <p>To power its intelligence, Savyn accesses the following <em>on your device only</em>:</p>
+            
+            <div class="card">
+                <h3>📱 Installed Apps</h3>
+                <p>To display your app drawer, create shortcuts, and understand your app ecosystem.</p>
+            </div>
+            
+            <div class="card">
+                <h3>📊 App Usage Patterns</h3>
+                <p>
+                    With your permission (Usage Access), Savyn learns when you use apps, for how long, 
+                    and in what sequences — to surface the right app at the right time.
+                </p>
+            </div>
+            
+            <div class="card">
+                <h3>📝 Your Saves</h3>
+                <p>
+                    Screenshots, notes, bookmarks, and links you save to Savyn. These stay on your 
+                    device and are indexed locally for intelligent retrieval.
+                </p>
+            </div>
+        </section>
 
-        <h3>Data sharing & transfers</h3>
-        <ul>
-            <li>We <strong>do not</strong> send your data to our servers.</li>
-            <li>We <strong>do not</strong> share data with third parties.</li>
-            <li>We <strong>do not</strong> sell data.</li>
-        </ul>
+        <!-- How We Use It -->
+        <section>
+            <h2>How It's Used</h2>
+            <ul>
+                <li><strong>Smart Predictions:</strong> Show the right apps, notes, and actions when you need them</li>
+                <li><strong>Pattern Recognition:</strong> Learn your routines to reduce friction in your day</li>
+                <li><strong>Contextual Retrieval:</strong> Surface saved content when it's relevant</li>
+                <li><strong>On-Device ML Only:</strong> All intelligence runs locally via TensorFlow Lite</li>
+            </ul>
+        </section>
 
-        <h3>Storage & security</h3>
-        <ul>
-            <li>Data stays locally on your device in an encrypted database.</li>
-            <li>No cloud backup by Savyn. (If you enable system-level backups, your OS/vendor policies may apply.)</li>
-        </ul>
+        <!-- What We Don't Do -->
+        <section>
+            <h2>What We Don't Do</h2>
+            <ul>
+                <li><strong>No server uploads:</strong> Your data never leaves your phone</li>
+                <li><strong>No third-party sharing:</strong> We don't share data with anyone</li>
+                <li><strong>No selling data:</strong> We have nothing to sell — we don't have your data</li>
+                <li><strong>No cloud training:</strong> Our models don't learn from your usage</li>
+                <li><strong>No advertising:</strong> No ads, no tracking pixels, no analytics SDKs</li>
+            </ul>
+        </section>
 
-        <h3>Retention & deletion</h3>
-        <ul>
-            <li>Data persists on your device until you delete it.</li>
-            <li>You can erase all local data by uninstalling the app.</li>
-        </ul>
+        <!-- What We Don't Collect -->
+        <section>
+            <h2>What We Don't Access</h2>
+            <p>Savyn does not access, collect, or process:</p>
+            <ul>
+                <li>Personal identifiers (name, email, phone number)</li>
+                <li>Location data</li>
+                <li>Financial information</li>
+                <li>Photos, videos, or files (except what you explicitly save)</li>
+                <li>Contacts or calendar events</li>
+                <li>Device identifiers for advertising</li>
+                <li>Browsing history or app content</li>
+            </ul>
+        </section>
 
-        <h3>Permissions we request & why</h3>
-        <ul>
-            <li><strong>Usage Access (PACKAGE_USAGE_STATS):</strong> Required to read app usage events for on-device suggestions and insights. This is a sensitive permission that Android protects; we only use it locally and never transmit this data.</li>
-        </ul>
+        <!-- Security -->
+        <section>
+            <h2>Storage & Security</h2>
+            <ul>
+                <li><strong>Local encrypted database:</strong> All data stored in Android's secure app storage</li>
+                <li><strong>No cloud backup by us:</strong> If you use system backups, your OS vendor's policies apply</li>
+                <li><strong>Sandboxed execution:</strong> Other apps cannot access Savyn's data</li>
+            </ul>
+        </section>
 
-        <h3>What we do NOT collect</h3>
-        <ul>
-            <li>Personal identifiers (name, email, phone number)</li>
-            <li>Location data</li>
-            <li>Financial information</li>
-            <li>Photos, videos, or files</li>
-            <li>Contacts or calendar events</li>
-            <li>Device identifiers for advertising</li>
-        </ul>
+        <!-- Permissions -->
+        <section>
+            <h2>Permissions We Request</h2>
+            <div class="card">
+                <h3>Usage Access (PACKAGE_USAGE_STATS)</h3>
+                <p>
+                    This sensitive permission lets Savyn see app usage events. Android protects this 
+                    permission specially — you must explicitly grant it in Settings. We use it solely 
+                    for on-device learning and never transmit this data.
+                </p>
+            </div>
+        </section>
 
-        <h3>Third-party components</h3>
-        <ul>
-            <li><strong>TensorFlow Lite:</strong> On-device machine learning library. All processing happens locally; no data is sent to Google or any third party.</li>
-        </ul>
+        <!-- Deletion -->
+        <section>
+            <h2>Your Control</h2>
+            <ul>
+                <li><strong>Delete anytime:</strong> Uninstalling Savyn removes all local data instantly</li>
+                <li><strong>Clear learning:</strong> Reset Savyn's learned patterns from within the app</li>
+                <li><strong>No account required:</strong> Full functionality without signing up for anything</li>
+            </ul>
+        </section>
 
-        <h3>Children's privacy</h3>
-        <p>Savyn isn't directed to children under 13 and doesn't knowingly collect personal data from children.</p>
+        <!-- Children -->
+        <section>
+            <h2>Children's Privacy</h2>
+            <p>
+                Savyn is not directed at children under 13 and does not knowingly process data 
+                from children. Since we don't collect any personal data, this concern is largely moot.
+            </p>
+        </section>
 
-        <h3>Changes to this policy</h3>
-        <p>We may update this policy as needed. Changes will be displayed in-app and at the URL where this policy is hosted.</p>
+        <!-- Changes -->
+        <section>
+            <h2>Policy Updates</h2>
+            <p>
+                If we update this policy, we'll note the changes here and update the date above. 
+                Significant changes will be announced in the app.
+            </p>
+        </section>
 
-        <div class="contact">
-            <h3>Contact</h3>
-            <p><strong>Email:</strong> support@savynlabs.com<br>
-            <strong>Developer:</strong> Savyn Labs</p>
+        <!-- Contact -->
+        <div class="contact-section">
+            <h2>Questions?</h2>
+            <p>We're happy to clarify anything about how Savyn handles your data.</p>
+            <p><a href="mailto:support@savynlabs.com">support@savynlabs.com</a></p>
         </div>
     </div>
+
+    <footer class="footer">
+        <a href="/">← Back to Savyn</a>
+        <span>© 2025 Savyn Labs</span>
+    </footer>
 </body>
 </html>
-
