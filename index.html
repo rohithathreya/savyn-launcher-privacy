@@ -60,43 +60,36 @@
 
             <!-- Block 2: The Insight -->
             <div class="story-block">
-                <p class="story-text reveal-text">
-                    Before any journal, productivity app, or even your friends — 
-                    <em class="glow-text">it knows what you're doing, where, and why.</em>
+                <p class="story-text">
+                    Before any journal, productivity app, or even your friends — <em>it knows what you're doing, where, and why.</em>
                 </p>
             </div>
 
             <!-- Block 3: The Question -->
-            <div class="story-block center-block">
-                <p class="story-text large-text">
-                    Instead of just passing this learning to other apps...
-                </p>
-                <p class="story-accent">
-                    What if it began to <span class="shimmer">personalize your experience?</span>
+            <div class="story-block">
+                <p class="story-text">
+                    Instead of just running your apps and letting them collect your data — <em>what if it began personalizing your experience?</em>
                 </p>
             </div>
 
             <!-- Block 4: The Vision -->
-            <div class="story-block glass-card">
-                <div class="card-glow"></div>
-                <p class="card-text">
-                    Unify its learnings from across all your apps, notes, 
-                    screenshots, bookmarks into <strong>one real-time brain</strong>
+            <div class="story-block">
+                <p class="story-text">
+                    Unify its learnings from across all your apps, notes, screenshots, bookmarks into <em>one real-time brain.</em>
                 </p>
             </div>
 
             <!-- Block 5: The Dream -->
             <div class="story-block">
-                <p class="story-text reveal-text">
-                    A second brain that <em>"gets"</em> you — and always knows 
-                    <span class="highlight-box">the right things at the right time</span>
+                <p class="story-text">
+                    A second brain that <em>"gets"</em> you — and always knows the right things at the right time.
                 </p>
             </div>
 
             <!-- Block 6: The Unlock -->
-            <div class="story-block center-block feature-block">
-                <p class="story-text">This unlocks uniquely different experiences —</p>
-                <div class="cycling-container experience-cycle large-cycle">
+            <div class="story-block center-block">
+                <p class="story-text">This unlocks a wide range of experiences —</p>
+                <div class="cycling-container experience-cycle">
                     <span class="cycle-item active">thought companion</span>
                     <span class="cycle-item">productivity booster</span>
                     <span class="cycle-item">wellness upgrade</span>
@@ -109,39 +102,20 @@
             </div>
 
             <!-- Block 7: The Question -->
-            <div class="story-block hero-block">
+            <div class="story-block center-block">
                 <h2 class="big-question">
                     What'll you do with<br>
-                    <span class="text-gradient">your second brain?</span>
+                    <em>your second brain?</em>
                 </h2>
             </div>
         </section>
 
         <!-- The Privacy Pledge -->
         <section class="privacy-pledge">
-            <div class="pledge-container">
-                <div class="pledge-badge">Our Promise</div>
-                <div class="pledge-grid">
-                    <div class="pledge-item">
-                        <div class="pledge-icon">🚫</div>
-                        <h3>No Ads</h3>
-                        <p>Your attention is yours</p>
-                    </div>
-                    <div class="pledge-item">
-                        <div class="pledge-icon">👁️‍🗨️</div>
-                        <h3>No Tracking</h3>
-                        <p>We don't follow you around</p>
-                    </div>
-                    <div class="pledge-item">
-                        <div class="pledge-icon">☁️</div>
-                        <h3>No Cloud Training</h3>
-                        <p>Your data never leaves your phone</p>
-                    </div>
-                </div>
-                <p class="pledge-statement">
-                    Your data stays on your device. Encrypted. Private.<br>
-                    <span class="signature">We don't sell it because we don't even see it.</span>
-                </p>
+            <div class="pledge-card">
+                <h2>No ads. <br>No tracking. <br>No cloud training.</h2>
+                <p>Your data stays on your device. Encrypted. Private. We don't sell it because we don't even see it.</p>
+                <p class="signature">This is the only way.</p>
             </div>
         </section>
 
@@ -196,7 +170,7 @@
         
         function resize() {
             canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight * 3; // Extend for scroll
+            canvas.height = window.innerHeight * 3;
         }
         
         function createNeurons() {
@@ -246,20 +220,17 @@
                 if (neuron.y < 0 || neuron.y > canvas.height) neuron.vy *= -1;
             });
             
-            // Update pulses
             pulses = pulses.filter(pulse => {
                 pulse.progress += pulse.speed;
                 return pulse.progress < 1;
             });
             
-            // Occasionally create new pulse
             if (Math.random() < 0.03) createPulse();
         }
         
         function draw() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             
-            // Draw synapses (connections)
             for (let i = 0; i < neurons.length; i++) {
                 for (let j = i + 1; j < neurons.length; j++) {
                     const dx = neurons[i].x - neurons[j].x;
@@ -267,7 +238,7 @@
                     const dist = Math.sqrt(dx * dx + dy * dy);
                     
                     if (dist < synapseDistance) {
-                        const opacity = (1 - dist / synapseDistance) * 0.15;
+                        const opacity = (1 - dist / synapseDistance) * 0.12;
                         ctx.strokeStyle = `rgba(139, 92, 246, ${opacity})`;
                         ctx.lineWidth = 0.5;
                         ctx.beginPath();
@@ -278,12 +249,11 @@
                 }
             }
             
-            // Draw pulses
             pulses.forEach(pulse => {
                 const x = pulse.startX + (pulse.endX - pulse.startX) * pulse.progress;
                 const y = pulse.startY + (pulse.endY - pulse.startY) * pulse.progress;
                 const gradient = ctx.createRadialGradient(x, y, 0, x, y, 8);
-                gradient.addColorStop(0, 'rgba(139, 92, 246, 0.8)');
+                gradient.addColorStop(0, 'rgba(139, 92, 246, 0.6)');
                 gradient.addColorStop(1, 'rgba(139, 92, 246, 0)');
                 ctx.fillStyle = gradient;
                 ctx.beginPath();
@@ -291,15 +261,14 @@
                 ctx.fill();
             });
             
-            // Draw neurons
             neurons.forEach(neuron => {
                 const pulseSize = Math.sin(neuron.pulse) * 0.3 + 1;
                 const gradient = ctx.createRadialGradient(
                     neuron.x, neuron.y, 0,
                     neuron.x, neuron.y, neuron.radius * 2 * pulseSize
                 );
-                gradient.addColorStop(0, 'rgba(139, 92, 246, 0.6)');
-                gradient.addColorStop(0.5, 'rgba(139, 92, 246, 0.2)');
+                gradient.addColorStop(0, 'rgba(139, 92, 246, 0.5)');
+                gradient.addColorStop(0.5, 'rgba(139, 92, 246, 0.15)');
                 gradient.addColorStop(1, 'rgba(139, 92, 246, 0)');
                 
                 ctx.fillStyle = gradient;
@@ -307,7 +276,7 @@
                 ctx.arc(neuron.x, neuron.y, neuron.radius * 2 * pulseSize, 0, Math.PI * 2);
                 ctx.fill();
                 
-                ctx.fillStyle = 'rgba(139, 92, 246, 0.8)';
+                ctx.fillStyle = 'rgba(139, 92, 246, 0.6)';
                 ctx.beginPath();
                 ctx.arc(neuron.x, neuron.y, neuron.radius * pulseSize, 0, Math.PI * 2);
                 ctx.fill();
@@ -350,7 +319,6 @@
         // Scroll Animations
         // ============================================
         const storyBlocks = document.querySelectorAll('.story-block');
-        const pledgeItems = document.querySelectorAll('.pledge-item');
         
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -358,13 +326,9 @@
                     entry.target.classList.add('visible');
                 }
             });
-        }, { threshold: 0.2, rootMargin: '-50px' });
+        }, { threshold: 0.3, rootMargin: '-30px' });
 
         storyBlocks.forEach(el => observer.observe(el));
-        pledgeItems.forEach((el, i) => {
-            el.style.transitionDelay = `${i * 0.15}s`;
-            observer.observe(el);
-        });
 
         // CTA button scroll
         document.getElementById('top-cta')?.addEventListener('click', () => {
@@ -389,7 +353,6 @@
             const email = emailInput.value.trim();
             if (!email) return;
 
-            // Show loading state
             submitBtn.disabled = true;
             submitBtn.textContent = 'Joining...';
             errorMessage.classList.add('hidden');
@@ -404,12 +367,10 @@
                 const data = await response.json();
 
                 if (data.ok) {
-                    // Success! Show the opt-in button
                     betaForm.classList.add('hidden');
                     successState.classList.remove('hidden');
                     playOptInBtn.href = data.optInUrl;
                 } else {
-                    // Show error
                     errorMessage.textContent = data.error || 'Something went wrong. Please try again.';
                     errorMessage.classList.remove('hidden');
                     submitBtn.disabled = false;
