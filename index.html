@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,19 +9,21 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+    <div class="noise-overlay"></div>
+    <canvas id="neural-bg"></canvas>
 
     <nav class="nav-pill">
         <a href="/" class="logo">Savyn</a>
         <span class="nav-divider"></span>
         <button id="top-cta" class="nav-btn">Early Access</button>
     </nav>
-
-    <canvas id="neural-bg"></canvas>
 
     <main>
         <!-- Hero: The Unlock -->
@@ -31,7 +34,7 @@
                     <span class="line">already on your phone.</span>
                 </h1>
                 <p class="hero-subtitle">
-                    <span class="unlock-text">Just unlock it</span><span class="blink-cursor">.</span>
+                    <span class="unlock-text">Just unlock it</span><span class="blink-cursor"></span>
                 </p>
             </div>
             <div class="scroll-hint">
@@ -44,69 +47,56 @@
             <!-- Block 1: The Reality -->
             <div class="story-block">
                 <p class="story-text">
-                    So much of our lives runs through our phone —
+                    A lot of our lives runs through our phones — both work & play.
                 </p>
                 <div class="cycling-container modes-cycle">
-                    <span class="cycle-item active">plan vacations</span>
-                    <span class="cycle-item">order food</span>
-                    <span class="cycle-item">talk to friends</span>
-                    <span class="cycle-item">watch movies</span>
-                    <span class="cycle-item">listen to music</span>
-                    <span class="cycle-item">track workouts</span>
-                    <span class="cycle-item">book cabs</span>
-                    <span class="cycle-item">save ideas</span>
+                    <span class="cycle-item active">Plan vacations</span>
+                    <span class="cycle-item">Order food</span>
+                    <span class="cycle-item">Talk to friends</span>
+                    <span class="cycle-item">Watch movies</span>
+                    <span class="cycle-item">Listen to music</span>
+                    <span class="cycle-item">Track workouts</span>
+                    <span class="cycle-item">Book cabs</span>
+                    <span class="cycle-item">Save ideas</span>
                 </div>
             </div>
 
             <!-- Block 2: The Insight -->
             <div class="story-block">
                 <p class="story-text">
-                    Before any journal, productivity app, or even your friends — <em>it knows what you're doing, where, and why.</em>
+                    Before any journal, productivity app, or even your friends — <em>it knows what you're doing &
+                        why.</em>
                 </p>
             </div>
 
             <!-- Block 3: The Question -->
             <div class="story-block">
                 <p class="story-text">
-                    Instead of just running your apps and letting them collect your data — <em>what if it began personalizing your experience?</em>
+                    Instead of just letting apps collect this data, what if it began <em>to personalize your
+                        experience?</em>
                 </p>
             </div>
 
             <!-- Block 4: The Vision -->
             <div class="story-block">
                 <p class="story-text">
-                    Unify its learnings from across all your apps, notes, screenshots, bookmarks into <em>one real-time brain.</em>
+                    Unify learnings from across all your apps, notes, and bookmarks into one real-time brain.
                 </p>
             </div>
 
-            <!-- Block 5: The Dream -->
+            <!-- Block 5: The Unlock -->
             <div class="story-block">
-                <p class="story-text">
-                    A second brain that <em>"gets"</em> you — and always knows the right things at the right time.
-                </p>
-            </div>
-
-            <!-- Block 6: The Unlock -->
-            <div class="story-block center-block">
-                <p class="story-text">This unlocks a wide range of experiences —</p>
-                <div class="cycling-container experience-cycle">
-                    <span class="cycle-item active">thought companion</span>
-                    <span class="cycle-item">productivity booster</span>
-                    <span class="cycle-item">wellness upgrade</span>
-                    <span class="cycle-item">better connectedness</span>
-                    <span class="cycle-item">creative catalyst</span>
-                    <span class="cycle-item">focus guardian</span>
-                    <span class="cycle-item">memory keeper</span>
-                    <span class="cycle-item">decision helper</span>
+                <p class="story-text text-center">Get your unique phone experience.</p>
+                <div class="experience-cycling exp-cycle">
+                    <span class="exp-item active">Thought Companion</span>
+                    <span class="exp-item">Productivity Booster</span>
+                    <span class="exp-item">Wellness Upgrade</span>
+                    <span class="exp-item">Better Connectedness</span>
+                    <span class="exp-item">Creative Catalyst</span>
+                    <span class="exp-item">Focus Guardian</span>
+                    <span class="exp-item">Memory Keeper</span>
+                    <span class="exp-item">Decision Helper</span>
                 </div>
-            </div>
-
-            <!-- Block 7: The Question -->
-            <div class="story-block center-block">
-                <h2 class="big-question">
-                    What'll you do with<br>
-                    <em>your second brain?</em>
-                </h2>
             </div>
         </section>
 
@@ -114,15 +104,16 @@
         <section class="privacy-pledge">
             <div class="pledge-card">
                 <h2>No ads. <br>No tracking. <br>No cloud training.</h2>
-                <p>Your data stays on your device. Encrypted. Private. We don't sell it because we don't even see it.</p>
+                <p>Your data stays on your device. Encrypted. Private. We don't sell it because we don't even see it.
+                </p>
                 <p class="signature">This is the only way.</p>
             </div>
         </section>
 
         <!-- Final CTA: Email Form -->
         <section class="footer-cta" id="signup-section">
-            <h2 class="cta-headline">Ready to unlock it?</h2>
-            <p class="cta-subtext">Join the early access. Android first.</p>
+            <h2 class="cta-headline">Join closed beta.</h2>
+            <p class="cta-subtext">Android first.</p>
 
             <form id="beta-form" class="email-form">
                 <input type="email" id="email-input" name="email" placeholder="Enter your email" required>
@@ -155,235 +146,7 @@
         </div>
     </footer>
 
-    <script>
-        // ============================================
-        // Neural Background Animation
-        // ============================================
-        const canvas = document.getElementById('neural-bg');
-        const ctx = canvas.getContext('2d');
-        
-        let neurons = [];
-        let synapses = [];
-        let pulses = [];
-        const neuronCount = 80;
-        const synapseDistance = 180;
-        
-        function resize() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight * 3;
-        }
-        
-        function createNeurons() {
-            neurons = [];
-            for (let i = 0; i < neuronCount; i++) {
-                neurons.push({
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height,
-                    vx: (Math.random() - 0.5) * 0.4,
-                    vy: (Math.random() - 0.5) * 0.4,
-                    radius: Math.random() * 2.5 + 1.5,
-                    pulse: Math.random() * Math.PI * 2,
-                    pulseSpeed: 0.02 + Math.random() * 0.02
-                });
-            }
-        }
-        
-        function createPulse() {
-            if (neurons.length < 2) return;
-            const startNeuron = neurons[Math.floor(Math.random() * neurons.length)];
-            const endNeuron = neurons[Math.floor(Math.random() * neurons.length)];
-            if (startNeuron === endNeuron) return;
-            
-            const dx = endNeuron.x - startNeuron.x;
-            const dy = endNeuron.y - startNeuron.y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-            
-            if (dist < synapseDistance * 1.5) {
-                pulses.push({
-                    startX: startNeuron.x,
-                    startY: startNeuron.y,
-                    endX: endNeuron.x,
-                    endY: endNeuron.y,
-                    progress: 0,
-                    speed: 0.02 + Math.random() * 0.02
-                });
-            }
-        }
-        
-        function updateNeurons() {
-            neurons.forEach(neuron => {
-                neuron.x += neuron.vx;
-                neuron.y += neuron.vy;
-                neuron.pulse += neuron.pulseSpeed;
-                
-                if (neuron.x < 0 || neuron.x > canvas.width) neuron.vx *= -1;
-                if (neuron.y < 0 || neuron.y > canvas.height) neuron.vy *= -1;
-            });
-            
-            pulses = pulses.filter(pulse => {
-                pulse.progress += pulse.speed;
-                return pulse.progress < 1;
-            });
-            
-            if (Math.random() < 0.03) createPulse();
-        }
-        
-        function draw() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            for (let i = 0; i < neurons.length; i++) {
-                for (let j = i + 1; j < neurons.length; j++) {
-                    const dx = neurons[i].x - neurons[j].x;
-                    const dy = neurons[i].y - neurons[j].y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-                    
-                    if (dist < synapseDistance) {
-                        const opacity = (1 - dist / synapseDistance) * 0.12;
-                        ctx.strokeStyle = `rgba(139, 92, 246, ${opacity})`;
-                        ctx.lineWidth = 0.5;
-                        ctx.beginPath();
-                        ctx.moveTo(neurons[i].x, neurons[i].y);
-                        ctx.lineTo(neurons[j].x, neurons[j].y);
-                        ctx.stroke();
-                    }
-                }
-            }
-            
-            pulses.forEach(pulse => {
-                const x = pulse.startX + (pulse.endX - pulse.startX) * pulse.progress;
-                const y = pulse.startY + (pulse.endY - pulse.startY) * pulse.progress;
-                const gradient = ctx.createRadialGradient(x, y, 0, x, y, 8);
-                gradient.addColorStop(0, 'rgba(139, 92, 246, 0.6)');
-                gradient.addColorStop(1, 'rgba(139, 92, 246, 0)');
-                ctx.fillStyle = gradient;
-                ctx.beginPath();
-                ctx.arc(x, y, 8, 0, Math.PI * 2);
-                ctx.fill();
-            });
-            
-            neurons.forEach(neuron => {
-                const pulseSize = Math.sin(neuron.pulse) * 0.3 + 1;
-                const gradient = ctx.createRadialGradient(
-                    neuron.x, neuron.y, 0,
-                    neuron.x, neuron.y, neuron.radius * 2 * pulseSize
-                );
-                gradient.addColorStop(0, 'rgba(139, 92, 246, 0.5)');
-                gradient.addColorStop(0.5, 'rgba(139, 92, 246, 0.15)');
-                gradient.addColorStop(1, 'rgba(139, 92, 246, 0)');
-                
-                ctx.fillStyle = gradient;
-                ctx.beginPath();
-                ctx.arc(neuron.x, neuron.y, neuron.radius * 2 * pulseSize, 0, Math.PI * 2);
-                ctx.fill();
-                
-                ctx.fillStyle = 'rgba(139, 92, 246, 0.6)';
-                ctx.beginPath();
-                ctx.arc(neuron.x, neuron.y, neuron.radius * pulseSize, 0, Math.PI * 2);
-                ctx.fill();
-            });
-        }
-        
-        function animate() {
-            updateNeurons();
-            draw();
-            requestAnimationFrame(animate);
-        }
-        
-        resize();
-        createNeurons();
-        animate();
-        
-        window.addEventListener('resize', () => {
-            resize();
-            createNeurons();
-        });
-
-        // ============================================
-        // Cycling Text Animation
-        // ============================================
-        function initCycling(container, interval = 2000) {
-            const items = container.querySelectorAll('.cycle-item');
-            let current = 0;
-            
-            setInterval(() => {
-                items[current].classList.remove('active');
-                current = (current + 1) % items.length;
-                items[current].classList.add('active');
-            }, interval);
-        }
-        
-        document.querySelectorAll('.modes-cycle').forEach(c => initCycling(c, 1800));
-        document.querySelectorAll('.experience-cycle').forEach(c => initCycling(c, 2200));
-
-        // ============================================
-        // Scroll Animations
-        // ============================================
-        const storyBlocks = document.querySelectorAll('.story-block');
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.3, rootMargin: '-30px' });
-
-        storyBlocks.forEach(el => observer.observe(el));
-
-        // CTA button scroll
-        document.getElementById('top-cta')?.addEventListener('click', () => {
-            document.getElementById('signup-section')?.scrollIntoView({ behavior: 'smooth' });
-        });
-
-        // ============================================
-        // Beta Signup Form (KEEP INTACT)
-        // ============================================
-        const API_URL = 'https://savyn-beta-api.savynlabs.workers.dev';
-
-        const betaForm = document.getElementById('beta-form');
-        const emailInput = document.getElementById('email-input');
-        const submitBtn = document.getElementById('submit-btn');
-        const successState = document.getElementById('success-state');
-        const playOptInBtn = document.getElementById('play-opt-in-btn');
-        const errorMessage = document.getElementById('error-message');
-
-        betaForm?.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const email = emailInput.value.trim();
-            if (!email) return;
-
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Joining...';
-            errorMessage.classList.add('hidden');
-
-            try {
-                const response = await fetch(`${API_URL}/join-beta`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email })
-                });
-
-                const data = await response.json();
-
-                if (data.ok) {
-                    betaForm.classList.add('hidden');
-                    successState.classList.remove('hidden');
-                    playOptInBtn.href = data.optInUrl;
-                } else {
-                    errorMessage.textContent = data.error || 'Something went wrong. Please try again.';
-                    errorMessage.classList.remove('hidden');
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Join Beta';
-                }
-            } catch (error) {
-                console.error('Signup error:', error);
-                errorMessage.textContent = 'Network error. Please check your connection and try again.';
-                errorMessage.classList.remove('hidden');
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Join Beta';
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
+
 </html>

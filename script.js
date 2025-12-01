@@ -1,170 +1,255 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ==========================================
-    // Intersection Observer for Text Reveals
-    // ==========================================
+    // ============================================
+    // Neural Background Animation (Golden & Vibrant)
+    // ============================================
+    const canvas = document.getElementById('neural-bg');
+    if (canvas) {
+        const ctx = canvas.getContext('2d');
+
+        let neurons = [];
+        let pulses = [];
+
+        // More vibrant config with golden colors
+        const config = {
+            neuronCount: window.innerWidth < 768 ? 50 : 100, // More particles
+            synapseDistance: window.innerWidth < 768 ? 150 : 220,
+            baseSpeed: 0.2,
+            pulseChance: 0.025 // More frequent pulses
+        };
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            createNeurons();
+        }
+
+        function createNeurons() {
+            neurons = [];
+            for (let i = 0; i < config.neuronCount; i++) {
+                neurons.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    vx: (Math.random() - 0.5) * config.baseSpeed,
+                    vy: (Math.random() - 0.5) * config.baseSpeed,
+                    radius: Math.random() * 2 + 1.5, // Slightly larger
+                    pulse: Math.random() * Math.PI * 2,
+                    pulseSpeed: 0.015 + Math.random() * 0.015
+                });
+            }
+        }
+
+        function createPulse() {
+            if (neurons.length < 2) return;
+            const startNeuron = neurons[Math.floor(Math.random() * neurons.length)];
+            const endNeuron = neurons[Math.floor(Math.random() * neurons.length)];
+            if (startNeuron === endNeuron) return;
+
+            const dx = endNeuron.x - startNeuron.x;
+            const dy = endNeuron.y - startNeuron.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < config.synapseDistance * 1.5) {
+                pulses.push({
+                    startX: startNeuron.x,
+                    startY: startNeuron.y,
+                    endX: endNeuron.x,
+                    endY: endNeuron.y,
+                    progress: 0,
+                    speed: 0.02 + Math.random() * 0.015
+                });
+            }
+        }
+
+        function updateNeurons() {
+            neurons.forEach(neuron => {
+                neuron.x += neuron.vx;
+                neuron.y += neuron.vy;
+                neuron.pulse += neuron.pulseSpeed;
+
+                if (neuron.x < 0 || neuron.x > canvas.width) neuron.vx *= -1;
+                if (neuron.y < 0 || neuron.y > canvas.height) neuron.vy *= -1;
+            });
+
+            pulses = pulses.filter(pulse => {
+                pulse.progress += pulse.speed;
+                return pulse.progress < 1;
+            });
+
+            if (Math.random() < config.pulseChance) createPulse();
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw connections with golden glow
+            ctx.lineWidth = 1;
+            for (let i = 0; i < neurons.length; i++) {
+                for (let j = i + 1; j < neurons.length; j++) {
+                    const dx = neurons[i].x - neurons[j].x;
+                    const dy = neurons[i].y - neurons[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < config.synapseDistance) {
+                        const opacity = (1 - dist / config.synapseDistance) * 0.15;
+                        ctx.strokeStyle = `rgba(245, 195, 68, ${opacity})`; // Golden lines
+                        ctx.beginPath();
+                        ctx.moveTo(neurons[i].x, neurons[i].y);
+                        ctx.lineTo(neurons[j].x, neurons[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            // Draw Pulses with golden glow
+            pulses.forEach(pulse => {
+                const x = pulse.startX + (pulse.endX - pulse.startX) * pulse.progress;
+                const y = pulse.startY + (pulse.endY - pulse.startY) * pulse.progress;
+
+                const gradient = ctx.createRadialGradient(x, y, 0, x, y, 10);
+                gradient.addColorStop(0, 'rgba(255, 217, 90, 0.8)');
+                gradient.addColorStop(0.5, 'rgba(245, 195, 68, 0.4)');
+                gradient.addColorStop(1, 'rgba(245, 195, 68, 0)');
+                ctx.fillStyle = gradient;
+                ctx.beginPath();
+                ctx.arc(x, y, 10, 0, Math.PI * 2);
+                ctx.fill();
+            });
+
+            // Draw Neurons with golden glow
+            neurons.forEach(neuron => {
+                const pulseSize = Math.sin(neuron.pulse) * 0.3 + 1;
+
+                // Outer glow
+                const gradient = ctx.createRadialGradient(neuron.x, neuron.y, 0, neuron.x, neuron.y, neuron.radius * pulseSize * 3);
+                gradient.addColorStop(0, 'rgba(255, 217, 90, 0.6)');
+                gradient.addColorStop(0.5, 'rgba(245, 195, 68, 0.2)');
+                gradient.addColorStop(1, 'rgba(245, 195, 68, 0)');
+                ctx.fillStyle = gradient;
+                ctx.beginPath();
+                ctx.arc(neuron.x, neuron.y, neuron.radius * pulseSize * 3, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Inner core
+                ctx.fillStyle = `rgba(255, 217, 90, ${0.5 + Math.sin(neuron.pulse) * 0.3})`;
+                ctx.beginPath();
+                ctx.arc(neuron.x, neuron.y, neuron.radius * pulseSize, 0, Math.PI * 2);
+                ctx.fill();
+            });
+        }
+
+        function animate() {
+            updateNeurons();
+            draw();
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+        animate();
+    }
+
+    // ============================================
+    // Cycling Text Animation
+    // ============================================
+    function initCycling(container, interval = 2500) {
+        if (!container) return;
+        const items = container.querySelectorAll('.cycle-item, .exp-item');
+        if (items.length === 0) return;
+
+        let current = 0;
+
+        setInterval(() => {
+            items[current].classList.remove('active');
+            current = (current + 1) % items.length;
+            items[current].classList.add('active');
+        }, interval);
+    }
+
+    const cyclingContainer = document.querySelector('.modes-cycle');
+    initCycling(cyclingContainer);
+
+    // Initialize experience cycling
+    const expCyclingContainer = document.querySelector('.exp-cycle');
+    initCycling(expCyclingContainer, 2000); // Slightly faster
+
+    // ============================================
+    // Scroll Animations
+    // ============================================
     const observerOptions = {
-        root: null,
-        rootMargin: '-20% 0px -20% 0px',
-        threshold: 0.1
+        threshold: 0.2,
+        rootMargin: '0px 0px -50px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-            } else {
-                entry.target.classList.remove('active');
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    const textBlocks = document.querySelectorAll('.text-block');
-    textBlocks.forEach(block => observer.observe(block));
+    document.querySelectorAll('.story-block').forEach(el => observer.observe(el));
 
-
-    // ==========================================
-    // Network Background Animation (Spreading Wave)
-    // ==========================================
-    const canvas = document.getElementById('network-bg');
-    const ctx = canvas.getContext('2d');
-
-    let width, height;
-    let particles = [];
-
-    // Configuration
-    const particleCount = window.innerWidth < 768 ? 40 : 80;
-    const connectionDistance = window.innerWidth < 768 ? 100 : 150;
-
-    // Wave Logic
-    let waveRadius = 0;
-    const waveSpeed = 15; // Speed of the spread
-    const maxWaveRadius = Math.sqrt(window.innerWidth ** 2 + window.innerHeight ** 2) + 100; // Diagonal + buffer
-
-    const particleSpeed = 0.3;
-    const particleColor = 'rgba(212, 175, 55, 0.6)'; // Gold
-    const lineColorBase = 'rgba(212, 175, 55, '; // Gold lines
-
-    function resize() {
-        width = window.innerWidth;
-        height = window.innerHeight;
-        canvas.width = width;
-        canvas.height = height;
-    }
-
-    class Particle {
-        constructor() {
-            this.x = Math.random() * width;
-            this.y = Math.random() * height;
-            this.vx = (Math.random() - 0.5) * particleSpeed;
-            this.vy = (Math.random() - 0.5) * particleSpeed;
-            this.size = Math.random() * 2 + 1.5;
-            this.active = false; // Becomes active when wave hits it
-        }
-
-        update() {
-            // Only move if active
-            if (this.active) {
-                this.x += this.vx;
-                this.y += this.vy;
-
-                // Bounce off edges
-                if (this.x < 0 || this.x > width) this.vx *= -1;
-                if (this.y < 0 || this.y > height) this.vy *= -1;
-            } else {
-                // Check if wave reached this particle
-                const distFromTopLeft = Math.sqrt(this.x ** 2 + this.y ** 2);
-                if (distFromTopLeft < waveRadius) {
-                    this.active = true;
-                }
-            }
-        }
-
-        draw() {
-            if (!this.active) return;
-
-            ctx.fillStyle = particleColor;
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fill();
-        }
-    }
-
-    function initParticles() {
-        particles = [];
-        for (let i = 0; i < particleCount; i++) {
-            particles.push(new Particle());
-        }
-        waveRadius = 0; // Reset wave on resize/init
-    }
-
-    function animate() {
-        ctx.clearRect(0, 0, width, height);
-
-        // Expand wave
-        if (waveRadius < maxWaveRadius) {
-            waveRadius += waveSpeed;
-        }
-
-        // Update and draw particles
-        particles.forEach(p => {
-            p.update();
-            p.draw();
-        });
-
-        // Draw connections
-        for (let i = 0; i < particles.length; i++) {
-            if (!particles[i].active) continue;
-
-            for (let j = i + 1; j < particles.length; j++) {
-                if (!particles[j].active) continue;
-
-                const dx = particles[i].x - particles[j].x;
-                const dy = particles[i].y - particles[j].y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-
-                if (distance < connectionDistance) {
-                    // Opacity based on distance
-                    const opacity = (1 - distance / connectionDistance) * 0.4;
-
-                    ctx.beginPath();
-                    ctx.strokeStyle = lineColorBase + opacity + ')';
-                    ctx.lineWidth = 1;
-                    ctx.moveTo(particles[i].x, particles[i].y);
-                    ctx.lineTo(particles[j].x, particles[j].y);
-                    ctx.stroke();
-                }
-            }
-        }
-
-        requestAnimationFrame(animate);
-    }
-
-    // Initialize
-    window.addEventListener('resize', () => {
-        resize();
-        initParticles();
+    // Smooth Scroll for CTA
+    document.getElementById('top-cta')?.addEventListener('click', () => {
+        document.getElementById('signup-section')?.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => {
+            document.getElementById('email-input')?.focus();
+        }, 800);
     });
 
-    resize();
-    initParticles();
-    animate();
+    // ============================================
+    // Beta Signup Form (CRITICAL LOGIC)
+    // ============================================
+    const API_URL = 'https://savyn-beta-api.savynlabs.workers.dev';
 
+    const betaForm = document.getElementById('beta-form');
+    const emailInput = document.getElementById('email-input');
+    const submitBtn = document.getElementById('submit-btn');
+    const successState = document.getElementById('success-state');
+    const playOptInBtn = document.getElementById('play-opt-in-btn');
+    const errorMessage = document.getElementById('error-message');
 
-    // ==========================================
-    // Scroll to Form
-    // ==========================================
-    const topBtn = document.getElementById('top-cta');
-    const signupSection = document.getElementById('signup-section');
-    const emailInput = document.querySelector('input[name="email"]');
+    if (betaForm) {
+        betaForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
 
-    if (topBtn && signupSection) {
-        topBtn.addEventListener('click', () => {
-            signupSection.scrollIntoView({ behavior: 'smooth' });
-            setTimeout(() => {
-                if (emailInput) emailInput.focus();
-            }, 800);
+            const email = emailInput.value.trim();
+            if (!email) return;
+
+            submitBtn.disabled = true;
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.textContent = 'Joining...';
+            errorMessage.classList.add('hidden');
+
+            try {
+                const response = await fetch(`${API_URL}/join-beta`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email })
+                });
+
+                const data = await response.json();
+
+                if (data.ok) {
+                    betaForm.classList.add('hidden');
+                    successState.classList.remove('hidden');
+                    if (data.optInUrl) {
+                        playOptInBtn.href = data.optInUrl;
+                    }
+                } else {
+                    throw new Error(data.error || 'Something went wrong');
+                }
+            } catch (error) {
+                console.error('Signup error:', error);
+                errorMessage.textContent = error.message || 'Network error. Please try again.';
+                errorMessage.classList.remove('hidden');
+
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalBtnText;
+            }
         });
     }
-
 });
