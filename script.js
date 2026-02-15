@@ -2,6 +2,21 @@
  * Savyn Website
  */
 
+// Cycling words
+const words = ['Work.', 'Exercise.', 'Relationships.', 'Meals.', 'Hobbies.', 'Chilling.'];
+const cycleEl = document.getElementById('cycle-word');
+let wordIndex = 0;
+
+if (cycleEl) {
+    setInterval(() => {
+        wordIndex = (wordIndex + 1) % words.length;
+        cycleEl.style.animation = 'none';
+        cycleEl.offsetHeight; // trigger reflow
+        cycleEl.textContent = words[wordIndex];
+        cycleEl.style.animation = 'cycleIn 0.5s ease';
+    }, 2000);
+}
+
 // Beta signup form
 const form = document.getElementById('beta-form');
 const emailInput = document.getElementById('email-input');
