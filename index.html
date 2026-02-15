@@ -4,125 +4,130 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Savyn — Give every part of you a seat at the table</title>
-    <meta name="description" content="An Android launcher that transforms your phone into a council of AI companions. Each one learns about a different part of your life and helps you be who you want to be.">
-    <meta name="theme-color" content="#0a0a0f">
-
-    <!-- Open Graph -->
+    <meta name="description" content="An Android launcher that transforms your phone into a council of AI companions. Each one learns about a different part of your life.">
+    <meta name="theme-color" content="#08080c">
+    
     <meta property="og:title" content="Savyn — Give every part of you a seat at the table">
-    <meta property="og:description" content="An Android launcher that transforms your phone into a council of AI companions.">
+    <meta property="og:description" content="An Android launcher with a council of AI companions.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://savynlabs.com">
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="noise"></div>
 
+    <!-- ════════════════════════════════════════════════════════════════ -->
     <!-- HERO -->
+    <!-- ════════════════════════════════════════════════════════════════ -->
     <section class="hero">
+        <div class="hero-bg"></div>
         <div class="hero-content">
-            <h1 class="hero-headline">Your life has so many<br>moving pieces.</h1>
-            <p class="hero-subline">Connect them. Give them all a seat at the table.</p>
-            <a href="#beta" class="hero-cta">Join the Beta</a>
+            <h1>Your life has so many<br>moving pieces.</h1>
+            <p class="hero-sub">Connect them. <span>Give them all a seat at the table.</span></p>
+            <a href="#beta" class="btn-primary">Join the Beta</a>
         </div>
-        <div class="scroll-hint"><span></span></div>
+        <div class="scroll-cue">
+            <svg width="20" height="32" viewBox="0 0 20 32" fill="none">
+                <rect x="1" y="1" width="18" height="30" rx="9" stroke="currentColor" stroke-width="1.5"/>
+                <circle class="scroll-dot" cx="10" cy="10" r="3" fill="currentColor"/>
+            </svg>
+        </div>
     </section>
 
-    <!-- TENSION -->
+    <!-- ════════════════════════════════════════════════════════════════ -->
+    <!-- THE TENSION -->
+    <!-- ════════════════════════════════════════════════════════════════ -->
     <section class="tension">
         <div class="container">
-            <p class="tension-lead">
-                Work. Exercise. Relationships. Meals. Hobbies. Chilling.
+            <p class="big-text">
+                <span>Work.</span> <span>Exercise.</span> <span>Relationships.</span><br>
+                <span>Meals.</span> <span>Hobbies.</span> <span>Chilling.</span>
             </p>
-            <p class="tension-body">
-                Sometimes you ace them all. Sometimes you wish you did.<br>
-                <em>It's hard.</em>
+            <p class="tension-followup">
+                Sometimes you ace them all.<br>
+                Sometimes you wish you did. <em>It's hard.</em>
             </p>
         </div>
     </section>
 
-    <!-- POSSIBILITY -->
+    <!-- ════════════════════════════════════════════════════════════════ -->
+    <!-- THE POSSIBILITY -->
+    <!-- ════════════════════════════════════════════════════════════════ -->
     <section class="possibility">
         <div class="container">
-            <p class="possibility-question">
-                What if AI could understand the subtle nuances of each of these parts perfectly well —
-            </p>
-            <p class="possibility-answer">
-                and enable you to be the person you want to be?
-            </p>
+            <p class="possibility-q">What if AI could understand the subtle nuances of each of these parts —</p>
+            <p class="possibility-a">and help you be the person you want to be?</p>
         </div>
     </section>
 
-    <!-- COUNCIL -->
-    <section class="council" id="council">
+    <!-- ════════════════════════════════════════════════════════════════ -->
+    <!-- THE COUNCIL -->
+    <!-- ════════════════════════════════════════════════════════════════ -->
+    <section class="council">
         <div class="container">
-            <p class="section-label">Welcome to your council</p>
-            <h2 class="section-title">
-                Savyn transforms your phone into a council of members, each responsible for one part of your life.
-            </h2>
-            <p class="council-body">
-                The council members understand your aspirations, thoughts, what you want and when. Then they work together to coordinate all these parts for you.
-            </p>
-
-            <div class="council-visual">
-                <div class="council-table"></div>
-                <div class="council-members">
-                    <div class="member"><img src="avatars/savyn_work.webp" alt="Work"><span>Work</span></div>
-                    <div class="member"><img src="avatars/savyn_food.webp" alt="Food"><span>Food</span></div>
-                    <div class="member"><img src="avatars/savyn_fitness.webp" alt="Fitness"><span>Fitness</span></div>
-                    <div class="member savyn-main"><img src="avatars/savyn_savyn.webp" alt="Savyn"><span>Savyn</span></div>
-                    <div class="member"><img src="avatars/savyn_mind.webp" alt="Mind"><span>Mind</span></div>
-                    <div class="member"><img src="avatars/savyn_chill.webp" alt="Chill"><span>Chill</span></div>
-                    <div class="member"><img src="avatars/savyn_relationships.webp" alt="Relationships"><span>Relationships</span></div>
+            <span class="label">Welcome to your council</span>
+            <h2>Savyn transforms your phone into a council of members, each responsible for one part of your life.</h2>
+            <p class="council-desc">They understand your aspirations, thoughts, what you want and when. Then they work together to coordinate all these parts for you.</p>
+            
+            <!-- The Table -->
+            <div class="table-scene">
+                <div class="table-glow"></div>
+                <div class="table-ring"></div>
+                <div class="members">
+                    <div class="member m1"><img src="avatars/savyn_work.webp" alt="Work"><span>Work</span></div>
+                    <div class="member m2"><img src="avatars/savyn_food.webp" alt="Food"><span>Food</span></div>
+                    <div class="member m3"><img src="avatars/savyn_fitness.webp" alt="Fitness"><span>Fitness</span></div>
+                    <div class="member m4 main"><img src="avatars/savyn_savyn.webp" alt="Savyn"><span>Savyn</span></div>
+                    <div class="member m5"><img src="avatars/savyn_mind.webp" alt="Mind"><span>Mind</span></div>
+                    <div class="member m6"><img src="avatars/savyn_chill.webp" alt="Chill"><span>Chill</span></div>
+                    <div class="member m7"><img src="avatars/savyn_relationships.webp" alt="Relationships"><span>Relationships</span></div>
                 </div>
             </div>
 
-            <p class="council-note">
-                These are just starting points. Create your own members for whatever matters to you — <em>finance, spirituality, side projects, parenting</em> — the council is yours.
-            </p>
+            <p class="council-note">These are starting points. Create members for whatever matters to you — <em>finance, spirituality, side projects, parenting</em> — the council is yours.</p>
         </div>
     </section>
 
+    <!-- ════════════════════════════════════════════════════════════════ -->
     <!-- HOW IT WORKS -->
-    <section class="how-it-works">
+    <!-- ════════════════════════════════════════════════════════════════ -->
+    <section class="features">
         <div class="container">
-            <p class="section-label">How it works</p>
-            <h2 class="section-title">Everything happens through conversation.</h2>
-            <p class="section-subtitle">No menus. No settings screens. Just talk.</p>
+            <span class="label">How it works</span>
+            <h2>Everything happens through conversation.</h2>
+            <p class="features-sub">No menus. No settings screens. Just talk.</p>
 
-            <div class="features">
-                <div class="feature">
-                    <div class="feature-visual">
-                        <div class="chat-bubble them">How's the job search going?</div>
-                        <div class="chat-bubble you">Got an interview next week</div>
-                        <div class="chat-bubble them">That's huge. Want me to help you prep?</div>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="card-visual chat-visual">
+                        <div class="bubble them">How's the job search going?</div>
+                        <div class="bubble you">Got an interview next week</div>
+                        <div class="bubble them">That's huge. Want me to help you prep?</div>
                     </div>
                     <h3>They learn by listening</h3>
-                    <p>The more you talk to them, the better they understand what matters to you. They remember everything.</p>
+                    <p>The more you talk to them, the better they understand what matters. They remember everything.</p>
                 </div>
 
-                <div class="feature">
-                    <div class="feature-visual">
-                        <div class="checkin-preview">
-                            <img src="avatars/savyn_fitness.webp" alt="Fitness" class="checkin-avatar">
-                            <div class="checkin-content">
-                                <span class="checkin-time">7:30 AM</span>
+                <div class="feature-card">
+                    <div class="card-visual checkin-visual">
+                        <div class="checkin-card">
+                            <img src="avatars/savyn_fitness.webp" alt="Fitness">
+                            <div class="checkin-body">
+                                <span class="checkin-name">Fitness</span>
                                 <span class="checkin-msg">Gym today or rest day?</span>
                             </div>
+                            <span class="checkin-time">7:30 AM</span>
                         </div>
                     </div>
                     <h3>They check in when it matters</h3>
                     <p>Not random notifications. They know when to show up — and when to leave you alone.</p>
                 </div>
 
-                <div class="feature">
-                    <div class="feature-visual">
-                        <div class="apps-preview">
+                <div class="feature-card">
+                    <div class="card-visual apps-visual">
+                        <div class="app-row">
                             <div class="app-icon"></div>
                             <div class="app-icon"></div>
                             <div class="app-icon"></div>
@@ -130,100 +135,92 @@
                         </div>
                     </div>
                     <h3>Each has their own apps</h3>
-                    <p>Fitness knows about your gym app. Chill knows about Netflix. Quick launch right from the home screen.</p>
+                    <p>Fitness knows your gym app. Chill knows Netflix. Quick launch right from the home screen.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- COORDINATION -->
-    <section class="coordination">
+    <!-- ════════════════════════════════════════════════════════════════ -->
+    <!-- PULL QUOTE -->
+    <!-- ════════════════════════════════════════════════════════════════ -->
+    <section class="quote-section">
         <div class="container">
-            <p class="coordination-text">
+            <blockquote>
                 Over time, they notice patterns, remember context, and coordinate to help you be who you actually want to be.
-            </p>
+            </blockquote>
         </div>
     </section>
 
+    <!-- ════════════════════════════════════════════════════════════════ -->
     <!-- PRIVACY -->
+    <!-- ════════════════════════════════════════════════════════════════ -->
     <section class="privacy">
         <div class="container">
-            <p class="section-label">Privacy-first</p>
-            <h2 class="section-title">Your conversations never touch our servers.</h2>
-            <div class="privacy-points">
-                <div class="privacy-point">
-                    <span class="privacy-icon">🔒</span>
-                    <div>
-                        <h4>Local Only</h4>
-                        <p>All your data lives on your device. We literally cannot see it.</p>
-                    </div>
+            <span class="label">Privacy-first</span>
+            <h2>Your conversations never touch our servers.</h2>
+            
+            <div class="privacy-grid">
+                <div class="priv-item">
+                    <div class="priv-icon">🔒</div>
+                    <h4>Local Only</h4>
+                    <p>All your data lives on your device. We literally cannot see it.</p>
                 </div>
-                <div class="privacy-point">
-                    <span class="privacy-icon">🛡️</span>
-                    <div>
-                        <h4>Anonymized AI</h4>
-                        <p>When AI processes your messages, personal details are anonymized. Names, apps, and specifics are stripped.</p>
-                    </div>
+                <div class="priv-item">
+                    <div class="priv-icon">🛡️</div>
+                    <h4>Anonymized AI</h4>
+                    <p>When AI processes messages, personal details are stripped before leaving your phone.</p>
                 </div>
-                <div class="privacy-point">
-                    <span class="privacy-icon">🚫</span>
-                    <div>
-                        <h4>Zero Tracking</h4>
-                        <p>No accounts. No ads. No tracking. No selling your data. Ever.</p>
-                    </div>
+                <div class="priv-item">
+                    <div class="priv-icon">🚫</div>
+                    <h4>Zero Tracking</h4>
+                    <p>No accounts. No ads. No tracking. No selling your data. Ever.</p>
                 </div>
-                <div class="privacy-point">
-                    <span class="privacy-icon">🗑️</span>
-                    <div>
-                        <h4>Total Control</h4>
-                        <p>Delete the app and everything goes with it. Nothing lingers.</p>
-                    </div>
+                <div class="priv-item">
+                    <div class="priv-icon">🗑️</div>
+                    <h4>Total Control</h4>
+                    <p>Delete the app and everything goes with it. Nothing lingers.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ════════════════════════════════════════════════════════════════ -->
     <!-- CTA -->
+    <!-- ════════════════════════════════════════════════════════════════ -->
     <section class="cta" id="beta">
         <div class="container">
-            <h2 class="cta-title">Join the closed beta.</h2>
-            <p class="cta-subtitle">Android first. Limited spots.</p>
+            <h2>Join the closed beta.</h2>
+            <p class="cta-sub">Android first. Limited spots.</p>
 
             <form id="beta-form" class="beta-form">
-                <div class="form-row">
-                    <input type="email" id="email-input" placeholder="your@email.com" required autocomplete="email">
-                    <button type="submit" id="submit-btn">
-                        <span class="btn-text">Get Early Access</span>
-                        <span class="btn-loading" style="display:none;"><span class="spinner"></span></span>
-                    </button>
-                </div>
+                <input type="email" id="email-input" placeholder="your@email.com" required>
+                <button type="submit" id="submit-btn">
+                    <span class="btn-text">Get Early Access</span>
+                    <span class="btn-spinner"></span>
+                </button>
             </form>
 
-            <div id="success-state" class="success-state" style="display:none;">
-                <div class="success-icon">✓</div>
-                <p class="success-text">You're in. We'll reach out when beta slots open.</p>
-                <a href="#" id="play-store-link" class="play-link" style="display:none;">Get early access on Google Play →</a>
+            <div id="success-msg" class="success-msg">
+                <span class="success-check">✓</span>
+                <p>You're in. We'll reach out when beta slots open.</p>
             </div>
-
-            <div id="error-state" class="error-state" style="display:none;">
-                <p class="error-text"></p>
-            </div>
+            <div id="error-msg" class="error-msg"></div>
         </div>
     </section>
 
+    <!-- ════════════════════════════════════════════════════════════════ -->
     <!-- FOOTER -->
+    <!-- ════════════════════════════════════════════════════════════════ -->
     <footer>
-        <div class="container footer-inner">
-            <div class="footer-brand">
-                <span class="footer-logo">Savyn</span>
-                <span class="footer-tagline">by Savyn Labs</span>
-            </div>
+        <div class="container footer-grid">
+            <div class="footer-brand">Savyn <span>by Savyn Labs</span></div>
             <div class="footer-links">
                 <a href="privacy-policy.html">Privacy Policy</a>
                 <a href="mailto:support@savynlabs.com">Contact</a>
             </div>
-            <p class="footer-copy">&copy; 2026 Savyn Labs. All rights reserved.</p>
         </div>
+        <p class="copyright">© 2026 Savyn Labs</p>
     </footer>
 
     <script src="script.js"></script>
