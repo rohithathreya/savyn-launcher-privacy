@@ -3,174 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Savyn Privacy Policy – Your data stays on your device. Always.">
+    <meta name="description" content="Savyn Privacy Policy – Your data stays on your device.">
     <title>Privacy Policy – Savyn</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg: #0a0a0f;
-            --bg-elevated: #12121a;
-            --text: #f0f0f5;
-            --text-dim: #8888a0;
-            --text-muted: #55556a;
-            --accent: #8b5cf6;
-            --accent-bright: #a78bfa;
-            --accent-subtle: rgba(139, 92, 246, 0.1);
-            --border: rgba(255, 255, 255, 0.08);
-            --border-glow: rgba(139, 92, 246, 0.3);
-            --glass: rgba(255, 255, 255, 0.03);
-            
-            --display: 'Instrument Serif', serif;
-            --sans: 'Space Grotesk', sans-serif;
+            --bg: #0a0a0e;
+            --bg-box: #101014;
+            --text: #ffffff;
+            --text-dim: #9a9aa4;
+            --text-muted: #5a5a64;
+            --gold: #e8c547;
+            --gold-dim: #c9a83a;
+            --gold-glow: rgba(232, 197, 71, 0.1);
+            --border: rgba(255,255,255,0.06);
+            --serif: 'Playfair Display', Georgia, serif;
+            --sans: 'Inter', -apple-system, sans-serif;
         }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         
         body {
             background: var(--bg);
             color: var(--text);
             font-family: var(--sans);
-            font-size: 17px;
+            font-size: 16px;
             line-height: 1.7;
             -webkit-font-smoothing: antialiased;
         }
         
-        /* Gradient overlay */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(ellipse 80% 50% at 50% 0%, rgba(139, 92, 246, 0.06) 0%, transparent 60%);
-            pointer-events: none;
-            z-index: -1;
-        }
-        
-        /* Nav */
         .nav {
             position: fixed;
-            top: 1.5rem;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            align-items: center;
-            gap: 1.25rem;
-            padding: 0.6rem 1.25rem;
-            background: rgba(18, 18, 26, 0.9);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--border);
-            border-radius: 100px;
+            top: 1rem;
+            left: 1rem;
             z-index: 100;
         }
         
         .nav a {
-            font-family: var(--display);
-            font-size: 1.2rem;
-            color: var(--text);
+            font-family: var(--serif);
+            font-size: 1rem;
+            color: var(--text-dim);
             text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: var(--bg-box);
+            border: 1px solid var(--border);
+            border-radius: 100px;
         }
         
-        .nav a:hover {
-            color: var(--accent-bright);
-        }
+        .nav a:hover { color: var(--gold); }
         
-        /* Container */
         .container {
-            max-width: 800px;
+            max-width: 640px;
             margin: 0 auto;
-            padding: 8rem 2rem 6rem;
+            padding: 5rem 1.5rem 4rem;
         }
         
-        /* Hero */
         .policy-hero {
             text-align: center;
-            margin-bottom: 4rem;
-            padding-bottom: 3rem;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
             border-bottom: 1px solid var(--border);
         }
         
         .policy-hero h1 {
-            font-family: var(--display);
-            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-family: var(--serif);
+            font-size: clamp(2rem, 6vw, 3rem);
             font-weight: 400;
-            margin-bottom: 1rem;
-            background: linear-gradient(to bottom, var(--text) 0%, var(--text-dim) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.75rem;
         }
         
         .policy-hero .tagline {
-            font-size: 1.2rem;
-            color: var(--accent);
+            font-size: 1.1rem;
+            color: var(--gold);
             font-style: italic;
-            font-family: var(--display);
+            font-family: var(--serif);
         }
         
         .effective-date {
             display: inline-block;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--text-muted);
-            background: var(--glass);
-            padding: 0.5rem 1rem;
+            background: var(--bg-box);
+            padding: 0.4rem 0.8rem;
             border-radius: 100px;
             border: 1px solid var(--border);
-            margin-top: 2rem;
+            margin-top: 1.5rem;
         }
+        
+        /* TL;DR */
+        .tldr {
+            background: var(--gold-glow);
+            border: 1px solid rgba(232, 197, 71, 0.2);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .tldr h2 {
+            font-family: var(--serif);
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .tldr-list {
+            list-style: none;
+        }
+        
+        .tldr-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+        
+        .tldr-list li:last-child { margin-bottom: 0; }
+        
+        .tldr-list .icon { font-size: 1.1rem; flex-shrink: 0; }
+        
+        .tldr-list strong { color: var(--text); }
+        
+        .tldr-list span { color: var(--text-dim); }
         
         /* Sections */
         section {
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
         
         h2 {
-            font-family: var(--display);
-            font-size: 1.6rem;
+            font-family: var(--serif);
+            font-size: 1.3rem;
             font-weight: 400;
             color: var(--text);
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
             padding-bottom: 0.5rem;
             border-bottom: 1px solid var(--border);
         }
         
         h3 {
-            font-family: var(--sans);
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 600;
-            color: var(--accent-bright);
-            margin: 1.5rem 0 0.75rem;
+            color: var(--gold-dim);
+            margin: 1.25rem 0 0.5rem;
         }
         
         p {
             color: var(--text-dim);
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
         }
         
         ul {
             list-style: none;
-            padding: 0;
-            margin: 1rem 0;
+            margin: 0.75rem 0;
         }
         
         li {
             position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.75rem;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
             color: var(--text-dim);
         }
         
@@ -179,9 +178,9 @@
             position: absolute;
             left: 0;
             top: 0.6em;
-            width: 6px;
-            height: 6px;
-            background: var(--accent);
+            width: 5px;
+            height: 5px;
+            background: var(--gold-dim);
             border-radius: 50%;
         }
         
@@ -190,99 +189,53 @@
             font-weight: 500;
         }
         
-        /* TL;DR Box */
-        .tldr {
-            background: var(--accent-subtle);
-            border: 1px solid var(--border-glow);
-            border-radius: 16px;
-            padding: 2rem;
-            margin-bottom: 3rem;
-        }
-        
-        .tldr h2 {
-            border: none;
-            padding: 0;
-            margin-bottom: 1.5rem;
-            color: var(--accent-bright);
-        }
-        
-        .tldr-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .tldr-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-        }
-        
-        .tldr-icon {
-            font-size: 1.5rem;
-            flex-shrink: 0;
-        }
-        
-        .tldr-text {
-            font-size: 0.95rem;
-            color: var(--text);
-        }
-        
-        .tldr-text span {
-            display: block;
-            color: var(--text-dim);
-            font-size: 0.85rem;
-            margin-top: 0.25rem;
-        }
-        
-        /* Cards */
+        /* Card */
         .card {
-            background: var(--glass);
+            background: var(--bg-box);
             border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
+            border-radius: 12px;
+            padding: 1rem;
+            margin: 1rem 0;
         }
         
         .card h3 {
             margin-top: 0;
         }
         
+        .card p {
+            margin-bottom: 0;
+        }
+        
         /* Contact */
         .contact-section {
-            background: var(--bg-elevated);
+            background: var(--bg-box);
             border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 2.5rem;
+            border-radius: 16px;
+            padding: 1.5rem;
             text-align: center;
-            margin-top: 4rem;
+            margin-top: 2.5rem;
         }
         
         .contact-section h2 {
             border: none;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.75rem;
         }
         
-        .contact-section p {
-            margin-bottom: 0.5rem;
-        }
+        .contact-section p { margin-bottom: 0.25rem; }
         
         .contact-section a {
-            color: var(--accent-bright);
+            color: var(--gold);
             text-decoration: none;
-            transition: color 0.2s;
         }
         
-        .contact-section a:hover {
-            color: var(--accent);
-        }
+        .contact-section a:hover { text-decoration: underline; }
         
         /* Footer */
         .footer {
             text-align: center;
-            padding: 3rem 2rem;
+            padding: 2rem 1.5rem;
             border-top: 1px solid var(--border);
-            margin-top: 4rem;
+            margin-top: 3rem;
         }
         
         .footer a {
@@ -291,39 +244,13 @@
             font-size: 0.9rem;
         }
         
-        .footer a:hover {
-            color: var(--accent);
-        }
+        .footer a:hover { color: var(--gold); }
         
         .footer span {
             color: var(--text-muted);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             display: block;
-            margin-top: 1rem;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .container {
-                padding: 7rem 1.5rem 4rem;
-            }
-            
-            .policy-hero h1 {
-                font-size: 2rem;
-            }
-            
-            .tldr {
-                padding: 1.5rem;
-            }
-            
-            .tldr-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            
-            .contact-section {
-                padding: 1.5rem;
-            }
+            margin-top: 0.75rem;
         }
     </style>
 </head>
@@ -335,43 +262,31 @@
     <div class="container">
         <header class="policy-hero">
             <h1>Privacy Policy</h1>
-            <p class="tagline">Your data stays on your device. Always.</p>
-            <span class="effective-date">Last updated: December 1, 2025</span>
+            <p class="tagline">Your data stays on your device.</p>
+            <span class="effective-date">Last updated: February 14, 2026</span>
         </header>
 
         <!-- TL;DR -->
         <div class="tldr">
             <h2>TL;DR</h2>
-            <div class="tldr-grid">
-                <div class="tldr-item">
-                    <span class="tldr-icon">🔒</span>
-                    <div class="tldr-text">
-                        100% On-Device
-                        <span>All processing happens locally</span>
-                    </div>
-                </div>
-                <div class="tldr-item">
-                    <span class="tldr-icon">🚫</span>
-                    <div class="tldr-text">
-                        No Data Collection
-                        <span>We can't see your data</span>
-                    </div>
-                </div>
-                <div class="tldr-item">
-                    <span class="tldr-icon">📵</span>
-                    <div class="tldr-text">
-                        No Ads or Tracking
-                        <span>Your attention is yours</span>
-                    </div>
-                </div>
-                <div class="tldr-item">
-                    <span class="tldr-icon">🗑️</span>
-                    <div class="tldr-text">
-                        You Control Deletion
-                        <span>Uninstall = everything gone</span>
-                    </div>
-                </div>
-            </div>
+            <ul class="tldr-list">
+                <li>
+                    <span class="icon">🔒</span>
+                    <div><strong>Local storage</strong> — <span>All your data lives on your device</span></div>
+                </li>
+                <li>
+                    <span class="icon">🤖</span>
+                    <div><strong>Anonymized AI calls</strong> — <span>Personal info is stripped before any LLM processing</span></div>
+                </li>
+                <li>
+                    <span class="icon">📵</span>
+                    <div><strong>No tracking</strong> — <span>No accounts, no ads, no analytics</span></div>
+                </li>
+                <li>
+                    <span class="icon">🗑️</span>
+                    <div><strong>Full control</strong> — <span>Uninstall = everything gone</span></div>
+                </li>
+            </ul>
         </div>
 
         <!-- Who We Are -->
@@ -379,82 +294,62 @@
             <h2>Who We Are</h2>
             <p>
                 Savyn is an Android launcher developed by <strong>Savyn Labs</strong> that transforms your phone 
-                into a personalized second brain — entirely on-device using on-device AI.
+                into a council of AI members — each one dedicated to a different part of your life.
             </p>
         </section>
 
-        <!-- What We Access -->
+        <!-- Data Storage -->
         <section>
-            <h2>What Data Savyn Accesses</h2>
-            <p>To power its intelligence, Savyn accesses the following <em>on your device only</em>:</p>
-            
-            <div class="card">
-                <h3>📱 Installed Apps</h3>
-                <p>To display your app drawer, create shortcuts, and understand your app ecosystem.</p>
-            </div>
-            
-            <div class="card">
-                <h3>📊 App Usage Patterns</h3>
-                <p>
-                    With your permission (Usage Access), Savyn learns when you use apps, for how long, 
-                    and in what sequences — to surface the right app at the right time.
-                </p>
-            </div>
-            
-            <div class="card">
-                <h3>📝 Your Saves</h3>
-                <p>
-                    Screenshots, notes, bookmarks, and links you save to Savyn. These stay on your 
-                    device and are indexed locally for intelligent retrieval.
-                </p>
-            </div>
+            <h2>Where Your Data Lives</h2>
+            <p>All your data is stored locally on your device:</p>
+            <ul>
+                <li><strong>Conversations</strong> with your council members</li>
+                <li><strong>App usage patterns</strong> (with your permission)</li>
+                <li><strong>Preferences and settings</strong></li>
+                <li><strong>Notes and saves</strong> you add to Savyn</li>
+            </ul>
+            <p>We do not have servers that store your personal data. We cannot access, view, or retrieve your information.</p>
         </section>
 
-        <!-- How We Use It -->
+        <!-- AI Processing -->
         <section>
-            <h2>How It's Used</h2>
-            <ul>
-                <li><strong>Smart Predictions:</strong> Show the right apps, notes, and actions when you need them</li>
-                <li><strong>Pattern Recognition:</strong> Learn your routines to reduce friction in your day</li>
-                <li><strong>Contextual Retrieval:</strong> Surface saved content when it's relevant</li>
-                <li><strong>On-Device ML Only:</strong> All intelligence runs locally via TensorFlow Lite</li>
-            </ul>
+            <h2>AI Processing</h2>
+            <p>Savyn uses AI (via OpenAI) to power conversations with your council members. Here's how we protect your privacy:</p>
+            
+            <div class="card">
+                <h3>🛡️ Anonymization</h3>
+                <p>
+                    Before any data is sent to the AI, we strip out personal identifiers. Names, specific locations, 
+                    and other identifying information are removed or generalized.
+                </p>
+            </div>
+            
+            <div class="card">
+                <h3>📱 App Proxying</h3>
+                <p>
+                    App names are proxied — instead of sending the actual app name, we send a generic category 
+                    (e.g., "fitness app" instead of the specific name).
+                </p>
+            </div>
+            
+            <div class="card">
+                <h3>🚫 No Training</h3>
+                <p>
+                    Your conversations are not used to train AI models. We use API services that do not retain 
+                    or learn from your data.
+                </p>
+            </div>
         </section>
 
         <!-- What We Don't Do -->
         <section>
             <h2>What We Don't Do</h2>
             <ul>
-                <li><strong>No server uploads:</strong> Your data never leaves your phone</li>
-                <li><strong>No third-party sharing:</strong> We don't share data with anyone</li>
-                <li><strong>No selling data:</strong> We have nothing to sell — we don't have your data</li>
-                <li><strong>No cloud training:</strong> Our models don't learn from your usage</li>
-                <li><strong>No advertising:</strong> No ads, no tracking pixels, no analytics SDKs</li>
-            </ul>
-        </section>
-
-        <!-- What We Don't Collect -->
-        <section>
-            <h2>What We Don't Access</h2>
-            <p>Savyn does not access, collect, or process:</p>
-            <ul>
-                <li>Personal identifiers (name, email, phone number)</li>
-                <li>Location data</li>
-                <li>Financial information</li>
-                <li>Photos, videos, or files (except what you explicitly save)</li>
-                <li>Contacts or calendar events</li>
-                <li>Device identifiers for advertising</li>
-                <li>Browsing history or app content</li>
-            </ul>
-        </section>
-
-        <!-- Security -->
-        <section>
-            <h2>Storage & Security</h2>
-            <ul>
-                <li><strong>Local encrypted database:</strong> All data stored in Android's secure app storage</li>
-                <li><strong>No cloud backup by us:</strong> If you use system backups, your OS vendor's policies apply</li>
-                <li><strong>Sandboxed execution:</strong> Other apps cannot access Savyn's data</li>
+                <li><strong>No data selling</strong> — We have nothing to sell. Your data isn't ours.</li>
+                <li><strong>No advertising</strong> — No ads, no ad tracking, no targeting.</li>
+                <li><strong>No analytics</strong> — We don't track how you use the app.</li>
+                <li><strong>No accounts</strong> — Full functionality without signing up.</li>
+                <li><strong>No third-party sharing</strong> — Beyond anonymized AI processing, your data goes nowhere.</li>
             </ul>
         </section>
 
@@ -462,22 +357,22 @@
         <section>
             <h2>Permissions We Request</h2>
             <div class="card">
-                <h3>Usage Access (PACKAGE_USAGE_STATS)</h3>
+                <h3>📊 Usage Access</h3>
                 <p>
-                    This sensitive permission lets Savyn see app usage events. Android protects this 
-                    permission specially — you must explicitly grant it in Settings. We use it solely 
-                    for on-device learning and never transmit this data.
+                    This optional permission lets Savyn see which apps you use and when. It helps your council members 
+                    understand your patterns and surface the right apps at the right time. This data never leaves your device 
+                    except in anonymized form for AI processing.
                 </p>
             </div>
         </section>
 
-        <!-- Deletion -->
+        <!-- Your Control -->
         <section>
             <h2>Your Control</h2>
             <ul>
-                <li><strong>Delete anytime:</strong> Uninstalling Savyn removes all local data instantly</li>
-                <li><strong>Clear learning:</strong> Reset Savyn's learned patterns from within the app</li>
-                <li><strong>No account required:</strong> Full functionality without signing up for anything</li>
+                <li><strong>Delete anytime</strong> — Uninstalling Savyn removes all local data instantly.</li>
+                <li><strong>Clear conversations</strong> — Reset any council member's memory from within the app.</li>
+                <li><strong>Revoke permissions</strong> — Disable usage access anytime in Android settings.</li>
             </ul>
         </section>
 
@@ -485,8 +380,7 @@
         <section>
             <h2>Children's Privacy</h2>
             <p>
-                Savyn is not directed at children under 13 and does not knowingly process data 
-                from children. Since we don't collect any personal data, this concern is largely moot.
+                Savyn is not directed at children under 13. We do not knowingly collect data from children.
             </p>
         </section>
 
@@ -502,14 +396,14 @@
         <!-- Contact -->
         <div class="contact-section">
             <h2>Questions?</h2>
-            <p>We're happy to clarify anything about how Savyn handles your data.</p>
+            <p>We're happy to clarify anything.</p>
             <p><a href="mailto:support@savynlabs.com">support@savynlabs.com</a></p>
         </div>
     </div>
 
     <footer class="footer">
         <a href="/">← Back to Savyn</a>
-        <span>© 2025 Savyn Labs</span>
+        <span>© 2026 Savyn Labs</span>
     </footer>
 </body>
 </html>

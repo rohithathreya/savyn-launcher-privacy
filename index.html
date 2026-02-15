@@ -55,13 +55,12 @@
             <div class="content-box">
                 <span class="box-label">Welcome to your council</span>
                 <h2>Savyn transforms your phone into a council of members, each responsible for one part of your life.</h2>
-                <p class="box-text">They understand your aspirations, thoughts, what you want and when. Then they work together to coordinate all these parts for you.</p>
+                <p class="box-text">They understand your aspirations, thoughts, what you want and when.</p>
                 
                 <div class="members-row">
                     <div class="member"><img src="avatars/savyn_work.webp" alt="Work"><span>Work</span></div>
                     <div class="member"><img src="avatars/savyn_food.webp" alt="Food"><span>Food</span></div>
                     <div class="member"><img src="avatars/savyn_fitness.webp" alt="Fitness"><span>Fitness</span></div>
-                    <div class="member main"><img src="avatars/savyn_savyn.webp" alt="Savyn"><span>Savyn</span></div>
                     <div class="member"><img src="avatars/savyn_mind.webp" alt="Mind"><span>Mind</span></div>
                     <div class="member"><img src="avatars/savyn_chill.webp" alt="Chill"><span>Chill</span></div>
                     <div class="member"><img src="avatars/savyn_relationships.webp" alt="Relationships"><span>Relationships</span></div>
@@ -76,39 +75,64 @@
                 <h2>Everything happens through conversation.</h2>
                 <p class="box-text">No menus. No settings screens. Just talk.</p>
 
-                <div class="features-list">
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <div class="bubble-mini them"></div>
-                            <div class="bubble-mini you"></div>
+                <div class="feature-carousel">
+                    <!-- Card 1: Learn by listening -->
+                    <div class="feature-card">
+                        <div class="card-mockup chat-mockup">
+                            <div class="mockup-header">
+                                <img src="avatars/savyn_work.webp" alt="Work" class="mockup-avatar">
+                                <span>Work</span>
+                            </div>
+                            <div class="mockup-chat">
+                                <div class="chat-bubble them">How's the job search going?</div>
+                                <div class="chat-bubble you">Got an interview next week</div>
+                                <div class="chat-bubble them">That's huge! Want me to help prep?</div>
+                            </div>
                         </div>
-                        <div class="feature-text">
-                            <strong>They learn by listening</strong>
-                            <span>The more you talk, the better they understand. They remember everything.</span>
-                        </div>
+                        <h3>They learn by listening</h3>
+                        <p>The more you talk, the better they understand. They remember everything.</p>
                     </div>
-                    
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <img src="avatars/savyn_fitness.webp" alt="Fitness" class="feature-avatar">
+
+                    <!-- Card 2: Check in when it matters -->
+                    <div class="feature-card">
+                        <div class="card-mockup checkin-mockup">
+                            <div class="checkin-notification">
+                                <img src="avatars/savyn_fitness.webp" alt="Fitness" class="notif-avatar">
+                                <div class="notif-content">
+                                    <strong>Fitness</strong>
+                                    <span>Gym today or rest day?</span>
+                                </div>
+                                <span class="notif-time">7:30 AM</span>
+                            </div>
+                            <div class="checkin-notification">
+                                <img src="avatars/savyn_mind.webp" alt="Mind" class="notif-avatar">
+                                <div class="notif-content">
+                                    <strong>Mind</strong>
+                                    <span>Time for your evening journal?</span>
+                                </div>
+                                <span class="notif-time">9:00 PM</span>
+                            </div>
                         </div>
-                        <div class="feature-text">
-                            <strong>They check in when it matters</strong>
-                            <span>Not random notifications. They know when to show up — and when to leave you alone.</span>
-                        </div>
+                        <h3>They check in when it matters</h3>
+                        <p>Not random notifications. They know when to show up — and when to leave you alone.</p>
                     </div>
-                    
-                    <div class="feature-item">
-                        <div class="feature-icon apps-mini">
-                            <div class="app-dot" style="background:#e74c3c;"></div>
-                            <div class="app-dot" style="background:#1db954;"></div>
-                            <div class="app-dot" style="background:#667eea;"></div>
-                            <div class="app-dot" style="background:#00d4ff;"></div>
+
+                    <!-- Card 3: Each has their own apps -->
+                    <div class="feature-card">
+                        <div class="card-mockup apps-mockup">
+                            <div class="apps-member">
+                                <img src="avatars/savyn_fitness.webp" alt="Fitness" class="apps-avatar">
+                                <span>Fitness</span>
+                            </div>
+                            <div class="apps-grid">
+                                <div class="app-icon-lg" style="background: linear-gradient(135deg, #1db954, #148f3f);"><span>🎵</span></div>
+                                <div class="app-icon-lg" style="background: linear-gradient(135deg, #e74c3c, #c0392b);"><span>💪</span></div>
+                                <div class="app-icon-lg" style="background: linear-gradient(135deg, #f39c12, #e67e22);"><span>🏃</span></div>
+                                <div class="app-icon-lg" style="background: linear-gradient(135deg, #3498db, #2980b9);"><span>💧</span></div>
+                            </div>
                         </div>
-                        <div class="feature-text">
-                            <strong>Each has their own apps</strong>
-                            <span>Fitness knows your gym app. Chill knows Netflix. Quick launch from home.</span>
-                        </div>
+                        <h3>Each has their own apps</h3>
+                        <p>Fitness knows your gym app. Chill knows Netflix. Quick launch from home.</p>
                     </div>
                 </div>
             </div>
@@ -154,7 +178,7 @@
 
             <div id="success-msg" class="success-msg">
                 <span class="success-check">✓</span>
-                <p>You're in. We'll reach out when beta slots open.</p>
+                <p>You're in! We'll get back via email when the next beta slots open up. Stay tuned!</p>
             </div>
             <div id="error-msg" class="error-msg"></div>
         </div>
