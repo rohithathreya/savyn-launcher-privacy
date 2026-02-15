@@ -36,19 +36,17 @@ if (form) {
         errorMsg.style.display = 'none';
 
         try {
-            const res = await fetch('https://savyn-beta-api.savynlabs.workers.dev/signup', {
+            const res = await fetch('https://formspree.io/f/mlgwbpbj', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email })
             });
 
-            const data = await res.json();
-
             if (res.ok) {
                 form.style.display = 'none';
                 successMsg.style.display = 'block';
             } else {
-                throw new Error(data.message || 'Something went wrong');
+                throw new Error('Something went wrong');
             }
         } catch (err) {
             errorMsg.textContent = err.message || 'Something went wrong. Try again.';
