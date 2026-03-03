@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Savyn Terms of Service – Simple, fair terms for using the Savyn launcher.">
+    <title>Terms of Service – Savyn</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #0a0a0e;
+            --bg-box: #101014;
+            --text: #ffffff;
+            --text-dim: #9a9aa4;
+            --text-muted: #5a5a64;
+            --gold: #e8c547;
+            --gold-dim: #c9a83a;
+            --gold-glow: rgba(232, 197, 71, 0.1);
+            --border: rgba(255,255,255,0.06);
+            --serif: 'Playfair Display', Georgia, serif;
+            --sans: 'Inter', -apple-system, sans-serif;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--sans);
+            font-size: 16px;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .nav {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            z-index: 100;
+        }
+        
+        .nav a {
+            font-family: var(--serif);
+            font-size: 1rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: var(--bg-box);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+        }
+        
+        .nav a:hover { color: var(--gold); }
+        
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 5rem 1.5rem 4rem;
+        }
+        
+        .policy-hero {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .policy-hero h1 {
+            font-family: var(--serif);
+            font-size: clamp(2rem, 6vw, 3rem);
+            font-weight: 400;
+            margin-bottom: 0.75rem;
+        }
+        
+        .policy-hero .tagline {
+            font-size: 1.1rem;
+            color: var(--gold);
+            font-style: italic;
+            font-family: var(--serif);
+        }
+        
+        .effective-date {
+            display: inline-block;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            background: var(--bg-box);
+            padding: 0.4rem 0.8rem;
+            border-radius: 100px;
+            border: 1px solid var(--border);
+            margin-top: 1.5rem;
+        }
+        
+        .tldr {
+            background: var(--gold-glow);
+            border: 1px solid rgba(232, 197, 71, 0.2);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .tldr h2 {
+            font-family: var(--serif);
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .tldr-list {
+            list-style: none;
+        }
+        
+        .tldr-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+        
+        .tldr-list li::before { display: none; }
+        .tldr-list li:last-child { margin-bottom: 0; }
+        .tldr-list .icon { font-size: 1.1rem; flex-shrink: 0; }
+        .tldr-list strong { color: var(--text); }
+        .tldr-list span { color: var(--text-dim); }
+        
+        section { margin-bottom: 2rem; }
+        
+        h2 {
+            font-family: var(--serif);
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: var(--text);
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gold-dim);
+            margin: 1.25rem 0 0.5rem;
+        }
+        
+        p {
+            color: var(--text-dim);
+            margin-bottom: 0.75rem;
+        }
+        
+        ul {
+            list-style: none;
+            margin: 0.75rem 0;
+        }
+        
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dim);
+        }
+        
+        li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.6em;
+            width: 5px;
+            height: 5px;
+            background: var(--gold-dim);
+            border-radius: 50%;
+        }
+        
+        li strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+        
+        .card {
+            background: var(--bg-box);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .card h3 { margin-top: 0; }
+        .card p { margin-bottom: 0; }
+        
+        .contact-section {
+            background: var(--bg-box);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+            margin-top: 2.5rem;
+        }
+        
+        .contact-section h2 {
+            border: none;
+            margin-bottom: 0.75rem;
+        }
+        
+        .contact-section p { margin-bottom: 0.25rem; }
+        
+        .contact-section a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+        
+        .contact-section a:hover { text-decoration: underline; }
+        
+        .footer {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            border-top: 1px solid var(--border);
+            margin-top: 3rem;
+        }
+        
+        .footer a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .footer a:hover { color: var(--gold); }
+        
+        .footer span {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            display: block;
+            margin-top: 0.75rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="/">← Savyn</a>
+    </nav>
+
+    <div class="container">
+        <header class="policy-hero">
+            <h1>Terms of Service</h1>
+            <p class="tagline">Simple terms, no tricks.</p>
+            <span class="effective-date">Effective: March 3, 2026</span>
+        </header>
+
+        <!-- TL;DR -->
+        <div class="tldr">
+            <h2>TL;DR</h2>
+            <ul class="tldr-list">
+                <li>
+                    <span class="icon">✅</span>
+                    <div><strong>Use Savyn however you like</strong> — <span>it's your launcher, your agents, your data</span></div>
+                </li>
+                <li>
+                    <span class="icon">💳</span>
+                    <div><strong>Pay for what you use</strong> — <span>free tier included, subscriptions managed through Google Play</span></div>
+                </li>
+                <li>
+                    <span class="icon">🤝</span>
+                    <div><strong>Don't abuse the AI</strong> — <span>no harmful, illegal, or deceptive content through the agents</span></div>
+                </li>
+                <li>
+                    <span class="icon">🚪</span>
+                    <div><strong>Leave anytime</strong> — <span>uninstall and everything is gone, cancel subscriptions through Google Play</span></div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Agreement -->
+        <section>
+            <h2>1. Agreement</h2>
+            <p>
+                By installing or using Savyn ("the App"), you agree to these Terms of Service. 
+                If you don't agree, please don't use the App. Savyn is developed and operated by 
+                <strong>Savyn Labs</strong>.
+            </p>
+        </section>
+
+        <!-- What Savyn Is -->
+        <section>
+            <h2>2. What Savyn Is</h2>
+            <p>
+                Savyn is an AI-powered Android launcher. It organizes your digital life around personal 
+                AI agents — each dedicated to a domain like work, fitness, or creativity. The agents 
+                chat with you, help you stay on track, and surface the right content at the right time.
+            </p>
+            <p>
+                Savyn is a tool to help you. The AI agents provide suggestions, not professional advice. 
+                They are not a substitute for medical, legal, financial, or therapeutic guidance.
+            </p>
+        </section>
+
+        <!-- Accounts & Access -->
+        <section>
+            <h2>3. Accounts & Access</h2>
+            <p>
+                Savyn does not require an account. There is no sign-up, no login, no password. 
+                The app works fully on your device. Your subscription status is managed entirely 
+                through Google Play.
+            </p>
+        </section>
+
+        <!-- Subscriptions -->
+        <section>
+            <h2>4. Subscriptions & Billing</h2>
+
+            <div class="card">
+                <h3>💰 Starter Tier (Free)</h3>
+                <p>
+                    New users receive a free AI budget to explore Savyn. When this budget is exhausted, 
+                    AI features are paused until you subscribe. No credit card required to start.
+                </p>
+            </div>
+            
+            <div class="card">
+                <h3>⭐ Pro & Ultra Plans</h3>
+                <p>
+                    Paid plans are billed monthly through Google Play. Prices vary by region. 
+                    Each plan includes a monthly AI budget — when it's used up, AI features pause 
+                    until the next billing cycle.
+                </p>
+            </div>
+
+            <ul>
+                <li><strong>Billing</strong> — All payments are processed by Google Play. Savyn Labs does not handle payment information directly.</li>
+                <li><strong>Cancellation</strong> — You can cancel anytime through Google Play Store → Subscriptions. Access continues until the end of your billing period.</li>
+                <li><strong>Refunds</strong> — Refund requests are handled by Google Play per their policies.</li>
+                <li><strong>Price changes</strong> — If we change pricing, existing subscribers will be notified at least 30 days in advance via the app.</li>
+            </ul>
+        </section>
+
+        <!-- Acceptable Use -->
+        <section>
+            <h2>5. Acceptable Use</h2>
+            <p>You agree not to use Savyn to:</p>
+            <ul>
+                <li>Generate or distribute <strong>harmful, abusive, or illegal content</strong> through the AI agents</li>
+                <li>Attempt to <strong>extract, reverse-engineer, or abuse</strong> the AI systems</li>
+                <li>Use the app in ways that <strong>violate others' rights</strong> or applicable laws</li>
+                <li>Circumvent <strong>budget limits or billing</strong> mechanisms</li>
+                <li>Impersonate others or create <strong>misleading or deceptive content</strong></li>
+            </ul>
+            <p>
+                We reserve the right to suspend AI access if we detect abusive usage patterns. 
+                Your local data always remains yours regardless.
+            </p>
+        </section>
+
+        <!-- AI Content -->
+        <section>
+            <h2>6. AI-Generated Content</h2>
+            <p>
+                Savyn's agents generate responses using large language models (currently via OpenAI). 
+                You should be aware that:
+            </p>
+            <ul>
+                <li>AI responses may be <strong>inaccurate, incomplete, or outdated</strong></li>
+                <li>AI agents do not have access to <strong>real-time information</strong> beyond what you share with them</li>
+                <li>Responses are <strong>not professional advice</strong> — always verify important decisions independently</li>
+                <li>Content you share with agents is sent to AI providers for processing as described in our <a href="/privacy-policy.html" style="color: var(--gold);">Privacy Policy</a></li>
+            </ul>
+        </section>
+
+        <!-- Your Data -->
+        <section>
+            <h2>7. Your Data</h2>
+            <p>
+                Your conversations, preferences, saved links, and personal settings are stored locally 
+                on your device. We don't have access to them. For full details on how data is handled, 
+                see our <a href="/privacy-policy.html" style="color: var(--gold);">Privacy Policy</a>.
+            </p>
+            <p>
+                Uninstalling Savyn permanently deletes all local data. There is no cloud backup 
+                or recovery mechanism.
+            </p>
+        </section>
+
+        <!-- Intellectual Property -->
+        <section>
+            <h2>8. Intellectual Property</h2>
+            <p>
+                Savyn, including its code, design, and brand assets, is the property of Savyn Labs. 
+                You may not copy, modify, or distribute the app or its components.
+            </p>
+            <p>
+                Content you create or share within the app (conversations, notes, saved links) 
+                remains yours.
+            </p>
+        </section>
+
+        <!-- Availability -->
+        <section>
+            <h2>9. Availability & Changes</h2>
+            <ul>
+                <li>We aim to keep Savyn running reliably, but <strong>we don't guarantee uninterrupted service</strong> — AI providers may have downtime</li>
+                <li>We may <strong>update features, pricing, or these terms</strong> over time. Material changes will be communicated in the app</li>
+                <li>We may <strong>discontinue the app</strong> with reasonable notice. Your local data remains yours regardless</li>
+            </ul>
+        </section>
+
+        <!-- Limitation of Liability -->
+        <section>
+            <h2>10. Limitation of Liability</h2>
+            <p>
+                Savyn is provided "as is" without warranties of any kind. To the maximum extent 
+                permitted by law, Savyn Labs is not liable for any indirect, incidental, or 
+                consequential damages arising from your use of the app.
+            </p>
+            <p>
+                Our total liability for any claim related to the app is limited to the amount 
+                you paid us in the 12 months preceding the claim.
+            </p>
+        </section>
+
+        <!-- Termination -->
+        <section>
+            <h2>11. Termination</h2>
+            <p>
+                You can stop using Savyn at any time by uninstalling the app and cancelling 
+                any active subscription through Google Play.
+            </p>
+            <p>
+                We may suspend or terminate AI access if these terms are violated. 
+                Your local data is never affected by account-level actions.
+            </p>
+        </section>
+
+        <!-- Governing Law -->
+        <section>
+            <h2>12. Governing Law</h2>
+            <p>
+                These terms are governed by the laws of India. Any disputes will be resolved 
+                in the courts of Hyderabad, Telangana.
+            </p>
+        </section>
+
+        <!-- Contact -->
+        <div class="contact-section">
+            <h2>Questions?</h2>
+            <p>We're happy to clarify anything.</p>
+            <p><a href="mailto:support@savynlabs.com">support@savynlabs.com</a></p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="/">← Back to Savyn</a>
+            <a href="/privacy-policy.html">Privacy Policy</a>
+        </div>
+        <span>© 2026 Savyn Labs</span>
+    </footer>
+</body>
+</html>

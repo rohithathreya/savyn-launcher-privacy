@@ -304,9 +304,9 @@
             <p>All your data is stored locally on your device:</p>
             <ul>
                 <li><strong>Conversations</strong> with your council members</li>
-                <li><strong>App usage patterns</strong> (with your permission)</li>
                 <li><strong>Preferences and settings</strong></li>
-                <li><strong>Notes and saves</strong> you add to Savyn</li>
+                <li><strong>Notes, thoughts, and saves</strong> you add to Savyn</li>
+                <li><strong>Saved links</strong> and their enriched metadata</li>
             </ul>
             <p>We do not have servers that store your personal data. We cannot access, view, or retrieve your information.</p>
         </section>
@@ -357,11 +357,23 @@
         <section>
             <h2>Permissions We Request</h2>
             <div class="card">
-                <h3>📊 Usage Access</h3>
+                <h3>🌐 Internet</h3>
                 <p>
-                    This optional permission lets Savyn see which apps you use and when. It helps your council members 
-                    understand your patterns and surface the right apps at the right time. This data never leaves your device 
-                    except in anonymized form for AI processing.
+                    Required for AI-powered conversations and link enrichment. Chat messages are sent to our 
+                    server for processing (anonymized) and are not stored.
+                </p>
+            </div>
+            <div class="card">
+                <h3>🎙️ Microphone (optional)</h3>
+                <p>
+                    If you use voice input, audio is recorded and sent to our server for speech-to-text 
+                    transcription. Audio is processed in real time and is not stored.
+                </p>
+            </div>
+            <div class="card">
+                <h3>⏰ Alarms & Reminders</h3>
+                <p>
+                    Used to schedule reminders you set through your agents. No data leaves your device for this feature.
                 </p>
             </div>
         </section>
@@ -371,8 +383,9 @@
             <h2>Your Control</h2>
             <ul>
                 <li><strong>Delete anytime</strong> — Uninstalling Savyn removes all local data instantly.</li>
-                <li><strong>Clear conversations</strong> — Reset any council member's memory from within the app.</li>
-                <li><strong>Revoke permissions</strong> — Disable usage access anytime in Android settings.</li>
+                <li><strong>Clear conversations</strong> — Reset any agent's memory from within the app.</li>
+                <li><strong>Revoke permissions</strong> — Disable microphone access anytime in Android settings.</li>
+                <li><strong>Cancel subscription</strong> — Manage or cancel through Google Play Store at any time.</li>
             </ul>
         </section>
 
@@ -402,7 +415,10 @@
     </div>
 
     <footer class="footer">
-        <a href="/">← Back to Savyn</a>
+        <div style="display:flex;justify-content:center;gap:1.5rem;margin-bottom:0.5rem;">
+            <a href="/">← Back to Savyn</a>
+            <a href="/terms-of-service.html">Terms of Service</a>
+        </div>
         <span>© 2026 Savyn Labs</span>
     </footer>
 </body>
