@@ -3,423 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Savyn Privacy Policy – Your data stays on your device.">
     <title>Privacy Policy – Savyn</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
     <style>
-        :root {
-            --bg: #0a0a0e;
-            --bg-box: #101014;
-            --text: #ffffff;
-            --text-dim: #9a9aa4;
-            --text-muted: #5a5a64;
-            --gold: #e8c547;
-            --gold-dim: #c9a83a;
-            --gold-glow: rgba(232, 197, 71, 0.1);
-            --border: rgba(255,255,255,0.06);
-            --serif: 'Playfair Display', Georgia, serif;
-            --sans: 'Inter', -apple-system, sans-serif;
-        }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        
         body {
-            background: var(--bg);
-            color: var(--text);
-            font-family: var(--sans);
-            font-size: 16px;
-            line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
-        }
-        
-        .nav {
-            position: fixed;
-            top: 1rem;
-            left: 1rem;
-            z-index: 100;
-        }
-        
-        .nav a {
-            font-family: var(--serif);
-            font-size: 1rem;
-            color: var(--text-dim);
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            background: var(--bg-box);
-            border: 1px solid var(--border);
-            border-radius: 100px;
-        }
-        
-        .nav a:hover { color: var(--gold); }
-        
-        .container {
-            max-width: 640px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 5rem 1.5rem 4rem;
+            padding: 20px;
+            color: #333;
+            background: #f9f9f9;
         }
-        
-        .policy-hero {
-            text-align: center;
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid var(--border);
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        
-        .policy-hero h1 {
-            font-family: var(--serif);
-            font-size: clamp(2rem, 6vw, 3rem);
-            font-weight: 400;
-            margin-bottom: 0.75rem;
+        h1 {
+            color: #1a1a1a;
+            border-bottom: 3px solid #4CAF50;
+            padding-bottom: 10px;
         }
-        
-        .policy-hero .tagline {
-            font-size: 1.1rem;
-            color: var(--gold);
-            font-style: italic;
-            font-family: var(--serif);
-        }
-        
-        .effective-date {
-            display: inline-block;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            background: var(--bg-box);
-            padding: 0.4rem 0.8rem;
-            border-radius: 100px;
-            border: 1px solid var(--border);
-            margin-top: 1.5rem;
-        }
-        
-        /* TL;DR */
-        .tldr {
-            background: var(--gold-glow);
-            border: 1px solid rgba(232, 197, 71, 0.2);
-            border-radius: 16px;
-            padding: 1.5rem;
-            margin-bottom: 2.5rem;
-        }
-        
-        .tldr h2 {
-            font-family: var(--serif);
-            font-size: 1.25rem;
-            font-weight: 400;
-            color: var(--gold);
-            margin-bottom: 1rem;
-            border: none;
-            padding: 0;
-        }
-        
-        .tldr-list {
-            list-style: none;
-        }
-        
-        .tldr-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-            margin-bottom: 0.75rem;
-            font-size: 0.95rem;
-        }
-        
-        .tldr-list li:last-child { margin-bottom: 0; }
-        
-        .tldr-list .icon { font-size: 1.1rem; flex-shrink: 0; }
-        
-        .tldr-list strong { color: var(--text); }
-        
-        .tldr-list span { color: var(--text-dim); }
-        
-        /* Sections */
-        section {
-            margin-bottom: 2rem;
-        }
-        
-        h2 {
-            font-family: var(--serif);
-            font-size: 1.3rem;
-            font-weight: 400;
-            color: var(--text);
-            margin-bottom: 0.75rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--border);
-        }
-        
         h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--gold-dim);
-            margin: 1.25rem 0 0.5rem;
+            color: #2c3e50;
+            margin-top: 30px;
         }
-        
-        p {
-            color: var(--text-dim);
-            margin-bottom: 0.75rem;
-        }
-        
         ul {
-            list-style: none;
-            margin: 0.75rem 0;
+            padding-left: 20px;
         }
-        
         li {
-            position: relative;
-            padding-left: 1.25rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-dim);
+            margin: 8px 0;
         }
-        
-        li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0.6em;
-            width: 5px;
-            height: 5px;
-            background: var(--gold-dim);
-            border-radius: 50%;
+        .effective-date {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 30px;
         }
-        
-        li strong {
-            color: var(--text);
-            font-weight: 500;
+        .contact {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 30px;
         }
-        
-        /* Card */
-        .card {
-            background: var(--bg-box);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1rem;
-            margin: 1rem 0;
+        .tldr {
+            background: #f8f9fa;
+            border-left: 4px solid #4CAF50;
+            padding: 16px 20px;
+            margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
         }
-        
-        .card h3 {
-            margin-top: 0;
-        }
-        
-        .card p {
-            margin-bottom: 0;
-        }
-        
-        /* Contact */
-        .contact-section {
-            background: var(--bg-box);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 1.5rem;
-            text-align: center;
-            margin-top: 2.5rem;
-        }
-        
-        .contact-section h2 {
-            border: none;
-            margin-bottom: 0.75rem;
-        }
-        
-        .contact-section p { margin-bottom: 0.25rem; }
-        
-        .contact-section a {
-            color: var(--gold);
-            text-decoration: none;
-        }
-        
-        .contact-section a:hover { text-decoration: underline; }
-        
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 2rem 1.5rem;
-            border-top: 1px solid var(--border);
-            margin-top: 3rem;
-        }
-        
-        .footer a {
-            color: var(--text-dim);
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-        
-        .footer a:hover { color: var(--gold); }
-        
-        .footer span {
-            color: var(--text-muted);
-            font-size: 0.8rem;
-            display: block;
-            margin-top: 0.75rem;
+        .tldr p { margin: 6px 0; }
+        strong {
+            color: #2c3e50;
         }
     </style>
 </head>
 <body>
-    <nav class="nav">
-        <a href="/">← Savyn</a>
-    </nav>
-
     <div class="container">
-        <header class="policy-hero">
-            <h1>Privacy Policy</h1>
-            <p class="tagline">Your data stays on your device.</p>
-            <span class="effective-date">Last updated: February 14, 2026</span>
-        </header>
+        <h1>Savyn – Privacy Policy</h1>
+        <p class="effective-date"><strong>Effective Date:</strong> March 4, 2026</p>
 
-        <!-- TL;DR -->
         <div class="tldr">
-            <h2>TL;DR</h2>
-            <ul class="tldr-list">
-                <li>
-                    <span class="icon">🔒</span>
-                    <div><strong>Local storage</strong> — <span>All your data lives on your device</span></div>
-                </li>
-                <li>
-                    <span class="icon">🤖</span>
-                    <div><strong>Anonymized AI calls</strong> — <span>Personal info is stripped before any LLM processing</span></div>
-                </li>
-                <li>
-                    <span class="icon">📵</span>
-                    <div><strong>No tracking</strong> — <span>No accounts, no ads, no analytics</span></div>
-                </li>
-                <li>
-                    <span class="icon">🗑️</span>
-                    <div><strong>Full control</strong> — <span>Uninstall = everything gone</span></div>
-                </li>
-            </ul>
+            <strong>TL;DR</strong>
+            <p>&#128274; <strong>Local storage</strong> — All your data lives on your device</p>
+            <p>&#129302; <strong>Anonymized AI calls</strong> — Personal info is stripped before any LLM processing</p>
+            <p>&#128245; <strong>No tracking</strong> — No accounts, no ads, no analytics</p>
+            <p>&#128465; <strong>Full control</strong> — Uninstall = everything gone</p>
         </div>
 
-        <!-- Who We Are -->
-        <section>
-            <h2>Who We Are</h2>
-            <p>
-                Savyn is an Android launcher developed by <strong>Savyn Labs</strong> that transforms your phone 
-                into a council of AI members — each one dedicated to a different part of your life.
-            </p>
-        </section>
+        <h3>Who We Are</h3>
+        <p>Savyn ("the App," "we," "our") is an Android launcher developed by Savyn Labs that transforms your phone into a council of AI members — each one dedicated to a different part of your life.</p>
 
-        <!-- Data Storage -->
-        <section>
-            <h2>Where Your Data Lives</h2>
-            <p>All your data is stored locally on your device:</p>
-            <ul>
-                <li><strong>Conversations</strong> with your council members</li>
-                <li><strong>Preferences and settings</strong></li>
-                <li><strong>Notes, thoughts, and saves</strong> you add to Savyn</li>
-                <li><strong>Saved links</strong> and their enriched metadata</li>
-            </ul>
-            <p>We do not have servers that store your personal data. We cannot access, view, or retrieve your information.</p>
-        </section>
+        <h3>Where Your Data Lives</h3>
+        <p>All your data is stored locally on your device:</p>
+        <ul>
+            <li>Saved links and their enriched metadata</li>
+            <li>Notes, thoughts, and saves you add to Savyn</li>
+            <li>Preferences and settings</li>
+            <li>Conversations with your council members</li>
+        </ul>
+        <p>We do not have servers that store your personal data. We cannot access, view, or retrieve your information.</p>
 
-        <!-- AI Processing -->
-        <section>
-            <h2>AI Processing</h2>
-            <p>Savyn uses AI (via OpenAI) to power conversations with your council members. Here's how we protect your privacy:</p>
-            
-            <div class="card">
-                <h3>🛡️ Anonymization</h3>
-                <p>
-                    Before any data is sent to the AI, we strip out personal identifiers. Names, specific locations, 
-                    and other identifying information are removed or generalized.
-                </p>
-            </div>
-            
-            <div class="card">
-                <h3>📱 App Proxying</h3>
-                <p>
-                    App names are proxied — instead of sending the actual app name, we send a generic category 
-                    (e.g., "fitness app" instead of the specific name).
-                </p>
-            </div>
-            
-            <div class="card">
-                <h3>🚫 No Training</h3>
-                <p>
-                    Your conversations are not used to train AI models. We use API services that do not retain 
-                    or learn from your data.
-                </p>
-            </div>
-        </section>
+        <h3>AI Processing</h3>
+        <p>Savyn uses AI to power conversations with your council members. Here's how we protect your privacy:</p>
+        <ul>
+            <li><strong>Anonymization:</strong> Before any data is sent to the AI, we strip out personal identifiers. Names, specific locations, and other identifying information are removed or generalized.</li>
+            <li><strong>App proxying:</strong> App names are proxied — instead of sending the actual app name, we send a generic category (e.g., "fitness app" instead of the specific name).</li>
+            <li><strong>No training:</strong> Your conversations are not used to train AI models. We use API services that do not retain or learn from your data.</li>
+        </ul>
 
-        <!-- What We Don't Do -->
-        <section>
-            <h2>What We Don't Do</h2>
-            <ul>
-                <li><strong>No data selling</strong> — We have nothing to sell. Your data isn't ours.</li>
-                <li><strong>No advertising</strong> — No ads, no ad tracking, no targeting.</li>
-                <li><strong>No analytics</strong> — We don't track how you use the app.</li>
-                <li><strong>No accounts</strong> — Full functionality without signing up.</li>
-                <li><strong>No third-party sharing</strong> — Beyond anonymized AI processing, your data goes nowhere.</li>
-            </ul>
-        </section>
+        <h3>Third-Party Services</h3>
+        <p>Savyn communicates with the following external services through our secure proxy:</p>
+        <ul>
+            <li><strong>OpenAI API</strong> — Powers AI agent conversations and voice transcription. Anonymized conversation context is sent for processing. OpenAI's API data usage policy applies; data is not used for model training.</li>
+            <li><strong>Exa API</strong> — Powers the Discovery feature and web search for link enrichment. Only search queries and URLs are sent; no personal data is transmitted.</li>
+        </ul>
+        <p>All external requests are routed through our Cloudflare Worker proxy over HTTPS. No raw personal data is sent to any third-party service.</p>
 
-        <!-- Permissions -->
-        <section>
-            <h2>Permissions We Request</h2>
-            <div class="card">
-                <h3>🌐 Internet</h3>
-                <p>
-                    Required for AI-powered conversations and link enrichment. Chat messages are sent to our 
-                    server for processing (anonymized) and are not stored.
-                </p>
-            </div>
-            <div class="card">
-                <h3>🎙️ Microphone (optional)</h3>
-                <p>
-                    If you use voice input, audio is recorded and transcribed by cloud LLMs. 
-                    Audio is not stored in our servers.
-                </p>
-            </div>
-            <div class="card">
-                <h3>⏰ Alarms & Reminders</h3>
-                <p>
-                    Used to schedule reminders you set through your agents. No data leaves your device for this feature.
-                </p>
-            </div>
-        </section>
+        <h3>What We Don't Do</h3>
+        <ul>
+            <li><strong>No third-party sharing</strong> — Beyond anonymized AI processing described above, your data goes nowhere.</li>
+            <li><strong>No accounts</strong> — Full functionality without signing up.</li>
+            <li><strong>No analytics</strong> — We don't track how you use the app.</li>
+            <li><strong>No advertising</strong> — No ads, no ad tracking, no targeting.</li>
+            <li><strong>No data selling</strong> — We have nothing to sell. Your data isn't ours.</li>
+        </ul>
 
-        <!-- Your Control -->
-        <section>
-            <h2>Your Control</h2>
-            <ul>
-                <li><strong>Delete anytime</strong> — Uninstalling Savyn removes all local data instantly.</li>
-                <li><strong>Clear conversations</strong> — Reset any agent's memory from within the app.</li>
-                <li><strong>Revoke permissions</strong> — Disable microphone access anytime in Android settings.</li>
-                <li><strong>Cancel subscription</strong> — Manage or cancel through Google Play Store at any time.</li>
-            </ul>
-        </section>
+        <h3>Permissions We Request</h3>
+        <ul>
+            <li><strong>Internet:</strong> Required for AI-powered conversations, voice transcription, and link enrichment. Chat messages are anonymized and sent through our proxy for processing. They are not stored on our servers.</li>
+            <li><strong>Microphone (optional):</strong> If you use voice input, audio is recorded and sent through our proxy for speech-to-text transcription via OpenAI Whisper. Audio is processed in real time and is not stored.</li>
+            <li><strong>Alarms &amp; Reminders:</strong> Used to schedule reminders you set through your agents. No data leaves your device for this feature.</li>
+        </ul>
 
-        <!-- Children -->
-        <section>
-            <h2>Children's Privacy</h2>
-            <p>
-                Savyn is not directed at children under 13. We do not knowingly collect data from children.
-            </p>
-        </section>
+        <h3>Subscriptions &amp; Billing</h3>
+        <p>Savyn offers optional paid subscriptions managed entirely through Google Play. We do not collect, process, or store any payment information. All billing is handled by Google. Your subscription status is checked locally via the Google Play Billing API.</p>
 
-        <!-- Changes -->
-        <section>
-            <h2>Policy Updates</h2>
-            <p>
-                If we update this policy, we'll note the changes here and update the date above. 
-                Significant changes will be announced in the app.
-            </p>
-        </section>
+        <h3>Data Security</h3>
+        <ul>
+            <li>All data is stored locally on your device in an encrypted database.</li>
+            <li>All network communication uses HTTPS/TLS encryption.</li>
+            <li>No cloud backup by Savyn. If you enable system-level backups, your OS/vendor policies may apply.</li>
+        </ul>
 
-        <!-- Contact -->
-        <div class="contact-section">
-            <h2>Questions?</h2>
-            <p>We're happy to clarify anything.</p>
-            <p><a href="mailto:support@savynlabs.com">support@savynlabs.com</a></p>
+        <h3>Your Rights (GDPR / CCPA)</h3>
+        <p>Because Savyn stores data exclusively on your device, you have full, immediate control over all your data:</p>
+        <ul>
+            <li><strong>Right to access:</strong> All your data is visible within the app at all times.</li>
+            <li><strong>Right to deletion:</strong> Uninstalling Savyn permanently deletes all local data. You can also clear individual conversations or saved items within the app.</li>
+            <li><strong>Right to portability:</strong> Your data lives on your device and is not locked into any cloud service.</li>
+            <li><strong>Right to restrict processing:</strong> You can revoke microphone access in Android settings at any time. You can use the app without AI features.</li>
+            <li><strong>Right to object:</strong> No data is processed for marketing, profiling, or automated decision-making.</li>
+            <li><strong>Do Not Sell (CCPA):</strong> We do not sell personal information. We have no personal information to sell.</li>
+        </ul>
+        <p>For any data-related requests, contact us at <a href="mailto:support@savynlabs.com">support@savynlabs.com</a>. We will respond within 30 days.</p>
+
+        <h3>Your Control</h3>
+        <ul>
+            <li><strong>Cancel subscription</strong> — Manage or cancel through Google Play Store at any time.</li>
+            <li><strong>Revoke permissions</strong> — Disable microphone access anytime in Android settings.</li>
+            <li><strong>Clear conversations</strong> — Reset any agent's memory from within the app.</li>
+            <li><strong>Delete anytime</strong> — Uninstalling Savyn removes all local data instantly.</li>
+        </ul>
+
+        <h3>Children's Privacy</h3>
+        <p>Savyn is not directed at children under 13. We do not knowingly collect data from children. If you believe a child has provided us with personal data, please contact us and we will take steps to remove it.</p>
+
+        <h3>Changes to This Policy</h3>
+        <p>If we update this policy, we'll note the changes here and update the date above. Significant changes will be announced in the app.</p>
+
+        <div class="contact">
+            <h3>Contact</h3>
+            <p><strong>Email:</strong> <a href="mailto:support@savynlabs.com">support@savynlabs.com</a><br>
+            <strong>Developer:</strong> Savyn Labs<br>
+            <strong>Location:</strong> Hyderabad, India</p>
         </div>
     </div>
-
-    <footer class="footer">
-        <div style="display:flex;justify-content:center;gap:1.5rem;margin-bottom:0.5rem;">
-            <a href="/">← Back to Savyn</a>
-            <a href="/terms-of-service.html">Terms of Service</a>
-        </div>
-        <span>© 2026 Savyn Labs</span>
-    </footer>
 </body>
 </html>
