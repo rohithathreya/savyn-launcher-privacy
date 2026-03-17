@@ -7,153 +7,211 @@
     <meta name="description" content="Savyn shapes itself entirely around what you care about. Your interests, your schedule, your goals — understood and surfaced at the right time. Fully private. Fully yours.">
     <meta name="theme-color" content="#000000">
 
+    <meta property="og:title" content="Savyn — An OS That Actually Knows You">
+    <meta property="og:description" content="Your phone, shaped around what you care about. Interests, schedule, goals — understood and surfaced at the right time.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://savynlabs.com">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="ambient-orb"></div>
+    <div class="noise-overlay"></div>
+    <div class="ambient-glow"></div>
 
-    <section class="hero container">
-        <div class="hero-content animate-reveal">
+    <section class="hero">
+        <div class="hero-inner animate-fade-in">
             <div class="badge">For Android</div>
-            <h1 class="hero-title">Your phone should<br><i>know you</i> by now.</h1>
-            <p class="hero-subtitle">Savyn shapes itself entirely around what you care about.<br><span>Your interests. Your schedule. Your mind.</span></p>
-            <a href="https://play.google.com/store/apps/details?id=com.savyn.os" class="btn-primary">
-                Get Savyn
-            </a>
+            <h1 class="hero-title">
+                Your phone should<br><i>know you</i> by now.
+            </h1>
+            <p class="hero-subtitle">
+                Savyn shapes itself entirely around what you care about.<br>
+                <span>Your interests. Your schedule. Your mind.</span>
+            </p>
+            <div class="cta-wrapper">
+                <a href="https://play.google.com/store/apps/details?id=com.savyn.os" class="btn-primary">
+                    <span class="btn-text">Try Savyn</span>
+                    <span class="btn-glow"></span>
+                </a>
+            </div>
         </div>
     </section>
 
     <section class="concept container">
-        <div class="concept-row animate-reveal">
-            <div class="concept-col">
-                <p class="eyebrow">The Problem</p>
-                <h2 class="section-title">You use 30 apps a day.<br>None of them <i>talk.</i></h2>
-            </div>
-            <div class="concept-col">
-                <p class="body-text">Your fitness app doesn't know about your work deadlines. Your notes app doesn't know what you're interested in. Your phone sees fragments of your life, but never the full picture.</p>
-            </div>
+        <div class="concept-block animate-on-scroll">
+            <p class="eyebrow">The problem</p>
+            <h2 class="section-title">You use 30 apps a day.<br>None of them <i>talk to each other.</i></h2>
+            <p class="body-large">
+                Your fitness app doesn't know about your work deadlines. Your notes app doesn't know 
+                what you're interested in. Your phone sees fragments of your life — steps, playlists, 
+                messages, orders — but never the full picture.
+            </p>
         </div>
 
-        <div class="concept-row animate-reveal">
-            <div class="concept-col">
-                <p class="eyebrow">The Solution</p>
-                <h2 class="section-title">What if your phone<br><i>understood</i> you?</h2>
-            </div>
-            <div class="concept-col">
-                <p class="body-text">Not a generic assistant. An OS layer that learns your interests, remembers your conversations, notices your patterns, and surfaces the right thing at the right time. Built around you.</p>
-            </div>
+        <div class="concept-block animate-on-scroll">
+            <p class="eyebrow">The idea</p>
+            <h2 class="section-title">What if your phone actually<br><i>understood</i> you?</h2>
+            <p class="body-large">
+                Not a generic assistant that answers questions. An OS layer that learns your interests, 
+                remembers your conversations, notices your patterns, and surfaces the right thing at 
+                the right time. Built around you — not around apps.
+            </p>
         </div>
     </section>
 
-    <section class="features container">
-        <div class="section-header animate-reveal">
-            <p class="eyebrow">The Architecture</p>
+    <section class="agents container">
+        <div class="section-header animate-on-scroll">
+            <p class="eyebrow">What Savyn does</p>
             <h2 class="section-title">Three screens.<br><i>Everything</i> you need.</h2>
         </div>
 
-        <div class="bento-grid">
-            <div class="bento-card animate-reveal">
-                <div class="card-icon">⚡</div>
-                <div class="card-text">
+        <div class="bento-grid" id="cards-container">
+            <div class="bento-card animate-on-scroll">
+                <div class="card-content">
+                    <div class="icon-wrapper">⚡</div>
                     <p class="card-role">Your command center</p>
                     <h3>Daily Ops</h3>
-                    <p>Talk to Savyn about anything — tasks, questions, planning. It remembers your context and manages your schedule.</p>
+                    <p class="card-desc">Talk to Savyn about anything — tasks, questions, planning, venting. It remembers your context, manages your schedule, and handles tools like reminders and search.</p>
                 </div>
             </div>
 
-            <div class="bento-card animate-reveal">
-                <div class="card-icon">🧠</div>
-                <div class="card-text">
+            <div class="bento-card animate-on-scroll">
+                <div class="card-content">
+                    <div class="icon-wrapper">🧠</div>
                     <p class="card-role">The inner council</p>
                     <h3>Your Mind</h3>
-                    <p>Ask a question and hear from different parts of who you are. Each perspective is distinct, then Savyn synthesizes it all.</p>
+                    <p class="card-desc">Ask a question and hear from the different parts of who you are — your drives, your interests, your values. Each perspective is distinct. Then Savyn synthesizes it all.</p>
                 </div>
             </div>
 
-            <div class="bento-card animate-reveal">
-                <div class="card-icon">📅</div>
-                <div class="card-text">
+            <div class="bento-card animate-on-scroll">
+                <div class="card-content">
+                    <div class="icon-wrapper">📅</div>
                     <p class="card-role">Your day, visualized</p>
                     <h3>Schedule</h3>
-                    <p>See your patterns laid out hour by hour. Add blocks naturally. Savyn learns your rhythms.</p>
+                    <p class="card-desc">See your patterns laid out hour by hour. Add blocks by talking naturally. Savyn learns your rhythms and suggests what comes next.</p>
                 </div>
             </div>
 
-            <div class="bento-card animate-reveal">
-                <div class="card-icon">✦</div>
-                <div class="card-text">
+            <div class="bento-card animate-on-scroll">
+                <div class="card-content">
+                    <div class="icon-wrapper">✦</div>
                     <p class="card-role">The home screen</p>
                     <h3>For You</h3>
-                    <p>Apps, tasks, and content surfaced based on what's relevant right now. Voice input with a hold of the Nebula button.</p>
+                    <p class="card-desc">Your apps, your tasks, content from your interests — all surfaced based on what's relevant right now. Quick launch what matters. Voice input with a hold of the Nebula button.</p>
                 </div>
             </div>
 
-            <div class="bento-card animate-reveal">
-                <div class="card-icon">🔗</div>
-                <div class="card-text">
+            <div class="bento-card animate-on-scroll">
+                <div class="card-content">
+                    <div class="icon-wrapper">🔗</div>
                     <p class="card-role">Your second brain</p>
-                    <h3>Links & Notes</h3>
-                    <p>Everything gets enriched — Savyn understands what a saved link is about, tags it, and surfaces it when relevant.</p>
+                    <h3>Links &amp; Notes</h3>
+                    <p class="card-desc">Save links, jot thoughts, capture notes. Everything gets enriched — Savyn understands what it's about, tags it to your interests, and surfaces it when relevant.</p>
                 </div>
             </div>
 
-            <div class="bento-card animate-reveal">
-                <div class="card-icon">👤</div>
-                <div class="card-text">
+            <div class="bento-card animate-on-scroll">
+                <div class="card-content">
+                    <div class="icon-wrapper">👤</div>
                     <p class="card-role">The self-model</p>
                     <h3>You</h3>
-                    <p>Over time, Savyn builds a picture of who you are. You can see it, explore it, and shape it. It's yours.</p>
+                    <p class="card-desc">Over time, Savyn builds a picture of who you are — your interests, your values, your patterns. You can see it, explore it, and shape it. It's yours.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="privacy container animate-reveal">
+    <section class="how-it-works container">
+        <div class="section-header animate-on-scroll">
+            <p class="eyebrow">How it works</p>
+            <h2 class="section-title">Everything happens through<br><i>conversation.</i></h2>
+        </div>
+
+        <div class="steps-grid">
+            <div class="step-item animate-on-scroll">
+                <div class="step-num">01</div>
+                <div>
+                    <h3>Just talk</h3>
+                    <p>No menus. No settings screens. Tell Savyn what's on your mind, what you're working on, what you want to remember. It learns from every conversation.</p>
+                </div>
+            </div>
+            <div class="step-item animate-on-scroll">
+                <div class="step-num">02</div>
+                <div>
+                    <h3>It builds around you</h3>
+                    <p>Savyn discovers your interests, notices your patterns, and organizes your world. Your home screen adapts. Your apps are surfaced when relevant. Content appears when it matters.</p>
+                </div>
+            </div>
+            <div class="step-item animate-on-scroll">
+                <div class="step-num">03</div>
+                <div>
+                    <h3>Voice-first</h3>
+                    <p>Hold the Nebula button and speak. Release toward Daily Ops, Your Mind, or Save as Note. No typing needed — Savyn transcribes in real time.</p>
+                </div>
+            </div>
+            <div class="step-item animate-on-scroll">
+                <div class="step-num">04</div>
+                <div>
+                    <h3>Private by design</h3>
+                    <p>All data stays on your phone. AI calls are anonymized through our proxy. No accounts. No tracking. No ads. Uninstall and everything is gone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="privacy container animate-on-scroll">
         <div class="privacy-box">
-            <p class="eyebrow">The Pledge</p>
+            <p class="eyebrow">The pledge</p>
             <h2 class="section-title">Your data stays<br><i>on your phone.</i></h2>
             <div class="privacy-grid">
                 <div class="privacy-item">
-                    <h4>100% on-device</h4>
-                    <p>Conversations, notes, interests, schedule — everything lives locally.</p>
+                    <h4>100% on-device storage.</h4>
+                    <p>Conversations, notes, interests, schedule — everything lives locally. We don't have servers that store your data.</p>
                 </div>
                 <div class="privacy-item">
-                    <h4>Anonymized AI</h4>
-                    <p>Personal details are stripped before anything hits an API.</p>
+                    <h4>Anonymized AI calls.</h4>
+                    <p>When AI processing is needed, personal details are stripped before anything leaves your device. AI providers don't train on your data.</p>
                 </div>
                 <div class="privacy-item">
-                    <h4>No ads or tracking</h4>
-                    <p>We don't sell data. We don't even run analytics SDKs.</p>
+                    <h4>No ads. No tracking.</h4>
+                    <p>We don't sell data. We don't profile you. We don't show ads. We don't even run analytics SDKs.</p>
                 </div>
                 <div class="privacy-item">
-                    <h4>Uninstall = Gone</h4>
-                    <p>No trace. No cloud backup we control. Your data is yours alone.</p>
+                    <h4>Uninstall and it's gone.</h4>
+                    <p>No trace. No residue. No cloud backup we control. Your data is yours alone.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="creator-note container animate-reveal">
+    <section class="creator-note container animate-on-scroll">
         <p class="eyebrow">From the creator</p>
         <h2 class="section-title">We're still early.</h2>
         <div class="note-content">
-            <p>Savyn is envisioned as an OS for your phone — something that actually understands what you're working on, what matters to you, and surfaces the right thing at the right time. It's designed to shape itself entirely around what you care about.</p>
+            <p>Savyn is envisioned as an OS for your phone — something that actually understands what you're working on, what matters to you, and surfaces the right thing at the right time. It's designed to shape itself entirely around what you care about. Fully owned and controlled by you.</p>
             <p>I'm building this every day. If something feels off, or you just want to share what you're doing with it, write to me at <a href="mailto:support@savynlabs.com">support@savynlabs.com</a>.</p>
             <p class="signoff">Make it yours.<br><span>— Rohith</span></p>
         </div>
     </section>
 
-    <footer class="container animate-reveal">
+    <section class="bottom-cta container animate-on-scroll">
+        <h2 class="hero-title">Give it a spin.</h2>
+        <p class="hero-subtitle">Android. Free to start. Subscription for full power.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.savyn.os" class="btn-primary">Get Savyn on Google Play</a>
+    </section>
+
+    <footer class="container">
         <div class="footer-left">
             <span class="logo">Savyn</span>
             <span class="copy">&copy; 2026 Savyn Labs</span>
         </div>
         <div class="footer-right">
             <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="terms-of-service.html">Terms of Service</a>
             <a href="mailto:support@savynlabs.com">Contact</a>
         </div>
     </footer>
