@@ -3,197 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Savyn — Give every part of you a seat at the table</title>
-    <meta name="description" content="An Android launcher that transforms your phone into a council of AI companions. Each one learns about a different part of your life.">
-    <meta name="theme-color" content="#08080c">
-    
-    <meta property="og:title" content="Savyn — Give every part of you a seat at the table">
-    <meta property="og:description" content="An Android launcher with a council of AI companions.">
+    <title>Savyn — An OS That Actually Knows You</title>
+    <meta name="description" content="Savyn shapes itself entirely around what you care about. Your interests, your schedule, your goals — understood and surfaced at the right time. Fully private. Fully yours.">
+    <meta name="theme-color" content="#0a0a0f">
+
+    <meta property="og:title" content="Savyn — An OS That Actually Knows You">
+    <meta property="og:description" content="Your phone, shaped around what you care about. Interests, schedule, goals — understood and surfaced at the right time.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://savynlabs.com">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="noise"></div>
+    <canvas id="neural-bg"></canvas>
 
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
     <!-- HERO -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
     <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-content">
-            <h1>Your life has so many<br>moving pieces.</h1>
-            <p class="hero-sub">Connect them. <span>Give them all a seat at the table.</span></p>
-            <a href="#beta" class="btn-primary">Join the Beta</a>
+        <div class="hero-inner">
+            <p class="hero-eyebrow">For Android</p>
+            <h1 class="hero-title">
+                Your phone should<br>know you by now.
+            </h1>
+            <p class="hero-subtitle">
+                Savyn shapes itself entirely around what you care about.<br>
+                <strong>Your interests. Your schedule. Your mind.</strong>
+            </p>
+            <a href="https://play.google.com/store/apps/details?id=com.savyn.os" class="hero-cta">Try Savyn</a>
         </div>
-        <div class="scroll-cue">
-            <svg width="20" height="32" viewBox="0 0 20 32" fill="none">
-                <rect x="1" y="1" width="18" height="30" rx="9" stroke="currentColor" stroke-width="1.5"/>
-                <circle class="scroll-dot" cx="10" cy="10" r="3" fill="currentColor"/>
-            </svg>
+        <div class="scroll-hint">
+            <span></span>
         </div>
     </section>
 
-    <!-- TENSION -->
-    <section class="tension">
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- CONCEPT -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <section class="concept">
         <div class="container">
-            <p class="big-text">
-                <span class="cycle-word" id="cycle-word">Work.</span>
-            </p>
-            <p class="tension-followup">
-                Sometimes you ace them all.<br>
-                Sometimes you wish you did. <em>It's hard.</em>
-            </p>
+            <div class="concept-block animate-on-scroll">
+                <p class="concept-label">The problem</p>
+                <h2 class="concept-title">You use 30 apps a day.<br>None of them <em>talk to each other.</em></h2>
+                <p class="concept-body">
+                    Your fitness app doesn't know about your work deadlines. Your notes app doesn't know 
+                    what you're interested in. Your phone sees fragments of your life — steps, playlists, 
+                    messages, orders — but never the full picture.
+                </p>
+            </div>
+
+            <div class="concept-block animate-on-scroll">
+                <p class="concept-label">The idea</p>
+                <h2 class="concept-title">What if your phone actually<br><em>understood</em> you?</h2>
+                <p class="concept-body">
+                    Not a generic assistant that answers questions. An OS layer that learns your interests, 
+                    remembers your conversations, notices your patterns, and surfaces the right thing at 
+                    the right time. Built around you — not around apps.
+                </p>
+            </div>
         </div>
     </section>
 
-    <!-- MAIN CONTENT BOXES -->
-    <section class="content-boxes">
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- FEATURES -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <section class="agents" id="features">
         <div class="container">
+            <p class="section-label animate-on-scroll">What Savyn does</p>
+            <h2 class="section-title animate-on-scroll">Three screens.<br>Everything you need.</h2>
 
-            <!-- BOX 1: THE COUNCIL -->
-            <div class="content-box">
-                <span class="box-label">Welcome to your council</span>
-                <h2>Savyn transforms your phone into a council of members, each responsible for one part of your life.</h2>
-                <p class="box-text">They understand your aspirations, thoughts, what you want and when.</p>
-                
-                <div class="members-row">
-                    <div class="member"><img src="avatars/savyn_work.webp" alt="Work"><span>Work</span></div>
-                    <div class="member"><img src="avatars/savyn_food.webp" alt="Food"><span>Food</span></div>
-                    <div class="member"><img src="avatars/savyn_fitness.webp" alt="Fitness"><span>Fitness</span></div>
-                    <div class="member"><img src="avatars/savyn_mind.webp" alt="Mind"><span>Mind</span></div>
-                    <div class="member"><img src="avatars/savyn_chill.webp" alt="Chill"><span>Chill</span></div>
-                    <div class="member"><img src="avatars/savyn_relationships.webp" alt="Relationships"><span>Relationships</span></div>
+            <div class="agent-grid">
+                <div class="agent-card animate-on-scroll" data-accent="#f5c344">
+                    <div class="agent-icon">⚡</div>
+                    <h3>Daily Ops</h3>
+                    <p class="agent-role">Your command center</p>
+                    <p class="agent-desc">Talk to Savyn about anything — tasks, questions, planning, venting. It remembers your context, manages your schedule, and handles tools like reminders and search.</p>
                 </div>
 
-                <p class="box-note">These are starting points. Create members for whatever matters — <em>finance, spirituality, side projects, parenting</em> — the council is yours.</p>
+                <div class="agent-card animate-on-scroll" data-accent="#b05ce6">
+                    <div class="agent-icon">🧠</div>
+                    <h3>Your Mind</h3>
+                    <p class="agent-role">The inner council</p>
+                    <p class="agent-desc">Ask a question and hear from the different parts of who you are — your drives, your interests, your values. Each perspective is distinct. Then Savyn synthesizes it all.</p>
+                </div>
+
+                <div class="agent-card animate-on-scroll" data-accent="#5c8ae6">
+                    <div class="agent-icon">📅</div>
+                    <h3>Schedule</h3>
+                    <p class="agent-role">Your day, visualized</p>
+                    <p class="agent-desc">See your patterns laid out hour by hour. Add blocks by talking naturally. Savyn learns your rhythms and suggests what comes next.</p>
+                </div>
+
+                <div class="agent-card animate-on-scroll" data-accent="#5ce6a0">
+                    <div class="agent-icon">✦</div>
+                    <h3>For You</h3>
+                    <p class="agent-role">The home screen</p>
+                    <p class="agent-desc">Your apps, your tasks, content from your interests — all surfaced based on what's relevant right now. Quick launch what matters. Voice input with a hold of the Nebula button.</p>
+                </div>
+
+                <div class="agent-card animate-on-scroll" data-accent="#e6845c">
+                    <div class="agent-icon">🔗</div>
+                    <h3>Links &amp; Notes</h3>
+                    <p class="agent-role">Your second brain</p>
+                    <p class="agent-desc">Save links, jot thoughts, capture notes. Everything gets enriched — Savyn understands what it's about, tags it to your interests, and surfaces it when relevant.</p>
+                </div>
+
+                <div class="agent-card animate-on-scroll" data-accent="#e65c8a">
+                    <div class="agent-icon">👤</div>
+                    <h3>You</h3>
+                    <p class="agent-role">The self-model</p>
+                    <p class="agent-desc">Over time, Savyn builds a picture of who you are — your interests, your values, your patterns. You can see it, explore it, and shape it. It's yours.</p>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <!-- BOX 2: HOW IT WORKS -->
-            <div class="content-box">
-                <span class="box-label">How it works</span>
-                <h2>Everything happens through conversation.</h2>
-                <p class="box-text">No menus. No settings screens. Just talk.</p>
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- HOW IT WORKS -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <section class="how-it-works">
+        <div class="container">
+            <p class="section-label animate-on-scroll">How it works</p>
+            <h2 class="section-title animate-on-scroll">Everything happens through<br>conversation.</h2>
 
-                <div class="feature-carousel">
-                    <!-- Card 1: Learn by listening -->
-                    <div class="feature-card">
-                        <div class="card-mockup chat-mockup">
-                            <div class="mockup-header">
-                                <img src="avatars/savyn_work.webp" alt="Work" class="mockup-avatar">
-                                <span>Work</span>
-                            </div>
-                            <div class="mockup-chat">
-                                <div class="chat-bubble them">How's the job search going?</div>
-                                <div class="chat-bubble you">Got an interview next week</div>
-                                <div class="chat-bubble them">That's huge! Want me to help prep?</div>
-                            </div>
+            <div class="steps">
+                <div class="step animate-on-scroll">
+                    <div class="step-number">1</div>
+                    <h3>Just talk</h3>
+                    <p>No menus. No settings screens. Tell Savyn what's on your mind, what you're working on, what you want to remember. It learns from every conversation.</p>
+                </div>
+
+                <div class="step animate-on-scroll">
+                    <div class="step-number">2</div>
+                    <h3>It builds around you</h3>
+                    <p>Savyn discovers your interests, notices your patterns, and organizes your world. Your home screen adapts. Your apps are surfaced when relevant. Content appears when it matters.</p>
+                </div>
+
+                <div class="step animate-on-scroll">
+                    <div class="step-number">3</div>
+                    <h3>Voice-first</h3>
+                    <p>Hold the Nebula button and speak. Release toward Daily Ops, Your Mind, or Save as Note. No typing needed — Savyn transcribes in real time.</p>
+                </div>
+
+                <div class="step animate-on-scroll">
+                    <div class="step-number">4</div>
+                    <h3>Private by design</h3>
+                    <p>All data stays on your phone. AI calls are anonymized through our proxy. No accounts. No tracking. No ads. Uninstall and everything is gone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- PRIVACY -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <section class="privacy">
+        <div class="container">
+            <div class="privacy-content animate-on-scroll">
+                <p class="section-label">The pledge</p>
+                <h2 class="section-title">Your data stays<br>on your phone.</h2>
+                <div class="privacy-points">
+                    <div class="privacy-point">
+                        <span class="privacy-icon">📱</span>
+                        <div>
+                            <h4>100% on-device storage.</h4>
+                            <p>Conversations, notes, interests, schedule — everything lives locally. We don't have servers that store your data.</p>
                         </div>
-                        <h3>They learn by listening</h3>
-                        <p>The more you talk, the better they understand. They remember everything.</p>
                     </div>
-
-                    <!-- Card 2: Check in when it matters -->
-                    <div class="feature-card">
-                        <div class="card-mockup checkin-mockup">
-                            <div class="checkin-notification">
-                                <img src="avatars/savyn_fitness.webp" alt="Fitness" class="notif-avatar">
-                                <div class="notif-content">
-                                    <strong>Fitness</strong>
-                                    <span>Gym today or rest day?</span>
-                                </div>
-                                <span class="notif-time">7:30 AM</span>
-                            </div>
-                            <div class="checkin-notification">
-                                <img src="avatars/savyn_mind.webp" alt="Mind" class="notif-avatar">
-                                <div class="notif-content">
-                                    <strong>Mind</strong>
-                                    <span>Time for your evening journal?</span>
-                                </div>
-                                <span class="notif-time">9:00 PM</span>
-                            </div>
+                    <div class="privacy-point">
+                        <span class="privacy-icon">🔒</span>
+                        <div>
+                            <h4>Anonymized AI calls.</h4>
+                            <p>When AI processing is needed, personal details are stripped before anything leaves your device. AI providers don't train on your data.</p>
                         </div>
-                        <h3>They check in when it matters</h3>
-                        <p>Not random notifications. They know when to show up — and when to leave you alone.</p>
                     </div>
-
-                    <!-- Card 3: Each has their own apps -->
-                    <div class="feature-card">
-                        <div class="card-mockup apps-mockup">
-                            <div class="apps-member">
-                                <img src="avatars/savyn_fitness.webp" alt="Fitness" class="apps-avatar">
-                                <span>Fitness</span>
-                            </div>
-                            <div class="apps-grid">
-                                <div class="app-icon-lg" style="background: linear-gradient(135deg, #1db954, #148f3f);"><span>🎵</span></div>
-                                <div class="app-icon-lg" style="background: linear-gradient(135deg, #e74c3c, #c0392b);"><span>💪</span></div>
-                                <div class="app-icon-lg" style="background: linear-gradient(135deg, #f39c12, #e67e22);"><span>🏃</span></div>
-                                <div class="app-icon-lg" style="background: linear-gradient(135deg, #3498db, #2980b9);"><span>💧</span></div>
-                            </div>
+                    <div class="privacy-point">
+                        <span class="privacy-icon">🚫</span>
+                        <div>
+                            <h4>No ads. No tracking. No analytics.</h4>
+                            <p>We don't sell data. We don't profile you. We don't show ads. We don't even run analytics SDKs.</p>
                         </div>
-                        <h3>Each has their own apps</h3>
-                        <p>Fitness knows your gym app. Chill knows Netflix. Quick launch from home.</p>
+                    </div>
+                    <div class="privacy-point">
+                        <span class="privacy-icon">🗑️</span>
+                        <div>
+                            <h4>Uninstall and it's gone.</h4>
+                            <p>No trace. No residue. No cloud backup we control. Your data is yours alone.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <!-- BOX 3: PRIVACY -->
-            <div class="content-box">
-                <span class="box-label">Privacy-first</span>
-                <h2>Your conversations never touch our servers.</h2>
-                
-                <ul class="privacy-list">
-                    <li><strong>Local only</strong> — All data lives on your device. We cannot see it.</li>
-                    <li><strong>Anonymized AI</strong> — Personal details are stripped before any AI processing.</li>
-                    <li><strong>Zero tracking</strong> — No accounts. No ads. No selling your data.</li>
-                    <li><strong>Total control</strong> — Delete the app, everything goes with it.</li>
-                </ul>
-            </div>
-
         </div>
     </section>
 
-    <!-- PULL QUOTE -->
-    <section class="quote-section">
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- CREATOR NOTE -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <section class="widget-section">
         <div class="container">
-            <blockquote>
-                Over time, they notice patterns, remember context, and coordinate to help you be who you actually want to be.
-            </blockquote>
+            <div class="widget-content animate-on-scroll">
+                <p class="section-label">From the creator</p>
+                <h2 class="section-title">We're still early.</h2>
+                <p class="widget-body">
+                    Savyn is envisioned as an OS for your phone — something that actually understands 
+                    what you're working on, what matters to you, and surfaces the right thing at the right time. 
+                    It's designed to shape itself entirely around what you care about. Fully owned and controlled by you.
+                </p>
+                <p class="widget-body" style="margin-top: 16px;">
+                    I'm building this every day. If something feels off, or you just want to share 
+                    what you're doing with it, write to me at 
+                    <a href="mailto:support@savynlabs.com" style="color: var(--gold);">support@savynlabs.com</a>.
+                </p>
+                <p class="widget-body" style="margin-top: 20px; color: var(--text); font-weight: 500;">
+                    Make it yours.<br>— Rohith
+                </p>
+            </div>
         </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
     <!-- CTA -->
-    <section class="cta" id="beta">
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <section class="cta" id="download">
         <div class="container">
-            <h2>Join the closed beta.</h2>
-            <p class="cta-sub">Android first. Limited spots.</p>
-
-            <form id="beta-form" class="beta-form">
-                <input type="email" id="email-input" placeholder="your@email.com" required>
-                <button type="submit" id="submit-btn">
-                    <span class="btn-text">Get Early Access</span>
-                    <span class="btn-spinner"></span>
-                </button>
-            </form>
-
-            <div id="success-msg" class="success-msg">
-                <span class="success-check">✓</span>
-                <p>You're in! We'll get back via email when the next beta slots open up. Stay tuned!</p>
+            <div class="cta-content animate-on-scroll">
+                <h2 class="cta-title">Give it a spin.</h2>
+                <p class="cta-subtitle">Android. Free to start. Subscription for full power.</p>
+                <div style="margin-top: 32px;">
+                    <a href="https://play.google.com/store/apps/details?id=com.savyn.os" class="hero-cta" style="opacity: 1; animation: none;">Get Savyn on Google Play</a>
+                </div>
             </div>
-            <div id="error-msg" class="error-msg"></div>
         </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
     <!-- FOOTER -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
     <footer>
-        <div class="container footer-grid">
-            <div class="footer-brand">Savyn <span>by Savyn Labs</span></div>
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <span class="footer-logo">Savyn</span>
+                <span class="footer-tagline">by Savyn Labs</span>
+            </div>
             <div class="footer-links">
                 <a href="privacy-policy.html">Privacy Policy</a>
                 <a href="mailto:support@savynlabs.com">Contact</a>
             </div>
+            <p class="footer-copy">&copy; 2026 Savyn Labs. All rights reserved.</p>
         </div>
-        <p class="copyright">© 2026 Savyn Labs</p>
     </footer>
 
     <script src="script.js"></script>
