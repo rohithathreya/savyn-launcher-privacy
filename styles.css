@@ -23,6 +23,7 @@ html {
     font-family: var(--font-sans);
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
+    scroll-snap-type: y proximity;
 }
 
 body {
@@ -78,10 +79,11 @@ a:hover { filter: brightness(1.2); }
 
 .section-title {
     font-family: var(--font-serif);
-    font-size: clamp(3rem, 6vw, 4.5rem);
-    line-height: 1;
+    font-size: clamp(2.4rem, 5vw, 4.5rem);
+    line-height: 1.1;
     letter-spacing: -0.02em;
     margin-bottom: 1.5rem;
+    text-wrap: balance;
 }
 
 .section-title i, .hero-title i {
@@ -167,18 +169,20 @@ a:hover { filter: brightness(1.2); }
 
 .hero-title {
     font-family: var(--font-serif);
-    font-size: clamp(4rem, 10vw, 7rem);
+    font-size: clamp(3.2rem, 8vw, 7rem);
     line-height: 0.95;
     letter-spacing: -0.03em;
     margin-bottom: 1.5rem;
     text-shadow: 0 4px 30px rgba(0,0,0,0.5);
+    text-wrap: balance;
 }
 
 .hero-subtitle {
-    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
     color: var(--text-secondary);
     line-height: 1.5;
     margin-bottom: 3rem;
+    text-wrap: balance;
 }
 
 .hero-subtitle span {
@@ -225,6 +229,8 @@ a:hover { filter: brightness(1.2); }
 /* ═══════════════════════════════════════════════════════════════════════════ */
 section {
     padding: 10rem 24px;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
 }
 
 .concept-block {
@@ -528,7 +534,7 @@ footer {
 }
 
 @media (max-width: 768px) {
-    section { padding: 6rem 16px; }
+    section { padding: 6rem 16px; scroll-snap-align: start; }
     .privacy-box { padding: 2rem; }
     .note-content { padding: 1.5rem; }
     footer { flex-direction: column; gap: 1rem; text-align: center; }
@@ -538,5 +544,5 @@ footer {
     .bento-grid { gap: 24px; padding: 2rem 0 4rem 0; }
     .bento-card h3 { font-size: 1.8rem; }
     .card-desc { font-size: 0.9rem; }
-    .hero-marquee-section { padding: 4rem 0; }
+    .hero-marquee-section { padding: 4rem 16px; min-height: 100vh; }
 }
