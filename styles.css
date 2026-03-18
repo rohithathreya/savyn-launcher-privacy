@@ -237,12 +237,12 @@ section {
     margin-bottom: 6rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
 }
 
 .section-header {
-    text-align: center;
+    text-align: left;
     margin-bottom: 4rem;
 }
 
@@ -418,7 +418,7 @@ section {
     border: 1px solid var(--surface-border);
     border-radius: 24px;
     padding: 4rem;
-    text-align: center;
+    text-align: left;
 }
 
 .privacy-grid {
@@ -444,12 +444,12 @@ section {
 /* CREATOR NOTE & BOTTOM                                                       */
 /* ═══════════════════════════════════════════════════════════════════════════ */
 .creator-note {
-    text-align: center;
+    text-align: left;
 }
 
 .note-content {
     max-width: 600px;
-    margin: 0 auto;
+    margin: 0;
     text-align: left;
     background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, transparent 100%);
     padding: 3rem;
@@ -477,7 +477,7 @@ section {
 }
 
 .bottom-cta {
-    text-align: center;
+    text-align: left;
     padding: 6rem 0;
 }
 
@@ -537,7 +537,7 @@ footer {
     section { padding: 6rem 16px; scroll-snap-align: start; }
     .privacy-box { padding: 2rem; }
     .note-content { padding: 1.5rem; }
-    footer { flex-direction: column; gap: 1rem; text-align: center; }
+    footer { flex-direction: column; gap: 1rem; text-align: left; align-items: flex-start; }
     
     .bento-card { min-height: 400px; }
     .card-content { padding: 32px 24px; }
