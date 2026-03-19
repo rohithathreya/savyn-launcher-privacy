@@ -43,12 +43,20 @@
                 An AI-native layer for your phone<br>
                 <span>that shapes itself around you...</span>
             </p>
-            <div class="cta-wrapper">
-                <a href="https://play.google.com/store/apps/details?id=com.savyn.os" class="btn-primary">
-                    <span class="btn-text">Try Savyn</span>
-                    <span class="btn-glow"></span>
-                </a>
+            <form id="hero-form" class="signup-form">
+                <div class="form-row">
+                    <input type="email" class="signup-input" placeholder="your@email.com" required>
+                    <button type="submit" class="signup-btn">
+                        <span class="btn-text">Get Early Access</span>
+                        <span class="btn-spinner"></span>
+                    </button>
+                </div>
+                <p class="form-hint">Be the first to know when Savyn launches.</p>
+            </form>
+            <div class="signup-success" style="display:none;">
+                <p>You're in. We'll reach out soon.</p>
             </div>
+            <p class="signup-error" style="display:none;"></p>
         </div>
     </section>
 
@@ -224,10 +232,21 @@
     </section>
 
     <section class="bottom-cta container animate-on-scroll">
-        <h2 class="hero-title">Give it a spin.</h2>
-        <p class="hero-subtitle">Android. Free to start. Subscription for full power.</p>
-        <a href="https://play.google.com/store/apps/details?id=com.savyn.os" class="btn-primary">Get Savyn on Google
-            Play</a>
+        <h2 class="hero-title">Stay in the loop.</h2>
+        <p class="hero-subtitle">Sign up and we'll let you know when Savyn is ready.</p>
+        <form id="bottom-form" class="signup-form">
+            <div class="form-row">
+                <input type="email" class="signup-input" placeholder="your@email.com" required>
+                <button type="submit" class="signup-btn">
+                    <span class="btn-text">Get Early Access</span>
+                    <span class="btn-spinner"></span>
+                </button>
+            </div>
+        </form>
+        <div class="signup-success" style="display:none;">
+            <p>You're in. We'll reach out soon.</p>
+        </div>
+        <p class="signup-error" style="display:none;"></p>
     </section>
 
     <footer class="container">

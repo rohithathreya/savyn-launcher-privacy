@@ -53,3 +53,48 @@
 
     elements.forEach(el => observer.observe(el));
 })();
+
+// ═══════════════════════════════════════════════════════════════════════════
+// EMAIL SIGNUP — Formspree
+// ═══════════════════════════════════════════════════════════════════════════
+
+(function initSignupForms() {
+    document.querySelectorAll('.signup-form').forEach(form => {
+        const input = form.querySelector('.signup-input');
+        const btn = form.querySelector('.signup-btn');
+        const success = form.parentElement.querySelector('.signup-success');
+        const error = form.parentElement.querySelector('.signup-error');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = input.value.trim();
+            if (!email) return;
+
+            btn.classList.add('loading');
+            btn.disabled = true;
+            if (error) error.style.display = 'none';
+
+            try {
+                const res = await fetch('https://formspree.io/f/mlgwbpbj', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email })
+                });
+
+                if (res.ok) {
+                    form.style.display = 'none';
+                    if (success) success.style.display = 'block';
+                } else {
+                    throw new Error('Something went wrong. Please try again.');
+                }
+            } catch (err) {
+                if (error) {
+                    error.textContent = err.message || 'Something went wrong. Please try again.';
+                    error.style.display = 'block';
+                }
+                btn.classList.remove('loading');
+                btn.disabled = false;
+            }
+        });
+    });
+})();
