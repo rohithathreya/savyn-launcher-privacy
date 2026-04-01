@@ -22,24 +22,6 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
-    
-    <style>
-        .marquee-text-track {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            white-space: nowrap;
-        }
-        .marquee-text-item {
-            font-family: var(--font-sans);
-            font-size: clamp(4rem, 10vw, 8rem);
-            font-weight: 700;
-            color: rgba(255, 255, 255, 0.03);
-            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
-            text-transform: uppercase;
-            letter-spacing: -0.02em;
-        }
-    </style>
 </head>
 
 <body>
@@ -48,9 +30,9 @@
 
     <section class="hero hero-marquee-section">
         <div class="marquee-bg">
-            <div class="marquee-track marquee-text-track">
-                <span class="marquee-text-item">UPGRADE YOUR RAM • ZERO-SHOT EXECUTION • BYPASS DECISION FATIGUE • DROP THE CONTEXT TAX • </span>
-                <span class="marquee-text-item">UPGRADE YOUR RAM • ZERO-SHOT EXECUTION • BYPASS DECISION FATIGUE • DROP THE CONTEXT TAX • </span>
+            <div class="marquee-track">
+                <img src="avatars/onboarding_banner.webp" alt="Banner">
+                <img src="avatars/onboarding_banner.webp" alt="Banner">
             </div>
         </div>
         <div class="hero-inner animate-fade-in relative-z">
@@ -58,9 +40,8 @@
                 You are operating in the<br><i>wrong dimension.</i>
             </h1>
             <p class="hero-subtitle">
-                Folders. App grids. To-do lists. Tedious productivity trackers.<br>
-                <span>These are primitive relics that force your mind to think like a machine.</span><br><br>
-                We evolved past the grid. Savyn is an OS-level exoskeleton that catches your fleeting thoughts, bypasses decision fatigue, and dynamically materializes your next move.
+                Folders and app grids are primitive relics.<br>
+                <span>Upgrade to an active exoskeleton for your working memory.</span>
             </p>
             <form id="hero-form" class="signup-form">
                 <div class="form-row">
@@ -84,11 +65,9 @@
             <p class="eyebrow">The Paradigm Shift</p>
             <h2 class="section-title">The "Second Brain" industry<br><i>sold you a lie.</i></h2>
             <p class="body-large">
-                They gave you digital filing cabinets and told you to hoard data for a future that never arrives. They turned your life into a second full-time job of tagging, sorting, and organizing.
+                They gave you digital filing cabinets and told you to hoard data for a future that never arrives. 
                 <br><br>
-                But your mind doesn't need a hard drive. It runs on short-term RAM. Every time you switch contexts—from a deep-work coding sprint, to a complex chess endgame, to an evening yoga practice—the friction of finding the right apps and fighting through the UI bankrupts your willpower.
-                <br><br>
-                You don't lack discipline. You are just using a fundamentally broken operating system.
+                Your mind doesn't need a hard drive. It runs on short-term RAM. Every time you switch contexts, the friction of fighting through the UI bankrupts your willpower. You don't lack discipline. You are just using a fundamentally broken operating system.
             </p>
         </div>
     </section>
@@ -104,21 +83,21 @@
                 <div class="step-num">01</div>
                 <div>
                     <h3>The RAM Upgrade</h3>
-                    <p>Stop categorizing your existence. Hold the mic and yap your messy, unstructured thoughts into the void. Savyn acts as an external working memory, catching your cognitive overflow and parsing your intentions instantly without a single text box.</p>
+                    <p>Hold the mic and yap your unstructured thoughts into the void. Savyn catches your cognitive overflow and parses your intentions instantly.</p>
                 </div>
             </div>
             <div class="step-item animate-on-scroll">
                 <div class="step-num">02</div>
                 <div>
                     <h3>Zero-Shot Execution</h3>
-                    <p>When your context shifts, your phone shifts. No app drawers. No decision fatigue. If it’s time to focus, the OS banishes the noise and sets the board with the exact tools you need, materialized instantly.</p>
+                    <p>When your context shifts, your phone shifts. No app drawers. The OS banishes the noise and sets the board with the exact tools you need.</p>
                 </div>
             </div>
             <div class="step-item animate-on-scroll">
                 <div class="step-num">03</div>
                 <div>
                     <h3>The Exoskeleton</h3>
-                    <p>Productivity apps nag you. Savyn spots you. It is an active companion built around your agency. If you are burnt out, Savyn doesn't guilt-trip you over arbitrary deadlines. It negotiates a break, sets a boundary, and protects your baseline.</p>
+                    <p>Productivity apps nag you. Savyn spots you. It negotiates breaks, sets boundaries, and protects your baseline.</p>
                 </div>
             </div>
         </div>
@@ -135,7 +114,7 @@
                 <img src="avatars/bucket_focus.webp" class="card-bg-image" alt="Deep Work">
                 <div class="card-content">
                     <h3>Deep Work</h3>
-                    <p class="card-desc">Distractions are banished. Your IDE documentation, API references, and active startup execution threads are front and center.</p>
+                    <p class="card-desc">Distractions banished. API references and active startup execution threads are front and center.</p>
                 </div>
             </div>
 
@@ -143,7 +122,7 @@
                 <img src="avatars/bucket_zone_out.webp" class="card-bg-image" alt="Introspection">
                 <div class="card-content">
                     <h3>Introspection</h3>
-                    <p class="card-desc">The grind stops. Tanpura Droid, your meditation timers, and your philosophical journaling threads materialize instantly.</p>
+                    <p class="card-desc">The grind stops. Tanpura Droid, meditation timers, and journaling threads materialize instantly.</p>
                 </div>
             </div>
 
@@ -151,7 +130,7 @@
                 <img src="avatars/bucket_explore.webp" class="card-bg-image" alt="Intellectual">
                 <div class="card-content">
                     <h3>The Arena</h3>
-                    <p class="card-desc">Time to analyze. PGN viewers, aggressive opening studies, and your tactical training tools replace the daily noise.</p>
+                    <p class="card-desc">Time to analyze. PGN viewers and tactical training tools replace the daily noise.</p>
                 </div>
             </div>
         </div>
@@ -164,15 +143,15 @@
             <div class="privacy-grid">
                 <div class="privacy-item">
                     <h4>Local Foundation.</h4>
-                    <p>Your schedule, routines, and self-model live strictly on your hardware. We don't have servers hoarding your timeline.</p>
+                    <p>Your schedule and routines live strictly on your hardware.</p>
                 </div>
                 <div class="privacy-item">
                     <h4>Anonymized Inference.</h4>
-                    <p>AI processing is stripped of personal identifiers and routed through secure proxies. The models do not train on your life.</p>
+                    <p>AI processing is stripped of personal identifiers and routed through secure proxies.</p>
                 </div>
                 <div class="privacy-item">
                     <h4>Total Ownership.</h4>
-                    <p>No ads. No tracking SDKs. You own the engine. Uninstall it, and your digital footprint vanishes completely.</p>
+                    <p>No ads. No tracking SDKs. Uninstall it, and your footprint vanishes completely.</p>
                 </div>
             </div>
         </div>
@@ -183,9 +162,8 @@
         <h2 class="section-title">Why I built an OS instead of another app.</h2>
         <div class="note-content">
             <p>I didn't want to spend my evenings organizing my life. I wanted to execute it.</p>
-            <p>Every time I tried to switch contexts, the friction of finding the right apps and fighting through the UI drained my willpower. The context-switching tax was bankrupting my focus. I realized I didn't lack discipline; my device lacked scaffolding.</p>
-            <p>Standard phones are built for infinite, passive consumption. I needed an active engine. So I stopped downloading productivity apps and built an external operating system. Savyn is designed to catch your messy, fleeting yaps, hold your active context, and drop the activation energy of your hardest tasks to zero.</p>
-            <p>I'm building this every single day because I rely on it to run my own working memory. If you are tired of passive databases and want an OS that actually executes, give the alpha a spin.</p>
+            <p>Every time I tried to switch contexts, fighting through the UI drained my willpower. I realized I didn't lack discipline; my device lacked scaffolding.</p>
+            <p>I stopped downloading productivity apps and built an external operating system. Savyn is designed to catch your fleeting thoughts, hold your active context, and drop the activation energy of your hardest tasks to zero.</p>
             <p class="signoff">Make it yours.<br><span>— Rohith</span></p>
         </div>
     </section>
