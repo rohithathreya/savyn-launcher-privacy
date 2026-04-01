@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Savyn — An OS That Actually Knows You</title>
+    <title>Savyn — Transcend the Grid</title>
     <meta name="description"
-        content="Savyn shapes itself entirely around what you care about. Your interests, your schedule, your goals — understood and surfaced at the right time. Fully private. Fully yours.">
+        content="An external operating system for your working memory. Drop the context-switching tax. Stop hoarding data. Start executing.">
     <meta name="theme-color" content="#000000">
 
-    <meta property="og:title" content="Savyn — An OS That Actually Knows You">
+    <meta property="og:title" content="Savyn — Transcend the Grid">
     <meta property="og:description"
-        content="Your phone, shaped around what you care about. Interests, schedule, goals — understood and surfaced at the right time.">
+        content="An external operating system for your working memory. Bypass decision fatigue and execute.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://savynlabs.com">
 
@@ -22,6 +22,24 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        .marquee-text-track {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            white-space: nowrap;
+        }
+        .marquee-text-item {
+            font-family: var(--font-sans);
+            font-size: clamp(4rem, 10vw, 8rem);
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.03);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+    </style>
 </head>
 
 <body>
@@ -30,31 +48,32 @@
 
     <section class="hero hero-marquee-section">
         <div class="marquee-bg">
-            <div class="marquee-track">
-                <img src="avatars/onboarding_banner.webp" alt="Banner">
-                <img src="avatars/onboarding_banner.webp" alt="Banner">
+            <div class="marquee-track marquee-text-track">
+                <span class="marquee-text-item">UPGRADE YOUR RAM • ZERO-SHOT EXECUTION • BYPASS DECISION FATIGUE • DROP THE CONTEXT TAX • </span>
+                <span class="marquee-text-item">UPGRADE YOUR RAM • ZERO-SHOT EXECUTION • BYPASS DECISION FATIGUE • DROP THE CONTEXT TAX • </span>
             </div>
         </div>
         <div class="hero-inner animate-fade-in relative-z">
             <h1 class="hero-title">
-                The OS that actually<br><i>evolves with you.</i>
+                You are operating in the<br><i>wrong dimension.</i>
             </h1>
             <p class="hero-subtitle">
-                An AI-native layer for your phone<br>
-                <span>that shapes itself around you...</span>
+                Folders. App grids. To-do lists. Tedious productivity trackers.<br>
+                <span>These are primitive relics that force your mind to think like a machine.</span><br><br>
+                We evolved past the grid. Savyn is an OS-level exoskeleton that catches your fleeting thoughts, bypasses decision fatigue, and dynamically materializes your next move.
             </p>
             <form id="hero-form" class="signup-form">
                 <div class="form-row">
                     <input type="email" class="signup-input" placeholder="your@email.com" required>
                     <button type="submit" class="signup-btn">
-                        <span class="btn-text">Get Early Access</span>
+                        <span class="btn-text">Transcend the Grid</span>
                         <span class="btn-spinner"></span>
                     </button>
                 </div>
-                <p class="form-hint">Be the first to know when Savyn launches.</p>
+                <p class="form-hint">Currently in closed alpha for Android. Join the waitlist.</p>
             </form>
             <div class="signup-success" style="display:none;">
-                <p>You're in. We'll reach out soon.</p>
+                <p>Initialization sequence queued. We'll reach out soon.</p>
             </div>
             <p class="signup-error" style="display:none;"></p>
         </div>
@@ -62,126 +81,77 @@
 
     <section class="concept container">
         <div class="concept-block animate-on-scroll">
-            <p class="eyebrow">The problem</p>
-            <h2 class="section-title">You use 30 apps a day.<br>None of them <i>talk to each other.</i></h2>
+            <p class="eyebrow">The Paradigm Shift</p>
+            <h2 class="section-title">The "Second Brain" industry<br><i>sold you a lie.</i></h2>
             <p class="body-large">
-                Your fitness app doesn't know about your work deadlines. Your notes app doesn't know
-                what you're interested in. Your phone sees fragments of your life — steps, playlists,
-                messages, orders — but never the full picture.
+                They gave you digital filing cabinets and told you to hoard data for a future that never arrives. They turned your life into a second full-time job of tagging, sorting, and organizing.
+                <br><br>
+                But your mind doesn't need a hard drive. It runs on short-term RAM. Every time you switch contexts—from a deep-work coding sprint, to a complex chess endgame, to an evening yoga practice—the friction of finding the right apps and fighting through the UI bankrupts your willpower.
+                <br><br>
+                You don't lack discipline. You are just using a fundamentally broken operating system.
             </p>
-        </div>
-
-        <div class="concept-block animate-on-scroll">
-            <p class="eyebrow">The idea</p>
-            <h2 class="section-title">What if your phone actually<br><i>understood</i> you?</h2>
-            <p class="body-large">
-                Not a generic assistant that answers questions. A dedicated layer that learns your interests,
-                remembers your conversations, notices your patterns, and surfaces the right thing at
-                the right time. Built around you — not around apps.
-            </p>
-        </div>
-    </section>
-
-    <section class="agents container">
-        <div class="section-header animate-on-scroll">
-            <p class="eyebrow">What Savyn does</p>
-            <h2 class="section-title">Three screens.<br><i>Everything</i> you need.</h2>
-        </div>
-
-        <div class="bento-grid" id="cards-container">
-            <div class="bento-card animate-on-scroll">
-                <img src="avatars/bucket_core.webp" class="card-bg-image">
-                <div class="card-content">
-                    <h3>Daily Ops</h3>
-                    <p class="card-desc">Command your day through fluid conversation. Savyn orchestrates your tools,
-                        manages deep context, and executes tasks silently across your device.</p>
-                </div>
-            </div>
-
-            <div class="bento-card animate-on-scroll">
-                <img src="avatars/bucket_explore.webp" class="card-bg-image">
-                <div class="card-content">
-                    <h3>The Council</h3>
-                    <p class="card-desc">Consult a committee of autonomous agents representing your core drives,
-                        interests, and values to solve complex personal dilemmas instantly.</p>
-                </div>
-            </div>
-
-            <div class="bento-card animate-on-scroll">
-                <img src="avatars/bucket_focus.webp" class="card-bg-image">
-                <div class="card-content">
-                    <h3>Schedule</h3>
-                    <p class="card-desc">Your spacetime, mapped intuitively. Speak your intentions and let the OS
-                        negotiate your calendar based on your biological rhythms and habits.</p>
-                </div>
-            </div>
-
-            <div class="bento-card animate-on-scroll">
-                <img src="avatars/bucket_connect.webp" class="card-bg-image">
-                <div class="card-content">
-                    <h3>For You</h3>
-                    <p class="card-desc">A relentlessly adaptive home screen that materializes the apps, people, and
-                        deep interests relevant to your exact present context.</p>
-                </div>
-            </div>
-
-            <div class="bento-card animate-on-scroll">
-                <img src="avatars/bucket_cultivate.webp" class="card-bg-image">
-                <div class="card-content">
-                    <h3>Library</h3>
-                    <p class="card-desc">A unified repository bridging your fleeting thoughts, notes, and links,
-                        automatically embedded and mapped to your foundational persona.</p>
-                </div>
-            </div>
-
-            <div class="bento-card animate-on-scroll">
-                <img src="avatars/bucket_zone_out.webp" class="card-bg-image">
-                <div class="card-content">
-                    <h3>The Self Model</h3>
-                    <p class="card-desc">An evolved, living dataset of who you actually are. Completely private,
-                        mathematically modeled—your interests and core values mapped forever.</p>
-                </div>
-            </div>
         </div>
     </section>
 
     <section class="how-it-works container">
         <div class="section-header animate-on-scroll">
-            <p class="eyebrow">How it works</p>
-            <h2 class="section-title">Everything happens through<br><i>conversation.</i></h2>
+            <p class="eyebrow">The Mechanics</p>
+            <h2 class="section-title">Don't organize your life.<br><i>Execute it.</i></h2>
         </div>
 
         <div class="steps-grid">
             <div class="step-item animate-on-scroll">
                 <div class="step-num">01</div>
                 <div>
-                    <h3>Just talk</h3>
-                    <p>No menus. No settings screens. Tell Savyn what's on your mind, what you're working on, what you
-                        want to remember. It learns from every conversation.</p>
+                    <h3>The RAM Upgrade</h3>
+                    <p>Stop categorizing your existence. Hold the mic and yap your messy, unstructured thoughts into the void. Savyn acts as an external working memory, catching your cognitive overflow and parsing your intentions instantly without a single text box.</p>
                 </div>
             </div>
             <div class="step-item animate-on-scroll">
                 <div class="step-num">02</div>
                 <div>
-                    <h3>It builds around you</h3>
-                    <p>Savyn discovers your interests, notices your patterns, and organizes your world. Your home screen
-                        adapts. Your apps are surfaced when relevant. Content appears when it matters.</p>
+                    <h3>Zero-Shot Execution</h3>
+                    <p>When your context shifts, your phone shifts. No app drawers. No decision fatigue. If it’s time to focus, the OS banishes the noise and sets the board with the exact tools you need, materialized instantly.</p>
                 </div>
             </div>
             <div class="step-item animate-on-scroll">
                 <div class="step-num">03</div>
                 <div>
-                    <h3>Voice-first</h3>
-                    <p>Hold the Nebula button and speak. Release toward Daily Ops, Your Mind, or Save as Note. No typing
-                        needed — Savyn transcribes in real time.</p>
+                    <h3>The Exoskeleton</h3>
+                    <p>Productivity apps nag you. Savyn spots you. It is an active companion built around your agency. If you are burnt out, Savyn doesn't guilt-trip you over arbitrary deadlines. It negotiates a break, sets a boundary, and protects your baseline.</p>
                 </div>
             </div>
-            <div class="step-item animate-on-scroll">
-                <div class="step-num">04</div>
-                <div>
-                    <h3>Private by design</h3>
-                    <p>All data stays on your phone. AI calls are anonymized through our proxy. No accounts. No
-                        tracking. No ads. Uninstall and everything is gone.</p>
+        </div>
+    </section>
+
+    <section class="agents container">
+        <div class="section-header animate-on-scroll">
+            <p class="eyebrow">The Morph</p>
+            <h2 class="section-title">When your context shifts,<br><i>your reality shifts.</i></h2>
+        </div>
+
+        <div class="bento-grid" id="cards-container">
+            <div class="bento-card animate-on-scroll">
+                <img src="avatars/bucket_focus.webp" class="card-bg-image" alt="Deep Work">
+                <div class="card-content">
+                    <h3>Deep Work</h3>
+                    <p class="card-desc">Distractions are banished. Your IDE documentation, API references, and active startup execution threads are front and center.</p>
+                </div>
+            </div>
+
+            <div class="bento-card animate-on-scroll">
+                <img src="avatars/bucket_zone_out.webp" class="card-bg-image" alt="Introspection">
+                <div class="card-content">
+                    <h3>Introspection</h3>
+                    <p class="card-desc">The grind stops. Tanpura Droid, your meditation timers, and your philosophical journaling threads materialize instantly.</p>
+                </div>
+            </div>
+
+            <div class="bento-card animate-on-scroll">
+                <img src="avatars/bucket_explore.webp" class="card-bg-image" alt="Intellectual">
+                <div class="card-content">
+                    <h3>The Arena</h3>
+                    <p class="card-desc">Time to analyze. PGN viewers, aggressive opening studies, and your tactical training tools replace the daily noise.</p>
                 </div>
             </div>
         </div>
@@ -189,62 +159,51 @@
 
     <section class="privacy container animate-on-scroll">
         <div class="privacy-box">
-            <p class="eyebrow">The pledge</p>
-            <h2 class="section-title">Your data stays<br><i>on your phone.</i></h2>
+            <p class="eyebrow">The architecture is yours</p>
+            <h2 class="section-title">Zero Residue.<br><i>100% On-Device.</i></h2>
             <div class="privacy-grid">
                 <div class="privacy-item">
-                    <h4>100% on-device storage.</h4>
-                    <p>Conversations, notes, interests, schedule — everything lives locally. We don't have servers that
-                        store your data.</p>
+                    <h4>Local Foundation.</h4>
+                    <p>Your schedule, routines, and self-model live strictly on your hardware. We don't have servers hoarding your timeline.</p>
                 </div>
                 <div class="privacy-item">
-                    <h4>Anonymized AI calls.</h4>
-                    <p>When AI processing is needed, personal details are stripped before anything leaves your device.
-                        AI providers don't train on your data.</p>
+                    <h4>Anonymized Inference.</h4>
+                    <p>AI processing is stripped of personal identifiers and routed through secure proxies. The models do not train on your life.</p>
                 </div>
                 <div class="privacy-item">
-                    <h4>No ads. No tracking.</h4>
-                    <p>We don't sell data. We don't profile you. We don't show ads. We don't even run analytics SDKs.
-                    </p>
-                </div>
-                <div class="privacy-item">
-                    <h4>Uninstall and it's gone.</h4>
-                    <p>No trace. No residue. No cloud backup we control. Your data is yours alone.</p>
+                    <h4>Total Ownership.</h4>
+                    <p>No ads. No tracking SDKs. You own the engine. Uninstall it, and your digital footprint vanishes completely.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="creator-note container animate-on-scroll">
-        <p class="eyebrow">From the creator</p>
-        <h2 class="section-title">We're still early.</h2>
+        <p class="eyebrow">The Manifesto</p>
+        <h2 class="section-title">Why I built an OS instead of another app.</h2>
         <div class="note-content">
-            <p>Savyn is envisioned as a dedicated layer for my phone — something that actually understands what I am working on,
-                what matters to me, and surfaces the right thing at the right time.</p>
-            <p>In its current form, it's most effective as your home screen, but worth a try even as a standalone second
-                brain. It is designed to shape itself entirely around what you care about. Fully owned and controlled by
-                you.</p>
-            <p>We're still early, and I'm building this every day. Give it a spin. If something feels off, or you just
-                want to share what you're doing with it, write to me at <a
-                    href="mailto:support@savynlabs.com">support@savynlabs.com</a>.</p>
+            <p>I didn't want to spend my evenings organizing my life. I wanted to execute it.</p>
+            <p>Every time I tried to switch contexts, the friction of finding the right apps and fighting through the UI drained my willpower. The context-switching tax was bankrupting my focus. I realized I didn't lack discipline; my device lacked scaffolding.</p>
+            <p>Standard phones are built for infinite, passive consumption. I needed an active engine. So I stopped downloading productivity apps and built an external operating system. Savyn is designed to catch your messy, fleeting yaps, hold your active context, and drop the activation energy of your hardest tasks to zero.</p>
+            <p>I'm building this every single day because I rely on it to run my own working memory. If you are tired of passive databases and want an OS that actually executes, give the alpha a spin.</p>
             <p class="signoff">Make it yours.<br><span>— Rohith</span></p>
         </div>
     </section>
 
     <section class="bottom-cta container animate-on-scroll">
-        <h2 class="hero-title">Stay in the loop.</h2>
-        <p class="hero-subtitle">Sign up and we'll let you know when Savyn is ready.</p>
+        <h2 class="hero-title">Upgrade your OS.</h2>
+        <p class="hero-subtitle">Drop your email. We'll deploy the alpha to you soon.</p>
         <form id="bottom-form" class="signup-form">
             <div class="form-row">
                 <input type="email" class="signup-input" placeholder="your@email.com" required>
                 <button type="submit" class="signup-btn">
-                    <span class="btn-text">Get Early Access</span>
+                    <span class="btn-text">Transcend the Grid</span>
                     <span class="btn-spinner"></span>
                 </button>
             </div>
         </form>
         <div class="signup-success" style="display:none;">
-            <p>You're in. We'll reach out soon.</p>
+            <p>Initialization sequence queued. We'll reach out soon.</p>
         </div>
         <p class="signup-error" style="display:none;"></p>
     </section>
