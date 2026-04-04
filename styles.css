@@ -9,7 +9,7 @@
     --surface-border: #1f1f1f;
     --text-primary: #ffffff;
     --text-secondary: #888888;
-    --accent: #ffffff; /* Replaced Gold with Stark White */
+    --accent: #ffffff; 
     
     --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
@@ -42,7 +42,7 @@ a { color: var(--text-secondary); text-decoration: none; transition: 0.2s ease; 
 a:hover { color: var(--text-primary); border-bottom: 1px solid var(--text-primary); }
 
 /* ═══════════════════════════════════════════════════════════════════════════ */
-/* BACKGROUND EFFECTS (Cold Tech Glow)                                         */
+/* BACKGROUND EFFECTS                                                          */
 /* ═══════════════════════════════════════════════════════════════════════════ */
 .noise-overlay {
     position: fixed;
@@ -65,7 +65,7 @@ a:hover { color: var(--text-primary); border-bottom: 1px solid var(--text-primar
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════ */
-/* TYPOGRAPHY - SHARP & TECHNICAL                                              */
+/* TYPOGRAPHY - MOBILE SCALED                                                  */
 /* ═══════════════════════════════════════════════════════════════════════════ */
 .eyebrow {
     font-family: var(--font-mono);
@@ -77,13 +77,14 @@ a:hover { color: var(--text-primary); border-bottom: 1px solid var(--text-primar
     margin-bottom: 1.5rem;
 }
 
+/* Drastically reduced minimum clamp for mobile safety */
 .section-title {
     font-family: var(--font-sans);
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-size: clamp(2rem, 5vw, 4rem); 
     font-weight: 600;
     line-height: 1.05;
-    letter-spacing: -0.04em;
-    margin-bottom: 2rem;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
     text-wrap: balance;
 }
 
@@ -91,19 +92,15 @@ a:hover { color: var(--text-primary); border-bottom: 1px solid var(--text-primar
     color: var(--text-secondary);
 }
 
-.text-glow {
-    text-shadow: 0 0 20px rgba(255,255,255,0.3);
-}
-
 .body-large {
-    font-size: clamp(1.1rem, 2vw, 1.2rem);
+    font-size: clamp(1rem, 2vw, 1.2rem);
     color: var(--text-secondary);
     line-height: 1.6;
     max-width: 650px;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════ */
-/* HERO - MINIMAL & AGGRESSIVE                                                 */
+/* HERO                                                                        */
 /* ═══════════════════════════════════════════════════════════════════════════ */
 .badge {
     display: inline-block;
@@ -114,7 +111,7 @@ a:hover { color: var(--text-primary); border-bottom: 1px solid var(--text-primar
     font-size: 0.7rem;
     color: var(--text-secondary);
     letter-spacing: 0.1em;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     text-transform: uppercase;
 }
 
@@ -132,22 +129,26 @@ a:hover { color: var(--text-primary); border-bottom: 1px solid var(--text-primar
     z-index: 2;
 }
 
+/* Reduced minimum size so it doesn't break words on a phone */
 .hero-title {
     font-family: var(--font-sans);
     font-weight: 700;
-    font-size: clamp(3.5rem, 8vw, 6.5rem);
+    font-size: clamp(2.5rem, 7vw, 6rem);
     line-height: 0.95;
-    letter-spacing: -0.05em;
+    letter-spacing: -0.04em;
     margin-bottom: 1.5rem;
     text-wrap: balance;
 }
 
 .hero-subtitle {
-    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    font-size: clamp(1rem, 2vw, 1.3rem);
     color: var(--text-secondary);
     line-height: 1.5;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     text-wrap: balance;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════ */
@@ -156,11 +157,9 @@ a:hover { color: var(--text-primary); border-bottom: 1px solid var(--text-primar
 section {
     padding: 8rem 24px;
     scroll-snap-align: start;
-    scroll-snap-stop: always;
 }
 
 .concept-block {
-    margin-bottom: 6rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -169,28 +168,28 @@ section {
 
 .section-header {
     text-align: left;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════ */
-/* SPOTLIGHT BENTO GRID - COLD TECH GLOW                                       */
+/* SPOTLIGHT BENTO GRID                                                        */
 /* ═══════════════════════════════════════════════════════════════════════════ */
 .bento-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 24px;
     position: relative;
-    padding: 2rem 0 6rem 0;
+    padding: 1rem 0 4rem 0;
 }
 
 .bento-card {
     background: var(--surface);
-    border-radius: 8px; /* Sharp corners */
+    border-radius: 4px; /* Sharp brutalist corners */
     position: relative;
     cursor: default;
     overflow: hidden;
     transition: transform 0.3s ease;
-    min-height: 420px;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
     border: 1px solid var(--surface-border);
@@ -211,7 +210,7 @@ section {
     z-index: 0;
     opacity: 0.8;
     transition: transform 0.6s ease;
-    filter: grayscale(100%) contrast(1.2); /* Make images match the brutalist tech vibe */
+    filter: grayscale(100%) contrast(1.2); 
     mask-image: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 60%);
     -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 60%);
 }
@@ -220,12 +219,11 @@ section {
     transform: scale(1.03);
 }
 
-/* Mouse-tracking border glow - Silver/White */
 .bento-card::after {
     content: "";
     position: absolute;
     inset: 0;
-    border-radius: 8px;
+    border-radius: 4px;
     padding: 1px;
     background: radial-gradient(
         600px circle at var(--mouse-x) var(--mouse-y),
@@ -244,7 +242,7 @@ section {
 
 .card-content {
     flex: 1;
-    padding: 32px 28px;
+    padding: 24px;
     border-radius: inherit;
     position: relative;
     z-index: 3;
@@ -261,43 +259,43 @@ section {
 .bento-card h3 {
     font-family: var(--font-sans);
     font-weight: 600;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     margin-bottom: 0.5rem;
     color: var(--text-primary);
 }
 
 .card-desc {
     color: var(--text-secondary);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     line-height: 1.6;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════ */
-/* STEPS & PRIVACY                                                             */
+/* STEPS                                                                       */
 /* ═══════════════════════════════════════════════════════════════════════════ */
 .steps-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 4rem 2rem;
+    gap: 3rem 2rem;
 }
 
 .step-item {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.25rem;
 }
 
 .step-num {
     font-family: var(--font-mono);
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: var(--text-primary);
     border-bottom: 1px solid var(--surface-border);
-    padding-bottom: 1rem;
+    padding-bottom: 0.75rem;
 }
 
 .step-item h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
     font-weight: 600;
 }
 
@@ -307,37 +305,8 @@ section {
     line-height: 1.6;
 }
 
-.privacy-box {
-    background: var(--bg);
-    border: 1px solid var(--surface-border);
-    padding: 4rem;
-    text-align: left;
-}
-
-.privacy-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 3rem;
-    margin-top: 4rem;
-    text-align: left;
-}
-
-.privacy-item h4 {
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-    margin-bottom: 1rem;
-    color: var(--text-primary);
-    text-transform: uppercase;
-}
-
-.privacy-item p {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-
 /* ═══════════════════════════════════════════════════════════════════════════ */
-/* CREATOR NOTE & BOTTOM                                                       */
+/* CREATOR NOTE                                                                */
 /* ═══════════════════════════════════════════════════════════════════════════ */
 .creator-note {
     text-align: left;
@@ -347,14 +316,14 @@ section {
     max-width: 650px;
     margin: 0;
     text-align: left;
-    padding-top: 2rem;
+    padding-top: 1rem;
 }
 
 .note-content p {
     color: var(--text-secondary);
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     line-height: 1.7;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
 }
 
 .note-content .signoff {
@@ -371,10 +340,11 @@ section {
 
 .bottom-cta {
     text-align: left;
+    padding-bottom: 6rem;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════ */
-/* EMAIL SIGNUP FORM - TECHNICAL UI                                            */
+/* FORMS & BUTTONS                                                             */
 /* ═══════════════════════════════════════════════════════════════════════════ */
 .signup-form {
     max-width: 500px;
@@ -397,17 +367,13 @@ section {
     color: var(--text-primary);
     background: transparent;
     border: 1px solid var(--surface-border);
-    border-radius: 4px; /* Sharp corners */
+    border-radius: 4px; 
     outline: none;
     transition: border-color 0.2s ease;
 }
 
 .signup-input:focus {
     border-color: var(--text-primary);
-}
-
-.signup-input::placeholder {
-    color: var(--surface-border);
 }
 
 .signup-btn {
@@ -419,7 +385,7 @@ section {
     color: var(--bg);
     background: var(--text-primary);
     border: 1px solid var(--text-primary);
-    border-radius: 4px; /* Sharp corners */
+    border-radius: 4px; 
     cursor: pointer;
     white-space: nowrap;
     transition: all 0.2s ease;
@@ -428,48 +394,6 @@ section {
 .signup-btn:hover {
     background: transparent;
     color: var(--text-primary);
-}
-
-.signup-btn .btn-spinner {
-    display: none;
-    width: 16px;
-    height: 16px;
-    border: 2px solid var(--bg);
-    border-top-color: transparent;
-    border-radius: 50%;
-    animation: signup-spin 0.6s linear infinite;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.signup-btn.loading .btn-text { visibility: hidden; }
-.signup-btn.loading .btn-spinner { display: inline-block; }
-
-@keyframes signup-spin {
-    to { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-.signup-success {
-    max-width: 500px;
-    padding: 1.5rem;
-    margin-top: 1rem;
-    background: var(--surface);
-    border: 1px solid var(--surface-border);
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-}
-
-.hero .signup-success {
-    margin: 1rem auto 0;
-}
-
-.signup-error {
-    margin-top: 0.75rem;
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-    color: #ff4444;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════ */
@@ -496,44 +420,35 @@ footer {
     color: var(--text-secondary);
 }
 
-.footer-right {
-    display: flex;
-    gap: 2rem;
+/* ═══════════════════════════════════════════════════════════════════════════ */
+/* MOBILE OVERRIDES - THE FIX                                                  */
+/* ═══════════════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+    /* Kill the massive whitespace */
+    section { padding: 4rem 16px; }
+    
+    /* Better hero framing */
+    .hero { min-height: 85vh; padding-top: 2rem; }
+    .hero-subtitle { margin-bottom: 2rem; }
+    
+    /* Prevent bento boxes from taking over the whole screen */
+    .bento-grid { gap: 16px; padding: 1rem 0 2rem 0; }
+    .bento-card { min-height: 280px; }
+    .card-content { padding: 20px; }
+    
+    /* Stack the form cleanly */
+    .form-row { flex-direction: column; gap: 12px; }
+    .signup-btn { width: 100%; padding: 18px 20px; }
+    .signup-input { padding: 18px 20px; text-align: center; }
+
+    /* Footer stacking */
+    footer { flex-direction: column; gap: 1.5rem; text-align: left; align-items: flex-start; }
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════ */
 /* ANIMATIONS                                                                  */
 /* ═══════════════════════════════════════════════════════════════════════════ */
-.animate-fade-in {
-    opacity: 0;
-    animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.animate-on-scroll {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
-                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.animate-on-scroll.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 768px) {
-    section { padding: 6rem 16px; scroll-snap-align: start; }
-    .privacy-box { padding: 2rem; }
-    footer { flex-direction: column; gap: 1rem; text-align: left; align-items: flex-start; }
-    
-    .bento-card { min-height: 380px; }
-    .card-content { padding: 32px 24px; }
-    .bento-grid { gap: 16px; padding: 2rem 0 4rem 0; }
-    .form-row { flex-direction: column; }
-    .signup-btn { width: 100%; }
-}
+.animate-fade-in { opacity: 0; animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-on-scroll { opacity: 0; transform: translateY(20px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+.animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
