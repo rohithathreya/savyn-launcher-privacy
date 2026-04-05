@@ -77,7 +77,6 @@ a:hover { color: var(--text-primary); border-bottom: 1px solid var(--text-primar
     margin-bottom: 1.5rem;
 }
 
-/* Drastically reduced minimum clamp for mobile safety */
 .section-title {
     font-family: var(--font-sans);
     font-size: clamp(2rem, 5vw, 4rem); 
@@ -122,6 +121,22 @@ a:hover { color: var(--text-primary); border-bottom: 1px solid var(--text-primar
     justify-content: center;
     text-align: center;
     padding: 0 24px;
+    position: relative;
+}
+
+#sparks-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero-inner {
+    position: relative;
+    z-index: 2;
 }
 
 .relative-z {
@@ -129,7 +144,19 @@ a:hover { color: var(--text-primary); border-bottom: 1px solid var(--text-primar
     z-index: 2;
 }
 
-/* Reduced minimum size so it doesn't break words on a phone */
+.accumulate-flip {
+    transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+    display: inline-block;
+}
+
+.accumulate-flip.flipped {
+    color: #fff;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(100, 200, 255, 0.5);
+    background: linear-gradient(90deg, #ffffff 0%, #a4c9ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .hero-title {
     font-family: var(--font-sans);
     font-weight: 700;
@@ -149,6 +176,105 @@ a:hover { color: var(--text-primary); border-bottom: 1px solid var(--text-primar
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════ */
+/* HERO FUNNEL ANIMATION                                                       */
+/* ═══════════════════════════════════════════════════════════════════════════ */
+.data-pipe {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    margin: 3rem auto 2.5rem;
+    color: var(--text-secondary);
+    max-width: 650px;
+}
+
+.pipe-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.3;
+    transition: all 0.3s ease;
+    min-width: 80px;
+}
+
+.pipe-val {
+    color: var(--text-primary);
+    margin-bottom: 0.4rem;
+}
+
+/* TAPERING EFFECTS */
+.pipe-100 .pipe-val { font-size: 1.8rem; font-weight: 300; letter-spacing: -0.02em; color: var(--text-secondary); }
+.pipe-15 .pipe-val { font-size: 1.5rem; font-weight: 500; color: #bbb; }
+.pipe-5 .pipe-val { font-size: 1.25rem; font-weight: 600; color: #ddd; }
+.pipe-1 .pipe-val { font-size: 1.1rem; font-weight: 800; color: #fff; text-shadow: 0 0 8px rgba(255,255,255,0.5); }
+
+.pipe-label {
+    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.pipe-link {
+    flex: 1;
+    margin: 0 15px;
+    position: relative;
+    top: -10px;
+    overflow: hidden;
+}
+
+.link-1 { height: 3px; background: rgba(255,255,255, 0.15); }
+.link-2 { height: 2px; background: rgba(255,255,255, 0.1); }
+.link-3 { height: 1px; background: rgba(255,255,255, 0.05); }
+
+.flow-dot {
+    position: absolute;
+    top: 0;
+    background: var(--text-primary);
+}
+
+.flow-dot-1 {
+    width: 40px; height: 3px; border-radius: 3px;
+    box-shadow: 0 0 15px 3px rgba(255,255,255,0.3);
+    animation: flowSlide 4s infinite cubic-bezier(0.2, 0, 0.8, 1);
+}
+
+.flow-dot-2 {
+    width: 30px; height: 2px; border-radius: 2px;
+    box-shadow: 0 0 10px 2px rgba(255,255,255,0.6);
+    animation: flowSlide 4s infinite cubic-bezier(0.2, 0, 0.8, 1);
+    animation-delay: 1s;
+}
+
+.flow-dot-3 {
+    width: 20px; height: 1px; border-radius: 1px;
+    box-shadow: 0 0 6px 2px rgba(255,255,255,0.9);
+    background: #fff;
+    animation: flowSlide 4s infinite cubic-bezier(0.2, 0, 0.8, 1);
+    animation-delay: 2s;
+}
+
+.node-1 { animation: pulseNode 4s infinite; }
+.node-2 { animation: pulseNode 4s infinite; animation-delay: 1s; }
+.node-3 { animation: pulseNode 4s infinite; animation-delay: 2s; }
+.node-4 { animation: pulseNode 4s infinite; animation-delay: 3s; }
+
+@keyframes flowSlide {
+    0% { left: -40px; opacity: 0; }
+    3% { opacity: 1; }
+    21% { opacity: 1; }
+    25% { left: 100%; opacity: 0; }
+    100% { left: 100%; opacity: 0; }
+}
+
+@keyframes pulseNode {
+    0% { opacity: 0.3; transform: scale(1); text-shadow: none; }
+    3% { opacity: 1; transform: scale(1.05); text-shadow: 0 0 15px rgba(255,255,255,0.3); }
+    25% { opacity: 0.3; transform: scale(1); text-shadow: none; }
+    100% { opacity: 0.3; }
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════ */
@@ -184,7 +310,7 @@ section {
 
 .bento-card {
     background: var(--surface);
-    border-radius: 4px; /* Sharp brutalist corners */
+    border-radius: 4px; 
     position: relative;
     cursor: default;
     overflow: hidden;
@@ -421,7 +547,15 @@ footer {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════ */
-/* MOBILE OVERRIDES - THE FIX                                                  */
+/* ANIMATIONS                                                                  */
+/* ═══════════════════════════════════════════════════════════════════════════ */
+.animate-fade-in { opacity: 0; animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-on-scroll { opacity: 0; transform: translateY(20px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+.animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ═══════════════════════════════════════════════════════════════════════════ */
+/* MOBILE OVERRIDES - BRINGING THE AESTHETIC BACK                              */
 /* ═══════════════════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
     /* Kill the massive whitespace */
@@ -431,9 +565,33 @@ footer {
     .hero { min-height: 85vh; padding-top: 2rem; }
     .hero-subtitle { margin-bottom: 2rem; }
     
-    /* Prevent bento boxes from taking over the whole screen */
+    /* 1. FIX THE BACKGROUND: Crank the noise and blow up the glow */
+    .noise-overlay { opacity: 0.12; } 
+    .ambient-glow {
+        width: 200vw; 
+        height: 100vh;
+        top: -10%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.06) 0%, rgba(0,0,0,0) 65%);
+    }
+
+    /* 2. FIX THE CARDS: Fake the hover effect permanently */
     .bento-grid { gap: 16px; padding: 1rem 0 2rem 0; }
-    .bento-card { min-height: 280px; }
+    .bento-card { 
+        min-height: 280px; 
+        border: 1px solid rgba(255, 255, 255, 0.15); 
+        box-shadow: inset 0px 20px 40px -20px rgba(255, 255, 255, 0.1); 
+    }
+    
+    /* Simulate the silver tracking border at the top of every card */
+    .bento-card::after {
+        opacity: 1;
+        background: radial-gradient(
+            300px circle at 50% 0%, 
+            rgba(255, 255, 255, 0.5),
+            transparent 60%
+        );
+    }
+
     .card-content { padding: 20px; }
     
     /* Stack the form cleanly */
@@ -443,12 +601,48 @@ footer {
 
     /* Footer stacking */
     footer { flex-direction: column; gap: 1.5rem; text-align: left; align-items: flex-start; }
+
+    /* Funnel stacking */
+    .data-pipe {
+        flex-direction: column;
+        gap: 1.5rem;
+        margin: 2rem auto;
+    }
+    .pipe-node {
+        opacity: 0.5;
+    }
+    .pipe-link {
+        height: 40px;
+        top: 0;
+        margin: 0;
+    }
+    .link-1 { width: 3px; }
+    .link-2 { width: 2px; }
+    .link-3 { width: 1px; }
+
+    .flow-dot {
+        left: 0;
+    }
+    .flow-dot-1 {
+        width: 3px; height: 40px; 
+        animation: flowSlideMobile 4s infinite cubic-bezier(0.2, 0, 0.8, 1);
+    }
+    .flow-dot-2 {
+        width: 2px; height: 30px;
+        animation: flowSlideMobile 4s infinite cubic-bezier(0.2, 0, 0.8, 1);
+        animation-delay: 1s;
+    }
+    .flow-dot-3 {
+        width: 1px; height: 20px;
+        animation: flowSlideMobile 4s infinite cubic-bezier(0.2, 0, 0.8, 1);
+        animation-delay: 2s;
+    }
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════ */
-/* ANIMATIONS                                                                  */
-/* ═══════════════════════════════════════════════════════════════════════════ */
-.animate-fade-in { opacity: 0; animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-.animate-on-scroll { opacity: 0; transform: translateY(20px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-.animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes flowSlideMobile {
+    0% { top: -40px; opacity: 0; }
+    3% { opacity: 1; }
+    21% { opacity: 1; }
+    25% { top: 100%; opacity: 0; }
+    100% { top: 100%; opacity: 0; }
+}

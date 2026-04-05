@@ -20,28 +20,62 @@
     <div class="ambient-glow"></div>
 
     <section class="hero relative-z">
+        <canvas id="sparks-canvas"></canvas>
         <div class="hero-inner animate-fade-in">
-            <div class="badge">SYS.STATUS // CLOSED ALPHA</div>
+            <div class="badge">CLOSED ALPHA</div>
             <h1 class="hero-title">
-                Your phone should bend to your mind.
+                The Personal Context OS.
             </h1>
-            <p class="hero-subtitle">
-                Stop fighting your screen. Stop organizing apps.<br> 
-                Speak your intent, and let the OS compile the environment.
-            </p>
-            <form id="hero-form" class="signup-form">
-                <div class="form-row">
-                    <input type="email" class="signup-input" placeholder="INITIALIZE_EMAIL" required>
-                    <button type="submit" class="signup-btn">
-                        <span class="btn-text">Transcend the Grid</span>
+
+            <div class="data-pipe">
+                <div class="pipe-node node-1 pipe-100">
+                    <span class="pipe-val">100%</span>
+                    <span class="pipe-label">Ideas & Goals</span>
+                </div>
+                <div class="pipe-link link-1">
+                    <div class="flow-dot flow-dot-1"></div>
+                </div>
+                <div class="pipe-node node-2 pipe-15">
+                    <span class="pipe-val">15%</span>
+                    <span class="pipe-label">Remembered</span>
+                </div>
+                <div class="pipe-link link-2">
+                    <div class="flow-dot flow-dot-2"></div>
+                </div>
+                <div class="pipe-node node-3 pipe-5">
+                    <span class="pipe-val">5%</span>
+                    <span class="pipe-label">Recalled</span>
+                </div>
+                <div class="pipe-link link-3">
+                    <div class="flow-dot flow-dot-3"></div>
+                </div>
+                <div class="pipe-node node-4 pipe-1">
+                    <span class="pipe-val">1%</span>
+                    <span class="pipe-label">Acted On</span>
+                </div>
+            </div>
+
+            <form id="hero-form" class="signup-form hero-form-center" style="position: relative; z-index: 3; margin: 0 auto 3rem auto;">
+                <div class="form-row" id="hero-form-sink" style="position: relative; overflow: hidden; border-radius: 4px; box-shadow: inset 0 0 0 1px var(--surface-border); background: var(--surface); padding: 4px;">
+                    <div id="sparks-fill-bg" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 0%; background: linear-gradient(to top, rgba(160, 200, 255, 0.5), rgba(255,255,255,0.1)); z-index: 0; transition: height 0.5s ease-out;"></div>
+                    <input type="email" class="signup-input" placeholder="INITIALIZE_EMAIL" required style="position: relative; z-index: 1; border: none !important;">
+                    <button type="submit" class="signup-btn" style="position: relative; z-index: 1;">
+                        <span class="btn-text">Join Alpha</span>
                         <span class="btn-spinner"></span>
                     </button>
+                    <div class="signup-success" style="display:none; position: absolute; z-index: 2; inset: 0; background: var(--surface); align-items: center; justify-content: center;"><p>Queued.</p></div>
                 </div>
             </form>
-            <div class="signup-success" style="display:none;">
-                <p>Sequence queued. We will contact you.</p>
+
+            <div id="vision-text" style="opacity: 0; transform: translateY(20px); transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1);">
+                <p class="hero-subtitle">
+                    Today's second brain and productivity apps may work for the ultra-disciplined. Savyn is for the rest of us.
+                    <br><br>
+                    No folders. No templates. No tags. Your raw ideas, goals & interests turned into active context for your phone—instantly surfacing the exact apps, links and insights you need at any point in time.
+                    <br><br>
+                    <span class="accumulate-flip flipped" style="display: inline-block;">A generative smartphone layer built around you</span>
+                </p>
             </div>
-            <p class="signup-error" style="display:none;"></p>
         </div>
     </section>
 
