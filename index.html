@@ -19,13 +19,23 @@
     <div class="noise-overlay"></div>
     <div class="ambient-glow"></div>
 
+    <nav class="top-nav container">
+        <div class="nav-inner">
+            <a href="index.html" class="logo">SAVYN</a>
+            <div class="nav-links">
+                <a href="articles.html" class="nav-link">Articles</a>
+                <a href="mailto:support@savynlabs.com" class="nav-link">Comms</a>
+            </div>
+        </div>
+    </nav>
+
     <section class="hero relative-z">
-        <div class="hero-inner animate-fade-in">
+        <div class="hero-inner container animate-fade-in" style="align-items: flex-start; text-align: left;">
             
             <div class="badge">CLOSED ALPHA</div>
             <h1 class="hero-title">The Personal Context OS.</h1>
 
-            <div class="hero-manifesto">
+            <div class="hero-manifesto" style="margin-bottom: 2.5rem;">
                 <p class="hero-subtitle">
                     Raw ideas, goals, and interests, used to generatively adapt your smartphone in real-time.
                 </p>
@@ -47,12 +57,12 @@
 
             <div class="problem-statement" style="align-items: flex-start;">
                 <p class="eyebrow">00 // The Problem</p>
-                <div class="attrition-visual" id="attrition-container" style="flex-direction: column; gap: 2rem; align-items: center; width: 100%;">
+                <div class="attrition-visual" id="attrition-container" style="flex-direction: column; gap: 2rem; align-items: flex-start;">
                     <div class="attrition-grid" id="dot-grid"></div>
                     
-                    <div class="a-label active" id="single-cycling-label" style="justify-content: center; width: 100%; transition: opacity 0.3s ease;">
-                        <span class="a-val" id="cycle-val" style="width: auto; text-align: right;">100</span>
-                        <span id="cycle-text" style="width: 200px;">of all your ideas and goals</span>
+                    <div class="a-label active" id="single-cycling-label" style="justify-content: flex-start; transition: opacity 0.3s ease;">
+                        <span class="a-val" id="cycle-val" style="width: auto; text-align: left;">100</span>
+                        <span id="cycle-text" style="width: 250px;">of all your ideas and goals</span>
                     </div>
                 </div>
             </div>
@@ -126,6 +136,18 @@
             </div>
             <p class="signup-error" style="display:none; margin-top: 1rem;"></p>
         </form>
+    </section>
+
+    <section class="latest-writings container animate-on-scroll" style="margin-top: 4rem; border-top: 1px solid var(--surface-border); padding-top: 6rem;">
+        <p class="eyebrow">04 // Latest Articles</p>
+        <div style="display: flex; flex-direction: column; gap: 2rem; align-items: flex-start;">
+            <a href="stop-explaining-yourself.html" class="article-item" style="max-width: 600px; display: block; border-left: 2px solid var(--surface-border); padding-left: 2rem; transition: border-left 0.3s ease;">
+                <span class="article-meta" style="font-size: 0.7rem;">APRIL 2026</span>
+                <h3 style="font-size: 1.8rem; margin-top: 0.5rem; margin-bottom: 0.5rem;">Stop explaining yourself to a machine!</h3>
+                <p class="text-muted" style="font-size: 1rem;">Why does your phone force you to think like a filing cabinet? It's time to offload your mental cache.</p>
+            </a>
+            <a href="articles.html" class="nav-link" style="margin-top: 1rem; text-decoration: underline;">See all writings →</a>
+        </div>
     </section>
 
     <footer class="container">
