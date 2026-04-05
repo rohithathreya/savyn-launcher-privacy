@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Savyn — Transcend the Grid</title>
+    <title>Savyn — Personal Context OS</title>
     <meta name="description" content="An operating system that bends to your mind. Zero setup. Total execution.">
     <meta name="theme-color" content="#000000">
 
@@ -21,32 +21,14 @@
 
     <section class="hero relative-z">
         <div class="hero-inner animate-fade-in">
-            <div class="badge">CLOSED ALPHA</div>
             
-            <h1 class="hero-title">
-                The Human Context OS.
-            </h1>
+            <div class="badge">CLOSED ALPHA</div>
+            <h1 class="hero-title">The Personal Context OS.</h1>
 
-            <div class="stat-pipeline">
-                <div class="stat-node">
-                    <span class="stat-val">100%</span>
-                    <span class="stat-label">Of all your ideas & goals</span>
-                </div>
-                <div class="stat-wire"></div>
-                <div class="stat-node">
-                    <span class="stat-val">15%</span>
-                    <span class="stat-label">Remembered...</span>
-                </div>
-                <div class="stat-wire"></div>
-                <div class="stat-node">
-                    <span class="stat-val">5%</span>
-                    <span class="stat-label">Recalled...</span>
-                </div>
-                <div class="stat-wire"></div>
-                <div class="stat-node target-node">
-                    <span class="stat-val">1%</span>
-                    <span class="stat-label">Acted Upon</span>
-                </div>
+            <div class="hero-manifesto">
+                <p class="hero-subtitle">
+                    Raw ideas, goals, and interests, used to generatively adapt your smartphone in real-time.
+                </p>
             </div>
 
             <form id="hero-form" class="signup-form">
@@ -62,6 +44,21 @@
                 </div>
                 <p class="signup-error" style="display:none; margin-top: 1rem;"></p>
             </form>
+
+            <div class="problem-statement">
+                <p class="eyebrow">00 // The Problem</p>
+                <div class="attrition-visual" id="attrition-container">
+                    <div class="attrition-labels">
+                        <div class="a-label" id="label-100"><span class="a-val">100</span> great ideas and goals</div>
+                        <div class="a-label" id="label-15"><span class="a-val">&lt;15</span> saved to a folder</div>
+                        <div class="a-label" id="label-5"><span class="a-val">&lt;5</span> actually revisited</div>
+                        <div class="a-label a-target" id="label-1"><span class="a-val">1-2</span> acted upon</div>
+                    </div>
+                    <div class="attrition-grid" id="dot-grid">
+                        </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -120,29 +117,20 @@
         </div>
     </section>
 
-    <section class="creator-note container animate-on-scroll">
-        <p class="eyebrow">04 // Note From Creator</p>
-        <h2 class="section-title">The origin of Savyn.</h2>
-        <div class="note-content">
-            <p>The dissonance between what we want to do and what we actually do. That is why I built this.</p>
-            <p>I’ve tried the full spectrum of the productivity stack. It all just boils down to more sophisticated ways of creating rich folders and hoping the effort pays off. You do all that setup work, abandon it in a week, and blame yourself, thinking you just lack the drive.</p>
-            <p>You don't lack drive. The friction is just too high. And "Focus Mode" is a myth.</p>
-            <p>Savyn is a fundamental attempt to rewrite how we interact with our smartphones. It is an OS that is actively aware of your goals, tracks your concepts, and works <em>with</em> you. It proves that you don't need to life-hack your way into momentum. You just need an environment that adapts to your mind.</p>
-            <p>This is Day 1 of this architecture. I urge you to try it out. If you feel the shift, make it your default home.</p>
-            <p class="signoff">I want to hear from you.<br><span>— Rohith (support@savynlabs.com)</span></p>
-        </div>
-    </section>
-
-    <section class="bottom-cta container animate-on-scroll">
-        <h2 class="hero-title" style="font-size: clamp(2rem, 5vw, 4rem);">Upgrade your OS.</h2>
-        <p class="hero-subtitle text-muted">Join the closed alpha for Android.</p>
-        <form id="bottom-form" class="signup-form">
+    <section class="bottom-cta container animate-on-scroll" style="margin-top: 6rem; padding-bottom: 2rem;">
+        <h2 class="hero-title" style="font-size: clamp(2.5rem, 6vw, 4.5rem);">Upgrade your OS.</h2>
+        <p class="hero-subtitle text-muted" style="margin-bottom: 4rem;">Join the closed alpha for Android.</p>
+        
+        <form id="bottom-form" class="signup-form" style="max-width: 450px; margin: 0 auto;">
             <div class="form-row pill-form">
-                <input type="email" class="signup-input" placeholder="INITIALIZE_EMAIL" required>
+                <input type="email" class="signup-input" placeholder="Enter your email" required>
                 <button type="submit" class="signup-btn">
-                    <span class="btn-text">Transcend the Grid</span>
+                    <span class="btn-text">Join Alpha</span>
                     <span class="btn-spinner"></span>
                 </button>
+                <div class="signup-success" style="display:none;">
+                    <p>Sequence queued.</p>
+                </div>
             </div>
             <p class="signup-error" style="display:none; margin-top: 1rem;"></p>
         </form>

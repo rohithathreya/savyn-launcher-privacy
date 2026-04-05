@@ -1,3 +1,47 @@
+// ═══════════════════════════════════════════════════════════════════════════
+// THE ATTRITION GRID ANIMATION
+// ═══════════════════════════════════════════════════════════════════════════
+(function initAttritionVisual() {
+    const grid = document.getElementById('dot-grid');
+    if (!grid) return;
+
+    // Inject exactly 100 dots to keep HTML clean
+    for (let i = 0; i < 100; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'dot';
+        grid.appendChild(dot);
+    }
+
+    const states = [100, 15, 5, 1];
+    let currentIndex = 0;
+
+    function updateState() {
+        const state = states[currentIndex];
+        
+        // Update the master class on the grid
+        grid.className = `attrition-grid grid-${state}`;
+
+        // Update the active label
+        document.querySelectorAll('.a-label').forEach(label => {
+            label.classList.remove('active');
+        });
+        const activeLabel = document.getElementById(`label-${state}`);
+        if (activeLabel) activeLabel.classList.add('active');
+
+        // Loop forward
+        currentIndex = (currentIndex + 1) % states.length;
+    }
+
+    // Start sequence
+    setTimeout(() => {
+        updateState();
+        setInterval(updateState, 2500); // Shift every 2.5 seconds
+    }, 100);
+})();
+
+// ═══════════════════════════════════════════════════════════════════════════
+// SCROLL REVEAL ANIMATIONS
+// ═══════════════════════════════════════════════════════════════════════════
 (function initScrollAnimations() {
     const observerOptions = {
         root: null,
@@ -17,6 +61,9 @@
     elements.forEach(el => observer.observe(el));
 })();
 
+// ═══════════════════════════════════════════════════════════════════════════
+// EMAIL SIGNUP — Formspree
+// ═══════════════════════════════════════════════════════════════════════════
 (function initSignupForms() {
     document.querySelectorAll('.signup-form').forEach(form => {
         const input = form.querySelector('.signup-input');
