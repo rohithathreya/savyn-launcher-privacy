@@ -148,6 +148,9 @@ footer { display: flex; justify-content: space-between; align-items: center; pad
     .noise-overlay { opacity: 0.12; } 
     .ambient-glow { width: 200vw; height: 100vh; top: -10%; background: radial-gradient(circle, rgba(255, 255, 255, 0.06) 0%, rgba(0,0,0,0) 65%); }
 
+    .section-title { font-size: clamp(1.8rem, 8vw, 2.2rem); }
+    .hero-title { font-size: clamp(2rem, 9vw, 2.5rem); }
+
     /* Shrink the problem statement gap slightly so it fits on screen */
     .problem-statement { margin-top: 2.5rem; padding-top: 2rem; }
     

@@ -12,24 +12,42 @@
         grid.appendChild(dot);
     }
 
-    const states = [100, 15, 5, 1];
+    const stateData = [
+        { state: 100, val: "100", text: "great ideas & wishes" },
+        { state: 15, val: "<15", text: "saved for later" },
+        { state: 5, val: "<5", text: "actually revisited" },
+        { state: 1, val: "1-2", text: "acted upon" }
+    ];
     let currentIndex = 0;
 
+    const lblWrap = document.getElementById('single-cycling-label');
+    const lblVal = document.getElementById('cycle-val');
+    const lblText = document.getElementById('cycle-text');
+
     function updateState() {
-        const state = states[currentIndex];
+        const data = stateData[currentIndex];
         
         // Update the master class on the grid
-        grid.className = `attrition-grid grid-${state}`;
+        grid.className = `attrition-grid grid-${data.state}`;
 
-        // Update the active label
-        document.querySelectorAll('.a-label').forEach(label => {
-            label.classList.remove('active');
-        });
-        const activeLabel = document.getElementById(`label-${state}`);
-        if (activeLabel) activeLabel.classList.add('active');
+        // Fade text out cleanly
+        lblWrap.style.opacity = '0';
+        
+        setTimeout(() => {
+            lblVal.innerText = data.val;
+            lblText.innerText = data.text;
+            
+            if (data.state === 1) {
+                lblWrap.style.textShadow = '0 0 15px rgba(255,255,255,0.6)';
+            } else {
+                lblWrap.style.textShadow = 'none';
+            }
+
+            lblWrap.style.opacity = '1';
+        }, 300); // Wait for transition
 
         // Loop forward
-        currentIndex = (currentIndex + 1) % states.length;
+        currentIndex = (currentIndex + 1) % stateData.length;
     }
 
     // Start sequence

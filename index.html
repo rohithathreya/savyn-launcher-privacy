@@ -33,7 +33,7 @@
 
             <form id="hero-form" class="signup-form">
                 <div class="form-row pill-form">
-                    <input type="email" class="signup-input" placeholder="INITIALIZE_EMAIL" required>
+                    <input type="email" class="signup-input" placeholder="Enter your email" required>
                     <button type="submit" class="signup-btn">
                         <span class="btn-text">Join Alpha</span>
                         <span class="btn-spinner"></span>
@@ -45,17 +45,15 @@
                 <p class="signup-error" style="display:none; margin-top: 1rem;"></p>
             </form>
 
-            <div class="problem-statement">
+            <div class="problem-statement" style="align-items: flex-start;">
                 <p class="eyebrow">00 // The Problem</p>
-                <div class="attrition-visual" id="attrition-container">
-                    <div class="attrition-labels">
-                        <div class="a-label" id="label-100"><span class="a-val">100</span> great ideas and goals</div>
-                        <div class="a-label" id="label-15"><span class="a-val">&lt;15</span> saved to a folder</div>
-                        <div class="a-label" id="label-5"><span class="a-val">&lt;5</span> actually revisited</div>
-                        <div class="a-label a-target" id="label-1"><span class="a-val">1-2</span> acted upon</div>
+                <div class="attrition-visual" id="attrition-container" style="flex-direction: column; gap: 2rem; align-items: center; width: 100%;">
+                    <div class="attrition-grid" id="dot-grid"></div>
+                    
+                    <div class="a-label active" id="single-cycling-label" style="justify-content: center; width: 100%; transition: opacity 0.3s ease;">
+                        <span class="a-val" id="cycle-val" style="width: auto; text-align: right;">100</span>
+                        <span id="cycle-text" style="width: 200px;">of all your ideas and goals</span>
                     </div>
-                    <div class="attrition-grid" id="dot-grid">
-                        </div>
                 </div>
             </div>
 
@@ -101,19 +99,13 @@
                     <h3>Compound Intellect</h3>
                     <p>Your ideas never die again. The OS tracks your obsessions and hands your best concepts back to you when you enter the right context.</p>
                 </div>
+            <div class="step-item animate-on-scroll">
+                <div class="step-num">04</div>
+                <div>
+                    <h3>Privacy First</h3>
+                    <p>All storage on device. AI calls are anonymous and made via secure cloud proxies. <a href="privacy-policy.html" style="text-decoration: underline; color: inherit; opacity: 0.8;">Read our strict privacy policy.</a></p>
+                </div>
             </div>
-        </div>
-    </section>
-
-    <section class="architecture container">
-        <div class="concept-block animate-on-scroll">
-            <p class="eyebrow">03 // The Architecture</p>
-            <h2 class="section-title">Living spaces.<br><span class="text-muted">Not app grids.</span></h2>
-            <p class="body-large">
-                Standard phones are passive. Savyn actively acts as a contextual Chief of Staff for whatever you are trying to execute right now.
-                <br><br>
-                Your phone is divided into fluid, living spaces. Switch to your mindset, and the OS instantly summons the relevant links, active tools, and the exact contextual discussion you left off on yesterday. It understands what you need, before you have to search for it.
-            </p>
         </div>
     </section>
 
@@ -137,11 +129,13 @@
     </section>
 
     <footer class="container">
-        <div class="footer-left">
+        <div class="footer-left" style="display: flex; gap: 2rem; align-items: center;">
             <span class="logo">SAVYN_LABS</span>
             <span class="copy">&copy; 2026</span>
         </div>
-        <div class="footer-right">
+        <div class="footer-right" style="display: flex; gap: 1.5rem; align-items: center;">
+            <a href="privacy-policy.html">Privacy</a>
+            <a href="terms-of-service.html">Terms</a>
             <a href="mailto:support@savynlabs.com">Comms</a>
         </div>
     </footer>
