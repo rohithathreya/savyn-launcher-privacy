@@ -99,128 +99,53 @@
     });
 })();
 
-// ═══════════════════════════════════════════════════════════════════════════
-// VISIONARY FUNNEL SPARKS ANIMATION
-// ═══════════════════════════════════════════════════════════════════════════
+// Sparks engine removed as per user request
 
-(function initSparksAnimation() {
-    const canvas = document.getElementById('sparks-canvas');
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d', { alpha: true });
-    
-    let width, height;
-    let floorHeights = new Float32Array(10);
-    
-    function resize() {
-        const hero = document.querySelector('.hero');
-        if (!hero) return;
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = hero.offsetHeight;
-        floorHeights = new Float32Array(width);
-    }
-    window.addEventListener('resize', resize);
-    resize();
+// ═══════════════════════════════════════════════════════════════════════════
+// FUNNEL PANNING VIEW
+// ═══════════════════════════════════════════════════════════════════════════
+(function initFunnelPan() {
+    const pipe = document.getElementById('panning-pipe');
+    if (!pipe) return;
+    const nodes = pipe.querySelectorAll('.pipe-node');
+    if (!nodes.length) return;
 
-    const particles = [];
-    let accumulatedCount = 0;
-    const maxAccumulation = 250;
-    
-    const dots = document.querySelectorAll('.flow-dot');
-    const hero = document.querySelector('.hero');
-    
-    function spawnSlice(rect, intensityType, isMobile, hr) {
-        if (!hero) return;
+    let currentIndex = 0;
+
+    function panToStage(index) {
+        // Find the center of the mask
+        const mask = pipe.parentElement;
+        const maskWidth = mask.offsetWidth;
+
+        const node = nodes[index];
+        const nodeOffset = node.offsetLeft;
+        const nodeWidth = node.offsetWidth;
+
+        // Shift so node is perfectly centered inside the 300px mask
+        const shiftX = (maskWidth / 2) - (nodeOffset + nodeWidth / 2);
         
-        // Spawn precisely from the animated dot
-        const startX = (rect.left - hr.left) + Math.random() * rect.width;
-        const startY = (rect.top - hr.top) + rect.height / 2;
-        
-        // Discarded ideas drift perpendicularly away and fade to nothing
-        const distY = isMobile ? (Math.random() - 0.5) * 40 : (Math.random() * 80 + 30);
-        const distX = isMobile ? (Math.random() > 0.5 ? 1 : -1) * (Math.random() * 60 + 20) : (Math.random() - 0.5) * 40;
-        
-        particles.push({
-            startX, startY,
-            x: startX, y: startY,
-            endX: startX + distX,
-            endY: startY + distY,
-            progress: 0,
-            speed: Math.random() * 0.01 + 0.005, 
-            thickness: intensityType === 1 ? 3 : (intensityType === 0.8 ? 2 : 1),
-            length: Math.random() * 15 + 10,
-            intensity: intensityType,
-            isMobile
+        pipe.style.transform = `translateX(${shiftX}px)`;
+
+        // Highlight active node
+        nodes.forEach((n, i) => {
+            if (i === index) {
+                n.style.opacity = '1';
+                n.style.transform = 'scale(1)';
+            } else {
+                n.style.opacity = '0';
+                n.style.transform = 'scale(0.95)';
+            }
         });
     }
 
-    function loop() {
-        ctx.clearRect(0, 0, width, height);
+    // Initial center
+    setTimeout(() => panToStage(0), 100);
 
-        let hr = null;
-        if (hero) hr = hero.getBoundingClientRect();
-        
-        const isMobile = window.innerWidth <= 768;
+    // Cycle every 2.5 seconds
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % nodes.length;
+        panToStage(currentIndex);
+    }, 2500);
 
-        // Spawn slices based on dot timing (heavy loss at 100%, stabilizing down the funnel)
-        if (hr) {
-            dots.forEach((dot, idx) => {
-                const rect = dot.getBoundingClientRect();
-                if (idx === 0 && Math.random() < 0.3) spawnSlice(rect, 1, isMobile, hr);
-                if (idx === 1 && Math.random() < 0.1) spawnSlice(rect, 0.8, isMobile, hr);
-                if (idx === 2 && Math.random() < 0.01) spawnSlice(rect, 0.5, isMobile, hr);
-            });
-        }
-
-        // Elegantly update and render the detaching slices
-        for (let i = particles.length - 1; i >= 0; i--) {
-            let p = particles[i];
-            p.progress += p.speed;
-            
-            if (p.progress >= 1) {
-                particles.splice(i, 1);
-                continue;
-            }
-
-            const t = p.progress;
-            
-            // Elegant deceleration
-            const ease = 1 - Math.pow(1 - t, 2.5);
-            p.x = p.startX + (p.endX - p.startX) * ease;
-            p.y = p.startY + (p.endY - p.startY) * ease;
-
-            // Draw clean literal slices (dashes)
-            ctx.beginPath();
-            
-            // For horizontal pipes, slices are vertical dashes dropping.
-            // For vertical pipes (mobile), slices are horizontal dashes drifting.
-            if (p.isMobile) {
-                // Determine direction of slice to make it trail correctly
-                const dirX = Math.sign(p.endX - p.startX);
-                ctx.moveTo(p.x, p.y);
-                ctx.lineTo(p.x - dirX * p.length, p.y);
-            } else {
-                ctx.moveTo(p.x, p.y);
-                ctx.lineTo(p.x, p.y - p.length);
-            }
-            
-            // Slowly dissolve into oblivion
-            const alpha = (1 - t) * (p.intensity === 1 ? 0.6 : 0.3);
-            ctx.strokeStyle = `rgba(255, 255, 255, ${Math.max(0, alpha)})`;
-            ctx.lineWidth = p.thickness;
-            ctx.lineCap = 'round';
-            
-            if (t < 0.3) {
-                ctx.shadowBlur = p.thickness * 2;
-                ctx.shadowColor = 'rgba(255, 255, 255, 0.8)';
-            } else {
-                ctx.shadowBlur = 0;
-            }
-            
-            ctx.stroke();
-        }
-        
-        requestAnimationFrame(loop);
-    }
-    
-    setTimeout(loop, 500);
+    window.addEventListener('resize', () => panToStage(currentIndex));
 })();
