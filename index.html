@@ -10,7 +10,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -22,62 +22,57 @@
     <section class="hero relative-z">
         <div class="hero-inner animate-fade-in">
             <div class="badge">CLOSED ALPHA</div>
+            
             <h1 class="hero-title">
-                The Personal Context OS.
+                The Human Context OS.
             </h1>
 
-            <div class="pipe-mask" style="width: 100%; max-width: 300px; margin: 0 auto 3rem auto; overflow: hidden; position: relative;">
-                <div class="data-pipe panning-pipe" id="panning-pipe" style="margin: 0; display: flex; align-items: center; justify-content: flex-start; width: max-content; transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);">
-                    <div class="pipe-node node-1 pipe-100">
-                        <span class="pipe-val">100%</span>
-                        <span class="pipe-label">of all your ideas and goals</span>
-                    </div>
-                    <div class="pipe-node node-2 pipe-15">
-                        <span class="pipe-val">15%</span>
-                        <span class="pipe-label">stored for later</span>
-                    </div>
-                    <div class="pipe-node node-3 pipe-5">
-                        <span class="pipe-val">5%</span>
-                        <span class="pipe-label">actually recalled</span>
-                    </div>
-                    <div class="pipe-node node-4 pipe-1">
-                        <span class="pipe-val">1%</span>
-                        <span class="pipe-label">acted upon</span>
-                    </div>
+            <div class="stat-pipeline">
+                <div class="stat-node">
+                    <span class="stat-val">100%</span>
+                    <span class="stat-label">Of all your ideas & goals</span>
+                </div>
+                <div class="stat-wire"></div>
+                <div class="stat-node">
+                    <span class="stat-val">15%</span>
+                    <span class="stat-label">Remembered...</span>
+                </div>
+                <div class="stat-wire"></div>
+                <div class="stat-node">
+                    <span class="stat-val">5%</span>
+                    <span class="stat-label">Recalled...</span>
+                </div>
+                <div class="stat-wire"></div>
+                <div class="stat-node target-node">
+                    <span class="stat-val">1%</span>
+                    <span class="stat-label">Acted Upon</span>
                 </div>
             </div>
 
-            <form id="hero-form" class="signup-form hero-form-center" style="position: relative; z-index: 3; margin: 0 auto 3rem auto;">
-                <div class="form-row" style="position: relative; overflow: hidden; border-radius: 4px; box-shadow: inset 0 0 0 1px var(--surface-border); background: var(--surface); padding: 4px;">
-                    <input type="email" class="signup-input" placeholder="Enter your email" required style="position: relative; z-index: 1; border: none !important;">
-                    <button type="submit" class="signup-btn" style="position: relative; z-index: 1;">
+            <form id="hero-form" class="signup-form">
+                <div class="form-row pill-form">
+                    <input type="email" class="signup-input" placeholder="INITIALIZE_EMAIL" required>
+                    <button type="submit" class="signup-btn">
                         <span class="btn-text">Join Alpha</span>
                         <span class="btn-spinner"></span>
                     </button>
-                    <div class="signup-success" style="display:none; position: absolute; z-index: 2; inset: 0; background: var(--surface); align-items: center; justify-content: center;"><p>Queued.</p></div>
+                    <div class="signup-success" style="display:none;">
+                        <p>Sequence queued.</p>
+                    </div>
                 </div>
+                <p class="signup-error" style="display:none; margin-top: 1rem;"></p>
             </form>
-
-            <div id="vision-text" style="opacity: 1; transform: translateY(0);">
-                <p class="hero-subtitle">
-                    Today's second brain and productivity apps may work for the ultra-disciplined. Savyn is for the rest of us.
-                    <br><br>
-                    No folders. No templates. No tags. Your raw ideas, goals & interests captured and turned into active context for your phone in real-time
-                    <br><br>
-                    <span class="accumulate-flip flipped" style="display: inline-block;">A generative smartphone layer built around you</span>
-                </p>
-            </div>
         </div>
     </section>
 
     <section class="concept container">
         <div class="concept-block animate-on-scroll">
-            <p class="eyebrow">01 // The Trap</p>
-            <h2 class="section-title">Stop trying to build a Second Brain.<br><span class="text-muted">Start using your first one.</span></h2>
+            <p class="eyebrow">01 // The Reality</p>
+            <h2 class="section-title">Productivity apps are for the ultra-disciplined.<br><span class="text-muted">Savyn is for the rest of us.</span></h2>
             <p class="body-large">
-                Productivity apps force you to do data entry on your own life. Tagging, sorting, and linking—it’s high-effort procrastination. 
+                No folders. No templates. No tags. Savyn captures your passing thoughts and turns them into active context—instantly surfacing the exact apps, links and insights you need right now.
                 <br><br>
-                Savyn is an OS for executors, not librarians. You don't organize anything. You speak your unstructured thoughts, and Savyn's dimensional memory silently maps your goals and active concepts in the background. Zero friction. Total execution.
+                An adaptive smartphone layer built around you.
             </p>
         </div>
     </section>
@@ -113,36 +108,15 @@
         </div>
     </section>
 
-    <section class="agents container">
-        <div class="section-header animate-on-scroll">
-            <p class="eyebrow">03 // The Interface</p>
-            <h2 class="section-title">Dead app grids are out.<br><span class="text-muted">Living containers are in.</span></h2>
-        </div>
-
-        <div class="bento-grid" id="cards-container">
-            <div class="bento-card animate-on-scroll">
-                <img src="avatars/bucket_focus.webp" class="card-bg-image" alt="Codebase">
-                <div class="card-content">
-                    <h3>Code & Execute</h3>
-                    <p class="card-desc">Distractions physically banished. IDE references and active build threads locked into your immediate context.</p>
-                </div>
-            </div>
-
-            <div class="bento-card animate-on-scroll">
-                <img src="avatars/bucket_explore.webp" class="card-bg-image" alt="The Arena">
-                <div class="card-content">
-                    <h3>The Arena</h3>
-                    <p class="card-desc">The OS pulls your historical chess tactics. PGN viewers and Grandmaster-level sparring materialize instantly.</p>
-                </div>
-            </div>
-
-            <div class="bento-card animate-on-scroll">
-                <img src="avatars/bucket_zone_out.webp" class="card-bg-image" alt="Reset">
-                <div class="card-content">
-                    <h3>Hard Reset</h3>
-                    <p class="card-desc">The grind stops. Carnatic tracks cue up. Philosophical threads and introspection tools replace the daily noise.</p>
-                </div>
-            </div>
+    <section class="architecture container">
+        <div class="concept-block animate-on-scroll">
+            <p class="eyebrow">03 // The Architecture</p>
+            <h2 class="section-title">Living spaces.<br><span class="text-muted">Not app grids.</span></h2>
+            <p class="body-large">
+                Standard phones are passive. Savyn actively acts as a contextual Chief of Staff for whatever you are trying to execute right now.
+                <br><br>
+                Your phone is divided into fluid, living spaces. Switch to your mindset, and the OS instantly summons the relevant links, active tools, and the exact contextual discussion you left off on yesterday. It understands what you need, before you have to search for it.
+            </p>
         </div>
     </section>
 
@@ -160,21 +134,18 @@
     </section>
 
     <section class="bottom-cta container animate-on-scroll">
-        <h2 class="hero-title">Upgrade your OS.</h2>
+        <h2 class="hero-title" style="font-size: clamp(2rem, 5vw, 4rem);">Upgrade your OS.</h2>
         <p class="hero-subtitle text-muted">Join the closed alpha for Android.</p>
         <form id="bottom-form" class="signup-form">
-            <div class="form-row">
+            <div class="form-row pill-form">
                 <input type="email" class="signup-input" placeholder="INITIALIZE_EMAIL" required>
                 <button type="submit" class="signup-btn">
                     <span class="btn-text">Transcend the Grid</span>
                     <span class="btn-spinner"></span>
                 </button>
             </div>
+            <p class="signup-error" style="display:none; margin-top: 1rem;"></p>
         </form>
-        <div class="signup-success" style="display:none;">
-            <p>Sequence queued. We will contact you.</p>
-        </div>
-        <p class="signup-error" style="display:none;"></p>
     </section>
 
     <footer class="container">
