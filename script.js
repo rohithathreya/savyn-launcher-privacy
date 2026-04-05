@@ -125,119 +125,98 @@
     let accumulatedCount = 0;
     const maxAccumulation = 250;
     
-    const links = document.querySelectorAll('.pipe-link');
+    const dots = document.querySelectorAll('.flow-dot');
     const hero = document.querySelector('.hero');
-    const flipText = document.getElementById('flip-text');
     
-    function spawnSpark(rect, intensityType) {
+    function spawnSlice(rect, intensityType, isMobile, hr) {
         if (!hero) return;
-        const heroRect = hero.getBoundingClientRect();
         
-        const x = (rect.left - heroRect.left) + Math.random() * rect.width;
-        const y = (rect.top - heroRect.top) + rect.height / 2;
+        // Spawn precisely from the animated dot
+        const startX = (rect.left - hr.left) + Math.random() * rect.width;
+        const startY = (rect.top - hr.top) + rect.height / 2;
+        
+        // Discarded ideas drift perpendicularly away and fade to nothing
+        const distY = isMobile ? (Math.random() - 0.5) * 40 : (Math.random() * 80 + 30);
+        const distX = isMobile ? (Math.random() > 0.5 ? 1 : -1) * (Math.random() * 60 + 20) : (Math.random() - 0.5) * 40;
         
         particles.push({
-            x: x,
-            y: y + Math.random() * 5,
-            vx: (Math.random() - 0.5) * 1.5,
-            vy: Math.random() * 1.5 + 0.5,
-            life: 1,
-            size: Math.random() * 1.5 + 0.5,
+            startX, startY,
+            x: startX, y: startY,
+            endX: startX + distX,
+            endY: startY + distY,
+            progress: 0,
+            speed: Math.random() * 0.01 + 0.005, 
+            thickness: intensityType === 1 ? 3 : (intensityType === 0.8 ? 2 : 1),
+            length: Math.random() * 15 + 10,
             intensity: intensityType,
-            settled: false
+            isMobile
         });
     }
 
     function loop() {
         ctx.clearRect(0, 0, width, height);
 
-        links.forEach((link, idx) => {
-            const rect = link.getBoundingClientRect();
-            // Link 1 (100 -> 15): Heavy drop
-            if (idx === 0 && Math.random() < 0.25) spawnSpark(rect, 1);
-            // Link 2 (15 -> 5): Medium drop
-            if (idx === 1 && Math.random() < 0.10) spawnSpark(rect, 0.8);
-            // Link 3 (5 -> 1): Rare drop
-            if (idx === 2 && Math.random() < 0.02) spawnSpark(rect, 0.5);
-        });
+        let hr = null;
+        if (hero) hr = hero.getBoundingClientRect();
+        
+        const isMobile = window.innerWidth <= 768;
 
-        // Update Physics
+        // Spawn slices based on dot timing (heavy loss at 100%, stabilizing down the funnel)
+        if (hr) {
+            dots.forEach((dot, idx) => {
+                const rect = dot.getBoundingClientRect();
+                if (idx === 0 && Math.random() < 0.3) spawnSlice(rect, 1, isMobile, hr);
+                if (idx === 1 && Math.random() < 0.1) spawnSlice(rect, 0.8, isMobile, hr);
+                if (idx === 2 && Math.random() < 0.01) spawnSlice(rect, 0.5, isMobile, hr);
+            });
+        }
+
+        // Elegantly update and render the detaching slices
         for (let i = particles.length - 1; i >= 0; i--) {
             let p = particles[i];
+            p.progress += p.speed;
             
-            if (!p.settled) {
-                p.vy += 0.08; // gravity
-                p.x += p.vx;
-                p.y += p.vy;
-                p.vx += (Math.random() - 0.5) * 0.2; // wind
-                
-                let px = Math.floor(p.x);
-                if (px >= 0 && px < width) {
-                    const currentFloorY = height - 10 - floorHeights[px];
-                    if (p.y >= currentFloorY) {
-                        p.settled = true;
-                        p.y = currentFloorY;
-                        
-                        floorHeights[px] += p.size * 0.5; // build the pile
-                        // Smooth mountain to neighbors
-                        for (let j = -4; j <= 4; j++) {
-                            if (px + j >= 0 && px + j < width) {
-                                floorHeights[px + j] += (4 - Math.abs(j)) * 0.08;
-                            }
-                        }
-                        
-                        accumulatedCount++;
-                    }
-                } else if (p.y > height) {
-                    particles.splice(i, 1);
-                    continue;
-                }
-            } else {
-                p.life *= 0.99;
-                if (Math.random() < 0.005 || p.life < 0.1) {
-                    particles.splice(i, 1);
-                    continue;
-                }
+            if (p.progress >= 1) {
+                particles.splice(i, 1);
+                continue;
             }
 
-            // Draw spark
+            const t = p.progress;
+            
+            // Elegant deceleration
+            const ease = 1 - Math.pow(1 - t, 2.5);
+            p.x = p.startX + (p.endX - p.startX) * ease;
+            p.y = p.startY + (p.endY - p.startY) * ease;
+
+            // Draw clean literal slices (dashes)
             ctx.beginPath();
-            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
             
-            if (p.settled) {
-                ctx.fillStyle = `rgba(180, 200, 255, ${p.life * 0.6})`;
-                ctx.shadowBlur = Math.random() < 0.05 ? 5 : 0;
+            // For horizontal pipes, slices are vertical dashes dropping.
+            // For vertical pipes (mobile), slices are horizontal dashes drifting.
+            if (p.isMobile) {
+                // Determine direction of slice to make it trail correctly
+                const dirX = Math.sign(p.endX - p.startX);
+                ctx.moveTo(p.x, p.y);
+                ctx.lineTo(p.x - dirX * p.length, p.y);
             } else {
-                const alpha = p.intensity === 1 ? 0.9 : 0.6;
-                ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
-                ctx.shadowBlur = 8;
-                ctx.shadowColor = 'rgba(255, 255, 255, 0.8)';
+                ctx.moveTo(p.x, p.y);
+                ctx.lineTo(p.x, p.y - p.length);
             }
             
-            ctx.fill();
-            ctx.shadowBlur = 0; 
-        }
-        
-        // Render & Bleed Floor Pile
-        for (let x = 0; x < width; x++) {
-            if (floorHeights[x] > 0) {
-                if (x % 3 === 0) {
-                    ctx.fillStyle = `rgba(200, 220, 255, ${Math.min(floorHeights[x] / 25, 0.5)})`;
-                    ctx.fillRect(x, height - 10 - floorHeights[x], 3, floorHeights[x]);
-                }
-                floorHeights[x] *= 0.998; // physically sink over time
+            // Slowly dissolve into oblivion
+            const alpha = (1 - t) * (p.intensity === 1 ? 0.6 : 0.3);
+            ctx.strokeStyle = `rgba(255, 255, 255, ${Math.max(0, alpha)})`;
+            ctx.lineWidth = p.thickness;
+            ctx.lineCap = 'round';
+            
+            if (t < 0.3) {
+                ctx.shadowBlur = p.thickness * 2;
+                ctx.shadowColor = 'rgba(255, 255, 255, 0.8)';
+            } else {
+                ctx.shadowBlur = 0;
             }
-        }
-        
-        accumulatedCount = Math.max(0, accumulatedCount - 0.5);
-
-        if (flipText) {
-            let ratio = Math.min(accumulatedCount / maxAccumulation, 1);
-            if (ratio > 0.8) {
-                flipText.classList.add('flipped');
-            } else if (ratio < 0.3) {
-                flipText.classList.remove('flipped');
-            }
+            
+            ctx.stroke();
         }
         
         requestAnimationFrame(loop);

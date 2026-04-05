@@ -206,10 +206,14 @@ a:hover { color: var(--text-primary); border-bottom: 1px solid var(--text-primar
 }
 
 /* TAPERING EFFECTS */
-.pipe-100 .pipe-val { font-size: 1.8rem; font-weight: 300; letter-spacing: -0.02em; color: var(--text-secondary); }
-.pipe-15 .pipe-val { font-size: 1.5rem; font-weight: 500; color: #bbb; }
-.pipe-5 .pipe-val { font-size: 1.25rem; font-weight: 600; color: #ddd; }
-.pipe-1 .pipe-val { font-size: 1.1rem; font-weight: 800; color: #fff; text-shadow: 0 0 8px rgba(255,255,255,0.5); }
+.pipe-100 .pipe-val { font-size: 2.2rem; font-weight: 300; letter-spacing: -0.02em; color: var(--text-secondary); }
+.pipe-100 .pipe-label { font-size: 0.8rem; }
+.pipe-15 .pipe-val { font-size: 1.2rem; font-weight: 500; color: #aaa; opacity: 0.9; }
+.pipe-15 .pipe-label { font-size: 0.65rem; }
+.pipe-5 .pipe-val { font-size: 0.9rem; font-weight: 600; color: #888; opacity: 0.7; }
+.pipe-5 .pipe-label { font-size: 0.55rem; }
+.pipe-1 .pipe-val { font-size: 1.1rem; font-weight: 800; color: #fff; opacity: 1; text-shadow: 0 0 10px rgba(255,255,255,0.8); }
+.pipe-1 .pipe-label { font-size: 0.6rem; color: #fff; font-weight: 700; text-shadow: 0 0 5px rgba(255,255,255,0.4); }
 
 .pipe-label {
     letter-spacing: 0.1em;
