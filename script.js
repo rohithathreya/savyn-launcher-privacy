@@ -15,10 +15,10 @@
     }
 
     const stateData = [
-        { state: 100, val: "100", text: "great ideas & wishes" },
+        { state: 100, val: "100", text: "great ideas & goals" },
         { state: 15, val: "<15", text: "saved for later" },
         { state: 5, val: "<5", text: "actually revisited" },
-        { state: 1, val: "1-2", text: "acted upon" }
+        { state: 1, val: "<2", text: "acted upon" }
     ];
     let currentIndex = 0;
 
