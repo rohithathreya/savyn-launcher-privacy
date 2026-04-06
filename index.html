@@ -26,46 +26,33 @@
             <a href="index.html" class="logo">SAVYN</a>
             <div class="nav-links">
                 <a href="articles.html" class="nav-link">Articles</a>
-                <a href="mailto:support@savynlabs.com" class="nav-link">Comms</a>
+                <a href="#join-alpha" class="nav-link highlight-link">Join Alpha</a>
             </div>
         </div>
     </nav>
 
     <section class="hero relative-z">
-        <div class="hero-inner container animate-fade-in" style="align-items: flex-start; text-align: left;">
-
-            <h1 class="hero-title">The Personal Context OS.</h1>
-
-            <div class="hero-manifesto" style="margin-bottom: 2.5rem;">
-                <p class="hero-subtitle">
-                    Raw ideas, goals, and interests, used to generatively adapt your smartphone in real-time.
-                </p>
+        <div class="hero-inner container animate-fade-in hero-grid">
+            
+            <div class="hero-text-block">
+                <h1 class="hero-title">The Personal Context OS.</h1>
+                <div class="hero-manifesto">
+                    <p class="hero-subtitle">
+                        Raw ideas, goals, and interests, used to generatively adapt your smartphone in real-time.
+                    </p>
+                </div>
             </div>
 
-            <form id="hero-form" class="signup-form">
-                <div class="form-row pill-form">
-                    <input type="email" class="signup-input" placeholder="Enter your email" required>
-                    <button type="submit" class="signup-btn">
-                        <span class="btn-text">Join Alpha</span>
-                        <span class="btn-spinner"></span>
-                    </button>
-                    <div class="signup-success" style="display:none;">
-                        <p>Sequence queued.</p>
-                    </div>
-                </div>
-                <p class="signup-error" style="display:none; margin-top: 1rem;"></p>
-            </form>
+            <div class="hero-visual-block">
+                <div class="problem-statement">
+                    <p class="eyebrow">00 // The Problem</p>
+                    <div class="attrition-visual" id="attrition-container">
+                        <div class="attrition-grid" id="dot-grid"></div>
 
-            <div class="problem-statement" style="align-items: flex-start;">
-                <p class="eyebrow">00 // The Problem</p>
-                <div class="attrition-visual" id="attrition-container"
-                    style="flex-direction: column; gap: 2rem; align-items: flex-start;">
-                    <div class="attrition-grid" id="dot-grid"></div>
-
-                    <div class="a-label active" id="single-cycling-label"
-                        style="justify-content: flex-start; transition: opacity 0.3s ease;">
-                        <span class="a-val" id="cycle-val" style="width: auto; text-align: left;">100</span>
-                        <span id="cycle-text" style="width: 250px;">of all your ideas and goals</span>
+                        <div class="a-label active" id="single-cycling-label">
+                            <span class="a-val" id="cycle-val">100</span>
+                            <span class="a-text" id="cycle-text">of all your ideas and goals</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -117,20 +104,21 @@
                     <p>Your ideas never die again. The OS tracks your obsessions and hands your best concepts back to
                         you when you enter the right context.</p>
                 </div>
-                <div class="step-item animate-on-scroll">
-                    <div class="step-num">04</div>
-                    <div>
-                        <h3>Privacy First</h3>
-                        <p>All storage on device. AI calls are anonymous and made via secure cloud proxies. <a
-                                href="privacy-policy.html"
-                                style="text-decoration: underline; color: inherit; opacity: 0.8;">Read our strict
-                                privacy policy.</a></p>
-                    </div>
+            </div>
+            <div class="step-item animate-on-scroll">
+                <div class="step-num">04</div>
+                <div>
+                    <h3>Privacy First</h3>
+                    <p>All storage on device. AI calls are anonymous and made via secure cloud proxies. <a
+                            href="privacy-policy.html"
+                            style="text-decoration: underline; color: inherit; opacity: 0.8;">Read our strict
+                            privacy policy.</a></p>
                 </div>
             </div>
+        </div>
     </section>
 
-    <section class="bottom-cta container animate-on-scroll" style="margin-top: 6rem; padding-bottom: 2rem;">
+    <section id="join-alpha" class="bottom-cta container animate-on-scroll" style="margin-top: 6rem; padding-bottom: 2rem;">
         <h2 class="hero-title" style="font-size: clamp(2.5rem, 6vw, 4.5rem);">Upgrade your OS.</h2>
         <p class="hero-subtitle text-muted" style="margin-bottom: 4rem;">Join the closed alpha for Android.</p>
 

@@ -1,14 +1,16 @@
 // ═══════════════════════════════════════════════════════════════════════════
-// THE ATTRITION GRID ANIMATION
+// THE ATTRITION GRID ANIMATION - SOTA CASCADE
 // ═══════════════════════════════════════════════════════════════════════════
 (function initAttritionVisual() {
     const grid = document.getElementById('dot-grid');
     if (!grid) return;
 
-    // Inject exactly 100 dots to keep HTML clean
+    // Inject exactly 100 dots and assign CSS variables for stagger delay
     for (let i = 0; i < 100; i++) {
         const dot = document.createElement('div');
         dot.className = 'dot';
+        // This variable creates the sweeping ripple effect in CSS
+        dot.style.setProperty('--i', i); 
         grid.appendChild(dot);
     }
 
@@ -27,7 +29,7 @@
     function updateState() {
         const data = stateData[currentIndex];
         
-        // Update the master class on the grid
+        // Update the master class to trigger CSS cascade
         grid.className = `attrition-grid grid-${data.state}`;
 
         // Fade text out cleanly
@@ -44,7 +46,7 @@
             }
 
             lblWrap.style.opacity = '1';
-        }, 300); // Wait for transition
+        }, 300); // Sync text swap with the fade out
 
         // Loop forward
         currentIndex = (currentIndex + 1) % stateData.length;
