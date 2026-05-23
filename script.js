@@ -1,65 +1,4 @@
 // ═══════════════════════════════════════════════════════════════════════════
-// THE ATTRITION GRID ANIMATION - SOTA CASCADE
-// ═══════════════════════════════════════════════════════════════════════════
-(function initAttritionVisual() {
-    const grid = document.getElementById('dot-grid');
-    if (!grid) return;
-
-    // Inject exactly 100 dots and assign CSS variables for stagger delay
-    for (let i = 0; i < 100; i++) {
-        const dot = document.createElement('div');
-        dot.className = 'dot';
-        // This variable creates the sweeping ripple effect in CSS
-        dot.style.setProperty('--i', i); 
-        grid.appendChild(dot);
-    }
-
-    const stateData = [
-        { state: 100, val: "100", text: "great ideas & goals" },
-        { state: 15, val: "<15", text: "saved for later" },
-        { state: 5, val: "<5", text: "actually revisited" },
-        { state: 1, val: "<2", text: "acted upon" }
-    ];
-    let currentIndex = 0;
-
-    const lblWrap = document.getElementById('single-cycling-label');
-    const lblVal = document.getElementById('cycle-val');
-    const lblText = document.getElementById('cycle-text');
-
-    function updateState() {
-        const data = stateData[currentIndex];
-        
-        // Update the master class to trigger CSS cascade
-        grid.className = `attrition-grid grid-${data.state}`;
-
-        // Fade text out cleanly
-        lblWrap.style.opacity = '0';
-        
-        setTimeout(() => {
-            lblVal.innerText = data.val;
-            lblText.innerText = data.text;
-            
-            if (data.state === 1) {
-                lblWrap.style.textShadow = '0 0 15px rgba(255,255,255,0.6)';
-            } else {
-                lblWrap.style.textShadow = 'none';
-            }
-
-            lblWrap.style.opacity = '1';
-        }, 300); // Sync text swap with the fade out
-
-        // Loop forward
-        currentIndex = (currentIndex + 1) % stateData.length;
-    }
-
-    // Start sequence
-    setTimeout(() => {
-        updateState();
-        setInterval(updateState, 2500); // Shift every 2.5 seconds
-    }, 100);
-})();
-
-// ═══════════════════════════════════════════════════════════════════════════
 // SCROLL REVEAL ANIMATIONS
 // ═══════════════════════════════════════════════════════════════════════════
 (function initScrollAnimations() {
@@ -79,6 +18,46 @@
 
     const elements = document.querySelectorAll('.animate-on-scroll');
     elements.forEach(el => observer.observe(el));
+})();
+
+// ═══════════════════════════════════════════════════════════════════════════
+// LAZY LOOPING PRODUCT FILMS
+// Mounts each .lazy-loop <video> source only when it scrolls near the viewport,
+// then plays muted and pauses again when it leaves. Keeps the page light and
+// the films feel "alive" without forcing eager downloads.
+// ═══════════════════════════════════════════════════════════════════════════
+(function initLazyLoopVideos() {
+    const videos = document.querySelectorAll('video.lazy-loop');
+    if (!videos.length || !('IntersectionObserver' in window)) {
+        // Fallback: just attach the src directly.
+        videos.forEach(v => {
+            const src = v.getAttribute('data-src');
+            if (src && !v.src) v.src = src;
+        });
+        return;
+    }
+
+    const mount = (video) => {
+        const src = video.getAttribute('data-src');
+        if (src && !video.src) video.src = src;
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            const video = entry.target;
+            if (entry.isIntersecting) {
+                mount(video);
+                const playAttempt = video.play();
+                if (playAttempt && typeof playAttempt.catch === 'function') {
+                    playAttempt.catch(() => { /* autoplay blocked — that's fine */ });
+                }
+            } else {
+                if (!video.paused) video.pause();
+            }
+        });
+    }, { threshold: 0.35, rootMargin: '0px 0px -10% 0px' });
+
+    videos.forEach(v => observer.observe(v));
 })();
 
 // ═══════════════════════════════════════════════════════════════════════════

@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Savyn — Personal Context OS</title>
-    <meta name="description" content="An operating system that bends to your mind. Zero setup. Total execution.">
+    <title>Savyn — A phone that listens once.</title>
+    <meta name="description" content="Savyn is a personal context OS for Android. Speak what you're doing. Your agents reshape the phone around it — the right apps, the right links, the next move.">
     <meta name="theme-color" content="#000000">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
@@ -31,126 +31,223 @@
         </div>
     </nav>
 
-    <section class="hero relative-z">
-        <div class="hero-inner container animate-fade-in hero-grid">
-            
-            <div class="hero-text-block">
-                <h1 class="hero-title">The Personal Context OS.</h1>
-                <div class="hero-manifesto">
-                    <p class="hero-subtitle">
-                        Use your raw ideas, goals & interests to generatively adapt your smartphone in real-time.
-                    </p>
-                </div>
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- HERO — ONE LINE, ONE PUNCH                                           -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <section class="hero hero-solo relative-z">
+        <div class="hero-inner container animate-fade-in">
+            <h1 class="hero-title">
+                The grid <span class="hero-strike">is</span> <em class="hero-em">dead</em>.
+            </h1>
+            <p class="hero-subtitle">
+                Speak once. Your phone <span class="text-primary">bends to the moment</span>.
+            </p>
+            <div class="hero-actions">
+                <a href="#join-alpha" class="cta-button">Join the closed alpha</a>
+                <a href="#m01" class="cta-ghost">See it work ↓</a>
             </div>
-
-            <div class="hero-visual-block">
-                <div class="problem-statement">
-                    <p class="eyebrow">00 // The Problem</p>
-                    <div class="attrition-visual" id="attrition-container">
-                        <div class="attrition-grid" id="dot-grid"></div>
-
-                        <div class="a-label active" id="single-cycling-label">
-                            <span class="a-val" id="cycle-val">100</span>
-                            <span class="a-text" id="cycle-text">of all your ideas and goals</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </section>
 
-    <section class="concept container">
-        <div class="concept-block animate-on-scroll">
-            <p class="eyebrow">01 // The Reality</p>
-            <h2 class="section-title">Productivity apps work for the ultra-disciplined.<br><span class="text-muted">Savyn
-                    is built for the rest of us.</span></h2>
-            <p class="body-large">
-                No folders. No templates. No tags. Savyn captures your passing thoughts and turns them into active
-                context—instantly surfacing the exact apps, links and insights you need right now.
-                <br><br>
-                An adaptive smartphone layer built around you.
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- M01 — SPEAK. IT RESHAPES.                                            -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <section id="m01" class="manifesto-beat container">
+        <div class="beat-inner animate-on-scroll">
+            <p class="eyebrow">M01 // Speak. It reshapes.</p>
+            <h2 class="beat-lead">
+                One sentence. <span class="accent">The phone reshapes.</span>
+            </h2>
+            <p class="beat-body">
+                Hold the mic. Say <em>"working on my Caro-Kann"</em>. Chess opens with the right lines, the right videos, the right next move — already loaded. You didn't open an app. You didn't write a prompt. You spoke once.
             </p>
         </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- SCREEN 01 — THE LIVE AGENT                                           -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <section class="product-film container">
+        <div class="film-frame animate-on-scroll">
+            <p class="eyebrow film-eyebrow">Frame 01 // Chess agent · live</p>
+            <div class="device">
+                <div class="device-notch"></div>
+                <img
+                    class="device-screen"
+                    src="assets/Screen1.png"
+                    alt="Savyn Chess agent pushing a Caro-Kann brief with linked YouTube references and the right apps surfaced"
+                    loading="lazy">
+                <div class="device-side"></div>
+            </div>
+            <p class="film-caption">
+                A real ping from a real agent — specific opening lines, the exact references, the apps you'd reach for, all in one breath. Not a notification. A next move.
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- M02 — FIVE AGENTS, ONE YOU                                           -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <section class="manifesto-beat container">
+        <div class="beat-inner animate-on-scroll">
+            <p class="eyebrow">M02 // Five agents. One you.</p>
+            <h2 class="beat-lead">
+                Your phone gets <span class="accent">a bench of operators</span>.
+            </h2>
+            <p class="beat-body">
+                Music. Chess. Mornings. Eating. The way you think. Each agent holds the thread of one part of your life — so you never start from zero, and no idea you have ever dies alone in a notes app.
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- M03 — TRAJECTORIES, NOT FOLDERS                                      -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <section class="manifesto-beat container">
+        <div class="beat-inner animate-on-scroll">
+            <p class="eyebrow">M03 // Trajectories, not folders.</p>
+            <h2 class="beat-lead">
+                Inside every agent lives <span class="accent">a responsibility</span>. The arc you're actually moving along.
+            </h2>
+            <p class="beat-body">
+                Your Caro-Kann opening. Your sub-4 5K. Your one black coffee before noon. Savyn watches each arc with you, names it, and stacks every moment you forge into its spine. You operate. It remembers.
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- SCREEN 02 — THE TRAJECTORY                                           -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <section class="product-film container">
+        <div class="film-frame animate-on-scroll">
+            <p class="eyebrow film-eyebrow">Frame 02 // A responsibility, alive</p>
+            <div class="device">
+                <div class="device-notch"></div>
+                <img
+                    class="device-screen"
+                    src="assets/Screen1.png"
+                    alt="A Savyn responsibility — the Caro-Kann arc — with the agent's brief, linked references, and a Complete button to log the moment"
+                    loading="lazy">
+                <div class="device-side"></div>
+            </div>
+            <p class="film-caption">
+                One tap on <em>Complete</em> stacks the moment into the arc. Days later, the agent comes back with the next continuation — written specifically for the arc you're on.
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- M04 — THE NEXT MOVE                                                  -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <section class="manifesto-beat container">
+        <div class="beat-inner animate-on-scroll">
+            <p class="eyebrow">M04 // The next move. Not a notification.</p>
+            <h2 class="beat-lead">
+                Two days in, a real <span class="accent">continuation lands</span>.
+            </h2>
+            <p class="beat-body">
+                <em>"Try the …Bf5 setup against the Advance — here's a 4-minute breakdown."</em> Specific. Linked. Forward-moving. Drawn from every moment you've put into the arc — never a generic nudge from a streak engine.
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- M05 — MASS, NOT METRICS                                              -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <section class="manifesto-beat container">
+        <div class="beat-inner animate-on-scroll">
+            <p class="eyebrow">M05 // Mass, not metrics.</p>
+            <h2 class="beat-lead">
+                No streaks. No scores. <span class="accent">No synthesis pretending to be wisdom.</span>
+            </h2>
+            <p class="beat-body">
+                Just the chronological mass of moments you forged — stacked, dated, undeniable. The shape of who you're becoming, kept faithfully and never gamified.
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- THE FLOW                                                             -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
     <section class="how-it-works container">
         <div class="section-header animate-on-scroll">
-            <p class="eyebrow">02 // The Flow</p>
-            <h2 class="section-title">Momentum.<br><span class="text-muted">Not Management.</span></h2>
+            <p class="eyebrow">03 // The flow</p>
+            <h2 class="section-title">Momentum.<br><span class="text-muted">Not management.</span></h2>
         </div>
 
         <div class="steps-grid">
             <div class="step-item animate-on-scroll">
                 <div class="step-num">01</div>
                 <div>
-                    <h3>Zero Activation Energy</h3>
-                    <p>Tap a button and just start speaking. No menus. No app drawers. Savyn catches your raw intent and
-                        parses it in milliseconds.</p>
+                    <h3>Zero activation energy.</h3>
+                    <p>One tap, one sentence. Savyn parses raw intent in milliseconds — no menus, no app drawer, no prompt-engineering yourself.</p>
                 </div>
             </div>
             <div class="step-item animate-on-scroll">
                 <div class="step-num">02</div>
                 <div>
-                    <h3>Dynamic Environments</h3>
-                    <p>When you change your mind, the OS changes its shape. It instantly materializes the exact tools
-                        and context you need for the task at hand.</p>
+                    <h3>The OS bends to the moment.</h3>
+                    <p>Change tracks and the phone changes shape — apps, widgets, links, all materialized for the state you're actually in.</p>
                 </div>
             </div>
             <div class="step-item animate-on-scroll">
                 <div class="step-num">03</div>
                 <div>
-                    <h3>Compound Intellect</h3>
-                    <p>Your ideas never die again. The OS follows your train of thought and hands your best concepts back to
-                        you when you enter the right context.</p>
+                    <h3>Your ideas compound.</h3>
+                    <p>Every moment slots into the right arc. The agent hands your best concepts back to you when the context returns.</p>
                 </div>
             </div>
             <div class="step-item animate-on-scroll">
                 <div class="step-num">04</div>
                 <div>
-                    <h3>Privacy First</h3>
-                    <p>All storage on device. AI calls are anonymous and made via secure cloud proxies. <a
+                    <h3>Private by build.</h3>
+                    <p>All storage on device. AI calls are anonymous, routed through secure proxies. <a
                             href="privacy-policy.html"
-                            style="text-decoration: underline; color: inherit; opacity: 0.8;">Read our strict
-                            privacy policy.</a></p>
+                            style="text-decoration: underline; color: inherit; opacity: 0.8;">Read the privacy policy.</a></p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="join-alpha" class="bottom-cta container animate-on-scroll" style="margin-top: 6rem; padding-bottom: 2rem;">
-        <h2 class="hero-title" style="font-size: clamp(2.5rem, 6vw, 4.5rem);">Upgrade your OS.</h2>
-        <p class="hero-subtitle text-muted" style="margin-bottom: 4rem;">Join the closed alpha for Android.</p>
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- BOTTOM CTA                                                           -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <section id="join-alpha" class="bottom-cta container animate-on-scroll">
+        <p class="eyebrow">Closing // Savyn Labs</p>
+        <h2 class="cta-lead">
+            <span class="accent">Speak once.</span> It begins.
+        </h2>
+        <p class="cta-sub text-muted">Android closed alpha. Limited seats. No marketing — only sequence updates.</p>
 
-        <form id="bottom-form" class="signup-form" style="max-width: 450px; margin: 0 auto;">
+        <form id="bottom-form" class="signup-form">
             <div class="form-row pill-form">
-                <input type="email" class="signup-input" placeholder="Enter your email" required>
+                <input type="email" class="signup-input" placeholder="you@signal.in" required>
                 <button type="submit" class="signup-btn">
-                    <span class="btn-text">Join Alpha</span>
+                    <span class="btn-text">Reserve seat</span>
                     <span class="btn-spinner"></span>
                 </button>
                 <div class="signup-success" style="display:none;">
-                    <p>Sequence queued.</p>
+                    <p>Sequence queued. — Rohith</p>
                 </div>
             </div>
             <p class="signup-error" style="display:none; margin-top: 1rem;"></p>
         </form>
+
+        <p class="cta-signoff">— Rohith, founder, Savyn Labs</p>
     </section>
 
-    <section class="latest-writings container animate-on-scroll"
-        style="margin-top: 4rem; border-top: 1px solid var(--surface-border); padding-top: 6rem;">
-        <p class="eyebrow">04 // Latest Articles</p>
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- LATEST WRITINGS                                                      -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <section class="latest-writings container animate-on-scroll">
+        <p class="eyebrow">04 // Writings</p>
         <div style="display: flex; flex-direction: column; gap: 2rem; align-items: flex-start;">
-            <a href="stop-explaining-yourself.html" class="article-item"
-                style="max-width: 600px; display: block; border-left: 2px solid var(--surface-border); padding-left: 2rem; transition: border-left 0.3s ease;">
-                <span class="article-meta" style="font-size: 0.7rem;">APRIL 2026</span>
-                <h3 style="font-size: 1.8rem; margin-top: 0.5rem; margin-bottom: 0.5rem;">Stop explaining yourself to a
-                    machine!</h3>
-                <p class="text-muted" style="font-size: 1rem;">Why does your phone force you to think like a filing
-                    cabinet? It's time to offload your mental cache.</p>
+            <a href="stop-explaining-yourself.html" class="article-item">
+                <span class="article-meta">APRIL 2026</span>
+                <h3>Stop explaining yourself to a machine.</h3>
+                <p class="text-muted">Your phone forces you to think like a filing cabinet. It's time to offload your mental cache.</p>
             </a>
-            <a href="articles.html" class="nav-link" style="margin-top: 1rem; text-decoration: underline;">See all
-                writings →</a>
+            <a href="articles.html" class="nav-link" style="margin-top: 1rem; text-decoration: underline;">All writings →</a>
         </div>
     </section>
 
