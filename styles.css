@@ -174,6 +174,7 @@ a:hover { color: var(--gold-bright); border-bottom-color: var(--gold-dim); }
     align-items: flex-start;
     width: 100%;
     max-width: 36em;
+    padding-left: 1.25rem;
 }
 
 .hero-title {
@@ -182,11 +183,11 @@ a:hover { color: var(--gold-bright); border-bottom-color: var(--gold-dim); }
     font-size: clamp(1.5rem, 0.35rem + 4.25vw, 3.25rem);
     line-height: 1.12;
     letter-spacing: -0.03em;
-    margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
+    margin: 0 0 clamp(1.75rem, 3.5vw, 2.5rem) -1.25rem;
     display: flex;
     flex-direction: column;
     gap: 0.2em;
-    width: 100%;
+    width: calc(100% + 1.25rem);
     max-width: 15em;
 }
 
@@ -201,31 +202,104 @@ a:hover { color: var(--gold-bright); border-bottom-color: var(--gold-dim); }
     text-shadow: 0 0 40px var(--gold-glow-soft);
 }
 
-.hero-subtitles {
+/* ── Stanza manifesto — each line a beat ─────────────────────────────── */
+.hero-manifesto {
     display: flex;
     flex-direction: column;
-    gap: clamp(1rem, 2.5vw, 1.35rem);
+    gap: clamp(1.25rem, 2.6vw, 1.85rem);
     width: 100%;
-    max-width: 38em;
+    max-width: 34em;
+    position: relative;
 }
 
-.hero-subtitle {
-    font-size: clamp(0.9375rem, 0.2rem + 1.05vw, 1.125rem);
-    color: var(--text-secondary);
-    line-height: 1.65;
-    margin: 0;
-    text-wrap: pretty;
-    max-width: 38em;
-    hanging-punctuation: first last;
+.hero-manifesto::before {
+    content: "";
+    position: absolute;
+    left: -1.25rem;
+    top: 0.4em;
+    bottom: 0.4em;
+    width: 1px;
+    background: linear-gradient(
+        180deg,
+        rgba(212, 168, 83, 0) 0%,
+        rgba(212, 168, 83, 0.45) 35%,
+        rgba(212, 168, 83, 0.45) 65%,
+        rgba(212, 168, 83, 0) 100%
+    );
+}
+
+.hero-stanza {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15em;
+}
+
+.hero-row {
+    display: block;
+    font-size: clamp(0.95rem, 0.25rem + 1.1vw, 1.15rem);
+    line-height: 1.5;
+    color: var(--text-primary);
+    letter-spacing: -0.005em;
+    opacity: 0;
+    transform: translateY(8px);
+    animation: heroRowIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-row-muted { color: var(--text-secondary); }
+
+.hero-row-anchor {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: clamp(1.15rem, 0.3rem + 1.6vw, 1.45rem);
+    color: var(--gold-bright);
+    letter-spacing: -0.015em;
+    text-shadow: 0 0 32px var(--gold-glow-soft);
+    margin-bottom: 0.15em;
+}
+
+/* Stagger: stanza index (--d) × 3 rows. Each row gets its own slot. */
+.hero-stanza .hero-row:nth-child(1) { animation-delay: calc(0.35s + (var(--d) * 0.45s) + 0.00s); }
+.hero-stanza .hero-row:nth-child(2) { animation-delay: calc(0.35s + (var(--d) * 0.45s) + 0.10s); }
+.hero-stanza .hero-row:nth-child(3) { animation-delay: calc(0.35s + (var(--d) * 0.45s) + 0.20s); }
+
+@keyframes heroRowIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Scroll hint ───────────────────────────────────────────────────────── */
+.hero-scroll-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: clamp(2rem, 4vw, 2.75rem);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--text-muted);
+    border-bottom: none !important;
+    opacity: 0;
+    animation: heroRowIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 1.95s;
+}
+.hero-scroll-rule {
+    width: 36px;
+    height: 1px;
+    background: var(--gold-dim);
+    transition: width 0.4s ease, background 0.3s ease;
+}
+.hero-scroll-hint:hover {
+    color: var(--gold-bright);
+    border-bottom: none !important;
+}
+.hero-scroll-hint:hover .hero-scroll-rule {
+    width: 56px;
+    background: var(--gold-bright);
 }
 
 .hero-actions {
-    margin-top: clamp(1.75rem, 4vw, 2.5rem);
-    display: flex;
-    gap: clamp(0.75rem, 2vw, 1.5rem);
-    flex-wrap: wrap;
-    align-items: center;
-    width: 100%;
+    display: none;
 }
 
 .cta-button {
@@ -589,15 +663,16 @@ footer {
         font-size: clamp(1.375rem, 5.2vw + 0.65rem, 1.875rem);
         max-width: 13em;
     }
+    .hero-copy { padding-left: 1rem; }
+    .hero-title { margin-left: -1rem; width: calc(100% + 1rem); }
+    .hero-manifesto::before { left: -1rem; }
+    .hero-row { font-size: 0.95rem; }
+    .hero-row-anchor { font-size: 1.05rem; }
     .cta-button,
     .cta-ghost {
         display: block;
         width: 100%;
         text-align: center;
-    }
-    .hero-actions {
-        flex-direction: column;
-        align-items: stretch;
     }
 }
 
