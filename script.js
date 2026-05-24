@@ -22,42 +22,70 @@
 
 // ═══════════════════════════════════════════════════════════════════════════
 // LAZY LOOPING PRODUCT FILMS
-// Mounts each .lazy-loop <video> source only when it scrolls near the viewport,
-// then plays muted and pauses again when it leaves. Keeps the page light and
-// the films feel "alive" without forcing eager downloads.
+// Poster (Screen1.png) paints instantly; MP4 mounts only when a device frame
+// enters the viewport. Pauses + rewinds when scrolled away. Respects
+// prefers-reduced-motion. One URL — browser cache serves repeat frames.
 // ═══════════════════════════════════════════════════════════════════════════
 (function initLazyLoopVideos() {
     const videos = document.querySelectorAll('video.lazy-loop');
-    if (!videos.length || !('IntersectionObserver' in window)) {
-        // Fallback: just attach the src directly.
-        videos.forEach(v => {
-            const src = v.getAttribute('data-src');
-            if (src && !v.src) v.src = src;
-        });
-        return;
-    }
+    if (!videos.length) return;
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const mounted = new WeakSet();
 
     const mount = (video) => {
+        if (mounted.has(video)) return;
         const src = video.getAttribute('data-src');
-        if (src && !video.src) video.src = src;
+        if (!src) return;
+        mounted.add(video);
+        video.src = src;
+        video.load();
     };
+
+    const play = (video) => {
+        if (reduceMotion) return;
+        const attempt = video.play();
+        if (attempt && typeof attempt.catch === 'function') {
+            attempt.catch(() => { /* autoplay policy — poster stays */ });
+        }
+    };
+
+    const pause = (video) => {
+        if (!video.paused) video.pause();
+        video.classList.remove('is-ready');
+    };
+
+    videos.forEach((video) => {
+        video.addEventListener('canplay', () => {
+            video.classList.add('is-ready');
+        }, { once: true });
+    });
+
+    if (!('IntersectionObserver' in window)) {
+        videos.forEach((v) => { mount(v); play(v); });
+        return;
+    }
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             const video = entry.target;
             if (entry.isIntersecting) {
                 mount(video);
-                const playAttempt = video.play();
-                if (playAttempt && typeof playAttempt.catch === 'function') {
-                    playAttempt.catch(() => { /* autoplay blocked — that's fine */ });
+                if (video.readyState >= 2) {
+                    play(video);
+                } else {
+                    video.addEventListener('canplay', () => play(video), { once: true });
                 }
             } else {
-                if (!video.paused) video.pause();
+                pause(video);
             }
         });
-    }, { threshold: 0.35, rootMargin: '0px 0px -10% 0px' });
+    }, {
+        threshold: 0.2,
+        rootMargin: '120px 0px 120px 0px',
+    });
 
-    videos.forEach(v => observer.observe(v));
+    videos.forEach((v) => observer.observe(v));
 })();
 
 // ═══════════════════════════════════════════════════════════════════════════

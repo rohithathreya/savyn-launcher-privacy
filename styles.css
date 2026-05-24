@@ -563,6 +563,15 @@ footer {
     background: #0c0a08;
     display: block;
 }
+
+/* Poster shows until first frame is ready — no flash of empty black */
+.device-video {
+    opacity: 0.92;
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.device-video.is-ready {
+    opacity: 1;
+}
 .device:not(.device-hero):hover {
     transform: translateY(-4px);
     box-shadow:
