@@ -664,10 +664,21 @@ footer {
     outline-offset: 3px;
 }
 
+/* Hero-stories device: drop the rigid 9/19.5 bezel aspect and let the screen
+   container's aspect-ratio match the loaded video (set by JS). The frame then
+   snaps tight around the recording instead of leaving dead bezel above and
+   below. Width still caps the device; height follows from the screen aspect. */
+.hero-stories-row .device-hero {
+    aspect-ratio: auto;
+    height: auto;
+}
+
 .device-stories-screen {
     position: relative;
     width: 100%;
-    height: 100%;
+    /* Default aspect mirrors the bezel until JS reads the video's native ratio
+       (initStoriesPlayer.applyAspect). Keeps SSR-painted frames sensible. */
+    aspect-ratio: 9 / 19.5;
     border-radius: 36px;
     overflow: hidden;
     background: #0c0a08;
@@ -678,10 +689,10 @@ footer {
     inset: 0;
     width: 100%;
     height: 100%;
-    /* Contain (not cover) — never crop or zoom the recording. The frame's own
-       background fills any letterbox if the video aspect ≠ the device aspect.
-       Cover was the source of the "insanely magnified" mobile rendering. */
-    object-fit: contain;
+    /* Cover fills the screen edge-to-edge. Container aspect is matched to the
+       video at load time, so cover doesn't crop in practice — it just guards
+       against the brief moment before native dimensions are known. */
+    object-fit: cover;
     object-position: center center;
     border-radius: 36px;
     background: #0c0a08;

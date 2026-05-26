@@ -107,6 +107,7 @@
     function initOne(container) {
         const videos = Array.from(container.querySelectorAll('.stories-video'));
         const fills = Array.from(container.querySelectorAll('.stories-bar-fill'));
+        const screen = container.querySelector('.device-stories-screen');
         const prevBtn = container.querySelector('.stories-nav-prev');
         const nextBtn = container.querySelector('.stories-nav-next');
         if (videos.length === 0) return;
@@ -116,11 +117,26 @@
         let rafId = 0;
         const mounted = new WeakSet();
 
+        // Snap the screen container's aspect-ratio to the active recording so
+        // the bezel hugs the video — no dead vertical space. We resize whenever
+        // a video becomes active (since stories #1 and #2 may differ).
+        const applyAspect = (video) => {
+            if (!screen) return;
+            const vw = video.videoWidth || 0;
+            const vh = video.videoHeight || 0;
+            if (vw > 0 && vh > 0) {
+                screen.style.aspectRatio = `${vw} / ${vh}`;
+            }
+        };
+
         const mount = (video) => {
             if (mounted.has(video)) return;
             const src = video.getAttribute('data-src');
             if (!src) return;
             mounted.add(video);
+            video.addEventListener('loadedmetadata', () => {
+                if (video.classList.contains('is-active')) applyAspect(video);
+            }, { once: true });
             video.src = src;
             video.load();
         };
@@ -170,6 +186,7 @@
             const v = videos[active];
             if (!v) return;
             mount(v);
+            if (v.videoWidth > 0) applyAspect(v);
             if (reduceMotion) {
                 paintBars();
                 return;
@@ -201,7 +218,10 @@
 
             active = nextIdx;
             const newV = videos[active];
-            if (newV) newV.classList.add('is-active');
+            if (newV) {
+                newV.classList.add('is-active');
+                if (newV.videoWidth > 0) applyAspect(newV);
+            }
             const newFill = fills[active];
             if (newFill) newFill.style.width = '0%';
 
