@@ -66,18 +66,41 @@
                 </a>
             </div>
             <div class="hero-device-wrap">
-                <div class="device device-hero">
-                    <div class="device-notch"></div>
-                    <video
-                        class="device-screen device-video lazy-loop"
-                        data-src="assets/screenvid1.mp4"
-                        poster="assets/Screen1.png"
-                        playsinline
-                        muted
-                        loop
-                        preload="none"
-                        aria-label="Savyn app — agents, responsibilities, and continuity in action"></video>
-                    <div class="device-side"></div>
+                <div class="hero-stories" data-stories-player>
+                    <div class="stories-bars" aria-hidden="true">
+                        <span class="stories-bar"><span class="stories-bar-fill"></span></span>
+                        <span class="stories-bar"><span class="stories-bar-fill"></span></span>
+                    </div>
+                    <div class="hero-stories-row">
+                        <button type="button" class="stories-nav stories-nav-prev" aria-label="Previous story">
+                            <span aria-hidden="true">‹</span>
+                        </button>
+                        <div class="device device-hero">
+                            <div class="device-notch"></div>
+                            <div class="device-stories-screen">
+                                <video
+                                    class="stories-video is-active"
+                                    data-src="assets/Video%20Project%202.mp4"
+                                    poster="assets/Screen1.png"
+                                    playsinline
+                                    muted
+                                    preload="none"
+                                    aria-label="Savyn app — story 1 of 2"></video>
+                                <video
+                                    class="stories-video"
+                                    data-src="assets/Video%20Project%203.mp4"
+                                    poster="assets/Screen1.png"
+                                    playsinline
+                                    muted
+                                    preload="none"
+                                    aria-label="Savyn app — story 2 of 2"></video>
+                            </div>
+                            <div class="device-side"></div>
+                        </div>
+                        <button type="button" class="stories-nav stories-nav-next" aria-label="Next story">
+                            <span aria-hidden="true">›</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

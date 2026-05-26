@@ -89,6 +89,176 @@
 })();
 
 // ═══════════════════════════════════════════════════════════════════════════
+// HERO STORIES PLAYER
+// Insta-stories style pair: 2 videos, 2 progress bars above the phone frame,
+// prev/next controls flanking the device (not on the screen). Auto-advances on
+// `ended`; sequence loops. Active video is
+// lazy-mounted on first view; the next video pre-mounts when the active one
+// crosses 70% so the swap is buttery.
+// ═══════════════════════════════════════════════════════════════════════════
+(function initStoriesPlayer() {
+    const containers = document.querySelectorAll('[data-stories-player]');
+    if (!containers.length) return;
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    containers.forEach(initOne);
+
+    function initOne(container) {
+        const videos = Array.from(container.querySelectorAll('.stories-video'));
+        const fills = Array.from(container.querySelectorAll('.stories-bar-fill'));
+        const prevBtn = container.querySelector('.stories-nav-prev');
+        const nextBtn = container.querySelector('.stories-nav-next');
+        if (videos.length === 0) return;
+
+        let active = 0;
+        let inView = false;
+        let rafId = 0;
+        const mounted = new WeakSet();
+
+        const mount = (video) => {
+            if (mounted.has(video)) return;
+            const src = video.getAttribute('data-src');
+            if (!src) return;
+            mounted.add(video);
+            video.src = src;
+            video.load();
+        };
+
+        const paintBars = () => {
+            // Past bars filled, future bars empty, active driven by playback.
+            videos.forEach((v, i) => {
+                const fill = fills[i];
+                if (!fill) return;
+                if (i < active) {
+                    fill.style.width = '100%';
+                } else if (i > active) {
+                    fill.style.width = '0%';
+                } else {
+                    const d = v.duration;
+                    if (Number.isFinite(d) && d > 0) {
+                        fill.style.width = `${Math.min(100, (v.currentTime / d) * 100)}%`;
+                    }
+                }
+            });
+        };
+
+        const tick = () => {
+            paintBars();
+            // Pre-mount the next video at 70% so swap-in is instant.
+            const v = videos[active];
+            if (v && Number.isFinite(v.duration) && v.duration > 0) {
+                const p = v.currentTime / v.duration;
+                if (p > 0.7) {
+                    const nextIdx = (active + 1) % videos.length;
+                    if (nextIdx !== active) mount(videos[nextIdx]);
+                }
+            }
+            rafId = requestAnimationFrame(tick);
+        };
+
+        const startTick = () => {
+            if (rafId) return;
+            rafId = requestAnimationFrame(tick);
+        };
+        const stopTick = () => {
+            if (rafId) cancelAnimationFrame(rafId);
+            rafId = 0;
+        };
+
+        const playActive = () => {
+            const v = videos[active];
+            if (!v) return;
+            mount(v);
+            if (reduceMotion) {
+                paintBars();
+                return;
+            }
+            const attempt = v.play();
+            if (attempt && typeof attempt.catch === 'function') {
+                attempt.catch(() => { /* autoplay policy — poster stays */ });
+            }
+            startTick();
+        };
+
+        const pauseActive = () => {
+            const v = videos[active];
+            if (v && !v.paused) v.pause();
+            stopTick();
+        };
+
+        const swapTo = (nextIdx, direction) => {
+            if (nextIdx === active) return;
+            const oldV = videos[active];
+            if (oldV) {
+                oldV.pause();
+                oldV.currentTime = 0;
+                oldV.classList.remove('is-active');
+            }
+            // Bar of the leaving slot: fill if going forward, clear if going back.
+            const oldFill = fills[active];
+            if (oldFill) oldFill.style.width = direction === 'forward' ? '100%' : '0%';
+
+            active = nextIdx;
+            const newV = videos[active];
+            if (newV) newV.classList.add('is-active');
+            const newFill = fills[active];
+            if (newFill) newFill.style.width = '0%';
+
+            if (inView) playActive();
+        };
+
+        const advance = () => {
+            const next = (active + 1) % videos.length;
+            swapTo(next, 'forward');
+        };
+        const back = () => {
+            if (active > 0) {
+                swapTo(active - 1, 'back');
+            } else {
+                // First story — tap left restarts it.
+                const v = videos[active];
+                if (v) {
+                    v.currentTime = 0;
+                    if (inView) playActive();
+                }
+            }
+        };
+
+        // ended → roll to the next story; loops at the end of the sequence.
+        videos.forEach((v, idx) => {
+            v.addEventListener('ended', () => {
+                if (idx === active) advance();
+            });
+        });
+
+        if (prevBtn) prevBtn.addEventListener('click', back);
+        if (nextBtn) nextBtn.addEventListener('click', advance);
+
+        if (!('IntersectionObserver' in window)) {
+            inView = true;
+            playActive();
+            return;
+        }
+
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach((e) => {
+                inView = e.isIntersecting;
+                if (e.isIntersecting) {
+                    playActive();
+                } else {
+                    pauseActive();
+                }
+            });
+        }, {
+            threshold: 0.2,
+            rootMargin: '120px 0px 120px 0px',
+        });
+        obs.observe(container);
+    }
+})();
+
+// ═══════════════════════════════════════════════════════════════════════════
 // EMAIL SIGNUP — Formspree
 // ═══════════════════════════════════════════════════════════════════════════
 (function initSignupForms() {
