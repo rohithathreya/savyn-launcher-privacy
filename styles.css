@@ -703,6 +703,54 @@ footer {
     opacity: 1;
 }
 
+/* ─── Captions ────────────────────────────────────────────────────────────
+   Sit below the phone frame; only the caption matching the active story is
+   visible (`is-active`). Container reserves min-height so swaps don't reflow
+   the hero. */
+.stories-captions {
+    position: relative;
+    width: 100%;
+    max-width: min(360px, 92vw);
+    margin: 4px auto 0;
+    min-height: 100px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.stories-caption {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    padding: 0 8px;
+    font-family: var(--font-sans, 'Inter', sans-serif);
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--text-secondary, rgba(255, 255, 255, 0.75));
+    text-align: center;
+    letter-spacing: 0.005em;
+    opacity: 0;
+    transform: translateY(4px);
+    transition:
+        opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+}
+.stories-caption.is-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.stories-caption-num {
+    display: inline-block;
+    margin-right: 8px;
+    font-family: var(--font-mono, 'JetBrains Mono', monospace);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: var(--gold-bright, #e8c878);
+    vertical-align: 1.5px;
+}
+
 /* ─── Tablet (≤ 900px) — nav flanks device, just compacted */
 @media (max-width: 900px) {
     .hero-stories {
@@ -746,6 +794,18 @@ footer {
     .device-stories-screen {
         border-radius: 30px;
     }
+    .stories-captions {
+        max-width: min(320px, 92vw);
+        min-height: 130px;
+    }
+    .stories-caption {
+        font-size: 0.88rem;
+        line-height: 1.5;
+        padding: 0 4px;
+    }
+    .stories-caption-num {
+        font-size: 0.68rem;
+    }
 }
 
 @media (max-width: 360px) {
@@ -760,6 +820,9 @@ footer {
     }
     .stories-bars {
         width: min(200px, calc(92vw - 72px));
+    }
+    .stories-captions {
+        min-height: 150px;
     }
 }
 

@@ -107,6 +107,7 @@
     function initOne(container) {
         const videos = Array.from(container.querySelectorAll('.stories-video'));
         const fills = Array.from(container.querySelectorAll('.stories-bar-fill'));
+        const captions = Array.from(container.querySelectorAll('.stories-caption'));
         const prevBtn = container.querySelector('.stories-nav-prev');
         const nextBtn = container.querySelector('.stories-nav-next');
         if (videos.length === 0) return;
@@ -204,6 +205,9 @@
             if (newV) newV.classList.add('is-active');
             const newFill = fills[active];
             if (newFill) newFill.style.width = '0%';
+
+            // Cross-fade the matching caption — only the active one is visible.
+            captions.forEach((c, i) => c.classList.toggle('is-active', i === active));
 
             if (inView) playActive();
         };
