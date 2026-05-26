@@ -686,9 +686,10 @@ footer {
     inset: 0;
     width: 100%;
     height: 100%;
-    /* Contain — never crop the recording. The phone-shaped frame stays
-       phone-shaped; any aspect gap shows as the dark "screen" background. */
-    object-fit: contain;
+    /* Cover — scale the recording up so it fills the OnePlus 12-shaped frame
+       edge-to-edge. Since the frame is already phone-aspect (9:19.8), any crop
+       is minimal — usually a thin sliver at the sides or top/bottom. */
+    object-fit: cover;
     object-position: center center;
     border-radius: 36px;
     background: #0c0a08;
