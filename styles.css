@@ -664,21 +664,18 @@ footer {
     outline-offset: 3px;
 }
 
-/* Hero-stories device: drop the rigid 9/19.5 bezel aspect and let the screen
-   container's aspect-ratio match the loaded video (set by JS). The frame then
-   snaps tight around the recording instead of leaving dead bezel above and
-   below. Width still caps the device; height follows from the screen aspect. */
+/* Hero-stories device: bezel locked to OnePlus 12 aspect (1440×3168 = 9:19.8)
+   so the frame always reads as a phone. Recordings letterbox cleanly inside —
+   any vertical/horizontal mismatch shows as the bezel's own dark fill, which
+   reads as the phone's screen border. */
 .hero-stories-row .device-hero {
-    aspect-ratio: auto;
-    height: auto;
+    aspect-ratio: 1440 / 3168;
 }
 
 .device-stories-screen {
     position: relative;
     width: 100%;
-    /* Default aspect mirrors the bezel until JS reads the video's native ratio
-       (initStoriesPlayer.applyAspect). Keeps SSR-painted frames sensible. */
-    aspect-ratio: 9 / 19.5;
+    aspect-ratio: 1440 / 3168;
     border-radius: 36px;
     overflow: hidden;
     background: #0c0a08;
@@ -689,10 +686,9 @@ footer {
     inset: 0;
     width: 100%;
     height: 100%;
-    /* Cover fills the screen edge-to-edge. Container aspect is matched to the
-       video at load time, so cover doesn't crop in practice — it just guards
-       against the brief moment before native dimensions are known. */
-    object-fit: cover;
+    /* Contain — never crop the recording. The phone-shaped frame stays
+       phone-shaped; any aspect gap shows as the dark "screen" background. */
+    object-fit: contain;
     object-position: center center;
     border-radius: 36px;
     background: #0c0a08;
