@@ -704,30 +704,30 @@ footer {
 }
 
 /* ─── Captions ────────────────────────────────────────────────────────────
-   Sit below the phone frame; only the caption matching the active story is
-   visible (`is-active`). Container reserves min-height so swaps don't reflow
-   the hero. */
+   Sit below the phone frame, sized to match the phone's width so the caption's
+   left edge aligns with the phone's left edge. Only the caption matching the
+   active story is visible (`is-active`); the rest fade out underneath.
+   Container reserves min-height so swaps don't reflow the hero. */
 .stories-captions {
     position: relative;
-    width: 100%;
-    max-width: min(360px, 92vw);
+    /* Match the .device-hero width so the caption block lines up under the
+       phone perfectly. Centered horizontally in .hero-stories — the phone is
+       also centered in its own row, so left edges align. */
+    width: min(300px, 42vw);
     margin: 4px auto 0;
     min-height: 100px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
 }
 
 .stories-caption {
     position: absolute;
     inset: 0;
     margin: 0;
-    padding: 0 8px;
+    padding: 0;
     font-family: var(--font-sans, 'Inter', sans-serif);
     font-size: 0.95rem;
     line-height: 1.55;
     color: var(--text-secondary, rgba(255, 255, 255, 0.75));
-    text-align: center;
+    text-align: left;
     letter-spacing: 0.005em;
     opacity: 0;
     transform: translateY(4px);
@@ -741,14 +741,13 @@ footer {
     transform: translateY(0);
 }
 .stories-caption-num {
-    display: inline-block;
-    margin-right: 8px;
+    display: block;
+    margin-bottom: 6px;
     font-family: var(--font-mono, 'JetBrains Mono', monospace);
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 700;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.22em;
     color: var(--gold-bright, #e8c878);
-    vertical-align: 1.5px;
 }
 
 /* ─── Tablet (≤ 900px) — nav flanks device, just compacted */
@@ -767,6 +766,9 @@ footer {
     }
     .hero-stories-row {
         gap: 8px;
+    }
+    .stories-captions {
+        width: min(240px, 68vw);
     }
 }
 
@@ -795,16 +797,16 @@ footer {
         border-radius: 30px;
     }
     .stories-captions {
-        max-width: min(320px, 92vw);
+        width: min(220px, calc(92vw - 80px));
         min-height: 130px;
     }
     .stories-caption {
         font-size: 0.88rem;
         line-height: 1.5;
-        padding: 0 4px;
     }
     .stories-caption-num {
-        font-size: 0.68rem;
+        font-size: 0.66rem;
+        margin-bottom: 5px;
     }
 }
 
@@ -822,6 +824,7 @@ footer {
         width: min(200px, calc(92vw - 72px));
     }
     .stories-captions {
+        width: min(200px, calc(92vw - 72px));
         min-height: 150px;
     }
 }
