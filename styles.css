@@ -570,117 +570,100 @@ footer {
 }
 
 /* ─── Stories player (hero) ─────────────────────────────────────────────────
-   One unified showcase panel: progress → phone → caption. No nested glass
-   boxes, no 3D tilt, no blur halos — reads like a product demo, not a UI kit. */
+   The phone is the hero: it floats on a warm gold spotlight with a deep,
+   realistic shadow. Progress bars live inside the screen like real stories.
+   Caption sits below as a centered editorial line. No cheap container box. */
 .hero-stories.hero-showcase {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     gap: 0;
     width: 100%;
-    max-width: min(400px, 100%);
+    max-width: 440px;
     margin: 0 auto;
-    padding: 20px 22px 26px;
-    border-radius: 20px;
-    background: #11100e;
-    border: 1px solid rgba(255, 255, 255, 0.09);
-    box-shadow:
-        0 24px 64px -16px rgba(0, 0, 0, 0.75),
-        0 0 0 1px rgba(212, 168, 83, 0.06) inset;
-}
-
-.stories-bars {
-    display: flex;
-    gap: 5px;
-    width: 100%;
-    margin-bottom: 16px;
-    pointer-events: none;
-}
-.stories-bar {
-    flex: 1;
-    height: 2px;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.12);
-    overflow: hidden;
-}
-.stories-bar-fill {
-    display: block;
-    height: 100%;
-    width: 0%;
-    background: var(--gold-bright, #e8c878);
-    border-radius: inherit;
-    will-change: width;
-}
-
-.hero-stories-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    width: 100%;
-    margin-bottom: 0;
-}
-
-.stories-nav {
-    flex: 0 0 auto;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: none;
-    background: rgba(255, 255, 255, 0.06);
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1.5rem;
-    line-height: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
     padding: 0;
-    -webkit-tap-highlight-color: transparent;
-    transition: background 0.2s ease, color 0.2s ease;
-}
-.stories-nav span {
-    display: block;
-    margin-top: -1px;
-}
-.stories-nav:hover {
-    background: rgba(255, 255, 255, 0.12);
-    color: #fff;
-}
-.stories-nav:active {
-    transform: scale(0.96);
-}
-.stories-nav:focus-visible {
-    outline: 2px solid rgba(232, 200, 120, 0.55);
-    outline-offset: 2px;
-}
-
-/* Flat front-facing phone — no perspective skew */
-.hero-stories-row .device-hero {
-    aspect-ratio: 1440 / 3168;
-    width: 100%;
-    max-width: 300px;
-    flex: 1 1 auto;
-    transform: none;
-    padding: 8px;
-    border-radius: 32px;
-    background: #1a1714;
+    background: none;
+    border: none;
     box-shadow: none;
 }
-.hero-stories-row .device-hero:hover {
-    transform: none;
+
+/* Stage holds the phone + flanking nav + the spotlight behind it */
+.hero-stage {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    width: 100%;
 }
-.hero-stories-row .device-hero::after {
-    display: none;
+.hero-stage-glow {
+    position: absolute;
+    left: 50%;
+    top: 46%;
+    transform: translate(-50%, -50%);
+    width: 118%;
+    height: 92%;
+    pointer-events: none;
+    z-index: 0;
+    background:
+        radial-gradient(48% 42% at 50% 44%, rgba(232, 200, 120, 0.22) 0%, rgba(212, 168, 83, 0.08) 38%, transparent 70%);
+    filter: blur(8px);
+}
+
+/* ── Premium floating phone ─────────────────────────────────────────────── */
+.hero-stage .device-hero {
+    position: relative;
+    z-index: 1;
+    aspect-ratio: 1440 / 3168;
+    width: 100%;
+    max-width: 296px;
+    flex: 0 1 296px;
+    transform: none;
+    padding: 7px;
+    border-radius: 40px;
+    background: linear-gradient(155deg, #3a3024 0%, #14100b 46%, #0c0907 100%);
+    box-shadow:
+        0 1.5px 0 rgba(255, 240, 205, 0.18) inset,
+        0 0 0 1px rgba(0, 0, 0, 0.65),
+        0 0 0 1.5px rgba(212, 168, 83, 0.22),
+        0 2px 6px rgba(0, 0, 0, 0.5),
+        0 40px 80px -24px rgba(0, 0, 0, 0.85),
+        0 60px 120px -40px rgba(232, 200, 120, 0.16);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
+    -webkit-touch-callout: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
+.hero-stage .device-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 40px;
+    pointer-events: none;
+    z-index: 4;
+    background:
+        linear-gradient(155deg, rgba(255, 245, 215, 0.14) 0%, transparent 22%),
+        radial-gradient(130% 50% at 50% 0%, rgba(232, 200, 120, 0.12), transparent 55%);
+}
+.hero-stage .device-hero:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 1.5px 0 rgba(255, 240, 205, 0.22) inset,
+        0 0 0 1px rgba(0, 0, 0, 0.65),
+        0 0 0 1.5px rgba(212, 168, 83, 0.32),
+        0 2px 6px rgba(0, 0, 0, 0.5),
+        0 56px 100px -24px rgba(0, 0, 0, 0.88),
+        0 70px 140px -40px rgba(232, 200, 120, 0.24);
 }
 
 .device-stories-screen {
     position: relative;
     width: 100%;
     aspect-ratio: 1440 / 3168;
-    border-radius: 36px;
+    border-radius: 33px;
     overflow: hidden;
     background: #0c0a08;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.6) inset;
 }
 
 .stories-video {
@@ -688,12 +671,9 @@ footer {
     inset: 0;
     width: 100%;
     height: 100%;
-    /* Cover — scale the recording up so it fills the OnePlus 12-shaped frame
-       edge-to-edge. Since the frame is already phone-aspect (9:19.8), any crop
-       is minimal — usually a thin sliver at the sides or top/bottom. */
     object-fit: cover;
     object-position: center center;
-    border-radius: 36px;
+    border-radius: 33px;
     background: #0c0a08;
     opacity: 0;
     transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1);
@@ -705,42 +685,109 @@ footer {
     opacity: 1;
 }
 
-/* ── Hold-to-pause feedback ────────────────────────────────────────────── */
-.hero-stories.is-holding .stories-bars { opacity: 0.4; }
-.hero-stories .stories-bars { transition: opacity 0.18s ease; }
-.hero-stories-row .device-hero {
-    -webkit-touch-callout: none;
-    user-select: none;
-    -webkit-user-select: none;
+/* ── Progress bars — overlaid inside the screen, true stories style ─────── */
+.stories-bars {
+    position: absolute;
+    top: 11px;
+    left: 12px;
+    right: 12px;
+    z-index: 3;
+    display: flex;
+    gap: 4px;
+    pointer-events: none;
+    transition: opacity 0.18s ease;
+}
+.stories-bars::before {
+    content: "";
+    position: absolute;
+    left: -12px;
+    right: -12px;
+    top: -11px;
+    height: 54px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, transparent 100%);
+    z-index: -1;
+    pointer-events: none;
+}
+.stories-bar {
+    flex: 1;
+    height: 2.5px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.28);
+    overflow: hidden;
+}
+.stories-bar-fill {
+    display: block;
+    height: 100%;
+    width: 0%;
+    background: #fff;
+    border-radius: inherit;
+    will-change: width;
 }
 
-/* ─── Captions — editorial strip inside the showcase panel ─────────────── */
+/* ── Nav arrows — refined, flanking the phone ───────────────────────────── */
+.stories-nav {
+    flex: 0 0 auto;
+    z-index: 2;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid rgba(212, 168, 83, 0.18);
+    background: rgba(20, 16, 12, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: rgba(244, 236, 224, 0.8);
+    font-size: 1.45rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.stories-nav span {
+    display: block;
+    margin-top: -2px;
+}
+.stories-nav:hover {
+    background: rgba(212, 168, 83, 0.16);
+    border-color: rgba(212, 168, 83, 0.4);
+    color: #fff;
+}
+.stories-nav:active {
+    transform: scale(0.94);
+}
+.stories-nav:focus-visible {
+    outline: 2px solid rgba(232, 200, 120, 0.55);
+    outline-offset: 2px;
+}
+
+/* ── Hold-to-pause feedback ────────────────────────────────────────────── */
+.hero-stories.is-holding .stories-bars { opacity: 0.35; }
+
+/* ─── Captions — centered editorial line below the phone ───────────────── */
 .stories-captions {
     position: relative;
     width: 100%;
-    margin: 20px 0 0;
-    padding: 20px 0 0;
+    max-width: 360px;
+    margin: 26px auto 0;
+    padding: 0;
     min-height: 7.5em;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    background: transparent;
-    border-radius: 0;
-    backdrop-filter: none;
-    box-shadow: none;
 }
 
 .stories-caption {
     position: absolute;
-    inset: 20px 0 0;
+    inset: 0;
     margin: 0;
-    padding: 0 0 0 14px;
-    border-left: 3px solid var(--gold-bright, #e8c878);
+    padding: 0;
     font-family: var(--font-sans, 'Inter', sans-serif);
-    text-align: left;
+    text-align: center;
     opacity: 0;
-    transform: translateY(4px);
+    transform: translateY(6px);
     transition:
-        opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-        transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
     pointer-events: none;
 }
 .stories-caption.is-active {
@@ -749,21 +796,22 @@ footer {
 }
 .stories-caption-num {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     font-family: var(--font-mono, 'JetBrains Mono', monospace);
-    font-size: 0.68rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.32em;
     text-transform: uppercase;
-    color: var(--gold-bright, #e8c878);
+    color: var(--gold-dim, #a67c32);
 }
 .stories-caption-text {
     display: block;
-    font-size: clamp(1.05rem, 0.5rem + 0.55vw, 1.22rem);
-    line-height: 1.5;
+    font-size: clamp(1.08rem, 0.6rem + 0.6vw, 1.3rem);
+    line-height: 1.55;
     font-weight: 500;
     color: #f5f2ed;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.012em;
+    text-wrap: balance;
 }
 
 /* (hero tablet rules live in Mobile section below with .hero-copy order) */
@@ -771,47 +819,50 @@ footer {
 /* ─── Phone (≤ 600px) ─────────────────────────────────────────────────── */
 @media (max-width: 600px) {
     .hero-stories.hero-showcase {
-        padding: 16px 16px 22px;
+        padding: 0;
         max-width: 100%;
     }
-    .hero-stories-row {
-        gap: 8px;
+    .hero-stage {
+        gap: 10px;
     }
     .stories-nav {
-        width: 32px;
-        height: 32px;
-        font-size: 1.2rem;
-        flex: 0 0 32px;
+        width: 36px;
+        height: 36px;
+        font-size: 1.25rem;
+        flex: 0 0 36px;
     }
-    .hero-stories-row .device-hero {
-        max-width: min(240px, calc(100vw - 120px));
+    .hero-stage .device-hero {
+        max-width: min(248px, calc(100vw - 116px));
+        flex: 0 1 auto;
+        padding: 6px;
+        border-radius: 34px;
     }
     .stories-video,
     .device-stories-screen {
-        border-radius: 26px;
-    }
-    .hero-stories-row .device-hero {
         border-radius: 28px;
     }
     .stories-captions {
-        min-height: 8.5em;
-    }
-    .stories-caption {
-        inset: 16px 0 0;
-        padding-left: 12px;
+        margin-top: 22px;
+        min-height: 9em;
     }
     .stories-caption-text {
-        font-size: 1rem;
-        line-height: 1.48;
+        font-size: 1.04rem;
+        line-height: 1.5;
     }
 }
 
 @media (max-width: 360px) {
-    .hero-stories-row .device-hero {
-        max-width: min(220px, calc(100vw - 108px));
+    .hero-stage .device-hero {
+        max-width: min(224px, calc(100vw - 104px));
+    }
+    .stories-nav {
+        width: 32px;
+        height: 32px;
+        font-size: 1.1rem;
+        flex: 0 0 32px;
     }
     .stories-captions {
-        min-height: 9.5em;
+        min-height: 10em;
     }
 }
 
@@ -903,10 +954,10 @@ footer {
     }
     .hero-manifesto::before { left: 0; }
     .hero-stories.hero-showcase {
-        max-width: min(360px, 92vw);
+        max-width: min(400px, 94vw);
     }
-    .hero-stories-row .device-hero {
-        max-width: 260px;
+    .hero-stage .device-hero {
+        max-width: 270px;
     }
 }
 
