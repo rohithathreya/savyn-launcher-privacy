@@ -162,8 +162,11 @@ a:hover { color: var(--gold-bright); border-bottom-color: var(--gold-dim); }
 .hero-inner { position: relative; z-index: 2; width: 100%; }
 
 .hero-split-grid {
+    /* Right side (phone + caption) now leads slightly — the demo IS the pitch.
+       Bumped from 1.05fr / 0.85fr → 0.95fr / 1.1fr so the phone+caption block
+       commands the eye without crowding the manifesto out. */
     display: grid;
-    grid-template-columns: 1.05fr 0.85fr;
+    grid-template-columns: 0.95fr 1.1fr;
     gap: clamp(2rem, 5vw, 4.5rem);
     align-items: center;
 }
@@ -339,16 +342,41 @@ a:hover { color: var(--gold-bright); border-bottom-color: var(--gold-dim); }
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
+/* Soft gold halo behind the phone — pulls the eye to the demo without competing
+   with text. Pure decoration; sits below all interactive elements (z-index 0)
+   and the .hero-stories container is implicitly above via stacking. */
+.hero-device-wrap::before {
+    content: "";
+    position: absolute;
+    inset: -10% -8% 0 -8%;
+    z-index: 0;
+    background: radial-gradient(
+        ellipse at center 38%,
+        rgba(232, 200, 120, 0.16) 0%,
+        rgba(212, 168, 83, 0.08) 28%,
+        rgba(212, 168, 83, 0.02) 55%,
+        transparent 72%
+    );
+    filter: blur(28px);
+    pointer-events: none;
+}
+
+.hero-stories { position: relative; z-index: 1; }
+
 .device-hero {
-    width: min(300px, 42vw);
+    /* Bumped from 300/42vw → 380/50vw so the demo reads as the hero, not a
+       supporting card. Box-shadow strengthened to match the bigger silhouette
+       and pair with the gold halo behind. */
+    width: min(380px, 50vw);
     transform: perspective(900px) rotateY(-6deg) rotateX(2deg);
     box-shadow:
-        0 1px 0 rgba(232, 200, 120, 0.12) inset,
-        0 0 0 1px rgba(212, 168, 83, 0.22),
-        0 40px 80px -20px rgba(0, 0, 0, 0.85),
-        0 0 80px -10px var(--gold-glow-soft);
+        0 1px 0 rgba(232, 200, 120, 0.14) inset,
+        0 0 0 1px rgba(212, 168, 83, 0.28),
+        0 60px 100px -22px rgba(0, 0, 0, 0.9),
+        0 0 110px -8px var(--gold-glow-soft);
 }
 
 .device-hero:hover {
@@ -588,15 +616,15 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 14px;
+    gap: 18px;
     width: 100%;
-    max-width: min(420px, 92vw);
+    max-width: min(520px, 96vw);
 }
 
 .stories-bars {
     display: flex;
     gap: 6px;
-    width: min(300px, 42vw);
+    width: min(380px, 50vw);
     pointer-events: none;
 }
 .stories-bar {
@@ -703,37 +731,69 @@ footer {
     opacity: 1;
 }
 
+/* ── Hold-to-pause feedback ──────────────────────────────────────────────
+   When the user is press-holding the device frame, dim the progress bars
+   slightly so the pause is read-able at a glance. Video itself doesn't
+   dim — the user is examining it, after all. */
+.hero-stories.is-holding .stories-bars { opacity: 0.45; }
+.hero-stories .stories-bars { transition: opacity 0.18s ease; }
+/* Stop the browser from selecting / dragging the device or showing a
+   call-out menu while the user is holding. */
+.device-hero {
+    -webkit-touch-callout: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
 /* ─── Captions ────────────────────────────────────────────────────────────
-   Sit below the phone frame, sized to match the phone's width so the caption's
-   left edge aligns with the phone's left edge. Only the caption matching the
-   active story is visible (`is-active`); the rest fade out underneath.
-   Container reserves min-height so swaps don't reflow the hero. */
+   The caption is half the pitch — it tells the viewer what they're SEEING in
+   the demo. So it gets headline-adjacent treatment: bigger, brighter, wider
+   than the phone itself, sitting on a subtle gold-tinted glass plate so it
+   reads as a deliberate caption block (not body copy that happens to live
+   under a video). Container reserves min-height so swaps never reflow. */
 .stories-captions {
     position: relative;
-    /* Match the .device-hero width so the caption block lines up under the
-       phone perfectly. Centered horizontally in .hero-stories — the phone is
-       also centered in its own row, so left edges align. */
-    width: min(300px, 42vw);
-    margin: 4px auto 0;
-    min-height: 100px;
+    /* Wider than the phone (~380px) so the caption frames it visually rather
+       than sitting boxed under it. Capped at 96vw so phones don't overflow. */
+    width: min(480px, 92vw);
+    margin: 10px auto 0;
+    min-height: 130px;
+    padding: 18px 22px;
+    border-radius: 16px;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(232, 200, 120, 0.06) 0%,
+            rgba(232, 200, 120, 0.02) 100%
+        ),
+        rgba(14, 12, 9, 0.55);
+    border: 1px solid rgba(212, 168, 83, 0.22);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow:
+        0 1px 0 rgba(232, 200, 120, 0.10) inset,
+        0 18px 38px -16px rgba(0, 0, 0, 0.65);
 }
 
 .stories-caption {
     position: absolute;
-    inset: 0;
+    inset: 18px 22px;
     margin: 0;
     padding: 0;
     font-family: var(--font-sans, 'Inter', sans-serif);
-    font-size: 0.95rem;
+    /* Was 0.95rem secondary — bumped to 1.1rem clamped, primary-color text.
+       This is now the dominant message under the demo, not a tertiary hint. */
+    font-size: clamp(1rem, 0.55rem + 0.6vw, 1.2rem);
     line-height: 1.55;
-    color: var(--text-secondary, rgba(255, 255, 255, 0.75));
+    font-weight: 500;
+    color: var(--text-primary, rgba(255, 255, 255, 0.95));
     text-align: left;
-    letter-spacing: 0.005em;
+    letter-spacing: -0.005em;
     opacity: 0;
-    transform: translateY(4px);
+    transform: translateY(6px);
     transition:
-        opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-        transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+        opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     pointer-events: none;
 }
 .stories-caption.is-active {
@@ -742,33 +802,37 @@ footer {
 }
 .stories-caption-num {
     display: block;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
     font-family: var(--font-mono, 'JetBrains Mono', monospace);
-    font-size: 0.7rem;
+    font-size: 0.78rem;
     font-weight: 700;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.28em;
     color: var(--gold-bright, #e8c878);
+    text-shadow: 0 0 24px rgba(232, 200, 120, 0.45);
 }
 
 /* ─── Tablet (≤ 900px) — nav flanks device, just compacted */
 @media (max-width: 900px) {
     .hero-stories {
         max-width: 100%;
-        gap: 12px;
+        gap: 14px;
     }
     .stories-bars {
-        width: min(220px, 56vw);
+        width: min(300px, 64vw);
     }
     .stories-nav {
-        width: 38px;
-        height: 38px;
-        font-size: 1.5rem;
+        width: 40px;
+        height: 40px;
+        font-size: 1.6rem;
     }
     .hero-stories-row {
-        gap: 8px;
+        gap: 10px;
+    }
+    .hero-stories-row .device-hero {
+        width: min(320px, 64vw);
     }
     .stories-captions {
-        width: min(240px, 68vw);
+        width: min(420px, 84vw);
     }
 }
 
@@ -787,26 +851,28 @@ footer {
     }
     .hero-stories-row .device-hero {
         /* 92vw total − 68px (2 buttons) − 12px (2 gaps) = ≤ (92vw − 80px) */
-        width: min(220px, calc(92vw - 80px));
+        width: min(280px, calc(92vw - 80px));
     }
     .stories-bars {
-        width: min(220px, calc(92vw - 80px));
+        width: min(280px, calc(92vw - 80px));
     }
     .stories-video,
     .device-stories-screen {
         border-radius: 30px;
     }
     .stories-captions {
-        width: min(220px, calc(92vw - 80px));
-        min-height: 130px;
+        width: min(96vw, 440px);
+        min-height: 150px;
+        padding: 16px 18px;
     }
     .stories-caption {
-        font-size: 0.88rem;
-        line-height: 1.5;
+        inset: 16px 18px;
+        font-size: 1rem;
+        line-height: 1.52;
     }
     .stories-caption-num {
-        font-size: 0.66rem;
-        margin-bottom: 5px;
+        font-size: 0.72rem;
+        margin-bottom: 8px;
     }
 }
 
@@ -818,14 +884,14 @@ footer {
         flex: 0 0 30px;
     }
     .hero-stories-row .device-hero {
-        width: min(200px, calc(92vw - 72px));
+        width: min(240px, calc(92vw - 72px));
     }
     .stories-bars {
-        width: min(200px, calc(92vw - 72px));
+        width: min(240px, calc(92vw - 72px));
     }
     .stories-captions {
-        width: min(200px, calc(92vw - 72px));
-        min-height: 150px;
+        width: min(96vw, 360px);
+        min-height: 170px;
     }
 }
 

@@ -239,6 +239,56 @@
         if (prevBtn) prevBtn.addEventListener('click', back);
         if (nextBtn) nextBtn.addEventListener('click', advance);
 
+        // ── Hold-to-pause (Insta-stories) ─────────────────────────────────────
+        // Press-and-hold on the device frame freezes the current story (video +
+        // progress bar fill stop advancing). Release resumes. Short taps don't
+        // trigger pause — we wait 140ms before pausing so accidental flicks
+        // still feel responsive on the prev/next buttons that live alongside.
+        const deviceFrame = container.querySelector('.device-hero');
+        if (deviceFrame) {
+            let holdTimer = 0;
+            let holding = false;
+            const HOLD_DELAY_MS = 140;
+
+            const startHold = (e) => {
+                // Don't intercept the nav buttons — they're siblings of the
+                // device frame and handle their own clicks. We only catch
+                // events that originate from the device itself.
+                if (e.target.closest('.stories-nav')) return;
+                if (holdTimer) clearTimeout(holdTimer);
+                holdTimer = setTimeout(() => {
+                    holding = true;
+                    const v = videos[active];
+                    if (v && !v.paused) v.pause();
+                    stopTick();
+                    container.classList.add('is-holding');
+                }, HOLD_DELAY_MS);
+            };
+
+            const endHold = () => {
+                if (holdTimer) {
+                    clearTimeout(holdTimer);
+                    holdTimer = 0;
+                }
+                if (!holding) return;
+                holding = false;
+                container.classList.remove('is-holding');
+                if (inView) playActive();
+            };
+
+            // Pointer events cover mouse + touch + stylus in one shot. We bind
+            // start to the device, end to the window so a finger sliding off
+            // the frame still releases the hold cleanly.
+            deviceFrame.addEventListener('pointerdown', startHold);
+            window.addEventListener('pointerup', endHold);
+            window.addEventListener('pointercancel', endHold);
+            // Block the device's context menu on long-press (iOS Safari + some
+            // Android browsers show "save image"-style menus on long-press).
+            deviceFrame.addEventListener('contextmenu', (e) => {
+                if (holding) e.preventDefault();
+            });
+        }
+
         if (!('IntersectionObserver' in window)) {
             inView = true;
             playActive();
