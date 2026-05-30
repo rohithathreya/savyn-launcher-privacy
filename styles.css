@@ -25,8 +25,7 @@
     --container: 1120px;
     --container-narrow: 760px;
     --glass-blur: 24px;
-    --nav-block: 5.25rem;
-    --landing-peek: clamp(72px, 14vh, 128px);
+    --landing-peek: clamp(88px, 17vh, 152px);
 }
 
 .text-primary { color: var(--text-primary); }
@@ -153,12 +152,27 @@ a:hover { color: var(--gold-bright); border-bottom-color: var(--gold-dim); }
 
 /* ─── Landing: hero → video (stacked) + snap scroll ─────────────────────── */
 .hero.hero-panel {
-    min-height: calc(100dvh - var(--nav-block) - var(--landing-peek));
-    min-height: calc(100svh - var(--nav-block) - var(--landing-peek));
+    min-height: calc(100dvh - var(--landing-peek));
+    min-height: calc(100svh - var(--landing-peek));
     display: flex;
-    align-items: center;
-    padding: clamp(1.25rem, 3vw, 2.5rem) 0 clamp(0.75rem, 2vw, 1.25rem);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0;
+    padding-bottom: 0;
     position: relative;
+}
+
+.hero-panel .top-nav {
+    flex-shrink: 0;
+    position: relative;
+    z-index: 3;
+}
+
+.hero-panel .hero-inner {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: clamp(0.35rem, 1.2vh, 0.75rem);
 }
 
 .video-panel {
@@ -167,7 +181,8 @@ a:hover { color: var(--gold-bright); border-bottom-color: var(--gold-dim); }
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: clamp(1rem, 2.5vw, 2rem) 0;
+    padding: 0 0 clamp(0.75rem, 2vw, 1.25rem);
+    margin-top: 0;
     position: relative;
     box-sizing: border-box;
 }
@@ -191,13 +206,42 @@ a:hover { color: var(--gold-bright); border-bottom-color: var(--gold-dim); }
     align-items: center;
     justify-content: center;
     flex: 1;
-    min-height: calc(100dvh - 2 * clamp(1rem, 2.5vw, 2rem));
-    min-height: calc(100svh - 2 * clamp(1rem, 2.5vw, 2rem));
+    min-height: calc(100dvh - clamp(0.75rem, 2vw, 1.25rem));
+    min-height: calc(100svh - clamp(0.75rem, 2vw, 1.25rem));
 }
 
 .hero-panel .hero-inner,
 .video-panel .video-panel-inner {
     width: 100%;
+}
+
+/* Thesis + join alpha — one snap stop */
+.thesis-panel {
+    display: flex;
+    flex-direction: column;
+    min-height: min(100dvh, max-content);
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.thesis-panel .manifesto-merged {
+    padding-top: clamp(3.5rem, 8vw, 6.5rem);
+    padding-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.thesis-panel .manifesto-core {
+    margin-bottom: 0;
+}
+
+.thesis-panel .bottom-cta {
+    margin-top: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: clamp(2.5rem, 5vw, 4rem);
+    padding-bottom: clamp(3.5rem, 7vw, 6rem);
+    border-top: 1px solid var(--surface-border);
 }
 
 .hero-backdrop {
@@ -492,9 +536,15 @@ a:hover { color: var(--gold-bright); border-bottom-color: var(--gold-dim); }
 /* ─── Sections & forms ───────────────────────────────────────────────────── */
 section { padding: 6rem 24px; }
 .hero-panel,
-.video-panel {
+.video-panel,
+.thesis-panel {
     padding-left: max(16px, env(safe-area-inset-left, 0px) + 16px);
     padding-right: max(16px, env(safe-area-inset-right, 0px) + 16px);
+}
+
+.thesis-panel {
+    padding-top: 0;
+    padding-bottom: 0;
 }
 .section-header { text-align: left; margin-bottom: 3rem; }
 
@@ -1210,7 +1260,7 @@ footer {
 /* ─── Mobile ─────────────────────────────────────────────────────────────── */
 @media (max-width: 900px) {
     :root {
-        --landing-peek: clamp(64px, 12vh, 108px);
+        --landing-peek: clamp(80px, 15vh, 132px);
     }
     .hero-copy {
         max-width: 100%;
@@ -1250,13 +1300,19 @@ footer {
 
 @media (max-width: 768px) {
     section { padding: 4rem max(16px, env(safe-area-inset-left, 0px) + 16px); }
-    .hero.hero-panel {
-        padding-top: 1rem;
-        padding-bottom: 0.75rem;
+    .hero-panel .hero-inner {
+        padding-bottom: 0.25rem;
     }
     .video-panel {
-        padding-top: 0.75rem;
-        padding-bottom: 0.75rem;
+        padding-bottom: 0.5rem;
+    }
+    .thesis-panel .manifesto-merged {
+        padding-top: 3rem;
+        padding-bottom: 1.5rem;
+    }
+    .thesis-panel .bottom-cta {
+        padding-top: 2rem;
+        padding-bottom: 3.5rem;
     }
     .nav-links { gap: 1rem; }
     .manifesto-beat { padding-top: 5rem; padding-bottom: 5rem; }

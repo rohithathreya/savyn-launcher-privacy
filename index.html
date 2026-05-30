@@ -21,18 +21,17 @@
     <div class="noise-overlay"></div>
     <div class="ambient-glow"></div>
 
-    <nav class="top-nav container">
-        <div class="nav-inner">
-            <a href="index.html" class="logo">SAVYN</a>
-            <div class="nav-links">
-                <a href="articles.html" class="nav-link">Articles</a>
-                <a href="#join-alpha" class="nav-link highlight-link">Join Alpha</a>
-            </div>
-        </div>
-    </nav>
-
     <section class="hero hero-panel snap-panel relative-z" id="hero">
         <div class="hero-backdrop" aria-hidden="true"></div>
+        <nav class="top-nav container" aria-label="Primary">
+            <div class="nav-inner">
+                <a href="index.html" class="logo">SAVYN</a>
+                <div class="nav-links">
+                    <a href="articles.html" class="nav-link">Articles</a>
+                    <a href="#join-alpha" class="nav-link highlight-link">Join Alpha</a>
+                </div>
+            </div>
+        </nav>
         <div class="hero-inner container animate-fade-in">
             <div class="hero-copy">
                 <h1 class="hero-title">
@@ -112,38 +111,40 @@
         </div>
     </section>
 
-    <section id="manifesto" class="manifesto-merged container snap-panel">
-        <div class="manifesto-core animate-on-scroll">
-            <p class="eyebrow">01 // The shift</p>
-            <h2 class="manifesto-lead">Your mind moves faster<br>than your screen.</h2>
-            <p class="manifesto-body manifesto-body-muted">But the chaos compounds. Feeds pull. Algorithms push. Apps don't speak to each other. Context switches all day.</p>
-            <p class="manifesto-body">Savyn is the direct line between your mind and phone. An operating system that answers to you — and no one else.</p>
-            <p class="manifesto-body manifesto-resolve">It collapses the noise into a single direction — <span class="text-gold">the exact apps, links, and ideas you need, the moment you need them.</span></p>
-        </div>
-    </section>
-
-    <section id="join-alpha" class="bottom-cta container animate-on-scroll">
-        <p class="eyebrow">02 // Join the alpha</p>
-        <h2 class="cta-lead">
-            <span class="accent">Speak once.</span> It begins.
-        </h2>
-        <p class="cta-sub text-muted">Android closed alpha. Limited seats. No marketing — only sequence updates.</p>
-
-        <form id="bottom-form" class="signup-form">
-            <div class="form-row pill-form">
-                <input type="email" class="signup-input" placeholder="you@signal.in" required>
-                <button type="submit" class="signup-btn">
-                    <span class="btn-text">Reserve seat</span>
-                    <span class="btn-spinner"></span>
-                </button>
-                <div class="signup-success" style="display:none;">
-                    <p>Sequence queued. — Rohith</p>
-                </div>
+    <section id="manifesto" class="thesis-panel snap-panel">
+        <div class="manifesto-merged container">
+            <div class="manifesto-core animate-on-scroll">
+                <p class="eyebrow">01 // The shift</p>
+                <h2 class="manifesto-lead">Your mind moves faster<br>than your screen.</h2>
+                <p class="manifesto-body manifesto-body-muted">But the chaos compounds. Feeds pull. Algorithms push. Apps don't speak to each other. Context switches all day.</p>
+                <p class="manifesto-body">Savyn is the direct line between your mind and phone. An operating system that answers to you — and no one else.</p>
+                <p class="manifesto-body manifesto-resolve">It collapses the noise into a single direction — <span class="text-gold">the exact apps, links, and ideas you need, the moment you need them.</span></p>
             </div>
-            <p class="signup-error" style="display:none; margin-top: 1rem;"></p>
-        </form>
+        </div>
 
-        <p class="cta-signoff">— Rohith, founder, Savyn Labs</p>
+        <div id="join-alpha" class="bottom-cta container animate-on-scroll">
+            <p class="eyebrow">02 // Join the alpha</p>
+            <h2 class="cta-lead">
+                <span class="accent">Speak once.</span> It begins.
+            </h2>
+            <p class="cta-sub text-muted">Android closed alpha. Limited seats. No marketing — only sequence updates.</p>
+
+            <form id="bottom-form" class="signup-form">
+                <div class="form-row pill-form">
+                    <input type="email" class="signup-input" placeholder="you@signal.in" required>
+                    <button type="submit" class="signup-btn">
+                        <span class="btn-text">Reserve seat</span>
+                        <span class="btn-spinner"></span>
+                    </button>
+                    <div class="signup-success" style="display:none;">
+                        <p>Sequence queued. — Rohith</p>
+                    </div>
+                </div>
+                <p class="signup-error" style="display:none; margin-top: 1rem;"></p>
+            </form>
+
+            <p class="cta-signoff">— Rohith, founder, Savyn Labs</p>
+        </div>
     </section>
 
     <section class="latest-writings container animate-on-scroll">
