@@ -25,10 +25,8 @@
     --container: 1120px;
     --container-narrow: 760px;
     --glass-blur: 24px;
-    /* Measured from .top-nav in script.js; fallback until load */
-    --nav-block: 3.75rem;
-    --landing-peek: clamp(88px, 15vh, 152px);
-    --section-gap: clamp(4rem, 10vh, 7rem);
+    --nav-block: 4rem;
+    --landing-peek: clamp(96px, 17vh, 168px);
 }
 
 .text-primary { color: var(--text-primary); }
@@ -43,19 +41,19 @@ html {
     -webkit-font-smoothing: antialiased;
 }
 
+/* Proximity (not mandatory) so the firm hero→video→thesis snaps fire, but the
+   sections below stay fully smooth and the footer is always reachable. */
 @media (prefers-reduced-motion: no-preference) {
     html {
-        scroll-snap-type: y mandatory;
+        scroll-snap-type: y proximity;
     }
 }
 
 .snap-panel {
     scroll-snap-align: start;
-    scroll-snap-stop: normal;
-    scroll-margin-top: 0;
-    scroll-margin-bottom: 0;
 }
 
+/* Firm, deliberate stops only for the two full-viewport landing panels. */
 .hero-panel,
 .video-panel {
     scroll-snap-stop: always;
@@ -131,21 +129,16 @@ a:hover { color: var(--gold-bright); border-bottom-color: var(--gold-dim); }
 .text-muted { color: var(--text-secondary); }
 .body-large { font-size: clamp(1.1rem, 2.5vw, 1.3rem); color: var(--text-secondary); line-height: 1.65; }
 
-/* ─── Nav — fixed so snap targets always sit below the bar ─────────────── */
+/* ─── Nav ────────────────────────────────────────────────────────────────── */
 .top-nav {
-    position: fixed;
+    position: sticky;
     top: 0;
-    left: 0;
-    right: 0;
     z-index: 100;
-    width: 100%;
-    max-width: none;
+    max-width: 100%;
     margin: 0;
-    padding-top: max(0.75rem, env(safe-area-inset-top, 0px));
-    padding-bottom: 0.75rem;
-    padding-left: max(16px, env(safe-area-inset-left, 0px) + 16px);
-    padding-right: max(16px, env(safe-area-inset-right, 0px) + 16px);
-    background: rgba(10, 9, 8, 0.82);
+    padding-top: 0.85rem;
+    padding-bottom: 0.85rem;
+    background: rgba(10, 9, 8, 0.72);
     backdrop-filter: blur(18px) saturate(140%);
     -webkit-backdrop-filter: blur(18px) saturate(140%);
     border-bottom: 1px solid var(--surface-border);
@@ -184,28 +177,23 @@ a:hover { color: var(--gold-bright); border-bottom-color: var(--gold-dim); }
     color: var(--on-gold) !important;
 }
 
-/* ─── Landing: hero → video (stacked) + snap scroll ───────────────────────
-   Heights are the *section* box (border-box). scroll-padding-top on html lines
-   each snap up with the fixed nav. Hero reserves nav space via padding-top. */
+/* ─── Landing: hero → video (stacked) + snap scroll ─────────────────────── */
 .hero.hero-panel {
-    min-height: calc(100svh - var(--landing-peek));
-    min-height: calc(100dvh - var(--landing-peek));
+    min-height: calc(100dvh - var(--nav-block) - var(--landing-peek));
+    min-height: calc(100svh - var(--nav-block) - var(--landing-peek));
     display: flex;
     align-items: center;
-    padding: var(--nav-block) max(16px, env(safe-area-inset-left, 0px) + 16px) 0;
-    padding-right: max(16px, env(safe-area-inset-right, 0px) + 16px);
+    padding: clamp(0.5rem, 1.5vw, 1rem) 0 0;
     position: relative;
-    box-sizing: border-box;
 }
 
 .video-panel {
-    min-height: calc(100svh - var(--nav-block));
     min-height: calc(100dvh - var(--nav-block));
+    min-height: calc(100svh - var(--nav-block));
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: clamp(0.5rem, 1.5vw, 1rem) max(16px, env(safe-area-inset-left, 0px) + 16px);
-    padding-right: max(16px, env(safe-area-inset-right, 0px) + 16px);
+    padding: clamp(0.75rem, 2vw, 1.5rem) 0;
     position: relative;
     box-sizing: border-box;
 }
@@ -527,22 +515,10 @@ a:hover { color: var(--gold-bright); border-bottom-color: var(--gold-dim); }
 
 /* ─── Sections & forms ───────────────────────────────────────────────────── */
 section { padding: 6rem 24px; }
-
-/* Snap landing panels opt out of generic section padding (it was throwing snaps off). */
-section.hero.hero-panel,
-section.video-panel {
+.hero-panel,
+.video-panel {
     padding-left: max(16px, env(safe-area-inset-left, 0px) + 16px);
     padding-right: max(16px, env(safe-area-inset-right, 0px) + 16px);
-}
-
-section.hero.hero-panel {
-    padding-top: var(--nav-block);
-    padding-bottom: 0;
-}
-
-section.video-panel {
-    padding-top: clamp(0.5rem, 1.5vw, 1rem);
-    padding-bottom: clamp(0.5rem, 1.5vw, 1rem);
 }
 .section-header { text-align: left; margin-bottom: 3rem; }
 
@@ -678,14 +654,10 @@ footer {
 .beat-body em { color: var(--text-primary); font-style: normal; }
 
 /* ─── Consolidated manifesto — thesis + mechanics in one block ───────────── */
-#manifesto.manifesto-merged {
-    padding-top: clamp(2.5rem, 5vh, 4rem);
-    padding-bottom: clamp(4.5rem, 9vw, 8rem);
-    scroll-margin-top: var(--section-gap);
-}
-
-#manifesto.manifesto-merged.snap-panel {
-    scroll-snap-stop: normal;
+.manifesto-merged {
+    margin-top: clamp(4rem, 12vh, 9rem);
+    padding-top: clamp(4.5rem, 8vw, 7rem);
+    padding-bottom: clamp(5rem, 9vw, 8rem);
 }
 
 /* The thesis — anchored by the same gold hairline rule the old beats used. */
@@ -876,6 +848,16 @@ footer {
 
 .video-panel .hero-stories.hero-showcase {
     max-width: min(520px, 100%);
+}
+
+/* The demo phone is an extreme 18.5:9 portrait, so it MUST be sized by the
+   height available in the snap viewport — width-driven sizing overflowed the
+   panel. Aspect-ratio derives the width; the reserve covers nav + caption. */
+.video-panel .hero-stage .device-hero {
+    width: auto;
+    max-width: none;
+    height: clamp(300px, calc(100svh - 18rem), 600px);
+    flex: 0 0 auto;
 }
 
 /* Stage holds the phone + flanking nav + the spotlight behind it */
@@ -1169,13 +1151,8 @@ footer {
 }
 
 /* ─── Bottom CTA ─────────────────────────────────────────────────────────── */
-#join-alpha.bottom-cta.snap-panel {
-    scroll-snap-stop: normal;
-    scroll-margin-top: 0;
-}
-
 .bottom-cta {
-    margin-top: 0;
+    margin-top: 4rem;
     padding-top: 7rem;
     padding-bottom: 7rem;
     text-align: center;
@@ -1243,25 +1220,22 @@ footer {
         max-width: min(560px, 92vw);
     }
     .video-panel .hero-stage .device-hero {
-        max-width: 300px;
+        height: clamp(400px, calc(100svh - 17rem), 660px);
     }
     .video-panel .stories-captions {
         max-width: 540px;
     }
 }
 
-/* Fit phone + caption inside one snap viewport on short screens */
-@media (max-height: 780px) {
-    .video-panel .hero-stage .device-hero {
-        max-width: min(240px, calc(100svh - 19rem));
-    }
+/* Short screens: trim the caption reserve so the phone keeps a usable size. */
+@media (max-height: 760px) {
     .video-panel .stories-captions {
         min-height: auto;
         margin-top: 14px;
     }
     .video-panel .stories-caption-text {
         font-size: 0.95rem;
-        line-height: 1.48;
+        line-height: 1.46;
     }
 }
 
@@ -1284,7 +1258,7 @@ footer {
         max-width: min(400px, 94vw);
     }
     .video-panel .hero-stage .device-hero {
-        max-width: 270px;
+        height: clamp(300px, calc(100svh - 19rem), 540px);
     }
 }
 
@@ -1308,16 +1282,13 @@ footer {
 
 @media (max-width: 768px) {
     section { padding: 4rem max(16px, env(safe-area-inset-left, 0px) + 16px); }
-    section.hero.hero-panel {
-        padding-top: var(--nav-block);
-        padding-bottom: 0;
+    .hero.hero-panel {
+        padding-top: 1rem;
+        padding-bottom: 0.75rem;
     }
-    section.video-panel {
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-    }
-    #manifesto.manifesto-merged {
-        padding-top: clamp(2rem, 4vh, 3rem);
+    .video-panel {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
     }
     .nav-links { gap: 1rem; }
     .manifesto-beat { padding-top: 5rem; padding-bottom: 5rem; }
