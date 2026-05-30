@@ -329,7 +329,7 @@
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (reduceMotion) return; // first item keeps .is-active — static, struck
 
-    const HOLD_MS = 2200;
+    const HOLD_MS = 1200;
     let idx = 0;
 
     setInterval(() => {

@@ -235,36 +235,37 @@ a:hover { color: var(--gold-bright); border-bottom-color: var(--gold-dim); }
     white-space: nowrap;
     line-height: 1.5;
     opacity: 0;
-    filter: blur(4px);
+    filter: blur(3px);
     transition:
-        opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-        filter 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* The strike — a warm hairline that draws left→right once the phrase lands. */
+/* The strike — a bright gold rule that snaps across once the phrase lands. */
 .hero-cycler-item::after {
     content: "";
     position: absolute;
-    left: -0.08em;
-    right: -0.08em;
-    top: 54%;
-    height: 1px;
-    background: var(--gold-dim);
+    left: -0.1em;
+    right: -0.1em;
+    top: 52%;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--gold-bright);
     opacity: 0;
     transform: scaleX(0);
     transform-origin: left center;
     transition:
-        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.18s,
-        opacity 0.5s ease 0.18s;
+        transform 0.42s cubic-bezier(0.22, 1, 0.36, 1) 0.06s,
+        opacity 0.3s ease 0.06s;
 }
 
 .hero-cycler-item.is-active {
-    opacity: 0.62;
+    opacity: 0.78;
     filter: blur(0);
 }
 
 .hero-cycler-item.is-active::after {
-    opacity: 0.7;
+    opacity: 0.95;
     transform: scaleX(1);
 }
 
@@ -613,45 +614,38 @@ footer {
 .manifesto-resolve { color: var(--text-primary); font-weight: 500; }
 .manifesto-resolve .text-gold { font-weight: 600; }
 
-/* The mechanics — glass cards matching the how-it-works step grid. */
-.manifesto-mechanics {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: clamp(1.5rem, 3vw, 2.5rem);
+/* The mechanics — sexy indented bullet lines along the same spine. */
+.manifesto-points {
+    list-style: none;
+    margin-top: clamp(1.9rem, 4vw, 2.8rem);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.95rem, 2vw, 1.35rem);
+    max-width: 620px;
 }
 
-.mechanic-block {
+.manifesto-point {
     position: relative;
-    padding: 1.85rem 1.6rem;
-    border-radius: 14px;
-    background: var(--surface-glass);
-    border: 1px solid var(--surface-border);
-    backdrop-filter: blur(var(--glass-blur));
-}
-
-.mechanic-index {
-    display: block;
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    color: var(--gold-dim);
-    margin-bottom: 1rem;
-}
-
-.mechanic-title {
-    font-size: 1.22rem;
-    font-weight: 600;
-    line-height: 1.25;
-    letter-spacing: -0.01em;
-    color: var(--text-primary);
-    margin-bottom: 0.7rem;
-}
-
-.mechanic-body {
-    font-size: 0.97rem;
-    line-height: 1.62;
+    padding-left: 1.5rem;
+    font-size: clamp(1rem, 1.5vw, 1.14rem);
+    line-height: 1.6;
     color: var(--text-secondary);
+}
+
+.manifesto-point::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.66em;
+    width: 0.72rem;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--gold-bright);
+}
+
+.point-head {
+    color: var(--text-primary);
+    font-weight: 600;
 }
 
 /* ─── Product film / device ──────────────────────────────────────────────── */
