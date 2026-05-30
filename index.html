@@ -31,9 +31,9 @@
         </div>
     </nav>
 
-    <section class="hero hero-split relative-z">
+    <section class="hero hero-panel snap-panel relative-z" id="hero">
         <div class="hero-backdrop" aria-hidden="true"></div>
-        <div class="hero-inner container animate-fade-in hero-split-grid">
+        <div class="hero-inner container animate-fade-in">
             <div class="hero-copy">
                 <h1 class="hero-title">
                     <span class="hero-cycler" aria-hidden="true">
@@ -48,67 +48,71 @@
                     <span class="hero-line hero-subline">Your mind. Your phone. Your momentum.</span>
                 </h1>
             </div>
-            <div class="hero-device-wrap">
-                <div class="hero-stories hero-showcase" data-stories-player>
-                    <div class="hero-stage">
-                        <div class="hero-stage-glow" aria-hidden="true"></div>
-                        <button type="button" class="stories-nav stories-nav-prev" aria-label="Previous story">
-                            <span aria-hidden="true">‹</span>
-                        </button>
-                        <div class="device device-hero">
-                            <div class="device-stories-screen">
-                                <div class="stories-bars" aria-hidden="true">
-                                    <span class="stories-bar"><span class="stories-bar-fill"></span></span>
-                                    <span class="stories-bar"><span class="stories-bar-fill"></span></span>
-                                    <span class="stories-bar"><span class="stories-bar-fill"></span></span>
-                                </div>
-                                <video
-                                    class="stories-video is-active"
-                                    data-src="assets/HealthyEatingAgent.mp4?v=20260530"
-                                    playsinline
-                                    muted
-                                    preload="none"
-                                    aria-label="Savyn app — story 1 of 3"></video>
-                                <video
-                                    class="stories-video"
-                                    data-src="assets/Music.mp4?v=20260530"
-                                    playsinline
-                                    muted
-                                    preload="none"
-                                    aria-label="Savyn app — story 2 of 3"></video>
-                                <video
-                                    class="stories-video"
-                                    data-src="assets/Exercise.mp4?v=20260530"
-                                    playsinline
-                                    muted
-                                    preload="none"
-                                    aria-label="Savyn app — story 3 of 3"></video>
+        </div>
+    </section>
+
+    <section class="video-panel snap-panel relative-z" id="demo" aria-label="Product demo">
+        <div class="video-panel-backdrop" aria-hidden="true"></div>
+        <div class="video-panel-inner container">
+            <div class="hero-stories hero-showcase" data-stories-player>
+                <div class="hero-stage">
+                    <div class="hero-stage-glow" aria-hidden="true"></div>
+                    <button type="button" class="stories-nav stories-nav-prev" aria-label="Previous story">
+                        <span aria-hidden="true">‹</span>
+                    </button>
+                    <div class="device device-hero">
+                        <div class="device-stories-screen">
+                            <div class="stories-bars" aria-hidden="true">
+                                <span class="stories-bar"><span class="stories-bar-fill"></span></span>
+                                <span class="stories-bar"><span class="stories-bar-fill"></span></span>
+                                <span class="stories-bar"><span class="stories-bar-fill"></span></span>
                             </div>
+                            <video
+                                class="stories-video is-active"
+                                data-src="assets/HealthyEatingAgent.mp4?v=20260530"
+                                playsinline
+                                muted
+                                preload="none"
+                                aria-label="Savyn app — story 1 of 3"></video>
+                            <video
+                                class="stories-video"
+                                data-src="assets/Music.mp4?v=20260530"
+                                playsinline
+                                muted
+                                preload="none"
+                                aria-label="Savyn app — story 2 of 3"></video>
+                            <video
+                                class="stories-video"
+                                data-src="assets/Exercise.mp4?v=20260530"
+                                playsinline
+                                muted
+                                preload="none"
+                                aria-label="Savyn app — story 3 of 3"></video>
                         </div>
-                        <button type="button" class="stories-nav stories-nav-next" aria-label="Next story">
-                            <span aria-hidden="true">›</span>
-                        </button>
                     </div>
-                    <div class="stories-captions">
-                        <p class="stories-caption is-active">
-                            <span class="stories-caption-num">01 / 03</span>
-                            <span class="stories-caption-text">A simple cue — "lunch at 2; plug my gaps" — my phone will get back to me at the right time with exactly what I need. Highly contextual and personalized.</span>
-                        </p>
-                        <p class="stories-caption">
-                            <span class="stories-caption-num">02 / 03</span>
-                            <span class="stories-caption-text">Builds deep knowledge of my music interests and what I like when — down to the mood, artist, genre — every last detail.</span>
-                        </p>
-                        <p class="stories-caption">
-                            <span class="stories-caption-num">03 / 03</span>
-                            <span class="stories-caption-text">Everything I say is understood not as standalone statements but as part of arcs. One example is my running arc. Nothing I say is ever lost or misinterpreted.</span>
-                        </p>
-                    </div>
+                    <button type="button" class="stories-nav stories-nav-next" aria-label="Next story">
+                        <span aria-hidden="true">›</span>
+                    </button>
+                </div>
+                <div class="stories-captions">
+                    <p class="stories-caption is-active">
+                        <span class="stories-caption-num">01 / 03</span>
+                        <span class="stories-caption-text">Aware of my daily dinner routine and dietary constraints. Even when I say something as basic as "Bored of dinner, let's switch it up", it adapts perfectly — right time and right context.</span>
+                    </p>
+                    <p class="stories-caption">
+                        <span class="stories-caption-num">02 / 03</span>
+                        <span class="stories-caption-text">I've been talking about what kind of music I like in what setting. Not only does it remember what I said, it actively interprets what I might need in any future settings. No nuance lost.</span>
+                    </p>
+                    <p class="stories-caption">
+                        <span class="stories-caption-num">03 / 03</span>
+                        <span class="stories-caption-text">Knows I workout at 7 pm. Knows I need to do legs today. Automatically adapts my home screen to what I need to be doing — precise, personalized, on time.</span>
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="manifesto" class="manifesto-merged container">
+    <section id="manifesto" class="manifesto-merged container snap-panel">
         <div class="manifesto-core animate-on-scroll">
             <p class="eyebrow">01 // The shift</p>
             <h2 class="manifesto-lead">Your mind moves faster<br>than your screen.</h2>
