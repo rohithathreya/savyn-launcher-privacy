@@ -203,20 +203,22 @@ a:hover { color: var(--gold-bright); border-bottom-color: var(--gold-dim); }
     text-shadow: 0 0 40px var(--gold-glow-soft);
 }
 
-/* ── Hero clutter cycler — the world's noise, struck out, rotating ─────────
-   A single line above the gold hammer that cycles through the phrases the
-   world pushes at you. Each phrase fades in, a gold line strikes across it,
-   then it fades out as the next arrives. Locks to the first phrase (static,
-   struck) under prefers-reduced-motion. */
+/* ── Hero eyebrow cycler — the world's noise, quietly struck ──────────────
+   A small monospace label above the hammer that rotates through the phrases
+   the world sells you. Each fades up through a soft blur while a hairline rule
+   draws across it, then fades out as the next arrives. Locks to the first
+   phrase (static, struck) under prefers-reduced-motion. Decorative — the
+   readable headline is "Be. More. You. Let Savyn handle the chaos." */
 .hero-cycler {
     display: block;
-    font-family: var(--font-sans);
-    font-weight: 600;
-    font-size: clamp(1.05rem, 0.4rem + 2vw, 1.7rem);
-    letter-spacing: -0.01em;
-    color: var(--text-secondary);
     height: 1.5em;
-    margin-bottom: 0.3em;
+    margin-bottom: clamp(1.1rem, 2.4vw, 1.7rem);
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: clamp(0.72rem, 0.4rem + 0.55vw, 0.9rem);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-muted);
 }
 
 .hero-cycler-track {
@@ -233,50 +235,61 @@ a:hover { color: var(--gold-bright); border-bottom-color: var(--gold-dim); }
     white-space: nowrap;
     line-height: 1.5;
     opacity: 0;
-    transform: translateY(0.35em);
+    filter: blur(4px);
     transition:
-        opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-        transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* The strike — a gold rule that draws left→right once the phrase is active. */
+/* The strike — a warm hairline that draws left→right once the phrase lands. */
 .hero-cycler-item::after {
     content: "";
     position: absolute;
-    left: -0.05em;
-    right: -0.05em;
-    top: 52%;
-    height: 0.075em;
-    border-radius: 2px;
-    background: var(--gold-bright);
-    opacity: 0.7;
+    left: -0.08em;
+    right: -0.08em;
+    top: 54%;
+    height: 1px;
+    background: var(--gold-dim);
+    opacity: 0;
     transform: scaleX(0);
     transform-origin: left center;
-    transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.12s;
+    transition:
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.18s,
+        opacity 0.5s ease 0.18s;
 }
 
 .hero-cycler-item.is-active {
-    opacity: 0.85;
-    transform: translateY(0);
+    opacity: 0.62;
+    filter: blur(0);
 }
 
 .hero-cycler-item.is-active::after {
+    opacity: 0.7;
     transform: scaleX(1);
 }
 
-/* The staccato gold hammer — periods are literal in the markup ("Be. More. You.") */
+/* The hammer — cream staccato, only "You." resolves into gold. */
 .hero-staccato {
-    letter-spacing: -0.015em;
+    color: var(--text-primary);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.04;
 }
 
-/* The relief line beneath the hammer. */
+.hero-staccato-accent {
+    color: var(--gold-bright);
+    text-shadow: 0 0 32px rgba(232, 200, 120, 0.22);
+}
+
+/* The relief line beneath the hammer — light, calm, a half-step quieter. */
 .hero-subline {
+    margin-top: clamp(0.85rem, 1.8vw, 1.3rem);
     font-family: var(--font-sans);
-    font-weight: 500;
-    font-size: clamp(1rem, 0.45rem + 1.3vw, 1.4rem);
+    font-weight: 400;
+    font-size: clamp(1.05rem, 0.55rem + 1vw, 1.4rem);
     letter-spacing: -0.005em;
+    line-height: 1.4;
     color: var(--text-secondary);
-    margin-top: 0.45em;
 }
 
 /* ── Stanza manifesto — each line a beat ─────────────────────────────── */
