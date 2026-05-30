@@ -385,3 +385,23 @@
         });
     });
 })();
+
+// ═══════════════════════════════════════════════════════════════════════════
+// SNAP LAYOUT — sync --nav-block to real bar height so scroll-padding + panel
+// heights line up with the fixed top nav (stops "slightly off" snap stops).
+// ═══════════════════════════════════════════════════════════════════════════
+(function initSnapLayout() {
+    const nav = document.querySelector('.top-nav');
+    if (!nav) return;
+
+    const sync = () => {
+        const h = Math.ceil(nav.getBoundingClientRect().height);
+        document.documentElement.style.setProperty('--nav-block', `${h}px`);
+    };
+
+    sync();
+    window.addEventListener('resize', sync, { passive: true });
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(sync);
+    }
+})();
