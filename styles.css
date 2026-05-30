@@ -194,6 +194,7 @@ a:hover { color: var(--gold-bright); border-bottom-color: var(--gold-dim); }
     align-items: center;
     justify-content: center;
     padding: clamp(0.75rem, 2vw, 1.5rem) 0;
+    margin-bottom: clamp(4rem, 10vh, 7rem);
     position: relative;
     box-sizing: border-box;
 }
@@ -655,7 +656,7 @@ footer {
 
 /* ─── Consolidated manifesto — thesis + mechanics in one block ───────────── */
 .manifesto-merged {
-    padding-top: clamp(4.5rem, 9vw, 8rem);
+    padding-top: clamp(6rem, 12vh, 10rem);
     padding-bottom: clamp(4.5rem, 9vw, 8rem);
 }
 
