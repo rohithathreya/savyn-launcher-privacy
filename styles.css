@@ -184,7 +184,7 @@ a:hover { color: var(--gold-bright); border-bottom-color: var(--gold-dim); }
     font-size: clamp(1.5rem, 0.35rem + 4.25vw, 3.25rem);
     line-height: 1.12;
     letter-spacing: -0.03em;
-    margin: 0 0 clamp(1.75rem, 3.5vw, 2.5rem) -1.25rem;
+    margin: 0 0 clamp(1.1rem, 2.4vw, 1.6rem) -1.25rem;
     display: flex;
     flex-direction: column;
     gap: 0.2em;
@@ -201,6 +201,24 @@ a:hover { color: var(--gold-bright); border-bottom-color: var(--gold-dim); }
 .hero-line-gold {
     color: var(--gold-bright);
     text-shadow: 0 0 40px var(--gold-glow-soft);
+}
+
+/* Hero support lines — the thesis's two calm captions beneath the headline. */
+.hero-lede {
+    max-width: 30em;
+    margin: 0 0 1rem;
+    font-size: clamp(0.98rem, 0.62rem + 0.85vw, 1.16rem);
+    line-height: 1.62;
+    color: var(--text-secondary);
+    text-wrap: pretty;
+}
+
+.hero-lede:last-child {
+    margin-bottom: 0;
+}
+
+.hero-lede-muted {
+    color: var(--text-muted);
 }
 
 /* ── Hero eyebrow cycler — the world's noise, quietly struck ──────────────
