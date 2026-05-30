@@ -567,6 +567,93 @@ footer {
 .beat-body .accent { color: var(--gold-bright); font-weight: 500; }
 .beat-body em { color: var(--text-primary); font-style: normal; }
 
+/* ─── Consolidated manifesto — thesis + mechanics in one block ───────────── */
+.manifesto-merged {
+    padding-top: clamp(4.5rem, 9vw, 8rem);
+    padding-bottom: clamp(4.5rem, 9vw, 8rem);
+}
+
+/* The thesis — anchored by the same gold hairline rule the old beats used. */
+.manifesto-core {
+    position: relative;
+    max-width: 760px;
+    padding-left: 2.5rem;
+    border-left: 1px solid var(--surface-border);
+    margin-bottom: clamp(3.5rem, 7vw, 5.5rem);
+}
+.manifesto-core::before {
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: 0;
+    width: 1px;
+    height: 96px;
+    background: linear-gradient(180deg, var(--gold-bright) 0%, rgba(212, 168, 83, 0) 100%);
+}
+
+.manifesto-lead {
+    font-weight: 600;
+    font-size: clamp(2rem, 4.4vw, 3.1rem);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+    text-wrap: balance;
+    margin-bottom: 1.6rem;
+}
+
+.manifesto-body {
+    font-size: clamp(1.05rem, 1.7vw, 1.2rem);
+    line-height: 1.7;
+    color: var(--text-secondary);
+    max-width: 620px;
+    margin-bottom: 1.25rem;
+}
+.manifesto-body:last-child { margin-bottom: 0; }
+.manifesto-body-muted { color: var(--text-muted); }
+.manifesto-resolve { color: var(--text-primary); font-weight: 500; }
+.manifesto-resolve .text-gold { font-weight: 600; }
+
+/* The mechanics — glass cards matching the how-it-works step grid. */
+.manifesto-mechanics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.mechanic-block {
+    position: relative;
+    padding: 1.85rem 1.6rem;
+    border-radius: 14px;
+    background: var(--surface-glass);
+    border: 1px solid var(--surface-border);
+    backdrop-filter: blur(var(--glass-blur));
+}
+
+.mechanic-index {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: var(--gold-dim);
+    margin-bottom: 1rem;
+}
+
+.mechanic-title {
+    font-size: 1.22rem;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
+    margin-bottom: 0.7rem;
+}
+
+.mechanic-body {
+    font-size: 0.97rem;
+    line-height: 1.62;
+    color: var(--text-secondary);
+}
+
 /* ─── Product film / device ──────────────────────────────────────────────── */
 .product-film { padding-top: 4rem; padding-bottom: 4rem; }
 .film-frame {
