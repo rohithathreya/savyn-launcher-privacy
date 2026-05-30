@@ -203,6 +203,21 @@ a:hover { color: var(--gold-bright); border-bottom-color: var(--gold-dim); }
     text-shadow: 0 0 40px var(--gold-glow-soft);
 }
 
+/* The "consume more" half of the couplet — present but visibly crossed out, so the
+   eye resolves onto the gold "be more" line below it. */
+.hero-line-quiet {
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.hero-strike {
+    text-decoration: line-through;
+    text-decoration-color: rgba(212, 168, 83, 0.55);
+    text-decoration-thickness: 0.07em;
+    text-underline-offset: 0.05em;
+    opacity: 0.78;
+}
+
 /* ── Stanza manifesto — each line a beat ─────────────────────────────── */
 .hero-manifesto {
     display: flex;
