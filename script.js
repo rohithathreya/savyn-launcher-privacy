@@ -313,6 +313,33 @@
 })();
 
 // ═══════════════════════════════════════════════════════════════════════════
+// HERO CLUTTER CYCLER
+// Rotates the struck-through "noise" phrases above the gold line. Each phrase
+// fades in, a gold rule strikes across it, then it fades out as the next
+// arrives. Under prefers-reduced-motion we leave the first phrase statically
+// struck (no cycling).
+// ═══════════════════════════════════════════════════════════════════════════
+(function initHeroClutterCycler() {
+    const track = document.querySelector('[data-hero-cycler]');
+    if (!track) return;
+
+    const items = Array.from(track.querySelectorAll('.hero-cycler-item'));
+    if (items.length <= 1) return;
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) return; // first item keeps .is-active — static, struck
+
+    const HOLD_MS = 1650;
+    let idx = 0;
+
+    setInterval(() => {
+        items[idx].classList.remove('is-active');
+        idx = (idx + 1) % items.length;
+        items[idx].classList.add('is-active');
+    }, HOLD_MS);
+})();
+
+// ═══════════════════════════════════════════════════════════════════════════
 // EMAIL SIGNUP — Formspree
 // ═══════════════════════════════════════════════════════════════════════════
 (function initSignupForms() {
