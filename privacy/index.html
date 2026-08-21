@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy — Savyn</title>
+    <meta name="description" content="Your data lives on your device. AI calls are anonymized. No ads. No tracking.">
+    <meta name="theme-color" content="#0c0a08">
+    <link rel="canonical" href="https://savynlabs.com/privacy/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="doc-page">
+    <div class="noise-overlay"></div>
+    <div class="ambient-glow"></div>
+
+    <nav class="top-nav container">
+        <div class="nav-inner">
+            <a href="/" class="logo">SAVYN</a>
+            <div class="nav-links">
+                <a href="/#join-alpha" class="nav-link highlight-link">Join Alpha</a>
+                <a href="/architecture/" class="nav-link">Architecture</a>
+                <a href="/privacy/" class="nav-link is-current">Privacy</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="doc-hero container">
+        <div class="doc-hero-inner animate-fade-in">
+            <p class="doc-kicker">03 // Privacy</p>
+            <h1 class="doc-title">Your data lives<br><em>on your device.</em></h1>
+            <p class="doc-lede">Always. AI calls are anonymized. No ads. No tracking. Uninstall and it’s gone.</p>
+            <p class="doc-meta">Last updated March 16, 2026</p>
+        </div>
+    </header>
+
+    <main class="doc-wrap container">
+        <section class="doc-block animate-on-scroll">
+            <h2>The short version</h2>
+            <dl class="silence-rows">
+                <div class="silence-row">
+                    <dt>On-device storage</dt>
+                    <dd>Conversations, notes, interests, schedule — all on your phone.</dd>
+                </div>
+                <div class="silence-row">
+                    <dt>Anonymized AI</dt>
+                    <dd>Personal details stripped before anything leaves the device.</dd>
+                </div>
+                <div class="silence-row">
+                    <dt>No ads or tracking</dt>
+                    <dd>No analytics. No data selling. Period.</dd>
+                </div>
+                <div class="silence-row">
+                    <dt>Full control</dt>
+                    <dd>Uninstall the app. Everything is gone.</dd>
+                </div>
+            </dl>
+        </section>
+
+        <section class="doc-block animate-on-scroll">
+            <h2>Who we are</h2>
+            <div class="doc-prose">
+                <p>Savyn is developed by <strong>Savyn Labs</strong>. It is designed to shape itself around what you care about — your interests, your schedule, your mind. In its current form it works as your Android home screen. It is built to be more than that: an OS layer that actually understands you.</p>
+            </div>
+        </section>
+
+        <section class="doc-block animate-on-scroll">
+            <h2>How it works</h2>
+            <div class="doc-prose">
+                <p>Savyn stores all your personal data locally. When AI processing is needed, it sends anonymized requests through our proxy to AI providers.</p>
+            </div>
+            <div class="doc-flow">
+                <b>Your phone</b><span>→</span>
+                <b>Savyn proxy</b><span>→</span>
+                <b>AI provider</b><span>→</span>
+                <b>Your phone</b>
+            </div>
+            <div class="doc-prose">
+                <p>Your data is never stored on our servers or the AI provider’s servers. The proxy exists solely to keep API keys safe — it forwards anonymized requests and returns results. Nothing is logged or persisted.</p>
+            </div>
+        </section>
+
+        <section class="doc-block animate-on-scroll">
+            <h2>AI services we use</h2>
+            <div class="doc-prose">
+                <p>Savyn uses cloud AI for features that require large language models or search. Before any data leaves your device, personal identifiers — names, specific locations, contact details — are stripped or generalized.</p>
+                <p class="doc-subhead">Conversations</p>
+                <p>When you chat, messages are sent to OpenAI for response generation. Conversation history stays on your device — only the current exchange is sent, with personal details anonymized.</p>
+                <p class="doc-subhead">Voice input</p>
+                <p>Voice is streamed to OpenAI’s transcription service for real-time speech-to-text. Audio is processed in the moment and not retained. The resulting text stays on your device.</p>
+                <p class="doc-subhead">Link enrichment</p>
+                <p>When you save a link, Savyn may fetch its content via Exa to understand what it’s about. No personal data is sent with these requests.</p>
+                <p class="doc-subhead">Image generation</p>
+                <p>Personalized images (avatars, interest visuals) are generated via OpenAI’s image API. Prompts describe visual styles and themes — they do not contain personal information, photos, or identifying details.</p>
+                <p class="doc-subhead">Background processing</p>
+                <p>Classification, self-model extraction, and pattern detection run on-demand from anonymized context — never from raw personal data.</p>
+                <p class="doc-subhead">No AI training</p>
+                <p>We use API-tier access. Per provider terms, API inputs and outputs are <strong>not used to train their models</strong>. Your conversations do not improve anyone else’s AI.</p>
+            </div>
+        </section>
+
+        <section class="doc-block animate-on-scroll">
+            <h2>What lives on your device</h2>
+            <div class="doc-prose">
+                <ul>
+                    <li><strong>Conversations</strong> — everything you say in Daily Ops, Your Mind, and other tabs</li>
+                    <li><strong>Notes and thoughts</strong> — anything you save or that’s captured from conversation</li>
+                    <li><strong>Links and saved content</strong> — with enrichment summaries and interest tags</li>
+                    <li><strong>Your interests and self-model</strong> — what Savyn learns about who you are</li>
+                    <li><strong>Schedule and tasks</strong> — patterns, reminders, and your daily structure</li>
+                    <li><strong>App usage patterns</strong> — which apps you use and when, with your permission</li>
+                    <li><strong>Generated images</strong> — avatars and category visuals, stored locally</li>
+                </ul>
+                <p style="margin-top: 1.25rem;">None of this is uploaded to our servers. We have no database of user data. We cannot access, view, or retrieve your information.</p>
+            </div>
+        </section>
+
+        <section class="doc-block animate-on-scroll">
+            <h2>What we don’t do</h2>
+            <div class="doc-prose">
+                <ul>
+                    <li><strong>No data collection</strong> — we don’t have servers that store your personal data</li>
+                    <li><strong>No selling data</strong> — we have nothing to sell</li>
+                    <li><strong>No advertising</strong> — no ads, no tracking pixels, no ad SDKs</li>
+                    <li><strong>No analytics</strong> — no Firebase Analytics, no Mixpanel, no telemetry</li>
+                    <li><strong>No third-party sharing</strong> — beyond anonymized AI processing, your data goes nowhere</li>
+                    <li><strong>No account required</strong> — full functionality without signing up</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="doc-block animate-on-scroll">
+            <h2>Permissions</h2>
+            <div class="doc-prose">
+                <p class="doc-subhead">Usage access</p>
+                <p>Lets Savyn see which apps you use and when. This helps surface the right apps at the right time. You grant it explicitly in Settings. Usage data never leaves your device except in anonymized, aggregated form for AI context.</p>
+                <p class="doc-subhead">Microphone</p>
+                <p>Used for voice input. Audio is streamed to OpenAI for speech-to-text. Recording only happens while you hold the button — never in the background.</p>
+                <p class="doc-subhead">Notifications</p>
+                <p>Used for task reminders and check-ins. You control what you receive. No marketing notifications.</p>
+                <p class="doc-subhead">Alarms &amp; reminders</p>
+                <p>Used to schedule alarms at the times you request. Entirely on-device through Android’s alarm system.</p>
+                <p class="doc-subhead">Internet</p>
+                <p>Required for AI processing and Google Play subscription management. All network requests go through our proxy. No personal data is transmitted beyond anonymized AI context.</p>
+            </div>
+        </section>
+
+        <section class="doc-block animate-on-scroll">
+            <h2>Subscriptions &amp; billing</h2>
+            <div class="doc-prose">
+                <p>Savyn offers optional paid plans managed entirely through <strong>Google Play Billing</strong>. We do not process payments directly and do not have access to your payment information.</p>
+                <p>Your subscription status is managed by Google Play. We receive only entitlement status — never payment details, card numbers, or billing address.</p>
+            </div>
+        </section>
+
+        <section class="doc-block animate-on-scroll">
+            <h2>Your control</h2>
+            <div class="doc-prose">
+                <ul>
+                    <li><strong>Delete anytime</strong> — uninstalling Savyn removes all local data instantly</li>
+                    <li><strong>Clear conversations</strong> — reset any conversation from within the app</li>
+                    <li><strong>Revoke permissions</strong> — disable usage access, microphone, or notifications in Android Settings</li>
+                    <li><strong>No lock-in</strong> — no account, no cloud sync, nothing to migrate</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="doc-block animate-on-scroll">
+            <h2>Children’s privacy</h2>
+            <div class="doc-prose">
+                <p>Savyn is not directed at children under 13. We do not knowingly process data from children. Since we don’t collect personal data, this concern is inherently limited.</p>
+            </div>
+        </section>
+
+        <section class="doc-block animate-on-scroll">
+            <h2>Policy updates</h2>
+            <div class="doc-prose">
+                <p>If we update this policy, we’ll note the changes here and update the date above. Significant changes will be communicated in the app.</p>
+                <p>Questions: <a href="mailto:support@savynlabs.com">support@savynlabs.com</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="container">
+        <div class="footer-left" style="display: flex; gap: 2rem; align-items: center;">
+            <span class="logo">SAVYN_LABS</span>
+            <span class="copy">&copy; 2026</span>
+        </div>
+        <div class="footer-right" style="display: flex; gap: 1.5rem; align-items: center;">
+            <a href="/architecture/">Architecture</a>
+            <a href="/privacy/">Privacy</a>
+            <a href="mailto:support@savynlabs.com">Comms</a>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>
