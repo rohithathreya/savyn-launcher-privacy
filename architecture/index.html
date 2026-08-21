@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Architecture — Savyn</title>
-    <meta name="description" content="Sitting intelligence: the complete write-path. Definitions, algorithms, packets, isolation, and failure. How Savyn thinks in a life.">
+    <meta name="description" content="A domain holds threads. Classify names the lenses. The beat is the episode. Sync does not write memory.">
     <meta name="theme-color" content="#0c0a08">
     <link rel="canonical" href="https://savynlabs.com/architecture/">
-    <meta property="og:title" content="Sitting intelligence — Savyn Architecture">
-    <meta property="og:description" content="Each writer has one job, one packet, one shape — and a silence cheaper than a lie.">
+    <meta property="og:title" content="Sitting intelligence — Savyn">
+    <meta property="og:description" content="Four isolated jobs. Memory on the dump. Silence cheaper than a lie.">
     <meta property="og:url" content="https://savynlabs.com/architecture/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,479 +30,362 @@
         </div>
     </nav>
 
-    <header class="doc-hero container">
-        <div class="doc-hero-inner animate-fade-in">
-            <p class="doc-kicker">Sitting intelligence</p>
-            <h1 class="doc-title">The write-path.</h1>
-            <p class="doc-lede">How Savyn thinks in a life: what a thread remembers, how a dump becomes an episode, how the door speaks from the soonest next, and what a chip is allowed to be. Causes, memories, jobs — not screens.</p>
+    <section class="hero hero-panel relative-z">
+        <div class="hero-backdrop" aria-hidden="true"></div>
+        <div class="hero-inner container animate-fade-in">
+            <div class="hero-copy">
+                <p class="eyebrow">Architecture</p>
+                <h1 class="hero-title">
+                    <span class="hero-line hero-staccato">Not a chatbot.</span>
+                    <span class="hero-line hero-staccato">A <span class="hero-staccato-accent">beat</span> is the episode.</span>
+                    <span class="hero-line hero-subline">Classify names the lenses. Memory files on the dump. Sync only leaves the room.</span>
+                </h1>
+            </div>
         </div>
-    </header>
+    </section>
 
     <main class="doc-wrap container">
         <ol class="spec-toc">
-            <li><a href="#s0"><span>00</span> Thesis</a></li>
-            <li><a href="#s1"><span>01</span> Ontology</a></li>
-            <li><a href="#s2"><span>02</span> Sitting algorithm</a></li>
-            <li><a href="#s3"><span>03</span> Sync</a></li>
-            <li><a href="#s4"><span>04</span> Chips</a></li>
-            <li><a href="#s5"><span>05</span> Door packet</a></li>
-            <li><a href="#s6"><span>06</span> Objects</a></li>
-            <li><a href="#s7"><span>07</span> Failure</a></li>
-            <li><a href="#s8"><span>08</span> Worked example</a></li>
-            <li><a href="#s9"><span>09</span> Writers</a></li>
-            <li><a href="#s10"><span>10</span> Isolation</a></li>
-            <li><a href="#s11"><span>11</span> Shapes</a></li>
+            <li><a href="#jobs"><span>00</span> Jobs</a></li>
+            <li><a href="#ontology"><span>01</span> Ontology</a></li>
+            <li><a href="#sit"><span>02</span> Sitting</a></li>
+            <li><a href="#door"><span>03</span> Door</a></li>
+            <li><a href="#chips"><span>04</span> Chips</a></li>
+            <li><a href="#sync"><span>05</span> Sync</a></li>
+            <li><a href="#fail"><span>06</span> Failure</a></li>
+            <li><a href="#writers"><span>07</span> Writers</a></li>
+            <li><a href="#isolation"><span>08</span> Isolation</a></li>
+            <li><a href="#shapes"><span>09</span> Shapes</a></li>
+            <li><a href="#example"><span>10</span> Trace</a></li>
         </ol>
 
-        <section class="doc-block" id="s0">
-            <h2>00 · Thesis</h2>
-            <div class="doc-prose">
-                <p>Savyn is not a chatbot with a memory dump. It is a <strong>domain</strong> of life, holding <strong>threads</strong> of continuity. A thread is a lens. They dump; the lenses that actually moved write a <strong>beat that is the episode</strong>.</p>
-                <p>Four jobs stay separate on purpose. Collapse them into one voice and the product becomes a clerk: “paste the game,” “keep going,” “you skipped vision.” The system is built to refuse that.</p>
-            </div>
-            <table class="spec-table">
-                <thead><tr><th>Job</th><th>Owner</th><th>For</th></tr></thead>
-                <tbody>
-                    <tr><td>The door</td><td>Callout</td><td>What they’d be doing <strong>right now on this app</strong> — short, lived. Speaks from the soonest domain-next, not the whole board.</td></tr>
-                    <tr><td>The reading</td><td>Threads</td><td>What this dump meant <em>for this path</em>, following that thread’s beat-structure blurb.</td></tr>
-                    <tr><td>Durable memory</td><td>The beat</td><td>On the dump: write the episode, embed it, fold so-far, rewrite domain-next + clock. Sync only leaves the room.</td></tr>
-                    <tr><td>The object</td><td>Links &amp; apps</td><td>A real next they can tap — a video, a board, a lesson. Attached after the line. Never invented.</td></tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section class="doc-block" id="s1">
-            <h2>01 · Ontology</h2>
-            <div class="doc-prose">
-                <p class="doc-subhead">Domain</p>
-                <p>A life (Fitness, Chess, People). It holds a <strong>North Star</strong>: how they want to live here — want, avoid, when. That spine is a special fixed thread, not a work path. The door may softly mention <strong>one clause, only when this app + this clock make that clause live</strong>. It is not a goal and not a dump of the spine.</p>
-                <p><strong>Domain next</strong> lives at domain height as a roster: <strong>one line per work thread</strong>, each with an expected timestamp when that thread has an honest clock. Threads with no clock (Game analysis) stay at the back. The door prioritizes the closest timestamp. Not a chore list, not skip-guilt, not seating copy. A line may name a thread noun (“protein’s thin — lunch is the hole”).</p>
-                <p>About and rhythm as separate dimensions are retired. They seed the North Star once, then they are gone.</p>
-
-                <p class="doc-subhead">Thread</p>
-                <p>A continuity lens inside a domain (Nutrition under Food; Training under Fitness). Not a topic tag. Not today’s anecdote. Not auto-minted from a sitting. The first set is seeded; they tweak after.</p>
-                <ul>
-                    <li><strong>Beat-structure blurb</strong> — prose, written at create, editable in the thread book. Charge for the LLM: what to infer from a dump. Not JSON. Nutrition might say daily calories, nutritional profile, meal times. Game analysis might say this path is unstructured — so it stays unstructured. Replaces the old INPUT / INFERRED beat legs.</li>
-                    <li><strong>So far</strong> — the thin spine of this path across sittings. Folded forward on each beat. Cap is short on purpose.</li>
-                    <li><strong>Episodes</strong> — each filed beat <em>is</em> an episode. Write, embed, store. Not a later recap of a sitting buffer.</li>
-                    <li><strong>Next</strong> — this thread’s one line on the domain-next roster, plus an expected timestamp when the dump implies an honest clock. Empty clock if unstructured — never invent 7:00. Brand-new threads have no next until a dump writes one. Never “you skipped / missed / muted.”</li>
-                </ul>
-                <p>North Star is special: one editable prose paragraph. No next. No episodes. No blurb-as-form. A thread may also hold <strong>ideas</strong>: facilitators on the path, not sibling threads. Lock-in does not mint new threads from them.</p>
-
-                <p class="doc-subhead">Episode</p>
-                <p>One dump a thread could file. They typed; classify named this lens; the lens wrote the beat. That beat is the episode. It does not wait for Sync.</p>
-                <p>A sitting can still be the open overlay (chorus, hide ≠ close). Chat can stay. <strong>Memory must not wait for Sync.</strong> Sync is leaving the room, not the memory writer.</p>
-                <p>Do taps do <strong>not</strong> start an episode. They open a URL or app. Never a turn, never a beat, never a thread line.</p>
+        <section class="spec-sec" id="jobs">
+            <div class="spec-idx">00</div>
+            <div>
+                <h2>Four jobs.<br>Never one voice.</h2>
+                <div class="doc-prose">
+                    <p>Collapse these and the product becomes a clerk — paste the game, keep going, you skipped vision. Isolation is the architecture.</p>
+                </div>
+                <div class="job-grid">
+                    <div class="job-cell">
+                        <div class="job-owner">Callout</div>
+                        <div class="job-name">Door</div>
+                        <p>This app, this hour, from the soonest domain-next. Not the board. Not a dump.</p>
+                    </div>
+                    <div class="job-cell">
+                        <div class="job-owner">Threads</div>
+                        <div class="job-name">Reading</div>
+                        <p>What the dump meant for this path. Follow the blurb. Infer. Never quiz.</p>
+                    </div>
+                    <div class="job-cell">
+                        <div class="job-owner">Beat</div>
+                        <div class="job-name">Memory</div>
+                        <p>On the dump: episode, embed, fold so-far, rewrite next + clock. Sync writes nothing.</p>
+                    </div>
+                    <div class="job-cell">
+                        <div class="job-owner">Links</div>
+                        <div class="job-name">Object</div>
+                        <p>A real next they can tap. Attached after the line. Never invented.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="doc-block" id="s2">
-            <h2>02 · Sitting algorithm</h2>
-            <div class="doc-prose">
-                <p>They tap Fitness on the widget and open the training app. The machine then runs this, and only this.</p>
-            </div>
-            <ol class="algo">
-                <li><strong>Open.</strong> App in this domain, or the domain with no app. Before they have spoken, Savyn owes a <strong>callout</strong>: one short line. Chips only if a real Do exists. Otherwise silence — they type.</li>
-                <li><strong>Key.</strong> Cache is <code>(domain, app)</code>. Swiggy ≠ Hevy ≠ chess.com. A day is 6am → 6am, local. Rewrite lazily on open if stale (~1 hour) or day-part flipped. A dump that rewrote domain-next drops the cache. Overlay hide does not.</li>
-                <li><strong>Sit.</strong> They type. That text is a user turn. Classify. Touched threads write episode beats. Memory is already filed.</li>
-                <li><strong>Do.</strong> They tap a chip that opens a link or an app. Launch happens. That is <strong>not</strong> a sitting turn. No classify, no chorus, no clerk copy.</li>
-                <li><strong>Classify.</strong> Name every thread this move actually moved. Silence only if nothing is there to file. If they replied to one member, only that thread answers. Up to a handful write in parallel. Each follows its own blurb. No clarifying question. Infer and write.</li>
-                <li><strong>Beat, same call.</strong> Episode stored, embedded, so-far folded, this thread’s domain-next + timestamp rewritten.</li>
-                <li><strong>Continue.</strong> Once there is a typed dump and the sitting is not synced, the starter is used up. A continuation callout follows — a notice, not a hello, not a recap. Do taps do not trigger this. Sync kills it.</li>
-            </ol>
-            <blockquote class="spec-quote">Browsing lunch options? Before you pick, quietly wait and watch cravings arise and pass, just like the late night urges.</blockquote>
-            <div class="doc-prose" style="margin-top: 1.25rem;">
-                <p>A nice idea, or a question-kinda statement — never homework. Not “Browse Zomato for lunch, quietly watching…, in Sakshi Bhava.” Not a doorbell. Not a sitting essay.</p>
-                <p class="doc-subhead">A thread may retrieve</p>
-                <ul>
-                    <li>The dump, verbatim, and any prior dump still on this sitting</li>
-                    <li>This thread’s so-far, next, clock, live ideas, and blurb</li>
-                    <li>What this thread already filed earlier in this sitting</li>
-                    <li>Recent group turns (faces, not a second copy of the dump)</li>
-                    <li>The domain’s title</li>
-                </ul>
-                <p class="doc-subhead">A thread must not</p>
-                <ul>
-                    <li>About / rhythm; other threads’ private so-far</li>
-                    <li>Invented facts or invented clocks</li>
-                    <li>Homework, skip / mute / missed-window talk</li>
-                    <li>Echoing the dump as the face; pasting moves, clocks, notation</li>
-                    <li>Clerk voice; asking them to fill the structure as a form</li>
-                </ul>
-                <p>If the model fails, or the face is a synonym of the dump: salvage from this thread’s next or so-far, or stay silent.</p>
-            </div>
-        </section>
-
-        <section class="doc-block" id="s3">
-            <h2>03 · Sync — leaving the room</h2>
-            <div class="doc-prose">
-                <p>Two ways in:</p>
-                <ul>
-                    <li><strong>They merge / Sync.</strong> Always leave this sitting.</li>
-                    <li><strong>Quiet.</strong> No user turn for about two hours, and there is substance. A gate may ask “is this still mid-arc?” If yes, leave the overlay as-is. If the gate fails, leave the room anyway — fail open.</li>
-                </ul>
-                <p>Hide is not Sync. Hide is not merge.</p>
-                <p>Sync does <strong>not</strong> re-read beats into a recap, rewrite so-far or next, or mint threads. Memory already landed on the dump.</p>
-                <p>Sync <strong>does</strong>: stamp the sitting closed, wipe the chorus transcript, drop the per-app callout cache for this domain so the next open cannot ignore the nexts that just changed, and may search a live object from those nexts.</p>
-                <p>North Star folds on the dump if classify touched it (they named want / avoid / when). Sync does not re-fold identity.</p>
+        <section class="spec-sec" id="ontology">
+            <div class="spec-idx">01</div>
+            <div>
+                <h2>Ontology</h2>
+                <dl>
+                    <div class="def-row">
+                        <dt>Domain</dt>
+                        <dd>A life: Fitness, Chess, Food. Holds a <strong>North Star</strong> (want / avoid / when) — a fixed thread, not a work path. The door may use <strong>one clause</strong> only when this app × this clock make that clause live.</dd>
+                    </div>
+                    <div class="def-row">
+                        <dt>Domain-next</dt>
+                        <dd>Roster at domain height: one line per work thread + honest clock, or empty. Soonest clock first; unstructured (Game analysis) at the back. Not a chore list. Never skip-guilt. Never an invented 7:00.</dd>
+                    </div>
+                    <div class="def-row">
+                        <dt>Thread</dt>
+                        <dd>Continuity lens (Nutrition ⊂ Food). Seeded, not auto-minted. Carries <strong>blurb</strong> (prose job for the beat), <strong>so-far</strong> (thin spine, folded each beat), <strong>episodes</strong>, <strong>next</strong> (its roster row). Brand-new: blurb only — no next, no so-far until a dump.</dd>
+                    </div>
+                    <div class="def-row">
+                        <dt>North Star</dt>
+                        <dd>One editable paragraph. No next, no episodes, no blurb-as-form. About / rhythm retired; they seed this once, then die.</dd>
+                    </div>
+                    <div class="def-row">
+                        <dt>Episode</dt>
+                        <dd>One dump a thread could file. Classify names the lens; the lens writes the beat; <em>that beat is the episode</em>. Does not wait for Sync. Do taps are not episodes.</dd>
+                    </div>
+                    <div class="def-row">
+                        <dt>Ideas</dt>
+                        <dd>Facilitators on a path, not sibling threads. Lock-in does not mint threads from them.</dd>
+                    </div>
+                    <div class="def-row">
+                        <dt>Day</dt>
+                        <dd>06:00 → 06:00 local. Door key = <code>(domain, app)</code> or <code>(domain, none)</code>. Swiggy ≠ Hevy ≠ chess.com.</dd>
+                    </div>
+                </dl>
             </div>
         </section>
 
-        <section class="doc-block" id="s4">
-            <h2>04 · Chips</h2>
-            <div class="doc-prose">
-                <p>The door is a <strong>line</strong>. A chip is only allowed if it is a <strong>Do</strong>: a real object in the room they can open right now. At most two. Live card first, then pantry. If neither serves a current next, <strong>show nothing</strong>.</p>
-                <p>Sit as a tap is retired. Two likely typed moves are generated with the line and shown as <strong>cycling placeholder text</strong> in the composer — not as taps. “Suggest a meal.” “Log my order.” If they want to answer, they type.</p>
-                <p class="doc-subhead">Do selection, in order</p>
-                <ul>
-                    <li><strong>Live card</strong> — after a merge, if some thread’s next is a named object in the world, Savyn may search once and park one live link for this domain. Chip only. Never silently saved to pantry.</li>
-                    <li><strong>Pantry</strong> — links they actually saved to this domain. A picker matches pantry rows against current nexts and keeps at most two that <em>serve</em> a next. A random saved article is not a chip.</li>
-                </ul>
-                <p>No third step. <strong>Associated app is not a chip.</strong> They already opened the app from the widget. “Open Hevy” is not a sitting move. The language model is forbidden from inventing URLs. When the line names a specific object, that noun matches live card and pantry. If nothing in the room is that object: silence. An idea-only line is not a Do.</p>
-                <p>Every Do makes two things obvious: the <strong>move</strong> (“Caro lesson,” “Play 10+0”) and <strong>where it opens</strong> (YouTube, Chess.com, Hevy). Tap launches. Not a turn, not a beat, not a chorus, not a continuation.</p>
-                <p>Chips are not three synonyms of the liner, recovery homework, a “smaller whisper,” or a second composer. If a chip cannot open a real object, it should not exist.</p>
+        <section class="spec-sec" id="sit">
+            <div class="spec-idx">02</div>
+            <div>
+                <h2>Sitting</h2>
+                <ol class="algo">
+                    <li><strong>Open.</strong> App in domain, or domain tile. Before they speak: one callout. Chips iff a real Do exists. Else silence.</li>
+                    <li><strong>Cache.</strong> Rewrite if stale (~1h) or day-part flipped. Dump that rewrote domain-next drops every key on that domain. Hide does not.</li>
+                    <li><strong>Sit.</strong> Typed dump = user turn. Classify → parallel beats. Memory already filed.</li>
+                    <li><strong>Do.</strong> Chip launches URL/app. Not a turn. No classify, no chorus, no continuation.</li>
+                    <li><strong>Classify.</strong> Name threads this dump actually moved. Empty allowed. Reply-to-one → that thread only. Cap a handful. Never on Do.</li>
+                    <li><strong>Beat (same call).</strong> Store episode, embed, fold so-far, rewrite next + <code>next_at</code>.</li>
+                    <li><strong>Continue.</strong> After a dump, sitting unsynced: notice, not hello, not recap. Dies on Sync. Do does not trigger it.</li>
+                </ol>
+                <div class="doc-prose" style="margin-top: 1.75rem;">
+                    <p>Beat may see: dump (verbatim), prior dump on this sitting, this thread’s blurb / so-far / next / clock / ideas / prior beats, group faces, domain title.</p>
+                    <p>Beat must not: other threads’ so-far, invented clocks, homework, skip/mute, echo-as-face, PGN/notation, clerk voice, a form.</p>
+                </div>
             </div>
         </section>
 
-        <section class="doc-block" id="s5">
-            <h2>05 · What the door may know</h2>
-            <div class="doc-prose">
-                <p>The starter is an <strong>app-hour orientation</strong>, not a sitting recap. The packet is small on purpose.</p>
-                <p><strong>Always.</strong> Current time. Domain title. If they opened an app: that app’s display name.</p>
-                <p><strong>Domain-next roster</strong> — soonest clock first, a handful of lines. Each line is one work thread’s next + expected timestamp (or none). Not every thread. Not today’s recaps. Not sitting beats.</p>
-                <p><strong>Never.</strong> The North Star as a goal to solve, or the whole spine on every open. So-far novels. Lifetime episodes. Invented clocks. Invented nouns that are not on a next line. A line that goes against a live clause. A late-night avoid quoted at noon.</p>
-                <p>The door does see a clipped North Star. Most hours it stays quiet. It may use one clause only when this app + this clock make that clause live (Swiggy at 1am × avoid late-night snacking).</p>
-                <p>Continuation (after a typed dump, sitting still open) is a different job: last move + chorus + soonest nexts. It does not overwrite the per-app starter cache. A Do tap does not write a continuation. Dump-kind is not a door packet. The app’s name is the grain (Swiggy = order, Hevy = train).</p>
+        <section class="spec-sec" id="door">
+            <div class="spec-idx">03</div>
+            <div>
+                <h2>Door packet</h2>
+                <div class="doc-prose">
+                    <p>App-hour orientation. Not a sitting recap. Grain = the app’s name (Swiggy = order, Hevy = train).</p>
+                </div>
+                <dl>
+                    <div class="def-row">
+                        <dt>Always</dt>
+                        <dd>Now. Domain title. App display name if known. A handful of soonest domain-next lines.</dd>
+                    </div>
+                    <div class="def-row">
+                        <dt>North Star</dt>
+                        <dd>Clipped, usually ignored. One clause iff this app × clock make it live (Swiggy 01:00 × avoid late-night snacking).</dd>
+                    </div>
+                    <div class="def-row">
+                        <dt>Never</dt>
+                        <dd>Spine as a goal. So-far novels. Lifetime episodes. Today’s recaps. Unmerged beats. Invented clocks or nouns. A noon quote of a night avoid.</dd>
+                    </div>
+                    <div class="def-row">
+                        <dt>Line</dt>
+                        <dd>≤24 words. Idea or question-statement. Never homework. Never a doorbell. Never a sitting essay.</dd>
+                    </div>
+                    <div class="def-row">
+                        <dt>Continuation</dt>
+                        <dd>Last dump + chorus faces + soonest nexts + so-far. Does not overwrite the per-app starter cache. ≤22 words.</dd>
+                    </div>
+                </dl>
+                <blockquote class="spec-quote">Browsing lunch options? Before you pick, quietly wait and watch cravings arise and pass.</blockquote>
             </div>
         </section>
 
-        <section class="doc-block" id="s6">
-            <h2>06 · Objects in the room</h2>
-            <div class="doc-prose">
-                <p>Search exists for one reason: <strong>next named a thing in the world</strong>, and a practitioner would Google that thing.</p>
-                <ul>
-                    <li>If the live card still matches the current next, keep it.</li>
-                    <li>If next is a vague practice (“keep training,” “check in”), stay silent. No search.</li>
-                    <li>If next is a named object, pick at most one query — what someone in this life would actually type — resolve it, park a card. Then read what the page <em>is</em> (kind, nouns, a two-to-five-word verb) from the page itself plus a small model. The Open Graph title is not the chip.</li>
-                </ul>
-                <p>Failures clear the card. Changing next clears it. The person can later save that URL into the pantry on purpose. The system never writes the pantry for them. The pantry survives merge. Associated apps are mapped to the domain; opening one from the widget <em>is</em> the sitting. That launch is not a chip.</p>
+        <section class="spec-sec" id="chips">
+            <div class="spec-idx">04</div>
+            <div>
+                <h2>Chips &amp; objects</h2>
+                <div class="doc-prose">
+                    <p>The door is a line. A chip is a <strong>Do</strong> or it does not exist. Max two. Live card, then pantry. Else nothing — no Sit fill. Two likely typed moves cycle as composer placeholders (“Suggest a meal”, “Log my order”). Sit taps are retired.</p>
+                    <p>Do = open a URL or app the domain already has. Model may not invent URLs. Associated app is not a chip — they opened it from the widget. Verb from the object (“Caro lesson”), never “Open this.” Tap is not a turn.</p>
+                    <p>Search exists iff next named a thing in the world a practitioner would Google. Vague practice (“keep training”) → no search. At most one query. Park one live card for chips only — never auto-write pantry. OG title is not the chip; verb is read from what the page is. Failures and next-changes clear the card.</p>
+                </div>
             </div>
         </section>
 
-        <section class="doc-block" id="s7">
-            <h2>07 · Failures, on purpose</h2>
-            <div class="doc-prose">
-                <p>Intelligence here is mostly knowing when to shut up. The product prefers a thin true memory to a thick invented one.</p>
-            </div>
-            <table class="spec-table">
-                <thead><tr><th>Failure</th><th>What Savyn does</th></tr></thead>
-                <tbody>
-                    <tr><td>Callout has no lived noun</td><td>Reject the line; fall back to a next, not a welcome</td></tr>
-                    <tr><td>No Do that serves a next</td><td>Silence. Do not invent a link or fill with Sit taps</td></tr>
-                    <tr><td>App unknown</td><td>Domain-level line. Do not fake Swiggy-voice</td></tr>
-                    <tr><td>Classify finds no thread</td><td>Say nothing rather than recap the roster</td></tr>
-                    <tr><td>A thread would only echo the dump</td><td>Silent, or salvage from that thread’s next / so-far</td></tr>
-                    <tr><td>Sync has nothing new to remember</td><td>Still leave the room; memory already filed on the dump</td></tr>
-                    <tr><td>Search has nothing named</td><td>No live card</td></tr>
-                    <tr><td>Overlay hidden</td><td>Sitting remains. No fold</td></tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section class="doc-block" id="s8">
-            <h2>08 · One sitting, end to end</h2>
-            <div class="doc-prose">
-                <p>They open Swiggy at 6pm from Food.</p>
-                <ul>
-                    <li>The starter door is the Swiggy line: time, app name, soonest Food domain-nexts. No Sit chips. Says cycle in the composer. A Do only if a real object is in the room.</li>
-                    <li>They type a dump. Classify names Nutrition. Nutrition writes the episode beat from its blurb (calories, profile, meal times), folds so-far, rewrites its domain-next + lunch clock. Game analysis stays quiet. Then a continuation on the sitting — not a rewrite of the Swiggy cache.</li>
-                    <li>A Do tap only opens the URL. No chorus.</li>
-                    <li>They leave. Overlay hides. The sitting is still open. Memory already landed.</li>
-                    <li>When they Sync (or quiet close), chat clears. The Food callout cache is dropped. Next Swiggy open writes a fresh line from the new domain-next roster.</li>
-                </ul>
-                <p>That is the intelligence: the door names the move on this app this hour from the closest next, the threads read and remember on the dump, Sync only leaves the room, and chips are only real objects this life can open.</p>
+        <section class="spec-sec" id="sync">
+            <div class="spec-idx">05</div>
+            <div>
+                <h2>Sync leaves.</h2>
+                <div class="doc-prose">
+                    <p>Merge: always leave. Quiet: ~2h since last dump + substance; gate “still mid-arc?” — fail open. Hide ≠ Sync.</p>
+                    <p><strong>Does:</strong> stamp closed, wipe chorus, drop per-app door cache, maybe search a live object from the new nexts.</p>
+                    <p><strong>Does not:</strong> recap beats, rewrite so-far or next, mint threads, re-fold North Star. Identity folds on the dump if classify touched it.</p>
+                </div>
             </div>
         </section>
 
-        <section class="doc-block" id="s9">
-            <h2>09 · How each entity is written</h2>
-            <div class="doc-prose">
-                <p>Every writer below is a separate job. They do not share one prompt. What one is allowed to see, another is forbidden from seeing — that is the point.</p>
-                <p>For each: when it runs, the job it is given, the packet it is fed, what it must return, what happens to the result, what happens if it fails. In raw job text, “house” means thread. “Track” means domain.</p>
-            </div>
-
-            <article class="writer">
-                <h3>9.1 North Star</h3>
-                <dl class="kv">
-                    <dt>When</dt>
-                    <dd>Created once per domain (onboarding, or seeded from legacy about + rhythm). Folded on a dump if classify touched it — they named how they want to live, what to avoid, or when. Overlay open ensures it exists.</dd>
-                    <dt>What</dt>
-                    <dd>A special fixed thread. One editable prose spine (want / avoid / when). No next. No episodes. No beat-structure form. Not a Do. Classify touches it only for identity / avoid / cadence dumps.</dd>
-                    <dt>Packet</dt>
-                    <dd>Current guidelines. Fold only if they named identity, avoid, or when.</dd>
-                    <dt>Return</dt>
-                    <dd>Optional fold into the same paragraph. Short. Guidelines, not a recap of the plate.</dd>
-                    <dt>Then</dt>
-                    <dd>Absorbed into the thread’s so-far. About / rhythm are not written.</dd>
-                    <dt>Fail</dt>
-                    <dd>Prior North Star stands. The door still only uses a clause when the moment needs it.</dd>
-                </dl>
-            </article>
-
-            <article class="writer">
-                <h3>9.2 Rhythm — retired</h3>
-                <dl class="kv">
-                    <dt>Note</dt>
-                    <dd>Cadence lives on the North Star as “when.” Legacy about + rhythm seed the North Star once, then those dimensions are cleared.</dd>
-                </dl>
-            </article>
-
-            <article class="writer">
-                <h3>9.3 So-far</h3>
-                <dl class="kv">
-                    <dt>When</dt>
-                    <dd>Same beat call as the episode, on each dump this thread filed. They do not type so-far as a field in chat.</dd>
-                    <dt>Job</dt>
-                    <dd>Update thread memory from this dump. Do not retell the episode. Fold prior so-far + this episode beat into continuity. Advance what changed; drop noise. Do not copy this episode. Good: prior “Building an openings book” + episode drilled Caro structure → “Openings book is live; Caro structure is the edge.”</dd>
-                    <dt>Packet</dt>
-                    <dd>This thread only: name, blurb, prior so-far, next, the dump, this sitting’s prior beats on this house.</dd>
-                    <dt>Return</dt>
-                    <dd><code>so_far</code> — short continuity, not a second recap.</dd>
-                    <dt>Then</dt>
-                    <dd>Replaces the thread’s so-far. Survives overlay hide. The next door and the next beat both read it.</dd>
-                    <dt>Fail</dt>
-                    <dd>Prior so-far is kept; the episode may still be filed.</dd>
-                </dl>
-            </article>
-
-            <article class="writer">
-                <h3>9.4 Domain next</h3>
-                <dl class="kv">
-                    <dt>When</dt>
-                    <dd>Same beat as the episode — always rewrite this thread’s line, unless the path closed. Also: they edit the line in the book; creating a thread can seed it; changing next clears any live link keyed to the old next.</dd>
-                    <dt>Job</dt>
-                    <dd>One line for THIS thread on the domain roster. Their nouns. Not a chore, not seating copy, not skip-guilt. Also <code>next_at</code>: an honest local clock only if this dump implies one. Empty if unstructured — never invent 7:00 for Game analysis. Good: “protein’s thin — lunch is the hole” + 13:00.</dd>
-                    <dt>Return</dt>
-                    <dd><code>next</code> + <code>next_at</code> (ISO or HH:mm or empty).</dd>
-                    <dt>Then</dt>
-                    <dd>Stored on the thread. Roster is these lines, sorted by soonest clock (none at the back). Guilt language stripped. The door speaks from the closest. Search may run from a named object on a next.</dd>
-                    <dt>Fail</dt>
-                    <dd>Old next and clock remain.</dd>
-                </dl>
-            </article>
-
-            <article class="writer">
-                <h3>9.5 Episode (the beat)</h3>
-                <dl class="kv">
-                    <dt>When</dt>
-                    <dd>After classify names this thread. Parallel, one writer per touched thread. Not on Do tap. Not delayed until Sync.</dd>
-                    <dt>Job</dt>
-                    <dd>You are ONE continuity thread. Follow YOUR JOB — the beat-structure blurb. Infer. Never a clarifying question. Never paste moves, PGN, clocks. Never homework. Never skip/mute/missed. Never invent. Never a synonym of their dump as the face. The episode <em>is</em> this beat.</dd>
-                    <dt>Packet</dt>
-                    <dd>“You are the thread {name}.” + YOUR JOB. Domain title. So-far, next, clock, live ideas for this thread only. This sitting already on this thread. Their dump, verbatim. Prior dump still on this sitting if follow-up. Recent group — faces, context only. Not in the packet: about, rhythm, other threads’ so-far, last episode as an ask, URLs.</dd>
-                    <dt>Then</dt>
-                    <dd>Face shown in the chorus. Episode stored, embedded, so-far folded, domain-next + clock rewritten. Thread marked touched. Callout cache for the domain dropped.</dd>
-                    <dt>Fail</dt>
-                    <dd>Soft fallback face from a dump liner. If the face is an echo, salvage from next or so-far, or silence. Empty is better than a polite recap. Threads are not auto-created from a dump.</dd>
-                </dl>
-                <pre class="packet">face      ≤12 words, no brackets — the plate line
-episode   the beat following YOUR JOB (this is the episode)
-so_far    thin spine
-next      ≤12 words, this thread’s domain-next line
-next_at   ISO-8601 local, HH:mm, or empty</pre>
-            </article>
-
-            <article class="writer">
-                <h3>9.6 Beat-structure blurb</h3>
-                <dl class="kv">
-                    <dt>When</dt>
-                    <dd>Onboarding authors it from their words. Manual add — LLM authors from what the path is for. Existing living threads — one-time backfill if missing. They may edit it any time in the thread book.</dd>
-                    <dt>What</dt>
-                    <dd>Prose charge for the beat writer. Not JSON, not a table, not INPUT/INFERRED legs. Brand-new thread: blurb only. No next. No so-far. Those appear after real dumps.</dd>
-                    <dt>Defaults</dt>
-                    <dd>Fallback only if the model is down. Nutrition → calories, nutritional profile, meal times. Fitness → body parts + recovery. Game analysis → unstructured. North Star has none.</dd>
-                </dl>
-            </article>
-
-            <article class="writer">
-                <h3>9.7 Classify</h3>
-                <dl class="kv">
-                    <dt>When</dt>
-                    <dd>Every user dump. Skipped if they replied to one member — that thread only. Never on Do tap.</dd>
-                    <dt>Job</dt>
-                    <dd>Name which continuity threads a dump actually moved. Include a thread if the dump has substance for it — even first touch. Exclude a thread that would only politely recap. Empty touched is allowed. North Star only if they named want / avoid / when.</dd>
-                    <dt>Packet</dt>
-                    <dd>Domain title. Dump (verbatim). Prior dump still on this sitting if any. Threads with exact ids, names, next, so-far. Recent group (context only).</dd>
-                    <dt>Return</dt>
-                    <dd><code>{ "touched": [thread ids…] }</code> — ids must be from the packet. Cap a handful. Then those threads write episode beats in parallel.</dd>
-                    <dt>Fail</dt>
-                    <dd>Heuristic: analysis-shaped dumps route to an analysis thread if one exists; else any thread whose name appears in the dump. If still empty: a quiet “nothing here had a thread.”</dd>
-                </dl>
-            </article>
-
-            <article class="writer">
-                <h3>9.8 Starter callout</h3>
-                <dl class="kv">
-                    <dt>When</dt>
-                    <dd>Lazily on open, for this <code>(domain, app)</code> key — or <code>(domain, none)</code>. Rewrite if stale (~1 hour) or day-part flipped. A dump that rewrote domain-next, and Sync, drop every key on that domain. A background slot pass does not rewrite all domains.</dd>
-                    <dt>Job</dt>
-                    <dd>One lived line: what they would be doing RIGHT NOW on THIS app. Idea or question-statement — never homework. App + clock are the situation. Soonest domain-next lines are the nouns. Do not invent a lunch, a session, fiber, or a 7:00 that is not in the packet. ≤24 words. Two typed says. Optional do_object. North Star: ignore unless one clause is live.</dd>
-                    <dt>Then</dt>
-                    <dd>Formula / guilt / homework / trash liners rejected. Dos from live card / pantry only. Fail: the soonest next as the line. No Sit fill.</dd>
-                </dl>
-                <pre class="packet">liner       ≤24 words, idea or question-statement, this app this hour
-says        two short typed moves (composer placeholders)
-do_object   named object if the line suggested one; else empty</pre>
-            </article>
-
-            <article class="writer">
-                <h3>9.9 Continuation callout</h3>
-                <dl class="kv">
-                    <dt>When</dt>
-                    <dd>Sitting has at least one typed dump. Last dump is newer than last Sync. Fingerprint = last turn’s time. Does not rewrite until something new lands. Not after a Do tap.</dd>
-                    <dt>Job</dt>
-                    <dd>This sitting already started. Write the next line — a notice, not a hello, not a doorbell, not homework. You were in the room for THEIR LAST MOVE. Name the next beat in their nouns. If they dumped, do not recap. Two typed says. Optional do_object.</dd>
-                    <dt>Packet</dt>
-                    <dd>Domain title. Clipped North Star (ignore unless one clause is live). Episode: open, not synced. Their last move. Threads just said — chorus faces. Domain-next roster, soonest first, plus so-far for those threads.</dd>
-                    <dt>Return</dt>
-                    <dd>Liner ≤22 words. Two says. Optional do_object. No Sit chips. Stored on this sitting until Sync or a newer dump. Fail: soonest next as the line. If even that is empty, no continuation plate.</dd>
-                </dl>
-            </article>
-
-            <article class="writer">
-                <h3>9.10 Sit chips — retired</h3>
-                <dl class="kv">
-                    <dt>Note</dt>
-                    <dd>The two says from the door writer are cycling placeholder text in the composer, not taps. They are the most likely typed moves. They are not a second chip row.</dd>
-                </dl>
-            </article>
-
-            <article class="writer">
-                <h3>9.11 Do chips</h3>
-                <dl class="kv">
-                    <dt>When</dt>
-                    <dd>After a liner exists. Two sources, in order. None invent a URL from the door prompt. Live card first (verb = about-verb). Then pantry pick — at most two links that serve a current next. Skip any Do whose verb is “Open this” or “Open {app}.” When the liner named a specific object, mix prefers rows that match that noun. Still no invented URL. Mix: max two Dos. Tap: launch. Never a turn. If none serve a next: silence. The line stands alone. Says still cycle.</dd>
-                </dl>
-            </article>
-
-            <article class="writer">
-                <h3>9.12 Live object</h3>
-                <dl class="kv">
-                    <dt>When</dt>
-                    <dd>After a dump (or Sync) has written domain-nexts. If a live card still matches the current next, keep it. Never auto-save to pantry.</dd>
-                    <dt>Job</dt>
-                    <dd>Pick at most ONE next that is genuinely served by a specific article, talk, paper, recipe, study, course, book, puzzle set, or video. “Keep practicing” is a no. A named dish they ate is a yes. Silence is correct when you cannot name a real object. object = ≤6 words, the Do chip verb. query = what a practitioner types into Google. Proper nouns. Never “tips for X”, “how to Y”, “best practices”, “healthy/easy/quick.”</dd>
-                    <dt>Return</dt>
-                    <dd><code>{ hub_id, object, query }</code> or empty. Query is resolved on the web. First real URL parked, keyed to that thread + exact next. Then link-about writes the verb. Fail: card cleared. Trash queries rejected before search.</dd>
-                </dl>
-            </article>
-
-            <article class="writer">
-                <h3>9.13 Link about</h3>
-                <dl class="kv">
-                    <dt>When</dt>
-                    <dd>We already have a URL — live card enrich, or they saved a link. Never search. Open Graph title/description fetched if missing.</dd>
-                    <dt>Job</dt>
-                    <dd>Say what it is for a sitting door chip. kind = recipe | video | game | article | order | course | other. nouns = 1–2 lived nouns. verb = 2–5 word chip they’d tap to GO there. Never the OG headline. Never a Sit dump. line = one short clause of what it is.</dd>
-                    <dt>Fail</dt>
-                    <dd>Host heuristic (YouTube → video / Watch this; chess.com → game / Play this; recipe hosts → Cook this; else Open this from the title).</dd>
-                </dl>
-            </article>
-
-            <article class="writer">
-                <h3>9.14 Pantry pick</h3>
-                <dl class="kv">
-                    <dt>When</dt>
-                    <dd>Attaching Do chips. Pantry is links they saved to this domain. Survives merge. Max a dozen.</dd>
-                    <dt>Job</dt>
-                    <dd>Pick the links that actually serve a next — a named object they’d open for THAT next. Not same-domain-so-close-enough. At most 2. Empty ids if none belong.</dd>
-                    <dt>Return</dt>
-                    <dd><code>{ "ids": [exact pantry ids] }</code>. Fail: no pantry Dos. The line stands alone.</dd>
-                </dl>
-            </article>
-
-            <article class="writer">
-                <h3>9.15 Quiet Sync gate</h3>
-                <dl class="kv">
-                    <dt>When</dt>
-                    <dd>Unsynced user dumps and ~2h since the last one. Manual Sync skips this and always leaves the room.</dd>
-                    <dt>Job</dt>
-                    <dd>Decide whether this sitting should close after a quiet gap. True when the bout feels naturally paused. False when they are clearly still mid-arc. Memory is already filed — this gate is only about leaving the room.</dd>
-                    <dt>Return</dt>
-                    <dd><code>{ "needs_merge": true | false }</code>. True → leave the room. False → leave the overlay as-is. Fail: default true — fail open so a sitting is not stranded open.</dd>
-                </dl>
-            </article>
-
-            <article class="writer">
-                <h3>9.16 Who may edit without a model</h3>
+        <section class="spec-sec" id="fail">
+            <div class="spec-idx">06</div>
+            <div>
+                <h2>Fail silent.</h2>
                 <table class="spec-table">
-                    <thead><tr><th>Entity</th><th>Human</th><th>System without a model</th></tr></thead>
+                    <thead><tr><th>Miss</th><th>Move</th></tr></thead>
                     <tbody>
-                        <tr><td>Thread name / blurb / domain-next</td><td>Thread book</td><td>LLM blurb on create + one-time backfill</td></tr>
-                        <tr><td>Pantry URL</td><td>They save / share</td><td>Never auto-write</td></tr>
-                        <tr><td>Associated apps</td><td>They pick for the domain</td><td>—</td></tr>
-                        <tr><td>Do launch</td><td>Tap</td><td>Opens the URL or app. Never a turn.</td></tr>
-                        <tr><td>Overlay hide</td><td>They dismiss</td><td>Sitting stays. Memory already on the dump.</td></tr>
+                        <tr><td>Callout, no lived noun</td><td>Reject. Fall back to a next, not a welcome.</td></tr>
+                        <tr><td>No Do serving a next</td><td>Silence. Never invent a URL. Never Sit-fill.</td></tr>
+                        <tr><td>App unknown</td><td>Domain-level line. No fake Swiggy-voice.</td></tr>
+                        <tr><td>Classify empty</td><td>Say nothing. Do not recap the roster.</td></tr>
+                        <tr><td>Face ≡ dump</td><td>Salvage from that thread’s next / so-far, or silence.</td></tr>
+                        <tr><td>Search unnamed</td><td>No live card.</td></tr>
+                        <tr><td>Overlay hidden</td><td>Sitting remains. Nothing folded.</td></tr>
                     </tbody>
                 </table>
-            </article>
+            </div>
         </section>
 
-        <section class="doc-block" id="s10">
-            <h2>10 · Isolation</h2>
-            <div class="doc-prose">
-                <p>This table is the architecture. Leakage here is how clerk voice comes back.</p>
+        <section class="spec-sec" id="writers">
+            <div class="spec-idx">07</div>
+            <div>
+                <h2>Writers</h2>
+                <div class="doc-prose">
+                    <p>Separate jobs. Separate prompts. “House” = thread, “track” = domain. Threads are never auto-created from a dump.</p>
+                </div>
+
+                <article class="w-row">
+                    <h3><span>9.1</span> North Star</h3>
+                    <div class="w-meta">
+                        <b>When</b><span>Once per domain. Fold on dump iff classify touched want / avoid / when.</span>
+                        <b>In</b><span>Current guidelines only.</span>
+                        <b>Out</b><span>Optional short fold into the same paragraph. Not a recap of the plate.</span>
+                        <b>Fail</b><span>Prior spine stands.</span>
+                    </div>
+                </article>
+                <article class="w-row">
+                    <h3><span>9.3</span> So-far</h3>
+                    <div class="w-meta">
+                        <b>When</b><span>Same beat as the episode. Never a chat field.</span>
+                        <b>In</b><span>This thread: name, blurb, prior so-far, next, dump, prior beats this sitting.</span>
+                        <b>Out</b><span><code>so_far</code> — advance what changed; do not retell the episode.</span>
+                        <b>Fail</b><span>Keep prior. Episode may still file.</span>
+                    </div>
+                </article>
+                <article class="w-row">
+                    <h3><span>9.4</span> Domain-next</h3>
+                    <div class="w-meta">
+                        <b>When</b><span>Every beat (unless path closed). Also human edit in the book. Next-change clears live card.</span>
+                        <b>In</b><span>Same as beat.</span>
+                        <b>Out</b><span><code>next</code> ≤12 words, their nouns. <code>next_at</code> ISO / HH:mm / empty — honest clock only.</span>
+                        <b>Fail</b><span>Old next + clock remain. Guilt language stripped on write.</span>
+                    </div>
+                </article>
+                <article class="w-row">
+                    <h3><span>9.5</span> Episode</h3>
+                    <div class="w-meta">
+                        <b>When</b><span>After classify. Parallel per touched thread. Not Do. Not delayed to Sync.</span>
+                        <b>In</b><span>You are thread {name} + YOUR JOB (blurb). Domain. This thread’s so-far / next / clock / ideas / prior beats. Dump verbatim. Prior dump if follow-up. Group faces. Never URLs, never other so-fars.</span>
+                        <b>Out</b><span>See shapes. Face on the plate. Episode stored + embedded. So-far folded. Next rewritten. Domain callout cache dropped.</span>
+                        <b>Fail</b><span>Salvage or silence. Empty &gt; polite recap.</span>
+                    </div>
+                </article>
+                <article class="w-row">
+                    <h3><span>9.6</span> Blurb</h3>
+                    <div class="w-meta">
+                        <b>When</b><span>Onboarding, manual add, one-time backfill, or they edit the book.</span>
+                        <b>Out</b><span>Prose charge. Not JSON. Not INPUT/INFERRED. Defaults (model down only): Nutrition → calories / profile / meal times; Fitness → parts + recovery; Game analysis → unstructured. North Star: none.</span>
+                    </div>
+                </article>
+                <article class="w-row">
+                    <h3><span>9.7</span> Classify</h3>
+                    <div class="w-meta">
+                        <b>When</b><span>Every user dump. Skip if reply-to-one. Never Do.</span>
+                        <b>In</b><span>Domain, dump, prior dump, threads (id, name, next, so-far), recent faces.</span>
+                        <b>Out</b><span><code>{ touched: [ids] }</code> from the packet. Empty allowed. North Star iff identity / avoid / when.</span>
+                        <b>Fail</b><span>Analysis-shaped → analysis thread; else name-match; else quiet nothing.</span>
+                    </div>
+                </article>
+                <article class="w-row">
+                    <h3><span>9.8</span> Starter door</h3>
+                    <div class="w-meta">
+                        <b>When</b><span>Lazy on open for <code>(domain, app)</code>. Stale ~1h or day-part. Dump/Sync drop all keys on that domain. Slot pass does not rewrite all domains.</span>
+                        <b>In</b><span>Weekday + clock, domain, app name, clipped North Star, soonest nexts.</span>
+                        <b>Out</b><span><code>liner</code> ≤24 · <code>says</code>×2 · <code>do_object</code> optional. Trash/guilt/homework rejected. Dos from live card / pantry only.</span>
+                        <b>Fail</b><span>Soonest next as the line. No Sit fill.</span>
+                    </div>
+                </article>
+                <article class="w-row">
+                    <h3><span>9.9</span> Continuation</h3>
+                    <div class="w-meta">
+                        <b>When</b><span>≥1 typed dump, newer than last Sync. Fingerprint = last turn. Not Do.</span>
+                        <b>In</b><span>Last dump, chorus faces, soonest nexts + so-far, clipped North Star.</span>
+                        <b>Out</b><span>Liner ≤22 · says×2 · optional do_object. Stored until Sync or a newer dump.</span>
+                        <b>Fail</b><span>Soonest next; if none, no plate.</span>
+                    </div>
+                </article>
+                <article class="w-row">
+                    <h3><span>9.11–14</span> Do / live / about / pantry</h3>
+                    <div class="w-meta">
+                        <b>Do</b><span>After liner. Live card then pantry. Max 2. Skip “Open this” / “Open {app}”. Prefer <code>do_object</code> match. No invented URL. None → silence; says still cycle.</span>
+                        <b>Live</b><span>After next rewrite. Pick ≤1 next that is a named object. <code>{ hub_id, object≤6, query }</code> or empty. Query = practitioner Google. Reject tips/how-to/best/healthy/easy/quick. Never auto-save pantry.</span>
+                        <b>About</b><span>URL already in hand. <code>kind · nouns · verb · line</code>. Never OG headline. Host heuristic on fail.</span>
+                        <b>Pantry</b><span>Their saved rows vs nexts. <code>{ ids }</code> ≤2 that serve that next. Fail → no pantry Dos.</span>
+                    </div>
+                </article>
+                <article class="w-row">
+                    <h3><span>9.15</span> Quiet gate</h3>
+                    <div class="w-meta">
+                        <b>When</b><span>Unsynced dumps and ~2h quiet. Manual Sync skips and always leaves.</span>
+                        <b>Out</b><span><code>{ needs_merge }</code>. True = leave room. False = overlay stays. Fail → true (fail open).</span>
+                    </div>
+                </article>
             </div>
-            <table class="spec-table">
-                <thead><tr><th>Writer</th><th>Sees</th><th>Must not see</th></tr></thead>
-                <tbody>
-                    <tr><td>Starter door</td><td>App name, now, soonest domain-next lines, clipped North Star</td><td>North Star as a goal or a dump of the whole spine, so-far novels, lifetime episodes, transcript, today’s recaps, unmerged beats, web, invented clocks</td></tr>
-                    <tr><td>Continuation</td><td>Last dump, chorus faces, soonest nexts + so-far, clipped North Star</td><td>Last episode as an ask, web, dumping the North Star, a Do tap as a turn</td></tr>
-                    <tr><td>Classify</td><td>Dump, prior dump, each thread’s next + so-far, recent faces. North Star only as a maybe-touch</td><td>Web, Do taps</td></tr>
-                    <tr><td>Beat</td><td>Dump, this thread’s blurb / so-far / next / clock / ideas / prior beats this sitting, recent faces</td><td>Other threads’ private so-far, last episode as homework, a form to quiz them with</td></tr>
-                    <tr><td>Sync</td><td>Nothing to rewrite — leave the room</td><td>Recap pass, graph extend, minting threads</td></tr>
-                    <tr><td>Live-link pick</td><td>Nexts, so-far</td><td>Chat transcript, North Star as a search query</td></tr>
-                    <tr><td>Link about</td><td>URL + OG + sitting hint</td><td>Nexts, so-far, chat</td></tr>
-                    <tr><td>Pantry pick</td><td>Nexts + saved row about</td><td>Web search</td></tr>
-                    <tr><td>Quiet gate</td><td>Recent turns + hours quiet</td><td>Need to invent a next</td></tr>
-                </tbody>
-            </table>
         </section>
 
-        <section class="doc-block" id="s11">
-            <h2>11 · Output shapes</h2>
-            <div class="doc-prose">
-                <p>Face on the plate is the short line. The episode is stored, embedded, and shown in the thread book.</p>
+        <section class="spec-sec" id="isolation">
+            <div class="spec-idx">08</div>
+            <div>
+                <h2>Isolation</h2>
+                <div class="doc-prose">
+                    <p>Leakage here is how clerk voice returns.</p>
+                </div>
+                <table class="spec-table">
+                    <thead><tr><th>Writer</th><th>Sees</th><th>Forbidden</th></tr></thead>
+                    <tbody>
+                        <tr><td>Starter</td><td>App, now, soonest nexts, clipped North Star</td><td>Spine-as-goal, so-far novels, episodes, transcript, recaps, unmerged beats, web, invented clocks</td></tr>
+                        <tr><td>Continuation</td><td>Last dump, faces, soonest nexts + so-far</td><td>Last episode as an ask, web, Do as a turn</td></tr>
+                        <tr><td>Classify</td><td>Dump, prior dump, each next + so-far, faces</td><td>Web, Do taps</td></tr>
+                        <tr><td>Beat</td><td>Dump, this thread only, faces</td><td>Other so-fars, episode-as-homework, a form</td></tr>
+                        <tr><td>Sync</td><td>—</td><td>Recap, graph extend, minting threads</td></tr>
+                        <tr><td>Live pick</td><td>Nexts, so-far</td><td>Transcript, North Star as query</td></tr>
+                        <tr><td>Link about</td><td>URL + OG + hint</td><td>Nexts, so-far, chat</td></tr>
+                        <tr><td>Pantry</td><td>Nexts + saved about</td><td>Web search</td></tr>
+                        <tr><td>Quiet gate</td><td>Recent turns, hours quiet</td><td>Inventing a next</td></tr>
+                    </tbody>
+                </table>
             </div>
-            <pre class="packet"># Beat — this is the episode
-face      ≤12 words — the plate
-episode   the beat following the structure blurb
-so_far    thin spine
-next      this thread’s domain-next line
-next_at   ISO / HH:mm / empty — never an invented 7:00
+        </section>
 
-# Door
-liner:      ≤24 words, idea or question-statement, this app this hour
-says:       two typed moves — cycling composer placeholders, not taps
-do_object:  named object if the line suggested one; else empty
-chips:      Do only, from live card / pantry — never Open {app}. Silence if none
-key:        (domain, app) or (domain, none)
-packet:     soonest domain-next lines, not every next + today’s recaps
+        <section class="spec-sec" id="shapes">
+            <div class="spec-idx">09</div>
+            <div>
+                <h2>Shapes</h2>
+                <pre class="packet">beat
+  face      ≤12 words     plate
+  episode   blurb-shaped  stored, embedded, booked
+  so_far    thin spine
+  next      ≤12 words     domain-next row
+  next_at   ISO | HH:mm | ∅
 
-# Sync
-No model recap. Leave the room. Drop the door cache.
+door
+  liner      ≤24          this app, this hour
+  says       ×2           composer placeholders
+  do_object  noun | ∅
+  chips      Do ≤2 | ∅    live card → pantry
+  key        (domain, app | none)
 
-# Live link pick
-hub_id, object (chip verb), query (what to search)   — or all empty
+live     { hub_id, object, query } | ∅
+about    kind, nouns, verb, line
+pantry   { ids: ≤2 }
+sync     no model. leave. drop cache.</pre>
+            </div>
+        </section>
 
-# Link about
-kind, nouns, verb, line
-
-# Pantry pick
-ids: [saved link ids]   — at most two, or none</pre>
-            <div class="doc-close">
-                <p class="doc-axiom">Each entity has one job, one packet, one shape.</p>
-                <p class="doc-axiom-sub">And a silence that is cheaper than a lie.</p>
+        <section class="spec-sec" id="example">
+            <div class="spec-idx">10</div>
+            <div>
+                <h2>Trace</h2>
+                <ol class="algo">
+                    <li>Swiggy, 18:00, Food. Starter from soonest Food nexts. Says cycle. Do iff an object is in the room.</li>
+                    <li>Dump. Classify → Nutrition. Nutrition writes the beat (calories, profile, meal times), folds so-far, sets lunch clock. Game analysis silent.</li>
+                    <li>Continuation on the sitting. Swiggy cache untouched.</li>
+                    <li>Do tap opens a URL. No chorus.</li>
+                    <li>Hide: sitting still open. Memory already landed.</li>
+                    <li>Sync: chorus gone, Food door cache dropped. Next Swiggy open writes from the new roster.</li>
+                </ol>
+                <div class="doc-close">
+                    <p class="doc-axiom">One job. One packet. One shape.</p>
+                    <p class="doc-axiom-sub">Silence is cheaper than a lie.</p>
+                </div>
             </div>
         </section>
     </main>
