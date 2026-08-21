@@ -1281,27 +1281,70 @@ footer {
 }
 
 @media (max-width: 768px) {
+    :root { --nav-block: 3.25rem; }
     section { padding: 4rem max(16px, env(safe-area-inset-left, 0px) + 16px); }
     .hero.hero-panel {
-        padding-top: 1rem;
-        padding-bottom: 0.75rem;
+        padding: 1.75rem 0 2rem;
+        min-height: unset;
+        align-items: flex-start;
     }
     .video-panel {
         padding-top: 0.75rem;
         padding-bottom: 0.75rem;
     }
-    .nav-links { gap: 1rem; }
+
+    .top-nav {
+        padding-top: 0.7rem;
+        padding-bottom: 0.7rem;
+    }
+    .nav-inner {
+        gap: 0.75rem;
+        min-width: 0;
+    }
+    .logo {
+        font-size: 0.82rem;
+        letter-spacing: 0.12em;
+        flex-shrink: 0;
+    }
+    .nav-links {
+        gap: 0.9rem;
+        flex: 1;
+        justify-content: flex-end;
+        min-width: 0;
+    }
+    .nav-link {
+        font-size: 0.62rem;
+        letter-spacing: 0.08em;
+        white-space: nowrap;
+        border-bottom: none;
+    }
+    /* Pill does not fit beside SAVYN + two links. Become a text link. */
+    .highlight-link {
+        background: none;
+        color: var(--gold-bright) !important;
+        padding: 0;
+        border-radius: 0;
+        box-shadow: none;
+        font-weight: 700;
+    }
+    .highlight-link:hover {
+        transform: none;
+        box-shadow: none;
+    }
+    /* Home already has the form — don't duplicate Join Alpha in the bar. */
+    .home-lite .nav-links .highlight-link { display: none; }
+
     .manifesto-beat { padding-top: 5rem; padding-bottom: 5rem; }
     .beat-inner { padding-left: 1.5rem; }
     .device { width: min(280px, 84vw); border-radius: 38px; padding: 8px; }
     .device-video, .device-screen { border-radius: 30px; }
     .device-notch { top: 14px; width: 78px; height: 20px; }
     .bottom-cta { padding-top: 5rem; padding-bottom: 5rem; }
-    .pill-form { flex-direction: column; background: transparent; border: none; padding: 0; gap: 12px; backdrop-filter: none; }
-    .signup-input { border: 1px solid var(--surface-border); border-radius: 8px; background: var(--surface-glass); padding: 16px; text-align: center; }
-    .signup-btn { padding: 18px; border-radius: 8px; width: 100%; }
+    .pill-form { flex-direction: column; background: transparent; border: none; padding: 0; gap: 10px; backdrop-filter: none; }
+    .signup-input { border: 1px solid var(--surface-border); border-radius: 8px; background: var(--surface-glass); padding: 14px 16px; text-align: left; }
+    .signup-btn { padding: 14px 16px; border-radius: 8px; width: 100%; }
     .signup-success { border: 1px solid var(--surface-border); }
-    footer { flex-direction: column; gap: 1.5rem; text-align: left; align-items: flex-start; }
+    footer { flex-direction: column; gap: 1.25rem; text-align: left; align-items: flex-start; padding-top: 1.5rem; padding-bottom: 2rem; }
 }
 
 /* ─── Interior pages (architecture, privacy) ──────────────────────────────── */
@@ -1652,6 +1695,26 @@ html:has(body.home-lite) {
     margin-left: 0;
 }
 .hero-alpha .pill-form { width: 100%; }
+@media (max-width: 768px) {
+    .home-lite .hero.hero-panel {
+        min-height: unset;
+        align-items: flex-start;
+        padding-top: 2.25rem;
+        padding-bottom: 2.5rem;
+    }
+    .home-lite .hero-copy { padding-left: 0; width: 100%; max-width: none; }
+    .home-lite .hero-title {
+        margin-left: 0;
+        margin-bottom: 1.5rem;
+        width: 100%;
+        max-width: none;
+    }
+    .hero-alpha {
+        margin-top: 0;
+        max-width: none;
+    }
+    .home-lite footer .footer-right { display: none; }
+}
 @media (max-width: 480px) {
     .home-lite .hero-copy { padding-left: 0; }
     .home-lite .hero-title { margin-left: 0; width: 100%; }
