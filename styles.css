@@ -71,8 +71,8 @@ body {
 .container {
     max-width: var(--container);
     margin: 0 auto;
-    padding-left: max(16px, env(safe-area-inset-left, 0px) + 16px);
-    padding-right: max(16px, env(safe-area-inset-right, 0px) + 16px);
+    padding-left: max(1.25rem, calc(env(safe-area-inset-left, 0px) + 1.25rem));
+    padding-right: max(1.25rem, calc(env(safe-area-inset-right, 0px) + 1.25rem));
 }
 
 a {
@@ -162,19 +162,13 @@ a:hover { color: var(--gold-bright); border-bottom-color: var(--gold-dim); }
 .nav-link { font-family: var(--font-mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; }
 
 .highlight-link {
-    background: linear-gradient(180deg, var(--gold-bright) 0%, var(--gold) 100%);
-    color: var(--on-gold) !important;
-    padding: 8px 18px;
-    border-radius: 999px;
     font-weight: 700;
+    color: var(--gold-bright);
     border-bottom: none !important;
-    box-shadow: 0 4px 20px var(--gold-glow-soft);
 }
 .highlight-link:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 8px 28px var(--gold-glow);
+    color: var(--gold-bright) !important;
     border-bottom: none !important;
-    color: var(--on-gold) !important;
 }
 
 /* ─── Landing: hero → video (stacked) + snap scroll ─────────────────────── */
@@ -1282,7 +1276,10 @@ footer {
 
 @media (max-width: 768px) {
     :root { --nav-block: 3.25rem; }
-    section { padding: 4rem max(16px, env(safe-area-inset-left, 0px) + 16px); }
+    .container {
+        padding-left: max(1.25rem, calc(env(safe-area-inset-left, 0px) + 1.25rem));
+        padding-right: max(1.25rem, calc(env(safe-area-inset-right, 0px) + 1.25rem));
+    }
     .hero.hero-panel {
         padding: 1.75rem 0 2rem;
         min-height: unset;
@@ -1318,20 +1315,10 @@ footer {
         white-space: nowrap;
         border-bottom: none;
     }
-    /* Pill does not fit beside SAVYN + two links. Become a text link. */
     .highlight-link {
-        background: none;
         color: var(--gold-bright) !important;
-        padding: 0;
-        border-radius: 0;
-        box-shadow: none;
         font-weight: 700;
     }
-    .highlight-link:hover {
-        transform: none;
-        box-shadow: none;
-    }
-    /* Home already has the form — don't duplicate Join Alpha in the bar. */
     .home-lite .nav-links .highlight-link { display: none; }
 
     .manifesto-beat { padding-top: 5rem; padding-bottom: 5rem; }

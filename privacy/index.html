@@ -10,7 +10,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles.css?v=20260821f">
+    <style>
+        .nav-link, a.nav-link {
+            background: none !important;
+            padding: 0 !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+        }
+        @media (max-width: 720px) {
+            .nav-inner { gap: 12px; }
+            .logo { font-size: 13px; letter-spacing: 0.12em; }
+            .nav-links { gap: 14px !important; flex-wrap: nowrap; }
+            .nav-link { font-size: 11px !important; letter-spacing: 0.06em !important; white-space: nowrap; }
+        }
+    </style>
 </head>
 <body class="doc-page">
     <div class="noise-overlay"></div>
@@ -20,7 +34,7 @@
         <div class="nav-inner">
             <a href="/" class="logo">SAVYN</a>
             <div class="nav-links">
-                <a href="/#join-alpha" class="nav-link highlight-link">Join Alpha</a>
+                <a href="/#join-alpha" class="nav-link">Alpha</a>
                 <a href="/architecture/" class="nav-link">Architecture</a>
                 <a href="/privacy/" class="nav-link is-current">Privacy</a>
             </div>
