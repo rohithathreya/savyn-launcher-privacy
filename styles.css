@@ -2118,3 +2118,103 @@ blockquote.spec-quote {
     .kv { grid-template-columns: 1fr; gap: 0.2rem 0; }
     .spec-table td:first-child { width: auto; }
 }
+
+/* ─── Manifesto ───────────────────────────────────────────────────────────── */
+.mf-page .hero.hero-panel {
+    min-height: auto;
+    padding: clamp(4rem, 10vh, 7rem) 0 clamp(2.5rem, 5vh, 3.5rem);
+}
+.mf-page .hero-copy { padding-left: 0; max-width: 22em; }
+.mf-page .hero-title {
+    margin-left: 0;
+    width: 100%;
+    max-width: none;
+}
+.mf-wrap {
+    max-width: 42rem;
+    padding: 0 0 7rem;
+}
+.mf-chapter {
+    padding: 4.25rem 0 0;
+    margin: 4.25rem 0 0;
+    border-top: 1px solid var(--surface-border);
+}
+.mf-chapter:first-of-type {
+    margin-top: 0;
+    padding-top: 3rem;
+    border-top: 1px solid var(--surface-border);
+}
+.mf-num {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin: 0 0 1rem;
+}
+.mf-chapter h2 {
+    font-size: clamp(1.85rem, 3.8vw, 2.75rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.08;
+    color: var(--text-primary);
+    margin: 0 0 1.75rem;
+}
+.mf-chapter p {
+    font-size: 1.08rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin: 0 0 1.15rem;
+}
+.mf-chapter p:last-child { margin-bottom: 0; }
+.mf-chapter strong { color: var(--text-primary); font-weight: 600; }
+.mf-pull {
+    margin: 2rem 0;
+    padding: 0;
+    border: none;
+    font-size: clamp(1.45rem, 3vw, 2rem);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.2;
+    color: var(--text-primary);
+}
+.mf-pull em {
+    font-style: normal;
+    color: var(--gold-bright);
+}
+.mf-principle {
+    padding: 1.6rem 0;
+    border-top: 1px solid var(--surface-border);
+}
+.mf-principle:last-of-type { border-bottom: 1px solid var(--surface-border); }
+.mf-principle h3 {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 0.55rem;
+}
+.mf-principle p {
+    margin: 0;
+    font-size: 1.02rem;
+}
+.mf-end {
+    margin-top: 3.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--surface-border);
+}
+.mf-end p {
+    font-size: clamp(1.5rem, 3.2vw, 2.15rem);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.2;
+    color: var(--text-primary);
+    margin: 0 0 0.85rem;
+}
+.mf-end p:last-child {
+    margin: 0;
+    color: var(--gold-bright);
+}
