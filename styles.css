@@ -1624,3 +1624,158 @@ html:has(body.doc-page) {
         gap: 0.35rem;
     }
 }
+
+/* ─── Home: hero + alpha only ─────────────────────────────────────────────── */
+html:has(body.home-lite) {
+    scroll-snap-type: none;
+}
+.home-lite .hero.hero-panel {
+    min-height: calc(100dvh - var(--nav-block) - 5.5rem);
+    min-height: calc(100svh - var(--nav-block) - 5.5rem);
+}
+.hero-alpha {
+    width: 100%;
+    max-width: 440px;
+    margin-top: clamp(2rem, 4.5vw, 3.25rem);
+}
+.hero-alpha .pill-form { width: 100%; }
+
+/* ─── Architecture poster ─────────────────────────────────────────────────── */
+.arch-page .hero.hero-panel {
+    min-height: auto;
+    padding: clamp(3.5rem, 8vh, 6rem) 0 clamp(3rem, 6vh, 4.5rem);
+}
+.arch-page .hero-title {
+    max-width: 14em;
+}
+.arch-band {
+    padding: 0;
+    border-top: 1px solid var(--surface-border);
+    border-bottom: 1px solid var(--surface-border);
+    background: rgba(20, 16, 12, 0.35);
+}
+.arch-spine {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+    align-items: stretch;
+    gap: 0;
+    padding-top: 3.25rem;
+    padding-bottom: 3.25rem;
+}
+.arch-node span,
+.arch-job span,
+.arch-ticks span,
+.arch-end span,
+.arch-quote cite {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+}
+.arch-node h2,
+.arch-job h2 {
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    color: var(--text-primary);
+    margin: 0.55rem 0 0.65rem;
+}
+.arch-node p,
+.arch-job p,
+.arch-ticks p {
+    color: var(--text-secondary);
+    font-size: 0.98rem;
+    line-height: 1.5;
+    margin: 0;
+}
+.arch-spine-rule {
+    width: 1px;
+    background: linear-gradient(180deg, transparent, var(--gold) 20%, var(--gold) 80%, transparent);
+    opacity: 0.55;
+    margin: 0.4rem 1.75rem;
+}
+.arch-jobs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.arch-job {
+    padding: 3rem 2.5rem 3rem 0;
+    border-bottom: 1px solid var(--surface-border);
+}
+.arch-job:nth-child(odd) {
+    padding-right: 2.75rem;
+    border-right: 1px solid var(--surface-border);
+}
+.arch-job:nth-child(even) { padding-left: 2.75rem; padding-right: 0; }
+.arch-job em { font-style: italic; color: var(--gold-bright); }
+.arch-ticks-wrap {
+    padding: 0;
+    border-bottom: 1px solid var(--surface-border);
+}
+.arch-ticks {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    gap: 2rem 1.5rem;
+}
+.arch-ticks div {
+    padding-left: 1.15rem;
+    border-left: 1px solid var(--gold);
+}
+.arch-quote {
+    padding-top: 5.5rem;
+    padding-bottom: 2rem;
+}
+.arch-quote p {
+    max-width: 16em;
+    font-size: clamp(1.65rem, 3.8vw, 2.6rem);
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    line-height: 1.18;
+    color: var(--text-primary);
+    text-wrap: balance;
+    margin: 0 0 1.25rem;
+}
+.arch-quote cite {
+    font-style: normal;
+    display: block;
+}
+.arch-end {
+    padding-top: 3rem;
+    padding-bottom: 5.5rem;
+}
+.arch-end p {
+    font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+    margin: 0 0 0.65rem;
+    max-width: 18em;
+}
+
+@media (max-width: 800px) {
+    .arch-spine {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+    .arch-spine-rule {
+        width: 48px;
+        height: 1px;
+        margin: 0;
+        background: var(--gold);
+    }
+    .arch-jobs { grid-template-columns: 1fr; }
+    .arch-job:nth-child(odd),
+    .arch-job:nth-child(even) {
+        padding: 2.25rem 0;
+        border-right: none;
+    }
+    .arch-ticks { grid-template-columns: 1fr 1fr; }
+}

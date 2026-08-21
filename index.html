@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Savyn — The anti-discipline OS</title>
-    <meta name="description" content="Consume more, scroll more, hustle harder — the world's noise, crossed out. The anti-discipline OS: your mind, your phone, your momentum. Savyn is the direct line between you and your device, collapsing the noise into the exact apps, links, and ideas you need, the moment you need them.">
+    <meta name="description" content="The anti-discipline OS: your mind, your phone, your momentum.">
     <meta name="theme-color" content="#0c0a08">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="home-lite">
     <div class="noise-overlay"></div>
     <div class="ambient-glow"></div>
 
@@ -32,7 +32,7 @@
         </div>
     </nav>
 
-    <section class="hero hero-panel snap-panel relative-z" id="hero">
+    <section class="hero hero-panel relative-z" id="hero">
         <div class="hero-backdrop" aria-hidden="true"></div>
         <div class="hero-inner container animate-fade-in">
             <div class="hero-copy">
@@ -48,103 +48,24 @@
                     <span class="hero-line hero-staccato">The <span class="hero-staccato-accent">anti-discipline</span> OS</span>
                     <span class="hero-line hero-subline">Your mind. Your phone. Your momentum.</span>
                 </h1>
-            </div>
-        </div>
-    </section>
 
-    <section class="video-panel snap-panel relative-z" id="demo" aria-label="Product demo">
-        <div class="video-panel-backdrop" aria-hidden="true"></div>
-        <div class="video-panel-inner container">
-            <div class="hero-stories hero-showcase" data-stories-player>
-                <div class="hero-stage">
-                    <div class="hero-stage-glow" aria-hidden="true"></div>
-                    <button type="button" class="stories-nav stories-nav-prev" aria-label="Previous story">
-                        <span aria-hidden="true">‹</span>
-                    </button>
-                    <div class="device device-hero">
-                        <div class="device-stories-screen">
-                            <div class="stories-bars" aria-hidden="true">
-                                <span class="stories-bar"><span class="stories-bar-fill"></span></span>
-                                <span class="stories-bar"><span class="stories-bar-fill"></span></span>
-                                <span class="stories-bar"><span class="stories-bar-fill"></span></span>
+                <div class="hero-alpha" id="join-alpha">
+                    <form class="signup-form">
+                        <div class="form-row pill-form">
+                            <input type="email" class="signup-input" placeholder="you@signal.in" required>
+                            <button type="submit" class="signup-btn">
+                                <span class="btn-text">Reserve seat</span>
+                                <span class="btn-spinner"></span>
+                            </button>
+                            <div class="signup-success" style="display:none;">
+                                <p>Sequence queued. — Rohith</p>
                             </div>
-                            <video
-                                class="stories-video is-active"
-                                data-src="assets/HealthyEatingAgent.mp4?v=20260530"
-                                playsinline
-                                muted
-                                preload="none"
-                                aria-label="Savyn app — story 1 of 3"></video>
-                            <video
-                                class="stories-video"
-                                data-src="assets/Music.mp4?v=20260530"
-                                playsinline
-                                muted
-                                preload="none"
-                                aria-label="Savyn app — story 2 of 3"></video>
-                            <video
-                                class="stories-video"
-                                data-src="assets/Exercise.mp4?v=20260530"
-                                playsinline
-                                muted
-                                preload="none"
-                                aria-label="Savyn app — story 3 of 3"></video>
                         </div>
-                    </div>
-                    <button type="button" class="stories-nav stories-nav-next" aria-label="Next story">
-                        <span aria-hidden="true">›</span>
-                    </button>
-                </div>
-                <div class="stories-captions">
-                    <p class="stories-caption is-active">
-                        <span class="stories-caption-num">01 / 03</span>
-                        <span class="stories-caption-text">Aware of my daily dinner routine and dietary constraints. Even a basic note, "Bored of dinner, let's switch it up", adapts perfectly — right time and right context.</span>
-                    </p>
-                    <p class="stories-caption">
-                        <span class="stories-caption-num">02 / 03</span>
-                        <span class="stories-caption-text">I set up a log of my music preferences. It remembers as well as actively interprets what I might need in any future setting. No nuance lost.</span>
-                    </p>
-                    <p class="stories-caption">
-                        <span class="stories-caption-num">03 / 03</span>
-                        <span class="stories-caption-text">Knows I workout at 7 pm. Knows I need to do legs today. Automatically adapts my home screen to what I need to be doing — precise, personalized, on time.</span>
-                    </p>
+                        <p class="signup-error" style="display:none; margin-top: 1rem;"></p>
+                    </form>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section id="manifesto" class="manifesto-merged container snap-panel">
-        <div class="manifesto-core animate-on-scroll">
-            <p class="eyebrow">01 // The shift</p>
-            <h2 class="manifesto-lead">Your mind moves faster<br>than your screen.</h2>
-            <p class="manifesto-body manifesto-body-muted">But the chaos compounds. Feeds pull. Algorithms push. Apps don't speak to each other. Context switches all day.</p>
-            <p class="manifesto-body">Savyn is the direct line between your mind and phone. An operating system that answers to you — and no one else.</p>
-            <p class="manifesto-body manifesto-resolve">It collapses the noise into a single direction — <span class="text-gold">the exact apps, links, and ideas you need, the moment you need them.</span></p>
-        </div>
-    </section>
-
-    <section id="join-alpha" class="bottom-cta container animate-on-scroll">
-        <p class="eyebrow">02 // Join the alpha</p>
-        <h2 class="cta-lead">
-            <span class="accent">Speak once.</span> It begins.
-        </h2>
-        <p class="cta-sub text-muted">Android closed alpha. Limited seats. No marketing — only sequence updates.</p>
-
-        <form id="bottom-form" class="signup-form">
-            <div class="form-row pill-form">
-                <input type="email" class="signup-input" placeholder="you@signal.in" required>
-                <button type="submit" class="signup-btn">
-                    <span class="btn-text">Reserve seat</span>
-                    <span class="btn-spinner"></span>
-                </button>
-                <div class="signup-success" style="display:none;">
-                    <p>Sequence queued. — Rohith</p>
-                </div>
-            </div>
-            <p class="signup-error" style="display:none; margin-top: 1rem;"></p>
-        </form>
-
-        <p class="cta-signoff">— Rohith, founder, Savyn Labs</p>
     </section>
 
     <footer class="container">
